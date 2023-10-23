@@ -1,0 +1,1100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITHoTram_CustomReportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CasinoKiosk_ChangeLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="OldName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OldPoints" Type="Int32" />
+    <Property Name="NewPoints" Type="Int32" />
+    <Property Name="OldQuantity" Type="Int32" />
+    <Property Name="NewQuantity" Type="Int32" />
+    <Property Name="OldImageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="NewImageUrl" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="OldIsActive" Type="Boolean" />
+    <Property Name="NewIsActive" Type="Boolean" />
+    <Property Name="ChangedDate" Type="DateTime" Precision="3" />
+    <Property Name="ChangedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CasinoKiosk_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="imageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CasinoKiosk_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="createdTime" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CurrentPlayerPoints" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="voidedStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="gamingDate" Type="DateTime" Precision="0" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedTime" Type="DateTime" Precision="3" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFBonus_PlayerPoints">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="DailyPoints" Type="Int32" />
+    <Property Name="WeeklyPoints" Type="Int32" />
+    <Property Name="FridayPoints" Type="Int32" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DailyPoints" Type="Int32" Nullable="false" />
+    <Property Name="SlotDailyPoints" Type="Int32" Nullable="false" />
+    <Property Name="TableDailyPoints" Type="Int32" Nullable="false" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FridayPoints" Type="Int32" />
+    <Property Name="SlotFridayPoints" Type="Int32" />
+    <Property Name="TableFridayPoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FridayPoints" Type="Int32" />
+    <Property Name="SlotFridayPoints" Type="Int32" />
+    <Property Name="TableFridayPoints" Type="Int32" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WeeklyPoints" Type="Int32" />
+    <Property Name="SlotWeeklyPoints" Type="Int32" />
+    <Property Name="TableWeeklyPoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WeeklyPoints" Type="Int32" />
+    <Property Name="SlotWeeklyPoints" Type="Int32" />
+    <Property Name="TableWeeklyPoints" Type="Int32" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="ITHoTram_CustomReportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CasinoKiosk_ChangeLog" EntityType="Self.CasinoKiosk_ChangeLog" />
+    <EntitySet Name="CasinoKiosk_Item" EntityType="Self.CasinoKiosk_Item" />
+    <EntitySet Name="CasinoKiosk_Log" EntityType="Self.CasinoKiosk_Log" />
+    <EntitySet Name="MFBonus_PlayerPoints" EntityType="Self.MFBonus_PlayerPoints" />
+    <EntitySet Name="MFDailyBonus_Items" EntityType="Self.MFDailyBonus_Items" />
+    <EntitySet Name="MFDailyBonus_Players" EntityType="Self.MFDailyBonus_Players" />
+    <EntitySet Name="MFFridayBonus_Items" EntityType="Self.MFFridayBonus_Items" />
+    <EntitySet Name="MFFridayBonus_Logs" EntityType="Self.MFFridayBonus_Logs" />
+    <EntitySet Name="MFFridayBonus_Players" EntityType="Self.MFFridayBonus_Players" />
+    <EntitySet Name="MFWeeklyBonus_Items" EntityType="Self.MFWeeklyBonus_Items" />
+    <EntitySet Name="MFWeeklyBonus_Logs" EntityType="Self.MFWeeklyBonus_Logs" />
+    <EntitySet Name="MFWeeklyBonus_Players" EntityType="Self.MFWeeklyBonus_Players" />
+    <FunctionImport Name="MFBonus_spSelectPlayerPoints_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectPlayerPoints_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="MFDailyBonus_SecondLogs" EntityType="ITHoTram_CustomReportModel.MFDailyBonus_SecondLogs" />
+    <FunctionImport Name="MFBonus_spSelectDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectFridayLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectFridayLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="MFBonus_ReprintLog" EntityType="ITHoTram_CustomReportModel.MFBonus_ReprintLog" />
+    <FunctionImport Name="MFBonus_spSelectSlotDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectSlotDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectSlotDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectSlotDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectRedemptionLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectRedemptionLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CIFE_Players" EntityType="ITHoTram_CustomReportModel.CIFE_Players" />
+    <FunctionImport Name="spReportCIFE_Program" ReturnType="Collection(ITHoTram_CustomReportModel.spReportCIFE_Program_Result)" />
+    <EntitySet Name="CasinoKioskRoles" EntityType="ITHoTram_CustomReportModel.CasinoKioskRole" />
+    <EntitySet Name="CasinoKioskUserRoles" EntityType="ITHoTram_CustomReportModel.CasinoKioskUserRole" />
+    <EntitySet Name="CasinoKioskUsers" EntityType="ITHoTram_CustomReportModel.CasinoKioskUser" />
+    <AssociationSet Name="FK_UserRoles_Roles" Association="ITHoTram_CustomReportModel.FK_UserRoles_Roles">
+      <End Role="CasinoKioskRole" EntitySet="CasinoKioskRoles" />
+      <End Role="CasinoKioskUserRole" EntitySet="CasinoKioskUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Users" Association="ITHoTram_CustomReportModel.FK_UserRoles_Users">
+      <End Role="CasinoKioskUser" EntitySet="CasinoKioskUsers" />
+      <End Role="CasinoKioskUserRole" EntitySet="CasinoKioskUserRoles" />
+    </AssociationSet>
+    <FunctionImport Name="CasinoKioskUsers_SelectAll" ReturnType="Collection(ITHoTram_CustomReportModel.CasinoKioskUsers_SelectAll_Result)">
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CasinoKioskRoles_SelectAll" ReturnType="Collection(ITHoTram_CustomReportModel.CasinoKioskRoles_SelectAll_Result)">
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="CasinoKioskUserActionLogs" EntityType="ITHoTram_CustomReportModel.CasinoKioskUserActionLog" />
+    <FunctionImport Name="FOPatron_SelectAll" ReturnType="Collection(ITHoTram_CustomReportModel.FOPatron_SelectAll_Result)" />
+    <FunctionImport Name="FOPatron_UpdateLastLogin">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="FOPatronUsers" EntityType="ITHoTram_CustomReportModel.FOPatronUser" />
+    <EntitySet Name="FOPatronUserActionLogs" EntityType="ITHoTram_CustomReportModel.FOPatronUserActionLog" />
+    <FunctionImport Name="FOPatronUserActionLog_SelectAll" ReturnType="Collection(ITHoTram_CustomReportModel.FOPatronUserActionLog_SelectAll_Result)" />
+    <FunctionImport Name="KioskUserActionLog_SelectAll" ReturnType="Collection(ITHoTram_CustomReportModel.KioskUserActionLog_SelectAll_Result)" />
+    <FunctionImport Name="HTAppGetPlayerInfoByPID_1" ReturnType="Collection(ITHoTram_CustomReportModel.HTAppGetPlayerInfoByPID_1_Result)">
+      <Parameter Name="PID" Mode="In" Type="Int32" />
+      <Parameter Name="IDNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="CurrencyConverter_User" EntityType="ITHoTram_CustomReportModel.CurrencyConverter_User" />
+    <EntitySet Name="CurrencyConverterUserActionLogs" EntityType="ITHoTram_CustomReportModel.CurrencyConverterUserActionLog" />
+    <EntitySet Name="POSPatronInfoUsers" EntityType="ITHoTram_CustomReportModel.POSPatronInfoUser" />
+    <EntitySet Name="POSPatron8DragonUserActionLog" EntityType="ITHoTram_CustomReportModel.POSPatron8DragonUserActionLog" />
+    <EntitySet Name="CasinoTheGrandSignatureItems" EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignatureItem" />
+    <EntitySet Name="CasinoTheGrandSignaturePlayerQualifieds" EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignaturePlayerQualified" />
+    <EntitySet Name="HTRTicketPromotions" EntityType="ITHoTram_CustomReportModel.HTRTicketPromotion" />
+    <EntitySet Name="MFPointsRedemption_Items" EntityType="ITHoTram_CustomReportModel.MFPointsRedemption_Items" />
+    <EntitySet Name="CasinoTrackingActivities" EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivity" />
+    <EntitySet Name="CasinoTrackingActivityEditLogs" EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivityEditLog" />
+    <EntitySet Name="CasinoTheGrandSignatureRedeemLogs" EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignatureRedeemLog" />
+    <EntitySet Name="DailyPSBundle_Items" EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Items" />
+    <EntitySet Name="DailyPSBundle_Logs" EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Logs" />
+    <EntitySet Name="DailyPSBundle_Players" EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Players" />
+    <EntitySet Name="MFBonus_SlotDailyItems" EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyItems" />
+    <EntitySet Name="MFBonus_SlotDailyLogs" EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyLogs" />
+    <EntitySet Name="MFBonus_SlotDailyPlayers" EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyPlayers" />
+    <EntitySet Name="MFPointsRedemption_Logs" EntityType="ITHoTram_CustomReportModel.MFPointsRedemption_Logs" />
+    <FunctionImport Name="SpReport_MarketingAuthorizer" ReturnType="Collection(ITHoTram_CustomReportModel.SpReport_MarketingAuthorizer_Result)" />
+    <EntitySet Name="HTRGoldenHourPlayers" EntityType="ITHoTram_CustomReportModel.HTRGoldenHourPlayer" />
+    <EntitySet Name="HTRGoldenHourPromotions" EntityType="ITHoTram_CustomReportModel.HTRGoldenHourPromotion" />
+    <FunctionImport Name="spHTR_GoldenHourDraw" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_GoldenHourDraw_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="CasinoKiosk_spGetFOPatronLogByDate" ReturnType="Collection(ITHoTram_CustomReportModel.CasinoKiosk_spGetFOPatronLogByDate_Result)">
+      <Parameter Name="fromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="toDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="HTR_ThursdayGoldenHourPlayers" EntityType="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPlayers" />
+    <FunctionImport Name="spHTR_ThursdayGoldenHourDraw" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_ThursdayGoldenHourDraw_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="HTR_ThursdayGoldenHourPromotion" EntityType="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPromotion" />
+    <EntitySet Name="MFDailyBonus_Items_Yesterday" EntityType="ITHoTram_CustomReportModel.MFDailyBonus_Items_Yesterday" />
+    <FunctionImport Name="MFDailyBonus_YesterdayItemsManual" ReturnType="Collection(Int32)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="MFDailyBonus_YesterdayItemsManual_Log" EntityType="ITHoTram_CustomReportModel.MFDailyBonus_YesterdayItemsManual_Log" />
+    <EntitySet Name="MiniBuffet_GetNewClassicPlayerLogs" EntityType="ITHoTram_CustomReportModel.MiniBuffet_GetNewClassicPlayerLogs" />
+    <FunctionImport Name="MiniBuffet_GetNewClassicPlayer" ReturnType="Collection(ITHoTram_CustomReportModel.MiniBuffet_GetNewClassicPlayer_Result)" />
+    <EntitySet Name="HTR_SundayGoldenHourPlayers" EntityType="ITHoTram_CustomReportModel.HTR_SundayGoldenHourPlayers" />
+    <FunctionImport Name="spHTR_SundayGoldenHourDraw" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_SundayGoldenHourDraw_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spHTR_SundayGoldenHourPromotionByID">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="HTR_SundayGoldenHourLog" EntityType="ITHoTram_CustomReportModel.HTR_SundayGoldenHourLog" />
+    <EntitySet Name="HTR_MidAutumeLog" EntityType="ITHoTram_CustomReportModel.HTR_MidAutumeLog" />
+    <EntitySet Name="HTR_MidAutumePlayers" EntityType="ITHoTram_CustomReportModel.HTR_MidAutumePlayers" />
+    <FunctionImport Name="spHTR_MidAutumeBySearchPatron" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_MidAutumeBySearchPatron_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spHTR_MidAutumeLogByID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_MidAutumeLogByID_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="Int32" Name="DailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="FridayPoints" Nullable="true" />
+    <Property Type="DateTime" Name="GamingDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="MFDailyBonus_SecondLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DailyPoints" Type="Int32" />
+    <Property Name="SlotDailyPoints" Type="Int32" />
+    <Property Name="TableDailyPoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+    <Property Name="reprintedTime" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="MFBonus_spSelectDailyLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="TableDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="MFBonus_spSelectFridayLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="FridayPoints" Nullable="true" />
+    <Property Type="Int32" Name="SlotFridayPoints" Nullable="true" />
+    <Property Type="Int32" Name="TableFridayPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="MFBonus_spSelectWeeklyLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="SlotWeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="TableWeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="MFBonus_ReprintLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketNo" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="MFBonus_spSelectSlotDailyLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="vSlotDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="false" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="GamingDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="MFBonus_spSelectRedemptionLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="LogName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="createdDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="createdTime" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="CurrentPlayerPoints" Nullable="true" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="gamingDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="CIFE_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="DateInserted" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spReportCIFE_Program_Result">
+    <Property Type="Int64" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="81" />
+    <Property Type="Int32" Name="Cage_DocID" Nullable="false" />
+    <Property Type="Int64" Name="Table_DocID" Nullable="false" />
+    <Property Type="DateTime" Name="AccountingDate" Nullable="true" Precision="23" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="21" Scale="6" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="5" />
+  </ComplexType>
+  <EntityType Name="CasinoKioskRole">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int16" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleDescription" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CasinoKioskUserRoles" Relationship="ITHoTram_CustomReportModel.FK_UserRoles_Roles" FromRole="CasinoKioskRole" ToRole="CasinoKioskUserRole" />
+  </EntityType>
+  <EntityType Name="CasinoKioskUserRole">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Name="UserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="CasinoKioskRole" Relationship="ITHoTram_CustomReportModel.FK_UserRoles_Roles" FromRole="CasinoKioskUserRole" ToRole="CasinoKioskRole" />
+    <NavigationProperty Name="CasinoKioskUser" Relationship="ITHoTram_CustomReportModel.FK_UserRoles_Users" FromRole="CasinoKioskUserRole" ToRole="CasinoKioskUser" />
+  </EntityType>
+  <EntityType Name="CasinoKioskUser">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CasinoKiosk_UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CasinoKioskUserRoles" Relationship="ITHoTram_CustomReportModel.FK_UserRoles_Users" FromRole="CasinoKioskUser" ToRole="CasinoKioskUserRole" />
+    <Property Name="isShow" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_UserRoles_Roles">
+    <End Type="ITHoTram_CustomReportModel.CasinoKioskRole" Role="CasinoKioskRole" Multiplicity="1" />
+    <End Type="ITHoTram_CustomReportModel.CasinoKioskUserRole" Role="CasinoKioskUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CasinoKioskRole">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="CasinoKioskUserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Users">
+    <End Type="ITHoTram_CustomReportModel.CasinoKioskUser" Role="CasinoKioskUser" Multiplicity="1" />
+    <End Type="ITHoTram_CustomReportModel.CasinoKioskUserRole" Role="CasinoKioskUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CasinoKioskUser">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CasinoKioskUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="CasinoKioskUsers_SelectAll_Result">
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="CasinoKiosk_UserName" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="String" Name="UserEmailAddress" Nullable="true" MaxLength="50" />
+    <Property Type="Int16" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="UserRoleId" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="CasinoKioskRoles_SelectAll_Result">
+    <Property Type="Int16" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="RoleName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RoleDescription" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <EntityType Name="CasinoKioskUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ValueBefore" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ValueAfter" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="FOPatron_SelectAll_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Role" Nullable="true" MaxLength="25" />
+    <Property Type="DateTime" Name="CreatedTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isActive" Nullable="true" />
+    <Property Type="DateTime" Name="LastLogin" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="FOPatronUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="isShow" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="FOPatronUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ValueBefore" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ValueAfter" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="FOPatronUserActionLog_SelectAll_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ActionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ValueBefore" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ValueAfter" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ActionDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="KioskUserActionLog_SelectAll_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ActionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ValueBefore" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="ValueAfter" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="ActionDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="HTAppGetPlayerInfoByPID_1_Result">
+    <Property Type="Int32" Name="PlayerID" Nullable="false" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="81" />
+    <Property Type="DateTime" Name="Birthday" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Tier" Nullable="true" MaxLength="16" />
+    <Property Type="String" Name="PPNumber" Nullable="true" MaxLength="32" />
+    <Property Type="DateTime" Name="PPExp" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="DailyPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsBalance" Nullable="true" />
+    <Property Type="Int32" Name="CurrentTierPoints" Nullable="true" />
+    <Property Type="Int32" Name="PointsToRoyal" Nullable="true" />
+    <Property Type="Int32" Name="PointsToPlatinum" Nullable="true" />
+    <Property Type="Int32" Name="DefaultRoyalPoints" Nullable="false" />
+    <Property Type="Int32" Name="DefaultPlatinumPoints" Nullable="false" />
+    <Property Type="DateTime" Name="FirstDayOfCurentYear" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="LastDayOfCurrentYear" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="CurrencyConverter_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isShow" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CurrencyConverterUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ValueBefore" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ValueAfter" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="POSPatronInfoUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="isActived" Type="Boolean" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="LastLogin" Type="DateTime" Precision="3" />
+    <Property Name="isShow" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="POSPatron8DragonUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ValueBefore" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ValueAfter" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignatureItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignaturePlayerQualified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Redeemded" Type="Int32" />
+    <Property Name="Remaining" Type="Int32" />
+    <Property Name="TotalPointsEarnedPreviousMonth" Type="Int32" />
+  </EntityType>
+  <EntityType Name="HTRTicketPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GuestPID" Type="Int32" />
+    <Property Name="GuestName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="IssuedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssuedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isReprinted" Type="Boolean" />
+    <Property Name="isReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumberOfReprint" Type="Int32" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VoidedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFPointsRedemption_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CasinoTrackingActivity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GuestPID" Type="Int32" />
+    <Property Name="GuestName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CallRecord" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ChatRecord" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MeetRecord" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isShow" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CasinoTrackingActivityEditLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ValueBefore" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ValueAfter" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ActionDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignatureRedeemLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="RedeemedQty" Type="Int32" Nullable="false" />
+    <Property Name="RemainingQty" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GamingDate" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="redeemedPerson" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SlotDailyPoints" Type="Int32" />
+    <Property Name="vSlotDailyPoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="voidedStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SlotDailyPoints" Type="Int32" />
+    <Property Name="vSlotDailyPoints" Type="Int32" Nullable="false" />
+    <Property Name="TableDailyPoints" Type="Int32" />
+    <Property Name="vTableDailyPoints" Type="Int32" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+    <Property Name="RedeemedSlotPoints" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFPointsRedemption_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LogName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CurrentPlayerPoints" Type="Int32" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gamingDate" Type="DateTime" Precision="3" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+    <Property Name="reprintedTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="SpReport_MarketingAuthorizer_Result">
+    <Property Type="String" Name="Authorizer" Nullable="false" MaxLength="30" />
+    <Property Type="DateTime" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="PlayerID" Nullable="false" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <EntityType Name="HTRGoldenHourPlayer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPointsEarned" Type="Int32" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="HTRGoldenHourPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isReprinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="spHTR_GoldenHourDraw_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="CasinoKiosk_spGetFOPatronLogByDate_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="RedeemBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RedeemDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RedeemAmount" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RedeemPoints" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="OldPlayerPoints" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CurrenPlayerPoints" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="HTR_ThursdayGoldenHourPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPointsEarned" Type="Int32" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spHTR_ThursdayGoldenHourDraw_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="HTR_ThursdayGoldenHourPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Items_Yesterday">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_YesterdayItemsManual_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="PreStatus" Type="Int32" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+    <Property Name="CreateBy" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PointsEarned" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MiniBuffet_GetNewClassicPlayerLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="MiniBuffet_GetNewClassicPlayer_Result">
+    <Property Type="Int32" Name="PlayerID" Nullable="false" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="81" />
+    <Property Type="Int32" Name="isPrint" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="HTR_SundayGoldenHourPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPointsEarned" Type="Int32" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spHTR_SundayGoldenHourDraw_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="HTR_SundayGoldenHourLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HTR_MidAutumeLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HTR_MidAutumePlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPointsEarned" Type="Int32" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spHTR_MidAutumeBySearchPatron_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="spHTR_MidAutumeLogByID_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PrintedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PrintedBy" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="isPrinted" Nullable="true" />
+    <Property Type="String" Name="ReprintedBy" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ReprintedDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="isVoided" Nullable="true" />
+    <Property Type="DateTime" Name="VoidedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="VoidedBy" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

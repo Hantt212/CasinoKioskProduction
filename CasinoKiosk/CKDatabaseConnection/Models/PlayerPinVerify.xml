@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CRMAcresMessage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="0">
+  <Header>
+
+    <MessageID>1234567891</MessageID>
+    <TimeStampe>2017-06-01T01:00:00</TimeStampe>
+    <Operation Data="PlayerPin" Operand="Validate"/>
+
+  </Header>
+  <PlayerID>@Player_ID</PlayerID>
+  <Site>
+    <SiteID>1</SiteID>
+
+  </Site>
+  <Body>
+    <PlayerPIN>
+      <PINNumber>@Player_PIN</PINNumber>
+    </PlayerPIN>
+  </Body>
+</CRMAcresMessage>

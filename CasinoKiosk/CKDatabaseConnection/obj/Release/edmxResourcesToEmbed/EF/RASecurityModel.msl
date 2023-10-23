@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RA_SecurityModelStoreContainer" CdmEntityContainer="RA_SecurityEntities">
+    <EntitySetMapping Name="FCardIDRefPIDs">
+      <EntityTypeMapping TypeName="RA_SecurityModel.FCardIDRefPID">
+        <MappingFragment StoreEntitySet="FCardIDRefPID">
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FCardID" ColumnName="FCardID" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="DateUpdated" ColumnName="DateUpdated" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

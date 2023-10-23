@@ -1,0 +1,77 @@
+﻿@model CKDatabaseConnection.EF.FOPatron_SelectAll_Result
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeaderContent
+{
+    <h2> FO Patron Users</h2>
+}
+<!DOCTYPE html>
+
+
+
+
+<div class="container-fluid p-3 my-3 border">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New User</button><br /><br />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    UserName
+                </th>
+                <th>
+                    IsActive
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody class="tbody"></tbody>
+    </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">&times;</span></button>*@
+
+                <h4 class="modal-title" id="myModalLabel">Add FOPatron User</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <input type="hidden" id="UserID" placeholder="UserID" />
+                    </div>
+                    <div class="form-group">
+                        <label for="FOPatron_UserName" class="font-weight-bold">UserName</label>
+                        <input type="text" class="form-control" id="FOPatron_UserName" placeholder="UserName" />
+                    </div>
+                    <div class="form-group " style="width: 100px;">
+                        <label for="isActive" class="font-weight-bold">IsActive</label>
+                        <input type="checkbox" class="form-control" id="isActive" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="hidden" id="ID" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scriptFOPatronUser
+{
+    <script src="~/Assets/Admin/js/patronUser.js"></script>
+}

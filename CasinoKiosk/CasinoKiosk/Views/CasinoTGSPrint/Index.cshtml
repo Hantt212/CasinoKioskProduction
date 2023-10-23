@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #printerDiv iframe {
+        position: absolute;
+        top: -1000px;
+    }
+</style>
+<div class="jumbotron">
+    <button onclick="funExportToPDF()">Export to PDF</button>
+</div>
+
+<div id="divPDF">
+    <div id="printerDiv"><iframe id="frmPDF"></iframe></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+    function funExportToPDF() {
+
+        $.ajax({
+            url: '@Url.Action("ExportToPDF", "CasinoTGSPrint")',
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+
+                $('#frmPDF').attr('src', '@Url.Content("~/")' + result);
+
+                setTimeout(function () {
+                    frame = document.getElementById("frmPDF");
+                    frameframedoc = frame.contentWindow;
+                    framedoc.focus();
+                    framedoc.print();
+                }, 1000);
+            },
+            error: function (xhr, status, err) {
+                alert(err);
+            }
+        });
+
+        return false;
+    }
+
+</script>
+

@@ -1,0 +1,338 @@
+﻿@model IList<CKDatabaseConnection.Models.FBItem>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "FBCasinoManagement";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <h2>FBCasinoManagement</h2>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- /.panel-heading -->
+
+            @using (Html.BeginForm("FBCasinoManagement", "FBCasino", FormMethod.Post, new { @class = "", enctype = "multipart/form-data" }))
+            {
+                <div class="row">
+                    <div class="input-group col-lg-4">
+                        <input type="number" class="form-control" placeholder="Search for PID..." aria-label="Search" aria-describedby="basic-addon2" name="ID">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit" id="btnSearch">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+
+                    <div class="col-md-12 col-lg-1">From date</div>
+                    <div class="col-md-12 col-lg-2">
+                        <input type="date" class="form-control" id="dptFromDate" name="dfromdate" />
+                    </div>
+                    <div class="col-md-12 col-lg-1">To date</div>
+                    <div class="col-md-12 col-lg-2">
+                        <input type="date" class="form-control" id="dptToDate" name="dtodate" />
+                    </div>
+                    <div class="col-md-12 col-lg-3">
+                        <button class="btn btn-primary" type="submit" id="btnSearchDate">
+                            <i class="fas fa-search fa-sm"></i> Search
+                        </button>
+                    </div>
+                </div>
+                <br />
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="itemlistTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ticket ID</th>
+                                    <th>Player ID</th>
+                                    <th>Ticket Value</th>
+                                    <th>Issued Date</th>
+                                    <th>Issued By</th>
+                                    <th>Status</th>
+                                    <th>IsSplit</th>
+                                    <th>Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.ticketID</td>
+                                        <td>@item.playerID</td>
+                                        <td>@item.itemValue</td>
+                                        <td>@item.issuedDate</td>
+                                        <td>@item.issuedBy</td>
+                                        <td>@item.strstatus</td>
+                                        <td>@item.isSplit</td>
+                                        <td>
+                                            <a class="btn btn-primary" data-toggle="modal" href="#" onclick="split_item(@item.ID,@item.itemValue,@item.playerID)">Split item</a>
+                                            @if (@item.isSplit == "True")
+                                            {
+                                                <a class="btn btn-success" data-toggle="modal" href="#" onclick="viewDetail(@item.ID,@item.itemValue,@item.playerID)">Detail</a>
+                                            }
+                                            else
+                                            {
+                                                <a class="btn btn-secondary" data-toggle="modal" href="#" onclick="viewDetail(@item.ID,@item.itemValue,@item.playerID)">Detail</a>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+            }
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
+
+<!--Split Modal-->
+<!-- Modal -->
+@using (Html.BeginForm("splitItem", "FBCasino", FormMethod.Post, new { @class = "", enctype = "multipart/form-data" }))
+{
+    <div class="modal fade" id="SplitTicketModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        <label id="lblSplitModalItem">
+
+                        </label>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            Outlets
+                        </div>
+                        <div class="col-md-8">
+                            <select id="cbOutlets" class="form-control" name="cbOutlets"></select>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-3">
+                            Value
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="txtSplitValue" class="form-control" name="inputSplitValue" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <label id="lblmessage" hidden></label>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" id="btnSave" class="btn btn-primary" onclick="checkInput()">Save</button>
+                </div>
+            </div>
+            <!--variable-->
+            <input type="text" name="txtTicketID" id="txtTicketID" hidden />
+            <input type="text" name="txtplayerid" id="txtplayerid" hidden />
+        </div>
+    </div>
+}
+
+
+<div class="modal fade" id="DetailSplitModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <label id="lblViewModalItem">
+                    </label>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="dtdetail">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Split ID</th>
+                                <th>Split Value</th>
+                                <th>Remain Value</th>
+                                <th>Split Date</th>
+                                <th>Split By</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailrow"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--variable-->
+
+    </div>
+</div>
+
+<!--End Modal-->
+<!---Script-->
+<script src="~/Assets/Admin/vendor/jquery/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        loadOutlets();
+    });
+    function loadOutlets() {
+        $.ajax({
+            //url: 'http://localhost:8090/HTMenu/services/GetDataFBCasino.aspx?Type=getOutlet',
+            url: 'http://localhost:8090/services/GetDataFBCasino.aspx?Type=getOutlet',
+            type: "POST",
+            data: {},
+            success: function (result) {
+                $("#cbOutlets").html("");
+                $("#cbOutlets").append($("<option></option>").val("All").html("All"));
+                $.each(result.listOutlet, function (key, value) {
+
+                    $("#cbOutlets").append($("<option></option>").val(value.itemNumber).html(value.name));
+
+                });
+
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    }
+
+    function saveSplitItem() {
+        $.ajax({
+            //url: 'http://localhost/HTMenu/services/GetDataFBCasino.aspx?Type=getOutlet',
+            url: 'http://localhost:8090/services/GetDataFBCasino.aspx?Type=getOutlet',
+            type: "POST",
+            data:JSON.stringify({playerid}),
+            success: function (result) {
+                $("#cbOutlets").html("");
+                $("#cbOutlets").append($("<option></option>").val("All").html("All"));
+                $.each(result.listOutlet, function (key, value) {
+                    $("#cbOutlets").append($("<option></option>").val(value.itemNumber).html(value.name));
+                });
+
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    }
+
+
+    function split_item(ticketid, remainvalue,playerid) {
+        if (remainvalue === null || remainvalue === 0)
+        {
+            alert("Can't split item with Remain value 0");
+            event.preventDefault();
+            return;
+        }
+        document.getElementById('lblSplitModalItem').innerText = "Player id:" + playerid + " - Ticket id: " + ticketid + " - Value:" + remainvalue;
+        document.getElementById('txtTicketID').value = ticketid;
+        document.getElementById('txtplayerid').value = playerid;
+        lblmessage.removeAttribute("style", "display:block !important");
+        $('#SplitTicketModal').modal('show');
+    }
+
+    function viewDetail(ticketid, remainvalue, playerid) {
+        document.getElementById('lblViewModalItem').innerText = "Player id:" + playerid + " - Ticket id: " + ticketid + " - Value:" + remainvalue;
+
+        $("#detailrow tr").remove();
+        $.ajax({
+            url: '/FBCasino/viewDetail',
+            type: "POST",
+            data: { ticketid: ticketid },
+            success: function (result) {
+
+                $.each(result.Data, function (key, value) {
+                    $("#detailrow").append($("<tr></tr>").html(
+                        "<td>" + value.ID + "</td>" +
+                        "<td>" + value.SplitID + "</td>" +
+                        "<td>" + value.SplitValue + "</td>" +
+                        "<td>" + value.RemainedValue + "</td>" +
+                        "<td>" + value.SplitDate + "</td>" +
+                        "<td>" + value.SplitBy + "</td>"
+                        ));
+                });
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+        $('#DetailSplitModal').modal('show');
+    }
+
+
+    function checkTicketValue(ticketid,splitvalue) {
+        $.ajax({
+            url: '/FBCasino/checkTicketValue',
+            type: "POST",
+            data: { ticketid: ticketid,splitvalue:splitvalue },
+            async:"false",
+            success: function (result) {
+                var v= result.Data;
+                if(v===0)
+                {
+                    lblmessage.innerHTML = "Not enought value";
+                    lblmessage.setAttribute("style", "display:block !important");
+                    event.preventDefault();
+                    return;
+                }
+                else {
+                    $('#btnSave').closest('form').submit();
+                }
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    }
+
+    function checkInput()
+        {
+        var splitvalue = document.getElementById('txtSplitValue')
+        var outletnumber = document.getElementById('cbOutlets');
+        var lblmessage = document.getElementById('lblmessage');
+        var tickeid=document.getElementById('txtTicketID').value;
+
+        if(splitvalue.value===null||splitvalue.value==="")
+        {
+            lblmessage.innerHTML = "Split value can't be null";
+            lblmessage.setAttribute("style", "display:block !important");
+            event.preventDefault();
+            return;
+        }
+        if (outletnumber.value === null || outletnumber.value === ""||outletnumber.value==="All") {
+            lblmessage.innerHTML = "Select outlet";
+            lblmessage.setAttribute("style", "display:block !important");
+            event.preventDefault();
+            return;
+        }
+        checkTicketValue(tickeid,splitvalue.value);
+    }
+
+
+</script>

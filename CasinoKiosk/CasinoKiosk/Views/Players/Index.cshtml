@@ -1,0 +1,69 @@
+﻿@model CKDatabaseConnection.EF.CIFE_Players
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeaderContent
+{
+    <h2> Players List </h2>
+}
+
+
+<!DOCTYPE html>
+
+    <div class="container-fluid p-3 my-3 border">      
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add New Player</button><br /><br />
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        PlayerID
+                    </th>                   
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="tbody"></tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">&times;</span></button>*@
+                    
+                    <h4 class="modal-title" id="myModalLabel">Add Player</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="ID">ID</label>
+                            <input type="text" class="form-control" id="ID" placeholder="ID" disabled="disabled"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="PlayerID">PlayerID</label>
+                            <input type="text" class="form-control" id="PlayerID" placeholder="PlayerID"/>
+                        </div>
+                                                                    
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnAdd" onclick="return Add();">Add</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+@section scriptPlayer
+{
+    <script src="~/Assets/Admin/js/player.js"></script>
+}

@@ -1,0 +1,267 @@
+﻿@model IEnumerable<CKDatabaseConnection.Models.TGSModel>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    WebGrid webGrid = new WebGrid(source: Model, canSort: false, canPage: false);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        .Grid {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            .Grid th {
+                background-color: #B8DBFD;
+                color: #333;
+                font-weight: bold;
+            }
+
+            .Grid th, .Grid td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            .Grid img {
+                cursor: pointer;
+            }
+
+        .ChildGrid {
+            width: 100%;
+        }
+
+            .ChildGrid th {
+                background-color: #6C6C6C;
+                color: #fff;
+                font-weight: bold;
+            }
+
+        .ImgAddition {
+            background: url(../Assets/Images/minus.png) no-repeat top left; /* add image*/
+            display: block;
+            width: 100px;
+            height: 100px;
+            text-indent: -9999px; /* hides the link text */
+        }
+
+        .webgrid-header {
+            color: #000000;
+            background-color: #add8e6;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+
+    @webGrid.GetHtml(
+        tableStyle: "table table-striped table-list table-hover",
+
+        htmlAttributes: new { @id = "WebGrid", @class = "Grid" },
+        headerStyle: "webgrid-header",
+        columns: webGrid.Columns(
+                         webGrid.Column(null, style: "col-md-2", format: @<text><img src="~/Assets/Images/add.png" /><div style="display:none"></div></text>),
+                         webGrid.Column("PID", "PlayerID", style: "font-weight-bold"),
+                         webGrid.Column("PlayerName", "PlayerName", style: "font-weight-bold"),
+                         webGrid.Column(format: (item) =>
+                         {
+                             WebGrid childGrid = new WebGrid(source: item.CasinoTGSPlayers, canSort: false, canPage: false);
+                             return childGrid.GetHtml(
+
+                                 htmlAttributes: new { @class = "ChildGrid" , @id = "ChildGrid"},
+                                 columns: childGrid.Columns(
+                                         childGrid.Column("ID", "ID"),
+                                         childGrid.Column("ItemName", "ItemName"),
+                                         childGrid.Column("Qty", "Quantity"),
+                                         childGrid.Column("Remaining", "Remaining"),
+                                         //childGrid.Column(" ", format: (row) => Html.Raw("<a onclick='return GetPlayerByID(" + row.ID + ")'>Redeem</a>"))
+                                         childGrid.Column("Action", null, format: (row) => Html.ActionLink("Redeem", "#", "", null, new { onclick = "return GetPlayerByID(" + row.ID + " ); return false;" }))
+                                  ));
+                         })
+                ))
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dissmiss="modal"><span aria-hidden="true">&times;</span></button>*@
+
+                    <h4 class="modal-title" id="myModalLabel">Redemption</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="hidden" id="ID" placeholder="ID" />
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" id="Remaining" placeholder="Remaining Amount..." />
+                        </div>
+                        <div class="form-group">
+                            <label for="PlayerID" class="font-weight-bold">PlayerID</label>
+                            <input type="text" class="form-control" id="PlayerID" placeholder="PlayerID" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="PlayerName" class="font-weight-bold">PlayerName</label>
+                            <input type="text" class="form-control" id="PlayerName" placeholder="PlayerName" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="ItemName" class="font-weight-bold">ItemName</label>
+                            <input type="text" class="form-control" id="ItemName" placeholder="ItemName" disabled="disabled" />
+                        </div>
+                        <div class="form-group">
+                            <label for="RedeemAmount" class="font-weight-bold">Redeem Amount</label>
+                            <input type="number" class="form-control" id="RedeemAmount" placeholder="Amount to redeem..." />
+                        </div>
+
+                        @if (@TempData["AlertMessage"] != null)
+                        {
+                            <div class="alert alert-warning">
+                                <strong>Warning!</strong> @TempData["AlertMessage"]
+                            </div>
+                        }
+
+                        @*<div class="form-group " style="width: 100px;">
+                                <label for="isActive" class="font-weight-bold">IsActive</label>
+                                <input type="checkbox" class="form-control" id="isActive" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" id="ID" />
+                            </div>*@
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnRedeem" onclick="return Redeem();">Redeem</button>
+                    <button type="button" class="btn btn-primary" id="btnUpdate" style="display:none;" onclick="Update();">Update</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+                           
+        $(function () {
+            //Loop through all Child Grids.
+            $("#WebGrid .ChildGrid").each(function () {
+                //Copy the Child Grid to DIV.
+                var childGrid = $(this).clone();
+                $(this).closest("TR").find("TD").eq(0).find("DIV").append(childGrid);
+
+                //Remove the Last Column from the Row.
+                $(this).parent().remove();
+            });
+
+            //Remove Last Column from Header Row.
+            $("#WebGrid TH:last-child").eq(0).remove();
+        });
+        //Assign Click event to Plus Image.
+        $("body").on("click", "img[src*='add.png']", function () {
+            $(this).closest("tr").after("<tr><td></td><td colspan = '999'>" + $(this).next().html() + "</td></tr>");
+            $(this).attr("src", "/Assets/Images/minus.png");
+        });
+        //Assign Click event to Minus Image.
+        $("body").on("click", "img[src*='minus.png']", function () {
+            $(this).attr("src", "/Assets/Images/add.png");
+            $(this).closest("tr").next().remove();
+        });
+        //load player qualified list
+        //refresh child grid
+        function refreshChild() {
+
+            location.reload();
+        }
+
+        // Validate
+        function validate() {
+            var isValid = true;
+            if ($('#RedeemAmount').val().trim() == "" || $('#RedeemAmount').val() == 0) {
+                $('#RedeemAmount').css('border-color', 'Red');
+                isValid = false;
+            }
+            else {
+                $('#RedeemAmount').css('border-color', 'lightgrey');
+            }
+            
+            return isValid;
+        }
+        // Get Player + Item details
+        function GetPlayerByID(ID) {
+            $('#RedeemAmount').val("");
+            $.ajax({
+                url: "/CasinoTGS/FindTGSPlayerByID/" + ID,
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    $('#ID').val(result.ID);
+                    $('#PlayerName').val(result.PlayerName);
+                    $('#PlayerID').val(result.PID);
+                    $('#ItemName').val(result.ItemName);
+                    $('#Remaining').val(result.Remaining);
+                    $('#myModal').modal('show');
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+        //Redeem
+        function Redeem() {
+            var res = validate();
+            if (res == false) {
+                return false;
+            }
+
+            if ($('#Remaining').val() < 0) {
+                alert("Remaining must be greater than 0...!");
+                return false;
+            }
+
+            if ($('#Remaining').val() < $('#RedeemAmount').val()) {
+                alert("Remaining must be greater than redeemed...!");
+                return false;
+            }
+            
+            var playerObj = {
+                ID: $('#ID').val(),
+                PID: $('#PlayerID').val(),
+                PlayerName: $('#PlayerName').val(),
+                ItemName: $('#ItemName').val(),
+                Redeemded: $('#RedeemAmount').val(),
+                Remaining: $('#Remaining').val()
+            };
+            $.ajax({
+                url: "/CasinoTGS/Redeem",
+                data: JSON.stringify(playerObj),
+                type: "POST",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    
+                    $('#myModal').modal('hide');
+                    $('#ID').val
+                    refreshChild();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+        //clear textbox
+
+    </script>
+</body>
+</html>

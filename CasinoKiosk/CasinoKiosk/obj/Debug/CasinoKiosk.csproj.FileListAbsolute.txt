@@ -1,0 +1,455 @@
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\nghiad.tran\documents\visual studio 2015\Projects\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\RedeemLogReport.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.SqlServer.Types.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Deployment.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Webpages.Razor.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
+C:\Users\nghiad.tran\Desktop\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\RedeemLogReport.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFDailyBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketSlotTournament.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.SqlServer.Types.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFWeeklyBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFFridayBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk01102020\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFRedemption.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x86.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x64.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\libgrpc_csharp_ext.x64.so
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\libgrpc_csharp_ext.x64.dylib
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Images\minus.png
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRGoldenHourPromotion.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\MiniBuffet.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRTicketPromotion.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\FOPatronLog.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\PointsRedemptionLog.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\FridayBonusLog.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFRedemption.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\WeeklyBonusLog.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\DailyBonusLog.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\RedeemLogReport.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFFridayBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFWeeklyBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFDailyBonus.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\CasinoTGSTicket.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketSlotTournament.rdlc
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Antlr3.Runtime.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\BouncyCastle.Crypto.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\itextsharp.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.SqlServer.Types.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Newtonsoft.Json.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PdfSharp.Charting.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PdfSharp.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Optimization.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\WebGrease.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Antlr3.Runtime.pdb
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\itextsharp.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\Newtonsoft.Json.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PdfSharp.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\PdfSharp.Charting.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Optimization.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.xml
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.resources.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.Charting.resources.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x86.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x64.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\libgrpc_csharp_ext.x64.so
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\libgrpc_csharp_ext.x64.dylib
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\msvcr120.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\msvcr120.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\ApplicationInsights.config
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\csc.exe
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\vbc.exe
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Images\minus.png
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRGoldenHourPromotion.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\MiniBuffet.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRTicketPromotion.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\FOPatronLog.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\PointsRedemptionLog.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\FridayBonusLog.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFRedemption.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\WeeklyBonusLog.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\DailyBonusLog.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\RedeemLogReport.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFFridayBonus.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFWeeklyBonus.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketMFDailyBonus.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\CasinoTGSTicket.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\TicketSlotTournament.rdlc
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll.config
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\CasinoKiosk.pdb
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Antlr3.Runtime.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\BouncyCastle.Crypto.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\EntityFramework.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\itextsharp.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.SqlServer.Types.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Newtonsoft.Json.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PagedList.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PdfSharp.Charting.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PdfSharp.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Optimization.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\WebGrease.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\CKDatabaseConnection.pdb
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Antlr3.Runtime.pdb
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\EntityFramework.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\EntityFramework.SqlServer.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\itextsharp.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.Web.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.ApplicationInsights.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\Newtonsoft.Json.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PagedList.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PagedList.Mvc.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PdfSharp.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\PdfSharp.Charting.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Helpers.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Mvc.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Optimization.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.Razor.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Deployment.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.xml
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.resources.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.Charting.resources.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk_Production\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb

@@ -1,0 +1,222 @@
+﻿@using CasinoKiosk.Helpers
+
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Admin</div>
+    </a>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+    <!-- Nav Item - Dashboard -->
+    <!-- Divider -->
+    <!-- Heading -->
+    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Divider -->
+    <!-- Heading -->
+    <!-- Nav Item - Pages Collapse Menu -->
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
+    {
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRedemption" aria-expanded="true" aria-controls="collapseRedemption">
+                <i class="fas fa-laptop"></i>
+                <span>Points Redemption</span>
+            </a>
+            <div id="collapseRedemption" class="collapse" aria-labelledby="headingRedemption" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
+                    {
+
+                        @*<a>@Html.ActionLink("Item List", "Index", "Items", new object { }, new { @class = "active" })</a>*@
+                        <a class="collapse-item" href="~/Items/Index">Item List</a>
+
+
+                        @*<a>@Html.ActionLink("Log List", "Index", "Logs", new object { }, new { @class = "collapse-item" })</a>*@
+                        <a class="collapse-item" href="~/Logs/Index">Log List</a>
+                    }
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
+                    {
+                        @*<a>@Html.ActionLink("Create", "Create", "Items", new object { }, new { @class = "collapse-item" })</a>*@
+                        <a class="collapse-item" href="~/Items/Create">Create Item</a>
+                    }
+                </div>
+            </div>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff") || User.IsInRole("ITAdmin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseMFBonus" aria-expanded="true" aria-controls="collapseMFBonus">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>MassFloor Bonus</span>
+            </a>
+            <div id="collapseMFBonus" class="collapse" aria-labelledby="headingMFBonus" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
+                    {
+                        <a>@Html.ActionLink("Daily Log", "DailyLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Daily Manual", "DailyManual", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Weekly Log", "WeeklyLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Friday Log", "FridayLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Redemption Log", "RedemptionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Daily PS Bundle", "PSBundleLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("The Grand Signature", "Index", "CasinoTGS", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Ticket Promotion Log", "Index", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        
+                        <a>@Html.ActionLink("Thursday Promotion", "GoldenHour", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        <a>@Html.ActionLink("Sunday Promotion", "SundayPromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        <a> @Html.ActionLink("Mid Autumn Promotion", "MidAutumePromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Ticket Mini Buffet", "MiniBuffet", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+
+
+                        <a href="~/Assets/Reports/TicketPromotion.aspx" class="collapse-item">Ticket Promotion</a>
+
+
+                    }
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("ITAdmin"))
+                    {
+
+                        <a>@Html.ActionLink("FOPatron ActionLog", "FOPatronUserActionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Kiosk ActionLog", "KioskUserActionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("Currency ActionLog", "CCUserActionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("POS8Dragon ActionLog", "POS8DragonUserActionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+                    }
+                </div>
+            </div>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff") || User.IsInRole("ITAdmin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="/PlayerCard/Index">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Player Card Initial</span>
+            </a>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTest" aria-expanded="true" aria-controls="collapseTest">
+                <i class="fas fa-fw fa-cogs"></i>
+                <span>IT Test Pages</span>
+            </a>
+            <div id="collapseTest" class="collapse" aria-labelledby="headingTest" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a>@Html.ActionLink("Get Player Points", "GetPoints", "Test", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("Get Player Info", "GetPlayerInfo", "Test", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("CIFE Players List", "Index", "Players", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("CIFE Reports", "CIFEReport", "Report", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("CIFE Detail Reports", "PlayerList", "Players", new object { }, new { @class = "collapse-item" })</a>
+                   
+                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
+                </div>
+            </div>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("CasinoAudit") || User.IsInRole("HTRAdmin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseReports" aria-expanded="true" aria-controls="collapseReports">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Reports</span>
+            </a>
+            <div id="collapseReports" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("CasinoAudit"))
+                    {
+                        <a>@Html.ActionLink("Audit Reports", "Index", "Report", new object { }, new { @class = "collapse-item" })</a>
+
+                        <a>@Html.ActionLink("CIFE Detail Reports", "PlayerList", "Players", new object { }, new { @class = "collapse-item" })</a>
+                        <a>@Html.ActionLink("Analyst Reports", "Index", "Analyst", new object { }, new { @class = "collapse-item" })</a>
+                    }
+
+                    @*Add 20230301 Hantt start*@
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
+                    {
+                        <a>@Html.ActionLink("Marketing Authorizers", "MarketAuth", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                    }
+                    @*Add 20230301 Hantt end*@
+
+                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
+                </div>
+            </div>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("PDTeam"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseActivityTracking" aria-expanded="true" aria-controls="collapseActivityTracking">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Activity Tracking</span>
+            </a>
+            <div id="collapseActivityTracking" class="collapse" aria-labelledby="headingActivityTracking" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a>@Html.ActionLink("Activity List", "Index", "ActivityTracking", new object { }, new { @class = "collapse-item" })</a>
+
+                    <a>@Html.ActionLink("Activity Report", "Report", "ActivityTracking", new object { }, new { @class = "collapse-item" })</a>
+                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
+                </div>
+            </div>
+        </li>
+    }
+
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("ITAdmin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseIT" aria-expanded="true" aria-controls="collapseIT">
+                <i class="fas fa-fw fa-table"></i>
+                <span>IT Management</span>
+            </a>
+            <div id="collapseIT" class="collapse" aria-labelledby="headingIT" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a>@Html.ActionLink("Casino Kiosk Users", "Index", "Users", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("FO Patron Users", "Index", "FOPatron", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("FinanceCurrency Users", "Index", "FC", new object { }, new { @class = "collapse-item" })</a>
+                    <a>@Html.ActionLink("8Dragon Users", "Index", "POS8Dragon", new object { }, new { @class = "collapse-item" })</a>
+                </div>
+            </div>
+        </li>
+    }
+    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseFBManagement" aria-expanded="true" aria-controls="collapseReports">
+                <i class="fas fa-fw fa-table"></i>
+                <span>FB Management</span>
+            </a>
+            <div id="collapseFBManagement" class="collapse" aria-labelledby="headingReports" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a>@Html.ActionLink("Management", "FBCasinoManagement", "FBCasino", new object { }, new { @class = "collapse-item" })</a>
+                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
+                </div>
+            </div>
+        </li>
+    }
+    <!-- Nav Item - Charts -->
+    <!-- Nav Item - Tables -->
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+    <!-- Sidebar Toggler (Sidebar) -->
+
+</ul>

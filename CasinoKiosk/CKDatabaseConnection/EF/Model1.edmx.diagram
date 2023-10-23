@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22954113aec040de874fdf0ed5bd2fc4" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKiosk_ChangeLog" Width="1.5" PointX="5.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Item" Width="1.5" PointX="7.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Log" Width="1.5" PointX="9.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_PlayerPoints" Width="1.875" PointX="9.375" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFDailyBonus_Items" Width="1.5" PointX="2.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFDailyBonus_Players" Width="1.5" PointX="7.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Items" Width="1.5" PointX="9.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Logs" Width="1.5" PointX="4.375" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Players" Width="2.5" PointX="11.375" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFWeeklyBonus_Items" Width="1.5" PointX="11.375" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFWeeklyBonus_Logs" Width="1.5" PointX="13.375" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFWeeklyBonus_Players" Width="3" PointX="9.375" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFDailyBonus_SecondLogs" Width="2.625" PointX="13.375" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_ReprintLog" Width="1.875" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CIFE_Players" Width="1.5" PointX="6.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKioskRole" Width="3.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKioskUserRole" Width="2.5" PointX="5" PointY="1.375" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKioskUser" Width="1.875" PointX="2.375" PointY="1" />
+        <AssociationConnector Association="ITHoTram_CustomReportModel.FK_UserRoles_Roles" />
+        <AssociationConnector Association="ITHoTram_CustomReportModel.FK_UserRoles_Users" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKioskUserActionLog" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.FOPatronUser" Width="1.5" PointX="2.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.FOPatronUserActionLog" Width="1.5" PointX="4.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CurrencyConverter_User" Width="1.5" PointX="6.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CurrencyConverterUserActionLog" Width="1.5" PointX="8.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.POSPatronInfoUser" Width="1.5" PointX="10.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.POSPatron8DragonUserActionLog" Width="1.5" PointX="17.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignatureItem" Width="1.5" PointX="17.375" PointY="13.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignaturePlayerQualified" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRTicketPromotion" Width="1.5" PointX="12.375" PointY="16.75" />
+        <!--<EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyItems1" Width="1.5" PointX="9.375" PointY="20.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyLogs1" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Players1" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignatureRedeemLog1" Width="1.5" PointX="3.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivity1" Width="1.5" PointX="21.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivityEditLog1" Width="1.5" PointX="11.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Items1" Width="1.5" PointX="13.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Logs1" Width="1.5" PointX="21.375" PointY="15.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyPlayers1" Width="1.5" PointX="19.375" PointY="21.75" />-->
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFPointsRedemption_Items" Width="1.5" PointX="21.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivity" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTrackingActivityEditLog" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoTheGrandSignatureRedeemLog" Width="1.5" PointX="14.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Items" Width="1.5" PointX="16.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Logs" Width="1.5" PointX="18.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.DailyPSBundle_Players" Width="1.5" PointX="3.375" PointY="19.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyItems" Width="1.5" PointX="5.375" PointY="19.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyLogs" Width="1.5" PointX="7.375" PointY="19.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFBonus_SlotDailyPlayers" Width="1.5" PointX="19.375" PointY="8.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFPointsRedemption_Logs" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRGoldenHourPlayer" Width="1.5" PointX="9.375" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRGoldenHourPromotion" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPlayers" Width="1.5" PointX="20.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPromotion" Width="1.5" PointX="20.375" PointY="16.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFDailyBonus_Items_Yesterday" Width="1.5" PointX="20.375" PointY="20.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFDailyBonus_YesterdayItemsManual_Log" Width="1.5" PointX="21.375" PointY="7.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MiniBuffet_GetNewClassicPlayerLogs" Width="1.5" PointX="21.375" PointY="11.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_SundayGoldenHourPlayers" Width="1.5" PointX="11.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_SundayGoldenHourLog" Width="1.5" PointX="16.375" PointY="21.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_MidAutumeLog" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_MidAutumePlayers" Width="1.5" PointX="2.75" PointY="22.75" />
+    
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

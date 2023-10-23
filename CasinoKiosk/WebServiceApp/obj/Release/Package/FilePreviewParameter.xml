@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/MyWebService" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk01102020\\CasinoKiosk\\WebServiceApp\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk01102020\\CasinoKiosk\\WebServiceApp\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CKdbContext-Web.config Connection String" description="" value="data source=10.70.1.53;initial catalog=ITHoTram_CustomReport;user id=casinokiosk.user;password=P@ssword1;MultipleActiveResultSets=True;App=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk01102020\\CasinoKiosk\\WebServiceApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CKdbContext']/@connectionString" />
+  </parameter>
+  <parameter name="PlayerManagementConStr-Web.config Connection String" description="" value="data source=10.70.1.53;initial catalog=PlayerManagement;user id=casinokiosk.user;password=P@ssword1;MultipleActiveResultSets=True;App=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk01102020\\CasinoKiosk\\WebServiceApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PlayerManagementConStr']/@connectionString" />
+  </parameter>
+</parameters>

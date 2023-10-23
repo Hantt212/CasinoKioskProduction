@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/MyWebSite" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk13Jan2021\\CasinoKiosk\\CasinoKiosk\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk13Jan2021\\CasinoKiosk\\CasinoKiosk\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CKdbContext-Web.config Connection String" description="" value="Data Source=10.70.1.53;Initial Catalog=ITHoTram_CustomReport;User ID=CasinoKiosk.User;Password=P@ssword1;Application Name=EntityFramework" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk13Jan2021\\CasinoKiosk\\CasinoKiosk\\obj\\Release\\Package\\PackageTmp\\web\.config$" match="/configuration/connectionStrings/add[@name='CKdbContext']/@connectionString" />
+  </parameter>
+  <parameter name="ITHoTram_CustomReportEntities-Web.config Connection String" description="" value="metadata=res://*/EF.Model1.csdl|res://*/EF.Model1.ssdl|res://*/EF.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=10.70.1.53;initial catalog=ITHoTram_CustomReport;user id=casinokiosk.user;password=P@ssword1;multipleactiveresultsets=True;application name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk13Jan2021\\CasinoKiosk\\CasinoKiosk\\obj\\Release\\Package\\PackageTmp\\web\.config$" match="/configuration/connectionStrings/add[@name='ITHoTram_CustomReportEntities']/@connectionString" />
+  </parameter>
+  <parameter name="PlayerManagementConStr-Web.config Connection String" description="PlayerManagementConStr Connection String used in web.config by the application to access the database." value="data source=10.70.1.53;initial catalog=PlayerManagement;user id=casinokiosk.user;password=P@ssword1;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\igt\.admin\\Desktop\\CasinoKiosk13Jan2021\\CasinoKiosk\\CasinoKiosk\\obj\\Release\\Package\\PackageTmp\\web\.config$" match="/configuration/connectionStrings/add[@name='PlayerManagementConStr']/@connectionString" />
+  </parameter>
+</parameters>

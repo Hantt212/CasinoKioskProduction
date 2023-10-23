@@ -1,0 +1,88 @@
+﻿@model PagedList.IPagedList<CKDatabaseConnection.EF.HTAppGetPlayerInfoByPID_1_Result>
+
+@using PagedList.Mvc;
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderContent
+{
+    <h2> Get PlayerInfo </h2>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+            </div>
+
+            <!-- /.panel-heading -->
+            @using (Html.BeginForm("GetPlayerInfo", "Test", FormMethod.Post, new { @class = "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search", enctype = "multipart/form-data" }))
+            {
+                <div class="input-group col-lg-4">
+
+
+
+                    <input type="number" class="form-control bg-light border-0 small" placeholder="PlayerID..." aria-label="Search" aria-describedby="basic-addon2" name="ID" required>
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Passport Number..." aria-label="Search" aria-describedby="basic-addon2" name="IDNumber" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit" id="btnSearch">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+
+                </div>
+                <br />
+                <br />
+
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Player ID</th>
+                                    <th>FullName</th>
+                                    <th>Birthday</th>
+                                    <th>Tier</th>
+                                    <th>PPNumber</th>
+                                    <th>PPExpired</th>
+                                    <th>DailyPointsEarned</th>
+                                    <th>TotalPointsBalance</th>
+                                    <th>CurrentTierPoints</th>
+                                    <th>PointsToRoyal</th>
+                                    <th>PointsToPlatinum</th>                                                                                            
+                            <tbody>
+                                @foreach (var Log in Model)
+                                {
+                                    <tr>
+                                        <td>@Log.PlayerID</td>
+                                        <td>@Log.FullName</td>
+                                        <td>@Log.Birthday</td>
+                                        <td>@Log.Tier</td>
+                                        <td>@Log.PPNumber</td>
+                                        <td>@Log.PPExp</td>
+                                        <td>@Log.DailyPointsEarned</td>
+                                        <td>@Log.TotalPointsBalance</td>
+                                        <td>@Log.CurrentTierPoints</td>
+                                        <td>@Log.PointsToRoyal</td>
+                                        <td>@Log.PointsToPlatinum</td>
+                                       
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+
+            }
+            <!-- /.panel-body -->
+
+
+
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>

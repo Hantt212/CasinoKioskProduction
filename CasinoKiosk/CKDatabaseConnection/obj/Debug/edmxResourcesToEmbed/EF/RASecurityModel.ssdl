@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RA_SecurityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FCardIDRefPID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FCardID" Type="varchar" MaxLength="20" />
+    <Property Name="PID" Type="varchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DateInserted" Type="datetime" />
+    <Property Name="DateUpdated" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="RA_SecurityModelStoreContainer">
+    <EntitySet Name="FCardIDRefPID" EntityType="Self.FCardIDRefPID" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

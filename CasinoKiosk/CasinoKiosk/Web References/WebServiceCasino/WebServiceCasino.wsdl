@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RedeemProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemProcessResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemProcessResult" type="tns:RedeemLog" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLog">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="issuedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="issuedDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentPlayerPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="voidedStatus" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetItemListByIsActive">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetItemListByIsActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetItemListByIsActiveResult" type="tns:ArrayOfItems" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfItems">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Items" nillable="true" type="tns:Items" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Items">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="imageURL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quantity" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemDailyFirst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemDailyFirstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemDailyFirstResult" type="tns:RedeemLogDailyFirst" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogDailyFirst">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GamingDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfItemDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ItemDetail" nillable="true" type="tns:ItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ItemDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ItemPoints" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemDailySecond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemDailySecondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemDailySecondResult" type="tns:RedeemLogDailySecond" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogDailySecond">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemWeeklyFirst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemWeeklyFirstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemWeeklyFirstResult" type="tns:RedeemLogWeeklyFirst" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogWeeklyFirst">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GamingDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemWeeklySecond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemWeeklySecondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemWeeklySecondResult" type="tns:RedeemLogWeeklySecond" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogWeeklySecond">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPointsResult" type="tns:Points" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Points">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DailyPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="WeeklyPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FridayPoints" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemFridayFirst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemFridayFirstResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemFridayFirstResult" type="tns:RedeemLogFridayFirst" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogFridayFirst">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GamingDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RedeemFridaySecond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="playerID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="itemID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RedeemFridaySecondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RedeemFridaySecondResult" type="tns:RedeemLogFridaySecond" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RedeemLogFridaySecond">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TicketNo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PlayerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PlayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ItemName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PromotionName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Points" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SlotPoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TablePoints" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfItemDetail" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RedeemProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemProcess" />
+  </wsdl:message>
+  <wsdl:message name="RedeemProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetItemListByIsActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:GetItemListByIsActive" />
+  </wsdl:message>
+  <wsdl:message name="GetItemListByIsActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:GetItemListByIsActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemDailyFirstSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemDailyFirst" />
+  </wsdl:message>
+  <wsdl:message name="RedeemDailyFirstSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemDailyFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemDailySecondSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemDailySecond" />
+  </wsdl:message>
+  <wsdl:message name="RedeemDailySecondSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemDailySecondResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWeeklyFirstSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemWeeklyFirst" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWeeklyFirstSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemWeeklyFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWeeklySecondSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemWeeklySecond" />
+  </wsdl:message>
+  <wsdl:message name="RedeemWeeklySecondSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemWeeklySecondResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPoints" />
+  </wsdl:message>
+  <wsdl:message name="GetPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemFridayFirstSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemFridayFirst" />
+  </wsdl:message>
+  <wsdl:message name="RedeemFridayFirstSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemFridayFirstResponse" />
+  </wsdl:message>
+  <wsdl:message name="RedeemFridaySecondSoapIn">
+    <wsdl:part name="parameters" element="tns:RedeemFridaySecond" />
+  </wsdl:message>
+  <wsdl:message name="RedeemFridaySecondSoapOut">
+    <wsdl:part name="parameters" element="tns:RedeemFridaySecondResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceCasinoSoap">
+    <wsdl:operation name="RedeemProcess">
+      <wsdl:input message="tns:RedeemProcessSoapIn" />
+      <wsdl:output message="tns:RedeemProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemListByIsActive">
+      <wsdl:input message="tns:GetItemListByIsActiveSoapIn" />
+      <wsdl:output message="tns:GetItemListByIsActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailyFirst">
+      <wsdl:input message="tns:RedeemDailyFirstSoapIn" />
+      <wsdl:output message="tns:RedeemDailyFirstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailySecond">
+      <wsdl:input message="tns:RedeemDailySecondSoapIn" />
+      <wsdl:output message="tns:RedeemDailySecondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklyFirst">
+      <wsdl:input message="tns:RedeemWeeklyFirstSoapIn" />
+      <wsdl:output message="tns:RedeemWeeklyFirstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklySecond">
+      <wsdl:input message="tns:RedeemWeeklySecondSoapIn" />
+      <wsdl:output message="tns:RedeemWeeklySecondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPoints">
+      <wsdl:input message="tns:GetPointsSoapIn" />
+      <wsdl:output message="tns:GetPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridayFirst">
+      <wsdl:input message="tns:RedeemFridayFirstSoapIn" />
+      <wsdl:output message="tns:RedeemFridayFirstSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridaySecond">
+      <wsdl:input message="tns:RedeemFridaySecondSoapIn" />
+      <wsdl:output message="tns:RedeemFridaySecondSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceCasinoSoap" type="tns:WebServiceCasinoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RedeemProcess">
+      <soap:operation soapAction="http://tempuri.org/RedeemProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemListByIsActive">
+      <soap:operation soapAction="http://tempuri.org/GetItemListByIsActive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailyFirst">
+      <soap:operation soapAction="http://tempuri.org/RedeemDailyFirst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailySecond">
+      <soap:operation soapAction="http://tempuri.org/RedeemDailySecond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklyFirst">
+      <soap:operation soapAction="http://tempuri.org/RedeemWeeklyFirst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklySecond">
+      <soap:operation soapAction="http://tempuri.org/RedeemWeeklySecond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoints">
+      <soap:operation soapAction="http://tempuri.org/GetPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridayFirst">
+      <soap:operation soapAction="http://tempuri.org/RedeemFridayFirst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridaySecond">
+      <soap:operation soapAction="http://tempuri.org/RedeemFridaySecond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceCasinoSoap12" type="tns:WebServiceCasinoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RedeemProcess">
+      <soap12:operation soapAction="http://tempuri.org/RedeemProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemListByIsActive">
+      <soap12:operation soapAction="http://tempuri.org/GetItemListByIsActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailyFirst">
+      <soap12:operation soapAction="http://tempuri.org/RedeemDailyFirst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemDailySecond">
+      <soap12:operation soapAction="http://tempuri.org/RedeemDailySecond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklyFirst">
+      <soap12:operation soapAction="http://tempuri.org/RedeemWeeklyFirst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemWeeklySecond">
+      <soap12:operation soapAction="http://tempuri.org/RedeemWeeklySecond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPoints">
+      <soap12:operation soapAction="http://tempuri.org/GetPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridayFirst">
+      <soap12:operation soapAction="http://tempuri.org/RedeemFridayFirst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RedeemFridaySecond">
+      <soap12:operation soapAction="http://tempuri.org/RedeemFridaySecond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceCasino">
+    <wsdl:port name="WebServiceCasinoSoap" binding="tns:WebServiceCasinoSoap">
+      <soap:address location="http://localhost:53282/WebServiceCasino.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceCasinoSoap12" binding="tns:WebServiceCasinoSoap12">
+      <soap12:address location="http://localhost:53282/WebServiceCasino.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

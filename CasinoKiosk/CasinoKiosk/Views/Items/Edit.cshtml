@@ -1,0 +1,98 @@
+﻿@model CKDatabaseConnection.EF.CasinoKiosk_Item
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderContent{
+    Edit Items
+}
+@using (Html.BeginForm("Edit", "Items", FormMethod.Post, new
+{
+    id = "loginForm",
+    enctype = "multipart/form-data"
+}))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Item</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ItemName, "", new { @class = "text-danger" })
+                @Html.ValidationMessage("WarningItemName", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ItemPoints, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ItemPoints, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                @Html.ValidationMessageFor(model => model.ItemPoints, "", new { @class = "text-danger" })
+                @Html.ValidationMessage("WarningItemPoints", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.imageURL, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">              
+                <img id="user_img"
+                     height="143"
+                     width="277"
+                     style="border:solid" />
+            </div>
+            <div class="col-md-10">
+                <input type="file" title="image" id="file" name="file" onchange="show(this)" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", type = "number" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                @Html.ValidationMessage("WarningQuantity", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.isActive, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <a href="#" id="submit" class="btn btn-primary btn-icon-split" onclick="loginForm.submit()">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-check"></i>
+                    </span>
+                    <span class="text">Update</span>
+                </a>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+
+   function show(input) {
+      if (input.files && input.files[0]) {
+      var filerdr = new FileReader();
+      filerdr.onload = function (e) {
+         $('#user_img').attr('src', e.target.result);
+      }
+      filerdr.readAsDataURL(input.files[0]);
+   }
+}
+</script>

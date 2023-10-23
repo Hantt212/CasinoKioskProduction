@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITHoTram_CustomReportModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CasinoKiosk_ChangeLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="OldName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewName" Type="nvarchar" MaxLength="50" />
+    <Property Name="OldPoints" Type="int" />
+    <Property Name="NewPoints" Type="int" />
+    <Property Name="OldQuantity" Type="int" />
+    <Property Name="NewQuantity" Type="int" />
+    <Property Name="OldImageURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="NewImageUrl" Type="nvarchar" MaxLength="250" />
+    <Property Name="OldIsActive" Type="bit" />
+    <Property Name="NewIsActive" Type="bit" />
+    <Property Name="ChangedDate" Type="datetime" />
+    <Property Name="ChangedPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CasinoKiosk_Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="imageURL" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="CasinoKiosk_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogName" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="createdTime" Type="nvarchar" MaxLength="100" />
+    <Property Name="CurrentPlayerPoints" Type="int" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="gamingDate" Type="date" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedTime" Type="datetime" />
+    <Property Name="voidedTime" Type="datetime" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CasinoKioskRoles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="smallint" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleDescription" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CasinoKioskUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="ValueBefore" Type="nvarchar" MaxLength="150" />
+    <Property Name="ValueAfter" Type="nvarchar" MaxLength="150" />
+    <Property Name="ActionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CasinoKioskUserRoles">
+    <Key>
+      <PropertyRef Name="UserRoleId" />
+    </Key>
+    <Property Name="UserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CasinoKioskUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CasinoKiosk_UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedTime" Type="datetime" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserEmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="isShow" Type="bit" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignatureItem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Qty" Type="int" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignaturePlayerQualified">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Redeemded" Type="int" />
+    <Property Name="Remaining" Type="int" />
+    <Property Name="TotalPointsEarnedPreviousMonth" Type="int" />
+  </EntityType>
+  <EntityType Name="CasinoTheGrandSignatureRedeemLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="RedeemedQty" Type="int" Nullable="false" />
+    <Property Name="RemainingQty" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="redeemedPerson" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CasinoTrackingActivities">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GuestPID" Type="int" />
+    <Property Name="GuestName" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CallRecord" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ChatRecord" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="MeetRecord" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CreatedDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="isShow" Type="bit" />
+  </EntityType>
+  <EntityType Name="CasinoTrackingActivityEditLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ValueBefore" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ValueAfter" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="ActionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CIFE_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="DateInserted" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CurrencyConverter_User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedTime" Type="datetime" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="isShow" Type="bit" />
+  </EntityType>
+  <EntityType Name="CurrencyConverterUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="ValueBefore" Type="nvarchar" MaxLength="150" />
+    <Property Name="ValueAfter" Type="nvarchar" MaxLength="150" />
+    <Property Name="ActionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DailyPSBundle_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FOPatronUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="25" />
+    <Property Name="CreatedTime" Type="datetime" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="isShow" Type="bit" />
+  </EntityType>
+  <EntityType Name="FOPatronUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="100" />
+    <Property Name="ValueBefore" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValueAfter" Type="nvarchar" MaxLength="250" />
+    <Property Name="ActionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HTR_MidAutumeLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="datetime" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isPrinted" Type="bit" />
+    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReprintedDate" Type="datetime" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedDate" Type="datetime" />
+    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HTR_MidAutumePlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalPointsEarned" Type="int" />
+    <Property Name="PrintedQty" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HTR_SundayGoldenHourLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="datetime" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isPrinted" Type="bit" />
+    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReprintedDate" Type="datetime" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedDate" Type="datetime" />
+    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HTR_SundayGoldenHourPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalPointsEarned" Type="int" />
+    <Property Name="PrintedQty" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HTR_ThursdayGoldenHourPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalPointsEarned" Type="int" />
+    <Property Name="PrintedQty" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HTR_ThursdayGoldenHourPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="datetime" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isPrinted" Type="bit" />
+    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReprintedDate" Type="datetime" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedDate" Type="datetime" />
+    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HTRGoldenHourPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="TotalPointsEarned" Type="int" />
+    <Property Name="PrintedQty" Type="int" />
+    <Property Name="InsertDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="HTRGoldenHourPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="datetime" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isReprinted" Type="bit" />
+    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReprintedDate" Type="datetime" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedDate" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="HTRTicketPromotion">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GuestPID" Type="int" />
+    <Property Name="GuestName" Type="nvarchar" MaxLength="250" />
+    <Property Name="isPrinted" Type="bit" />
+    <Property Name="IssuedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssuedTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedQty" Type="int" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isReprinted" Type="bit" />
+    <Property Name="isReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberOfReprint" Type="int" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="VoidedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFBonus_PlayerPoints">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="DailyPoints" Type="int" />
+    <Property Name="WeeklyPoints" Type="int" />
+    <Property Name="FridayPoints" Type="int" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MFBonus_ReprintLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketNo" Type="int" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyItems">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SlotDailyPoints" Type="int" />
+    <Property Name="vSlotDailyPoints" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MFBonus_SlotDailyPlayers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" Nullable="false" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SlotDailyPoints" Type="int" />
+    <Property Name="vSlotDailyPoints" Type="int" Nullable="false" />
+    <Property Name="TableDailyPoints" Type="int" />
+    <Property Name="vTableDailyPoints" Type="int" />
+    <Property Name="GamingDate" Type="datetime" />
+    <Property Name="RedeemedSlotPoints" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Items_Yesterday">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyPoints" Type="int" Nullable="false" />
+    <Property Name="SlotDailyPoints" Type="int" Nullable="false" />
+    <Property Name="TableDailyPoints" Type="int" Nullable="false" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_SecondLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyPoints" Type="int" />
+    <Property Name="SlotDailyPoints" Type="int" />
+    <Property Name="TableDailyPoints" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="Type" Type="nvarchar" MaxLength="20" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedTime" Type="datetime" />
+    <Property Name="reprintedTime" Type="datetime" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFDailyBonus_YesterdayItemsManual_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="PreStatus" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PointsEarned" Type="int" />
+    <Property Name="CreateTime" Type="datetime" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FridayPoints" Type="int" />
+    <Property Name="SlotFridayPoints" Type="int" />
+    <Property Name="TableFridayPoints" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFFridayBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FridayPoints" Type="int" />
+    <Property Name="SlotFridayPoints" Type="int" />
+    <Property Name="TableFridayPoints" Type="int" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MFPointsRedemption_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+  </EntityType>
+  <EntityType Name="MFPointsRedemption_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogName" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="createdTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CurrentPlayerPoints" Type="int" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="gamingDate" Type="datetime" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedTime" Type="datetime" />
+    <Property Name="reprintedTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="WeeklyPoints" Type="int" />
+    <Property Name="SlotWeeklyPoints" Type="int" />
+    <Property Name="TableWeeklyPoints" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="ItemPoints" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedTime" Type="datetime" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MFWeeklyBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="WeeklyPoints" Type="int" />
+    <Property Name="SlotWeeklyPoints" Type="int" />
+    <Property Name="TableWeeklyPoints" Type="int" />
+    <Property Name="GamingDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MiniBuffet_GetNewClassicPlayerLogs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrintedDate" Type="datetime" />
+    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isPrinted" Type="bit" />
+    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReprintedDate" Type="datetime" />
+    <Property Name="isVoided" Type="bit" />
+    <Property Name="VoidedDate" Type="datetime" />
+    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="POSPatron8DragonUserActionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="ValueBefore" Type="nvarchar" MaxLength="150" />
+    <Property Name="ValueAfter" Type="nvarchar" MaxLength="150" />
+    <Property Name="ActionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="POSPatronInfoUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="nvarchar" MaxLength="25" />
+    <Property Name="isActived" Type="bit" />
+    <Property Name="CreatedTime" Type="datetime" />
+    <Property Name="LastLogin" Type="datetime" />
+    <Property Name="isShow" Type="bit" />
+  </EntityType>
+  <Association Name="FK_UserRoles_Roles">
+    <End Role="CasinoKioskRoles" Type="Self.CasinoKioskRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CasinoKioskUserRoles" Type="Self.CasinoKioskUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CasinoKioskRoles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="CasinoKioskUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRoles_Users">
+    <End Role="CasinoKioskUsers" Type="Self.CasinoKioskUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CasinoKioskUserRoles" Type="Self.CasinoKioskUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CasinoKioskUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="CasinoKioskUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="CasinoKiosk_spGetFOPatronLogByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fromDate" Type="date" Mode="In" />
+    <Parameter Name="toDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="CasinoKioskRoles_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="CasinoKioskUsers_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoleId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="FOPatron_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="FOPatron_UpdateLastLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="FOPatronUserActionLog_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="HTAppGetPlayerInfoByPID_1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PID" Type="int" Mode="In" />
+    <Parameter Name="IDNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KioskUserActionLog_SelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="MFBonus_spSelectDailyLogs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MFBonus_spSelectFridayLogs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MFBonus_spSelectPlayerPoints" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MFBonus_spSelectRedemptionLogs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MFBonus_spSelectWeeklyLogs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MFDailyBonus_YesterdayItemsManual" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spHTR_GoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spHTR_MidAutumeBySearchPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spHTR_MidAutumeLogByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spHTR_SundayGoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spHTR_ThursdayGoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PlayerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SpReport_MarketingAuthorizer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spReportCIFE_Program" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ITHoTram_CustomReportModelStoreContainer">
+    <EntitySet Name="CasinoKiosk_ChangeLog" EntityType="Self.CasinoKiosk_ChangeLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKiosk_Item" EntityType="Self.CasinoKiosk_Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKiosk_Log" EntityType="Self.CasinoKiosk_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKioskRoles" EntityType="Self.CasinoKioskRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKioskUserActionLog" EntityType="Self.CasinoKioskUserActionLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKioskUserRoles" EntityType="Self.CasinoKioskUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoKioskUsers" EntityType="Self.CasinoKioskUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoTheGrandSignatureItem" EntityType="Self.CasinoTheGrandSignatureItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoTheGrandSignaturePlayerQualified" EntityType="Self.CasinoTheGrandSignaturePlayerQualified" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoTheGrandSignatureRedeemLogs" EntityType="Self.CasinoTheGrandSignatureRedeemLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoTrackingActivities" EntityType="Self.CasinoTrackingActivities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CasinoTrackingActivityEditLogs" EntityType="Self.CasinoTrackingActivityEditLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CIFE_Players" EntityType="Self.CIFE_Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrencyConverter_User" EntityType="Self.CurrencyConverter_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CurrencyConverterUserActionLog" EntityType="Self.CurrencyConverterUserActionLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyPSBundle_Items" EntityType="Self.DailyPSBundle_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyPSBundle_Logs" EntityType="Self.DailyPSBundle_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DailyPSBundle_Players" EntityType="Self.DailyPSBundle_Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FOPatronUser" EntityType="Self.FOPatronUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FOPatronUserActionLog" EntityType="Self.FOPatronUserActionLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_MidAutumeLog" EntityType="Self.HTR_MidAutumeLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_MidAutumePlayers" EntityType="Self.HTR_MidAutumePlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_SundayGoldenHourLog" EntityType="Self.HTR_SundayGoldenHourLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_SundayGoldenHourPlayers" EntityType="Self.HTR_SundayGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_ThursdayGoldenHourPlayers" EntityType="Self.HTR_ThursdayGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTR_ThursdayGoldenHourPromotion" EntityType="Self.HTR_ThursdayGoldenHourPromotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTRGoldenHourPlayers" EntityType="Self.HTRGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTRGoldenHourPromotion" EntityType="Self.HTRGoldenHourPromotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HTRTicketPromotion" EntityType="Self.HTRTicketPromotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFBonus_PlayerPoints" EntityType="Self.MFBonus_PlayerPoints" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFBonus_ReprintLog" EntityType="Self.MFBonus_ReprintLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFBonus_SlotDailyItems" EntityType="Self.MFBonus_SlotDailyItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFBonus_SlotDailyLogs" EntityType="Self.MFBonus_SlotDailyLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFBonus_SlotDailyPlayers" EntityType="Self.MFBonus_SlotDailyPlayers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFDailyBonus_Items" EntityType="Self.MFDailyBonus_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFDailyBonus_Items_Yesterday" EntityType="Self.MFDailyBonus_Items_Yesterday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFDailyBonus_Players" EntityType="Self.MFDailyBonus_Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFDailyBonus_SecondLogs" EntityType="Self.MFDailyBonus_SecondLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFDailyBonus_YesterdayItemsManual_Log" EntityType="Self.MFDailyBonus_YesterdayItemsManual_Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFFridayBonus_Items" EntityType="Self.MFFridayBonus_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFFridayBonus_Logs" EntityType="Self.MFFridayBonus_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFFridayBonus_Players" EntityType="Self.MFFridayBonus_Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFPointsRedemption_Items" EntityType="Self.MFPointsRedemption_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFPointsRedemption_Logs" EntityType="Self.MFPointsRedemption_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFWeeklyBonus_Items" EntityType="Self.MFWeeklyBonus_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFWeeklyBonus_Logs" EntityType="Self.MFWeeklyBonus_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MFWeeklyBonus_Players" EntityType="Self.MFWeeklyBonus_Players" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MiniBuffet_GetNewClassicPlayerLogs" EntityType="Self.MiniBuffet_GetNewClassicPlayerLogs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POSPatron8DragonUserActionLog" EntityType="Self.POSPatron8DragonUserActionLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POSPatronInfoUser" EntityType="Self.POSPatronInfoUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+      <End Role="CasinoKioskRoles" EntitySet="CasinoKioskRoles" />
+      <End Role="CasinoKioskUserRoles" EntitySet="CasinoKioskUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRoles_Users" Association="Self.FK_UserRoles_Users">
+      <End Role="CasinoKioskUsers" EntitySet="CasinoKioskUsers" />
+      <End Role="CasinoKioskUserRoles" EntitySet="CasinoKioskUserRoles" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

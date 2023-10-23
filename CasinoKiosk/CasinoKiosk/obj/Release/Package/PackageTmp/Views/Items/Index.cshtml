@@ -1,0 +1,66 @@
+﻿@model PagedList.IPagedList<CKDatabaseConnection.EF.CasinoKiosk_Item>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section HeaderContent
+{
+    <h2> Item List </h2>
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-sm-12 text-right">
+                        <button id="btnExcelExport" class="btn btn-success">Export to Excel </button>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover" id="itemlistTable">
+                        <thead>
+                            <tr>
+                                <th>Action</th>
+                                <th>Item ID</th>
+                                <th>Item Name</th>
+                                <th>Item Points</th>
+                                <th>Image URL</th>
+                                <th>Quantity</th>
+                                <th>isActive</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @*<a href="Items/Edit/@item.ID">Edit</a>*@
+
+                                        <a>@Html.ActionLink("Edit", "Edit", new { id = @item.ID })</a>
+                                    </td>
+
+                                    <td> @item.ID </td>
+                                    <td> @item.ItemName </td>
+                                    <td> @item.ItemPoints </td>
+                                    <td> @item.imageURL </td>
+                                    <td> @item.Quantity </td>
+                                    <td> @item.isActive </td>
+                               </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @*@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+                </div>
+                <!-- /.table-responsive -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
