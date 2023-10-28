@@ -26,6 +26,9 @@
     <!-- Custom styles for this page -->
     <link href="~/Assets/Admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!--Hantt-->
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">*@
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">*@
 
     @*<script src="~/Assets/Admin/js/jquery-1.11.0.js"></script>*@
     
@@ -175,6 +178,10 @@
     
     <script src="~/Assets/Admin/js/jquery.unobtrusive-ajax.js"></script>
     <script src="~/Assets/Admin/js/jquery.unobtrusive-ajax.min.js"></script>
+
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>*@
+
     @RenderSection("scriptUser", false)
     @RenderSection("scriptPlayer", false)
     @RenderSection("scriptFOPatronUser", false)
@@ -183,6 +190,7 @@
     @RenderSection("scriptActivity", false) 
     @RenderSection("scriptTicketPromotion", false)
     @RenderSection("scriptAnalyst", false)
+    @RenderSection("scriptPromotion", false)
     @*Add 20230301 Hantt start*@
     @RenderSection("scriptMarket", false)
     @*Add 20230301 Hantt end*@

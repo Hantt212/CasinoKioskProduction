@@ -10,7 +10,7 @@
 namespace CasinoKiosk.Assets.Reports {
     
     
-    public partial class MidAutumePromotion {
+    public partial class HTRPromotion {
         
         /// <summary>
         /// form1 control.
@@ -49,12 +49,12 @@ namespace CasinoKiosk.Assets.Reports {
         protected global::System.Web.UI.WebControls.Button btnPrint;
         
         /// <summary>
-        /// ReportMidAutume control.
+        /// ReportPromotion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportMidAutume;
+        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportPromotion;
     }
 }

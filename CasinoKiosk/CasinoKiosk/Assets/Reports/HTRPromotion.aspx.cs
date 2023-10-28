@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace CasinoKiosk.Assets.Reports
 {
-    public partial class MidAutumePromotion : System.Web.UI.Page
+    public partial class HTRPromotion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace CasinoKiosk.Assets.Reports
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["CKdbContext"].ConnectionString;
             using (SqlConnection cn = new SqlConnection(connStr))
             {
-                SqlCommand cmd = new SqlCommand("spHTR_MidAutumeLogByID", cn);
+                SqlCommand cmd = new SqlCommand("spHTR_PromotionLogByID", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ID", id);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -52,15 +52,15 @@ namespace CasinoKiosk.Assets.Reports
 
             if (dt != null)
             {
-                ReportDataSource rds = new ReportDataSource("MidAutume", dt);
+                ReportDataSource rds = new ReportDataSource("Promotion", dt);
 
-                ReportMidAutume.LocalReport.DataSources.Clear();
-                ReportMidAutume.LocalReport.DataSources.Add(rds);
-                ReportMidAutume.LocalReport.ReportPath = Server.MapPath("~/Assets/Reports/MidAutumeReport.rdlc");
+                ReportPromotion.LocalReport.DataSources.Clear();
+                ReportPromotion.LocalReport.DataSources.Add(rds);
+                ReportPromotion.LocalReport.ReportPath = Server.MapPath("~/Assets/Reports/HTRPromotion.rdlc");
 
-                ReportMidAutume.DataBind();
-                ReportMidAutume.ShowToolBar = false;
-                ReportMidAutume.LocalReport.Refresh();
+                ReportPromotion.DataBind();
+                ReportPromotion.ShowToolBar = false;
+                ReportPromotion.LocalReport.Refresh();
 
             }
 

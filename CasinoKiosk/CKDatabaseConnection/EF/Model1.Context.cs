@@ -77,6 +77,9 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<HTR_SundayGoldenHourLog> HTR_SundayGoldenHourLog { get; set; }
         public virtual DbSet<HTR_MidAutumeLog> HTR_MidAutumeLog { get; set; }
         public virtual DbSet<HTR_MidAutumePlayers> HTR_MidAutumePlayers { get; set; }
+        public virtual DbSet<HTRPromotion> HTRPromotions { get; set; }
+        public virtual DbSet<HTRPromotionLog> HTRPromotionLogs { get; set; }
+        public virtual DbSet<HTRPromotionPlayer> HTRPromotionPlayers { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {
@@ -321,6 +324,28 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_MidAutumeLogByID_Result>("spHTR_MidAutumeLogByID", iDParameter);
+        }
+    
+        public virtual ObjectResult<spHTR_PromotionByPatron_Result> spHTR_PromotionByPatron(Nullable<int> playerID, Nullable<int> promotionID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            var promotionIDParameter = promotionID.HasValue ?
+                new ObjectParameter("PromotionID", promotionID) :
+                new ObjectParameter("PromotionID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionByPatron_Result>("spHTR_PromotionByPatron", playerIDParameter, promotionIDParameter);
+        }
+    
+        public virtual ObjectResult<spHTR_PromotionLogByID_Result> spHTR_PromotionLogByID(Nullable<int> iD)
+        {
+            var iDParameter = iD.HasValue ?
+                new ObjectParameter("ID", iD) :
+                new ObjectParameter("ID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionLogByID_Result>("spHTR_PromotionLogByID", iDParameter);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MidAutumePromotion.aspx.cs" Inherits="CasinoKiosk.Assets.Reports.MidAutumePromotion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HTRPromotion.aspx.cs" Inherits="CasinoKiosk.Assets.Reports.HTRPromotion" %>
 
 <%@ Register Assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" Namespace="Microsoft.Reporting.WebForms" TagPrefix="rsweb" %>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
     </style>
     <script type="text/javascript">
         function doPrint() {
-             var prtContent = document.getElementById('<%= ReportMidAutume.ClientID %>');
+             var prtContent = document.getElementById('<%= ReportPromotion.ClientID %>');
                 prtContent.border = 0; //set no border here
 
                 var WinPrint = window.open('', '', 'left=100,top=100,width=800,height=1000,toolbar=0,scrollbars=1,status=0,resizable=1');
@@ -33,15 +33,25 @@
                 WinPrint.document.write(prtContent.innerHTML);
                 WinPrint.document.close();
 
-                if (is_chrome) {
-                    WinPrint.onload = function () { // wait until all resources loaded 
-                        isPrinting = true;
-                        WinPrint.focus();
-                        WinPrint.print();
-                        WinPrint.close();
-                        isPrinting = false;
-                    };
-                    setTimeout(function () { if (!isPrinting) { WinPrint.print(); WinPrint.close(); } }, 300);
+                //if (is_chrome) {
+                //    WinPrint.onload = function () { // wait until all resources loaded 
+                //        isPrinting = true;
+                //        WinPrint.focus();
+                //        WinPrint.print();
+                //        WinPrint.close();
+                //        isPrinting = false;
+                //    };
+                //   // setTimeout(function () { if (!isPrinting) { WinPrint.print(); WinPrint.close(); } }, 300);
+            //}
+                if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {   // Chrome Browser Detected?
+                    WinPrint.PPClose = false;                                     // Clear Close Flag
+                    WinPrint.onbeforeunload = function () {                         // Before Window Close Event
+                        if (window.PPClose === false) {                           // Close not OK?
+                            return 'Leaving this page will block the parent window!\nPlease select "Stay on this Page option" and use the\nCancel button instead to close the Print Preview Window.\n';
+                        }
+                    }
+                    WinPrint.print();                                             // Print preview
+                    WinPrint.PPClose = true;                                      // Set Close Flag to OK.
                 }
                 else {
                     WinPrint.document.close(); // necessary for IE >= 10
@@ -49,6 +59,9 @@
                     WinPrint.print();
                     WinPrint.close();
                 }
+
+
+                
 
                 return true;
             }
@@ -71,7 +84,7 @@
             
         </div>
         <div>
-            <rsweb:ReportViewer ID="ReportMidAutume" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1200px" Height="1200px" BorderStyle="Solid" BorderWidth="1px" SizeToReportContent="True" ShowPrintButton="True" Font-Bold="True">
+            <rsweb:ReportViewer ID="ReportPromotion" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="1200px" Height="1200px" BorderStyle="Solid" BorderWidth="1px" SizeToReportContent="True" ShowPrintButton="True" Font-Bold="True">
             </rsweb:ReportViewer>
         </div>
     </form>

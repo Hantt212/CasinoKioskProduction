@@ -142,23 +142,29 @@ namespace CKDatabaseConnection.DAO
         }
 
         //Mid Autume start
-        public spHTR_MidAutumeBySearchPatron_Result getPatronMidAutume(int playerID)
+        public spHTR_PromotionByPatron_Result getPromotionByPatron(int promotion,int playerID)
         {
-            spHTR_MidAutumeBySearchPatron_Result result = context.spHTR_MidAutumeBySearchPatron(playerID).FirstOrDefault();
+            spHTR_PromotionByPatron_Result result = context.spHTR_PromotionByPatron(playerID, promotion).FirstOrDefault();
             return result;
         }
 
-        public List<HTR_MidAutumeLog> getMidAutumeLog()
+        public List<HTRPromotionLog> getHTRPromotionLog(int promotionID)
         {
-            List<HTR_MidAutumeLog> list = context.HTR_MidAutumeLog.ToList();
+            List<HTRPromotionLog> list = context.HTRPromotionLogs.Where(item => item.PromotionId == promotionID).OrderBy(item => item.ID).ToList();
             return list;
         }
 
-        public long PrintMidAutumePromotion(int PlayerID)
+        public HTRPromotion getPromotionById(int promotionID)
         {
-            var ticket = new HTR_MidAutumeLog();
+            HTRPromotion result = context.HTRPromotions.Find(promotionID);
+            return result;
+        }
+
+        public long PrintHTRPromotion(int PlayerID, int PromotionID)
+        {
+            var ticket = new HTRPromotionLog();
             string userLogin = HttpContext.Current.Session["UserName"].ToString();
-            HTR_MidAutumePlayers player = context.HTR_MidAutumePlayers.FirstOrDefault(item => item.PlayerID == PlayerID);
+            HTRPromotionPlayer player = context.HTRPromotionPlayers.OrderByDescending(item => item.InsertDate).FirstOrDefault(item => item.PlayerID == PlayerID && item.PromotionId == PromotionID);
             if (player != null)
             {
                 if (player.Quantity == 1)
@@ -169,10 +175,11 @@ namespace CKDatabaseConnection.DAO
                     //write log
                     ticket.PlayerID = PlayerID;
                     ticket.PlayerName = player.PlayerName;
+                    ticket.PromotionId = PromotionID;
                     ticket.isPrinted = true;
                     ticket.PrintedDate = DateTime.Now;
                     ticket.PrintedBy = userLogin;
-                    context.HTR_MidAutumeLog.Add(ticket);
+                    context.HTRPromotionLogs.Add(ticket);
                     context.SaveChanges();
                     return ticket.ID;
                 }
@@ -180,10 +187,10 @@ namespace CKDatabaseConnection.DAO
             return 0;
         }
 
-        public string ReprintMidAutumePromotion(int ID)
+        public string ReprintHTRPromotion(int ID)
         {
             string userLogin = HttpContext.Current.Session["UserName"].ToString();
-            HTR_MidAutumeLog ticket = context.HTR_MidAutumeLog.Find(ID);
+            HTRPromotionLog ticket = context.HTRPromotionLogs.Find(ID);
 
             ticket.ReprintedBy = userLogin;
             ticket.ReprintedDate = DateTime.Now;
@@ -193,30 +200,67 @@ namespace CKDatabaseConnection.DAO
 
         }
 
-        public long VoidMidAutumePromotion(int id)
+        public long VoidHTRPromotion(int id)
         {
-            var ticket = new HTR_MidAutumeLog();
+            var ticket = new HTRPromotionLog();
 
-            ticket = context.HTR_MidAutumeLog.FirstOrDefault(x => x.ID == id);
+            ticket = context.HTRPromotionLogs.FirstOrDefault(x => x.ID == id);
 
 
             string username = HttpContext.Current.Session["UserName"].ToString();
+            ticket.VoidedBy = username;
+            ticket.isVoided = true;
+            ticket.VoidedDate = DateTime.Now;
 
-            if (ticket.isPrinted == true)
-            {
-                if (ticket.isVoided != true)
-                {
-                    ticket.VoidedBy = username;
-                    ticket.isVoided = true;
-                    ticket.VoidedDate = DateTime.Now;
-                    
-                    context.SaveChanges();
-                }
-            }
+
+
+            int patronId = ticket.PromotionId;
+            HTRPromotionPlayer promotion = context.HTRPromotionPlayers
+                                            .Where(item => item.PromotionId == ticket.PromotionId && item.PlayerID == ticket.PlayerID)
+                                            .OrderByDescending(item => item.InsertDate).FirstOrDefault();
+            promotion.Quantity = 1;
+            context.SaveChanges();
             return ticket.ID;
         }
 
         //Mid Autime end
+
+
+        public List<HTRPromotion> getHTRPromotionList()
+        {
+            List<HTRPromotion> result = context.HTRPromotions.ToList();
+            return result;
+        }
+
+        public int saveHTRPromotion(HTRPromotion input)
+        {
+            try
+            {
+                if (input.PromotionId == 0)
+                {
+                    context.HTRPromotions.Add(input);
+                }
+                else
+                {
+                    HTRPromotion promotion = context.HTRPromotions.Find(input.PromotionId);
+                    promotion.PromotionName = input.PromotionName;
+                    promotion.PromotionContent = input.PromotionContent;
+                    promotion.Condition = input.Condition;
+                    promotion.IsDisplayLuckyDate = input.IsDisplayLuckyDate;
+                    promotion.IsActived = input.IsActived;
+                    promotion.UpdatedBy = input.UpdatedBy;
+                    promotion.UpdatedTime = input.UpdatedTime;
+                }
+                context.SaveChanges();
+                return 0;
+            }
+            catch(Exception e)
+            {
+                return 1;
+            }
+            
+
+        }
 
         //Add 20230809 Hantt start
         public MiniBuffet_GetNewClassicPlayer_Result getMiniBuffet_GetNewClassicPlayer(int playerID)

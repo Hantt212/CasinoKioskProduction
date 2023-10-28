@@ -118,6 +118,7 @@
     <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="MFFridayBonus_Players">
     <Key>
@@ -311,6 +312,16 @@
       <Parameter Name="PlayerID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="spHTR_MidAutumeLogByID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_MidAutumeLogByID_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="HTRPromotions" EntityType="ITHoTram_CustomReportModel.HTRPromotion" />
+    <EntitySet Name="HTRPromotionLogs" EntityType="ITHoTram_CustomReportModel.HTRPromotionLog" />
+    <EntitySet Name="HTRPromotionPlayers" EntityType="ITHoTram_CustomReportModel.HTRPromotionPlayer" />
+    <FunctionImport Name="spHTR_PromotionByPatron" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_PromotionByPatron_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+      <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spHTR_PromotionLogByID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_PromotionLogByID_Result)">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
@@ -1096,5 +1107,70 @@
     <Property Type="Boolean" Name="isVoided" Nullable="true" />
     <Property Type="DateTime" Name="VoidedDate" Nullable="true" Precision="23" />
     <Property Type="String" Name="VoidedBy" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="HTRPromotion">
+    <Key>
+      <PropertyRef Name="PromotionId" />
+    </Key>
+    <Property Name="PromotionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsActived" Type="Boolean" />
+    <Property Name="PromotionContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedTime" Type="DateTime" Precision="3" />
+    <Property Name="Condition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDisplayLuckyDate" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="HTRPromotionLog">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionId" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrintedDate" Type="DateTime" Precision="3" />
+    <Property Name="PrintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isPrinted" Type="Boolean" />
+    <Property Name="ReprintedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReprintedDate" Type="DateTime" Precision="3" />
+    <Property Name="isVoided" Type="Boolean" />
+    <Property Name="VoidedDate" Type="DateTime" Precision="3" />
+    <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HTRPromotionPlayer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionId" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPointsEarned" Type="Int32" />
+    <Property Name="PrintedQty" Type="Int32" />
+    <Property Name="InsertDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spHTR_PromotionByPatron_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PromotionId" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="spHTR_PromotionLogByID_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="PrintedDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="PromotionContent" Nullable="true" />
+    <Property Type="String" Name="Condition" Nullable="true" />
+    <Property Type="String" Name="LuckyDate" Nullable="true" MaxLength="10" />
   </ComplexType>
 </Schema>

@@ -108,6 +108,7 @@
     <EntitySetMapping Name="MFFridayBonus_Logs">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MFFridayBonus_Logs">
         <MappingFragment StoreEntitySet="MFFridayBonus_Logs">
+          <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
           <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
           <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
           <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
@@ -1135,6 +1136,82 @@
           <ScalarProperty Name="isVoided" ColumnName="isVoided" />
           <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
           <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="HTRPromotions">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotion">
+        <MappingFragment StoreEntitySet="HTRPromotion">
+          <ScalarProperty Name="IsDisplayLuckyDate" ColumnName="IsDisplayLuckyDate" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="PromotionContent" ColumnName="PromotionContent" />
+          <ScalarProperty Name="IsActived" ColumnName="IsActived" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTRPromotionLogs">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotionLog">
+        <MappingFragment StoreEntitySet="HTRPromotionLog">
+          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
+          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
+          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
+          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
+          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
+          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
+          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
+          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HTRPromotionPlayers">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotionPlayer">
+        <MappingFragment StoreEntitySet="HTRPromotionPlayer">
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
+          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spHTR_PromotionByPatron" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_PromotionByPatron">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_PromotionByPatron_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
+          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
+          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spHTR_PromotionLogByID" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_PromotionLogByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_PromotionLogByID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="PromotionContent" ColumnName="PromotionContent" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+          <ScalarProperty Name="LuckyDate" ColumnName="LuckyDate" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

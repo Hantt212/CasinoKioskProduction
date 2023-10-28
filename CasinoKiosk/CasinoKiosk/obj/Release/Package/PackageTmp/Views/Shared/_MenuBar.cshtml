@@ -69,17 +69,22 @@
 
                         <a>@Html.ActionLink("Redemption Log", "RedemptionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
-                        <a>@Html.ActionLink("Daily PS Bundle", "PSBundleLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+                        @*<a>@Html.ActionLink("Daily PS Bundle", "PSBundleLog", "Logs", new object { }, new { @class = "collapse-item" })</a>*@
 
-                        <a>@Html.ActionLink("The Grand Signature", "Index", "CasinoTGS", new object { }, new { @class = "collapse-item" })</a>
+                        @*<a>@Html.ActionLink("The Grand Signature", "Index", "CasinoTGS", new object { }, new { @class = "collapse-item" })</a>*@
 
                         <a>@Html.ActionLink("Ticket Promotion Log", "Index", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
-                        
-                        <a>@Html.ActionLink("Thursday Promotion", "GoldenHour", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
-                        <a>@Html.ActionLink("Sunday Promotion", "SundayPromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
-                        <a> @Html.ActionLink("Mid Autumn Promotion", "MidAutumePromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
 
-                        <a>@Html.ActionLink("Ticket Mini Buffet", "MiniBuffet", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        @*<a>@Html.ActionLink("Thursday Promotion", "GoldenHour", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        <a>@Html.ActionLink("Sunday Promotion", "SundayPromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>*@
+                        if (User.IsInRole("SuperAdmin"))
+                        {
+                            <a> @Html.ActionLink("HTR Promotion List", "HTRPromotionList", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                        }
+
+                        <a> @Html.ActionLink("HTR Promotion Log", "HTRPromotionLog", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+
+                        @*<a>@Html.ActionLink("Ticket Mini Buffet", "MiniBuffet", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>*@
 
 
                         <a href="~/Assets/Reports/TicketPromotion.aspx" class="collapse-item">Ticket Promotion</a>

@@ -7,8 +7,9 @@ using System.Web.Security;
 
 namespace CasinoKiosk.Areas.Admin.Models
 {
-    
-        public class UserIdentity : IIdentity, IPrincipal
+
+    [Serializable()]
+    public class UserIdentity : IIdentity, IPrincipal
         {
             private readonly FormsAuthenticationTicket _ticket;
 

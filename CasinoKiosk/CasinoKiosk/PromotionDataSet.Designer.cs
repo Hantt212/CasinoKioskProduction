@@ -20,17 +20,17 @@ namespace CasinoKiosk {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MidAutumeDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PromotionDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MidAutumeDataSet : global::System.Data.DataSet {
+    public partial class PromotionDataSet : global::System.Data.DataSet {
         
-        private spHTR_MidAutumeLogByIDDataTable tablespHTR_MidAutumeLogByID;
+        private spHTR_PromotionLogByIDDataTable tablespHTR_PromotionLogByID;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MidAutumeDataSet() {
+        public PromotionDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CasinoKiosk {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected MidAutumeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PromotionDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CasinoKiosk {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["spHTR_MidAutumeLogByID"] != null)) {
-                    base.Tables.Add(new spHTR_MidAutumeLogByIDDataTable(ds.Tables["spHTR_MidAutumeLogByID"]));
+                if ((ds.Tables["spHTR_PromotionLogByID"] != null)) {
+                    base.Tables.Add(new spHTR_PromotionLogByIDDataTable(ds.Tables["spHTR_PromotionLogByID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CasinoKiosk {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public spHTR_MidAutumeLogByIDDataTable spHTR_MidAutumeLogByID {
+        public spHTR_PromotionLogByIDDataTable spHTR_PromotionLogByID {
             get {
-                return this.tablespHTR_MidAutumeLogByID;
+                return this.tablespHTR_PromotionLogByID;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MidAutumeDataSet cln = ((MidAutumeDataSet)(base.Clone()));
+            PromotionDataSet cln = ((PromotionDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CasinoKiosk {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["spHTR_MidAutumeLogByID"] != null)) {
-                    base.Tables.Add(new spHTR_MidAutumeLogByIDDataTable(ds.Tables["spHTR_MidAutumeLogByID"]));
+                if ((ds.Tables["spHTR_PromotionLogByID"] != null)) {
+                    base.Tables.Add(new spHTR_PromotionLogByIDDataTable(ds.Tables["spHTR_PromotionLogByID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablespHTR_MidAutumeLogByID = ((spHTR_MidAutumeLogByIDDataTable)(base.Tables["spHTR_MidAutumeLogByID"]));
+            this.tablespHTR_PromotionLogByID = ((spHTR_PromotionLogByIDDataTable)(base.Tables["spHTR_PromotionLogByID"]));
             if ((initTable == true)) {
-                if ((this.tablespHTR_MidAutumeLogByID != null)) {
-                    this.tablespHTR_MidAutumeLogByID.InitVars();
+                if ((this.tablespHTR_PromotionLogByID != null)) {
+                    this.tablespHTR_PromotionLogByID.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MidAutumeDataSet";
+            this.DataSetName = "PromotionDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MidAutumeDataSet.xsd";
+            this.Namespace = "http://tempuri.org/PromotionDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablespHTR_MidAutumeLogByID = new spHTR_MidAutumeLogByIDDataTable();
-            base.Tables.Add(this.tablespHTR_MidAutumeLogByID);
+            this.tablespHTR_PromotionLogByID = new spHTR_PromotionLogByIDDataTable();
+            base.Tables.Add(this.tablespHTR_PromotionLogByID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializespHTR_MidAutumeLogByID() {
+        private bool ShouldSerializespHTR_PromotionLogByID() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MidAutumeDataSet ds = new MidAutumeDataSet();
+            PromotionDataSet ds = new PromotionDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace CasinoKiosk {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void spHTR_MidAutumeLogByIDRowChangeEventHandler(object sender, spHTR_MidAutumeLogByIDRowChangeEvent e);
+        public delegate void spHTR_PromotionLogByIDRowChangeEventHandler(object sender, spHTR_PromotionLogByIDRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class spHTR_MidAutumeLogByIDDataTable : global::System.Data.TypedTableBase<spHTR_MidAutumeLogByIDRow> {
+        public partial class spHTR_PromotionLogByIDDataTable : global::System.Data.TypedTableBase<spHTR_PromotionLogByIDRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -287,24 +287,18 @@ namespace CasinoKiosk {
             
             private global::System.Data.DataColumn columnPrintedDate;
             
-            private global::System.Data.DataColumn columnPrintedBy;
+            private global::System.Data.DataColumn columnPromotionName;
             
-            private global::System.Data.DataColumn columnisPrinted;
+            private global::System.Data.DataColumn columnPromotionContent;
             
-            private global::System.Data.DataColumn columnReprintedBy;
+            private global::System.Data.DataColumn columnCondition;
             
-            private global::System.Data.DataColumn columnReprintedDate;
-            
-            private global::System.Data.DataColumn columnisVoided;
-            
-            private global::System.Data.DataColumn columnVoidedDate;
-            
-            private global::System.Data.DataColumn columnVoidedBy;
+            private global::System.Data.DataColumn columnLuckyDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDDataTable() {
-                this.TableName = "spHTR_MidAutumeLogByID";
+            public spHTR_PromotionLogByIDDataTable() {
+                this.TableName = "spHTR_PromotionLogByID";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +306,7 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal spHTR_MidAutumeLogByIDDataTable(global::System.Data.DataTable table) {
+            internal spHTR_PromotionLogByIDDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,7 +323,7 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected spHTR_MidAutumeLogByIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected spHTR_PromotionLogByIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -368,57 +362,33 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PrintedByColumn {
+            public global::System.Data.DataColumn PromotionNameColumn {
                 get {
-                    return this.columnPrintedBy;
+                    return this.columnPromotionName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn isPrintedColumn {
+            public global::System.Data.DataColumn PromotionContentColumn {
                 get {
-                    return this.columnisPrinted;
+                    return this.columnPromotionContent;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReprintedByColumn {
+            public global::System.Data.DataColumn ConditionColumn {
                 get {
-                    return this.columnReprintedBy;
+                    return this.columnCondition;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReprintedDateColumn {
+            public global::System.Data.DataColumn LuckyDateColumn {
                 get {
-                    return this.columnReprintedDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn isVoidedColumn {
-                get {
-                    return this.columnisVoided;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VoidedDateColumn {
-                get {
-                    return this.columnVoidedDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VoidedByColumn {
-                get {
-                    return this.columnVoidedBy;
+                    return this.columnLuckyDate;
                 }
             }
             
@@ -433,62 +403,59 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRow this[int index] {
+            public spHTR_PromotionLogByIDRow this[int index] {
                 get {
-                    return ((spHTR_MidAutumeLogByIDRow)(this.Rows[index]));
+                    return ((spHTR_PromotionLogByIDRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event spHTR_MidAutumeLogByIDRowChangeEventHandler spHTR_MidAutumeLogByIDRowChanging;
+            public event spHTR_PromotionLogByIDRowChangeEventHandler spHTR_PromotionLogByIDRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event spHTR_MidAutumeLogByIDRowChangeEventHandler spHTR_MidAutumeLogByIDRowChanged;
+            public event spHTR_PromotionLogByIDRowChangeEventHandler spHTR_PromotionLogByIDRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event spHTR_MidAutumeLogByIDRowChangeEventHandler spHTR_MidAutumeLogByIDRowDeleting;
+            public event spHTR_PromotionLogByIDRowChangeEventHandler spHTR_PromotionLogByIDRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event spHTR_MidAutumeLogByIDRowChangeEventHandler spHTR_MidAutumeLogByIDRowDeleted;
+            public event spHTR_PromotionLogByIDRowChangeEventHandler spHTR_PromotionLogByIDRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddspHTR_MidAutumeLogByIDRow(spHTR_MidAutumeLogByIDRow row) {
+            public void AddspHTR_PromotionLogByIDRow(spHTR_PromotionLogByIDRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRow AddspHTR_MidAutumeLogByIDRow(int PlayerID, string PlayerName, System.DateTime PrintedDate, string PrintedBy, bool isPrinted, string ReprintedBy, System.DateTime ReprintedDate, bool isVoided, System.DateTime VoidedDate, string VoidedBy) {
-                spHTR_MidAutumeLogByIDRow rowspHTR_MidAutumeLogByIDRow = ((spHTR_MidAutumeLogByIDRow)(this.NewRow()));
+            public spHTR_PromotionLogByIDRow AddspHTR_PromotionLogByIDRow(int PlayerID, string PlayerName, System.DateTime PrintedDate, string PromotionName, string PromotionContent, string Condition, string LuckyDate) {
+                spHTR_PromotionLogByIDRow rowspHTR_PromotionLogByIDRow = ((spHTR_PromotionLogByIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PlayerID,
                         PlayerName,
                         PrintedDate,
-                        PrintedBy,
-                        isPrinted,
-                        ReprintedBy,
-                        ReprintedDate,
-                        isVoided,
-                        VoidedDate,
-                        VoidedBy};
-                rowspHTR_MidAutumeLogByIDRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowspHTR_MidAutumeLogByIDRow);
-                return rowspHTR_MidAutumeLogByIDRow;
+                        PromotionName,
+                        PromotionContent,
+                        Condition,
+                        LuckyDate};
+                rowspHTR_PromotionLogByIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowspHTR_PromotionLogByIDRow);
+                return rowspHTR_PromotionLogByIDRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRow FindByID(int ID) {
-                return ((spHTR_MidAutumeLogByIDRow)(this.Rows.Find(new object[] {
+            public spHTR_PromotionLogByIDRow FindByID(int ID) {
+                return ((spHTR_PromotionLogByIDRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                spHTR_MidAutumeLogByIDDataTable cln = ((spHTR_MidAutumeLogByIDDataTable)(base.Clone()));
+                spHTR_PromotionLogByIDDataTable cln = ((spHTR_PromotionLogByIDDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -496,7 +463,7 @@ namespace CasinoKiosk {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new spHTR_MidAutumeLogByIDDataTable();
+                return new spHTR_PromotionLogByIDDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -506,13 +473,10 @@ namespace CasinoKiosk {
                 this.columnPlayerID = base.Columns["PlayerID"];
                 this.columnPlayerName = base.Columns["PlayerName"];
                 this.columnPrintedDate = base.Columns["PrintedDate"];
-                this.columnPrintedBy = base.Columns["PrintedBy"];
-                this.columnisPrinted = base.Columns["isPrinted"];
-                this.columnReprintedBy = base.Columns["ReprintedBy"];
-                this.columnReprintedDate = base.Columns["ReprintedDate"];
-                this.columnisVoided = base.Columns["isVoided"];
-                this.columnVoidedDate = base.Columns["VoidedDate"];
-                this.columnVoidedBy = base.Columns["VoidedBy"];
+                this.columnPromotionName = base.Columns["PromotionName"];
+                this.columnPromotionContent = base.Columns["PromotionContent"];
+                this.columnCondition = base.Columns["Condition"];
+                this.columnLuckyDate = base.Columns["LuckyDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -526,20 +490,14 @@ namespace CasinoKiosk {
                 base.Columns.Add(this.columnPlayerName);
                 this.columnPrintedDate = new global::System.Data.DataColumn("PrintedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrintedDate);
-                this.columnPrintedBy = new global::System.Data.DataColumn("PrintedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrintedBy);
-                this.columnisPrinted = new global::System.Data.DataColumn("isPrinted", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisPrinted);
-                this.columnReprintedBy = new global::System.Data.DataColumn("ReprintedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReprintedBy);
-                this.columnReprintedDate = new global::System.Data.DataColumn("ReprintedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReprintedDate);
-                this.columnisVoided = new global::System.Data.DataColumn("isVoided", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisVoided);
-                this.columnVoidedDate = new global::System.Data.DataColumn("VoidedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVoidedDate);
-                this.columnVoidedBy = new global::System.Data.DataColumn("VoidedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVoidedBy);
+                this.columnPromotionName = new global::System.Data.DataColumn("PromotionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPromotionName);
+                this.columnPromotionContent = new global::System.Data.DataColumn("PromotionContent", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPromotionContent);
+                this.columnCondition = new global::System.Data.DataColumn("Condition", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCondition);
+                this.columnLuckyDate = new global::System.Data.DataColumn("LuckyDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLuckyDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -547,35 +505,37 @@ namespace CasinoKiosk {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnPlayerName.MaxLength = 50;
-                this.columnPrintedBy.MaxLength = 50;
-                this.columnReprintedBy.MaxLength = 50;
-                this.columnVoidedBy.MaxLength = 50;
+                this.columnPromotionName.MaxLength = 200;
+                this.columnPromotionContent.MaxLength = 2147483647;
+                this.columnCondition.MaxLength = 2147483647;
+                this.columnLuckyDate.ReadOnly = true;
+                this.columnLuckyDate.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRow NewspHTR_MidAutumeLogByIDRow() {
-                return ((spHTR_MidAutumeLogByIDRow)(this.NewRow()));
+            public spHTR_PromotionLogByIDRow NewspHTR_PromotionLogByIDRow() {
+                return ((spHTR_PromotionLogByIDRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new spHTR_MidAutumeLogByIDRow(builder);
+                return new spHTR_PromotionLogByIDRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(spHTR_MidAutumeLogByIDRow);
+                return typeof(spHTR_PromotionLogByIDRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.spHTR_MidAutumeLogByIDRowChanged != null)) {
-                    this.spHTR_MidAutumeLogByIDRowChanged(this, new spHTR_MidAutumeLogByIDRowChangeEvent(((spHTR_MidAutumeLogByIDRow)(e.Row)), e.Action));
+                if ((this.spHTR_PromotionLogByIDRowChanged != null)) {
+                    this.spHTR_PromotionLogByIDRowChanged(this, new spHTR_PromotionLogByIDRowChangeEvent(((spHTR_PromotionLogByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,8 +543,8 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.spHTR_MidAutumeLogByIDRowChanging != null)) {
-                    this.spHTR_MidAutumeLogByIDRowChanging(this, new spHTR_MidAutumeLogByIDRowChangeEvent(((spHTR_MidAutumeLogByIDRow)(e.Row)), e.Action));
+                if ((this.spHTR_PromotionLogByIDRowChanging != null)) {
+                    this.spHTR_PromotionLogByIDRowChanging(this, new spHTR_PromotionLogByIDRowChangeEvent(((spHTR_PromotionLogByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -592,8 +552,8 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.spHTR_MidAutumeLogByIDRowDeleted != null)) {
-                    this.spHTR_MidAutumeLogByIDRowDeleted(this, new spHTR_MidAutumeLogByIDRowChangeEvent(((spHTR_MidAutumeLogByIDRow)(e.Row)), e.Action));
+                if ((this.spHTR_PromotionLogByIDRowDeleted != null)) {
+                    this.spHTR_PromotionLogByIDRowDeleted(this, new spHTR_PromotionLogByIDRowChangeEvent(((spHTR_PromotionLogByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -601,14 +561,14 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.spHTR_MidAutumeLogByIDRowDeleting != null)) {
-                    this.spHTR_MidAutumeLogByIDRowDeleting(this, new spHTR_MidAutumeLogByIDRowChangeEvent(((spHTR_MidAutumeLogByIDRow)(e.Row)), e.Action));
+                if ((this.spHTR_PromotionLogByIDRowDeleting != null)) {
+                    this.spHTR_PromotionLogByIDRowDeleting(this, new spHTR_PromotionLogByIDRowChangeEvent(((spHTR_PromotionLogByIDRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovespHTR_MidAutumeLogByIDRow(spHTR_MidAutumeLogByIDRow row) {
+            public void RemovespHTR_PromotionLogByIDRow(spHTR_PromotionLogByIDRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -617,7 +577,7 @@ namespace CasinoKiosk {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MidAutumeDataSet ds = new MidAutumeDataSet();
+                PromotionDataSet ds = new PromotionDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -635,7 +595,7 @@ namespace CasinoKiosk {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "spHTR_MidAutumeLogByIDDataTable";
+                attribute2.FixedValue = "spHTR_PromotionLogByIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -679,25 +639,25 @@ namespace CasinoKiosk {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class spHTR_MidAutumeLogByIDRow : global::System.Data.DataRow {
+        public partial class spHTR_PromotionLogByIDRow : global::System.Data.DataRow {
             
-            private spHTR_MidAutumeLogByIDDataTable tablespHTR_MidAutumeLogByID;
+            private spHTR_PromotionLogByIDDataTable tablespHTR_PromotionLogByID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal spHTR_MidAutumeLogByIDRow(global::System.Data.DataRowBuilder rb) : 
+            internal spHTR_PromotionLogByIDRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablespHTR_MidAutumeLogByID = ((spHTR_MidAutumeLogByIDDataTable)(this.Table));
+                this.tablespHTR_PromotionLogByID = ((spHTR_PromotionLogByIDDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tablespHTR_MidAutumeLogByID.IDColumn]));
+                    return ((int)(this[this.tablespHTR_PromotionLogByID.IDColumn]));
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.IDColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.IDColumn] = value;
                 }
             }
             
@@ -706,14 +666,14 @@ namespace CasinoKiosk {
             public int PlayerID {
                 get {
                     try {
-                        return ((int)(this[this.tablespHTR_MidAutumeLogByID.PlayerIDColumn]));
+                        return ((int)(this[this.tablespHTR_PromotionLogByID.PlayerIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerID\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerID\' in table \'spHTR_PromotionLogByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.PlayerIDColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.PlayerIDColumn] = value;
                 }
             }
             
@@ -722,14 +682,14 @@ namespace CasinoKiosk {
             public string PlayerName {
                 get {
                     try {
-                        return ((string)(this[this.tablespHTR_MidAutumeLogByID.PlayerNameColumn]));
+                        return ((string)(this[this.tablespHTR_PromotionLogByID.PlayerNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerName\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerName\' in table \'spHTR_PromotionLogByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.PlayerNameColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.PlayerNameColumn] = value;
                 }
             }
             
@@ -738,248 +698,165 @@ namespace CasinoKiosk {
             public System.DateTime PrintedDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablespHTR_MidAutumeLogByID.PrintedDateColumn]));
+                        return ((global::System.DateTime)(this[this.tablespHTR_PromotionLogByID.PrintedDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrintedDate\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PrintedDate\' in table \'spHTR_PromotionLogByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.PrintedDateColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.PrintedDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PrintedBy {
+            public string PromotionName {
                 get {
                     try {
-                        return ((string)(this[this.tablespHTR_MidAutumeLogByID.PrintedByColumn]));
+                        return ((string)(this[this.tablespHTR_PromotionLogByID.PromotionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrintedBy\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespHTR_MidAutumeLogByID.PrintedByColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool isPrinted {
-                get {
-                    try {
-                        return ((bool)(this[this.tablespHTR_MidAutumeLogByID.isPrintedColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isPrinted\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespHTR_MidAutumeLogByID.isPrintedColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ReprintedBy {
-                get {
-                    try {
-                        return ((string)(this[this.tablespHTR_MidAutumeLogByID.ReprintedByColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReprintedBy\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablespHTR_MidAutumeLogByID.ReprintedByColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ReprintedDate {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablespHTR_MidAutumeLogByID.ReprintedDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReprintedDate\' in table \'spHTR_MidAutumeLogByID\' is DBNull." +
+                        throw new global::System.Data.StrongTypingException("The value for column \'PromotionName\' in table \'spHTR_PromotionLogByID\' is DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.ReprintedDateColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.PromotionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool isVoided {
+            public string PromotionContent {
                 get {
                     try {
-                        return ((bool)(this[this.tablespHTR_MidAutumeLogByID.isVoidedColumn]));
+                        return ((string)(this[this.tablespHTR_PromotionLogByID.PromotionContentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isVoided\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PromotionContent\' in table \'spHTR_PromotionLogByID\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.isVoidedColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.PromotionContentColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime VoidedDate {
+            public string Condition {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablespHTR_MidAutumeLogByID.VoidedDateColumn]));
+                        return ((string)(this[this.tablespHTR_PromotionLogByID.ConditionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VoidedDate\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Condition\' in table \'spHTR_PromotionLogByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.VoidedDateColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.ConditionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string VoidedBy {
+            public string LuckyDate {
                 get {
                     try {
-                        return ((string)(this[this.tablespHTR_MidAutumeLogByID.VoidedByColumn]));
+                        return ((string)(this[this.tablespHTR_PromotionLogByID.LuckyDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VoidedBy\' in table \'spHTR_MidAutumeLogByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LuckyDate\' in table \'spHTR_PromotionLogByID\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablespHTR_MidAutumeLogByID.VoidedByColumn] = value;
+                    this[this.tablespHTR_PromotionLogByID.LuckyDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlayerIDNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.PlayerIDColumn);
+                return this.IsNull(this.tablespHTR_PromotionLogByID.PlayerIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlayerIDNull() {
-                this[this.tablespHTR_MidAutumeLogByID.PlayerIDColumn] = global::System.Convert.DBNull;
+                this[this.tablespHTR_PromotionLogByID.PlayerIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlayerNameNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.PlayerNameColumn);
+                return this.IsNull(this.tablespHTR_PromotionLogByID.PlayerNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlayerNameNull() {
-                this[this.tablespHTR_MidAutumeLogByID.PlayerNameColumn] = global::System.Convert.DBNull;
+                this[this.tablespHTR_PromotionLogByID.PlayerNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPrintedDateNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.PrintedDateColumn);
+                return this.IsNull(this.tablespHTR_PromotionLogByID.PrintedDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPrintedDateNull() {
-                this[this.tablespHTR_MidAutumeLogByID.PrintedDateColumn] = global::System.Convert.DBNull;
+                this[this.tablespHTR_PromotionLogByID.PrintedDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrintedByNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.PrintedByColumn);
+            public bool IsPromotionNameNull() {
+                return this.IsNull(this.tablespHTR_PromotionLogByID.PromotionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrintedByNull() {
-                this[this.tablespHTR_MidAutumeLogByID.PrintedByColumn] = global::System.Convert.DBNull;
+            public void SetPromotionNameNull() {
+                this[this.tablespHTR_PromotionLogByID.PromotionNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsisPrintedNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.isPrintedColumn);
+            public bool IsPromotionContentNull() {
+                return this.IsNull(this.tablespHTR_PromotionLogByID.PromotionContentColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetisPrintedNull() {
-                this[this.tablespHTR_MidAutumeLogByID.isPrintedColumn] = global::System.Convert.DBNull;
+            public void SetPromotionContentNull() {
+                this[this.tablespHTR_PromotionLogByID.PromotionContentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReprintedByNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.ReprintedByColumn);
+            public bool IsConditionNull() {
+                return this.IsNull(this.tablespHTR_PromotionLogByID.ConditionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReprintedByNull() {
-                this[this.tablespHTR_MidAutumeLogByID.ReprintedByColumn] = global::System.Convert.DBNull;
+            public void SetConditionNull() {
+                this[this.tablespHTR_PromotionLogByID.ConditionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReprintedDateNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.ReprintedDateColumn);
+            public bool IsLuckyDateNull() {
+                return this.IsNull(this.tablespHTR_PromotionLogByID.LuckyDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReprintedDateNull() {
-                this[this.tablespHTR_MidAutumeLogByID.ReprintedDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsisVoidedNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.isVoidedColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetisVoidedNull() {
-                this[this.tablespHTR_MidAutumeLogByID.isVoidedColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVoidedDateNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.VoidedDateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVoidedDateNull() {
-                this[this.tablespHTR_MidAutumeLogByID.VoidedDateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVoidedByNull() {
-                return this.IsNull(this.tablespHTR_MidAutumeLogByID.VoidedByColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVoidedByNull() {
-                this[this.tablespHTR_MidAutumeLogByID.VoidedByColumn] = global::System.Convert.DBNull;
+            public void SetLuckyDateNull() {
+                this[this.tablespHTR_PromotionLogByID.LuckyDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -987,22 +864,22 @@ namespace CasinoKiosk {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class spHTR_MidAutumeLogByIDRowChangeEvent : global::System.EventArgs {
+        public class spHTR_PromotionLogByIDRowChangeEvent : global::System.EventArgs {
             
-            private spHTR_MidAutumeLogByIDRow eventRow;
+            private spHTR_PromotionLogByIDRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRowChangeEvent(spHTR_MidAutumeLogByIDRow row, global::System.Data.DataRowAction action) {
+            public spHTR_PromotionLogByIDRowChangeEvent(spHTR_PromotionLogByIDRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public spHTR_MidAutumeLogByIDRow Row {
+            public spHTR_PromotionLogByIDRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1018,7 +895,7 @@ namespace CasinoKiosk {
         }
     }
 }
-namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
+namespace CasinoKiosk.PromotionDataSetTableAdapters {
     
     
     /// <summary>
@@ -1030,7 +907,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class spHTR_MidAutumeLogByIDTableAdapter : global::System.ComponentModel.Component {
+    public partial class spHTR_PromotionLogByIDTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1044,7 +921,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public spHTR_MidAutumeLogByIDTableAdapter() {
+        public spHTR_PromotionLogByIDTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1141,18 +1018,15 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "spHTR_MidAutumeLogByID";
+            tableMapping.DataSetTable = "spHTR_PromotionLogByID";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("PlayerID", "PlayerID");
             tableMapping.ColumnMappings.Add("PlayerName", "PlayerName");
             tableMapping.ColumnMappings.Add("PrintedDate", "PrintedDate");
-            tableMapping.ColumnMappings.Add("PrintedBy", "PrintedBy");
-            tableMapping.ColumnMappings.Add("isPrinted", "isPrinted");
-            tableMapping.ColumnMappings.Add("ReprintedBy", "ReprintedBy");
-            tableMapping.ColumnMappings.Add("ReprintedDate", "ReprintedDate");
-            tableMapping.ColumnMappings.Add("isVoided", "isVoided");
-            tableMapping.ColumnMappings.Add("VoidedDate", "VoidedDate");
-            tableMapping.ColumnMappings.Add("VoidedBy", "VoidedBy");
+            tableMapping.ColumnMappings.Add("PromotionName", "PromotionName");
+            tableMapping.ColumnMappings.Add("PromotionContent", "PromotionContent");
+            tableMapping.ColumnMappings.Add("Condition", "Condition");
+            tableMapping.ColumnMappings.Add("LuckyDate", "LuckyDate");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1169,7 +1043,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.spHTR_MidAutumeLogByID";
+            this._commandCollection[0].CommandText = "dbo.spHTR_PromotionLogByID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1179,7 +1053,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MidAutumeDataSet.spHTR_MidAutumeLogByIDDataTable dataTable, global::System.Nullable<int> ID) {
+        public virtual int Fill(PromotionDataSet.spHTR_PromotionLogByIDDataTable dataTable, global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ID.Value));
@@ -1198,7 +1072,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MidAutumeDataSet.spHTR_MidAutumeLogByIDDataTable GetData(global::System.Nullable<int> ID) {
+        public virtual PromotionDataSet.spHTR_PromotionLogByIDDataTable GetData(global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ID.Value));
@@ -1206,7 +1080,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            MidAutumeDataSet.spHTR_MidAutumeLogByIDDataTable dataTable = new MidAutumeDataSet.spHTR_MidAutumeLogByIDDataTable();
+            PromotionDataSet.spHTR_PromotionLogByIDDataTable dataTable = new PromotionDataSet.spHTR_PromotionLogByIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1280,7 +1154,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(MidAutumeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PromotionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1290,7 +1164,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(MidAutumeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PromotionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1300,7 +1174,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(MidAutumeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PromotionDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1334,7 +1208,7 @@ namespace CasinoKiosk.MidAutumeDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(MidAutumeDataSet dataSet) {
+        public virtual int UpdateAll(PromotionDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

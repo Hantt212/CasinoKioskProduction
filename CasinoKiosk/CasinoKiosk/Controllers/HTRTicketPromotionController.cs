@@ -176,57 +176,142 @@ namespace CasinoKiosk.Controllers
         }
         // Sunday Promotion end
 
-
-        //MidAutume Promotion start
+        // Get All Promotion List
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
-        public ActionResult MidAutumePromotion()
+        public ActionResult HTRPromotionList()
         {
-            var dao = new LogDao();
-
-            spHTR_MidAutumeBySearchPatron_Result patronInfo = new spHTR_MidAutumeBySearchPatron_Result();
-            if (Request["PatronID"] != null)
-            {
-
-                int patronID = Int32.Parse(Request["PatronID"]);
-                patronInfo = dao.getPatronMidAutume(patronID);
-
-            }
-
-            List<HTR_MidAutumeLog> patronList = dao.getMidAutumeLog();
-            
-            ViewBag.patronInfo = patronInfo;
-            ViewBag.patronList = patronList;
             return View();
         }
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
-        public ActionResult PrintMidAutumePromotion(int PlayerID)
+        public JsonResult GetHTRPromotionList()
+        {
+            var dao = new LogDao();
+            var result = dao.getHTRPromotionList().Where(item => item.IsActived == true).Select(item =>
+                    new {
+                        PromotionId = item.PromotionId,
+                        PromotionName = item.PromotionName,
+                        PromotionContent = item.PromotionContent,
+                        Condition = item.Condition,
+                        IsLuckyDate = item.IsDisplayLuckyDate,
+                        IsActived = item.IsActived,
+                        CreatedBy = item.CreatedBy,
+                        CreatedTime = item.CreatedTime?.ToString("yyyy-MM-dd"),
+                        UpdatedBy = item.UpdatedBy,
+                        UpdatedTime = item.UpdatedTime?.ToString("yyyy-MM-dd"),
+                    }
+            ).OrderBy(pro => pro.PromotionId).ToList();
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetHTRPromotionLog(int PromotionID)
+        {
+            var dao = new LogDao();
+            if (PromotionID == 0)
+            {
+                PromotionID = dao.getHTRPromotionList().Where(item => item.IsActived == true).OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
+            }
+            var result = dao.getHTRPromotionLog(PromotionID).Select(item =>
+                    new {
+                        PlayerID = item.PlayerID,
+                        PlayerName = item.PlayerName,
+                        PrintedDate = item.PrintedDate?.ToString("yyyy-MM-dd HH:mm"),
+                        PrintedBy = item.PrintedBy,
+                        ID = item.ID,
+                        isVoided = item.isVoided,
+                        ReprintedBy = item.ReprintedBy,
+                        ReprintedDate = item.ReprintedDate?.ToString("yyyy-MM-dd HH:mm"),
+                        VoidedBy = item.VoidedBy,
+                        VoidedDate = item.VoidedDate?.ToString("yyyy-MM-dd HH:mm")
+                    }
+            ).ToList();
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult SearchPromotionByPatron(int PromotionID, int PatronID)
+        {
+            var dao = new LogDao();
+            spHTR_PromotionByPatron_Result patronInfo = new spHTR_PromotionByPatron_Result();
+            patronInfo = dao.getPromotionByPatron(PromotionID, PatronID);
+            
+            return Json(patronInfo, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetPromotionById(int PromotionID)
+        {
+            var dao = new LogDao();
+            if (PromotionID == 0)
+            {
+                PromotionID = dao.getHTRPromotionList().OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
+            }
+            var item = dao.getPromotionById(PromotionID);
+
+            var result = new
+            {
+                PromotionId = item.PromotionId,
+                PromotionName = item.PromotionName,
+                Condition = item.Condition,
+                IsActived = item.IsActived,
+                Content = item.PromotionContent,
+                IsLuckyDate = item.IsDisplayLuckyDate,
+            };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        public JsonResult SaveHTRPromotion(HTRPromotion input)
+        {
+            var dao = new LogDao();
+            if (input.PromotionId == 0)
+            {
+                input.CreatedBy = Session["UserName"].ToString();
+                input.CreatedTime = DateTime.Now;
+            }
+
+            input.UpdatedBy = Session["UserName"].ToString();
+            input.UpdatedTime = DateTime.Now;
+
+
+            return Json(dao.saveHTRPromotion(input), JsonRequestBehavior.AllowGet);
+        }
+        
+
+        //Ticket Promotion start
+        [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
+        public ActionResult HTRPromotionLog()
+        {
+            var dao = new LogDao();
+            return View();
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
+        public ActionResult PrintHTRPromotion(int PlayerID, int PromotionID)
         {
             string url = "";
             var dao = new LogDao();
-            var ID = dao.PrintMidAutumePromotion(PlayerID);
+            var ID = dao.PrintHTRPromotion(PlayerID, PromotionID);
             if (ID != 0)
             {
-                url = "~/Assets/Reports/MidAutumePromotion.aspx?id=" + ID;
+                url = "~/Assets/Reports/HTRPromotion.aspx?id=" + ID;
                 return Redirect(url);
             }
             return Redirect(url);
         }
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
-        public ActionResult ReprintMidAutumePromotion(int ID)
+        public ActionResult ReprintHTRPromotion(int ID)
         {
             var dao = new LogDao();
-            dao.ReprintMidAutumePromotion(ID);
-            string url = "~/Assets/Reports/MidAutumePromotion.aspx?id=" + ID;
+            dao.ReprintHTRPromotion(ID);
+            string url = "~/Assets/Reports/HTRPromotion.aspx?id=" + ID;
             return Redirect(url);
         }
 
-        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
-        public JsonResult VoidMidAutumePromotion(int ID)
+        [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
+        public JsonResult VoidHTRPromotion(int ID)
         {
             var dao = new LogDao();
-            return Json(dao.VoidMidAutumePromotion(ID), JsonRequestBehavior.AllowGet);
+            return Json(dao.VoidHTRPromotion(ID), JsonRequestBehavior.AllowGet);
         }
 
         
@@ -244,23 +329,12 @@ namespace CasinoKiosk.Controllers
                 patronInfo = dao.getMiniBuffet_GetNewClassicPlayer(Int32.Parse(Request["PatronID"]));
                 if (patronInfo != null)
                 {
-                    //MiniBuffet_GetNewClassicPlayerLogs log  = dao.getMiniBuffetLogs()
-                    //                                               .Where(item => item.PlayerID == patronInfo.PlayerID && item.PrintedDate.ToString().Contains(DateTime.Now.ToShortDateString()))
-                    //                                               .OrderByDescending(item => item.ID)
-                    //                                               .FirstOrDefault();
-
-                    //if (log == null || log.isVoided == true)
-                    //{
-                    //    patronInfo.isPrint = 1;
-                    //}
-
                     bool flgDisplayBtnPrint = dao.getMiniBuffetLogs().Exists(item => item.isPrinted == true && item.PlayerID == patronInfo.PlayerID);
                     if (flgDisplayBtnPrint == false)
                     {
                         patronInfo.isPrint = 1;
                     }
                 }
-
             }
             
 

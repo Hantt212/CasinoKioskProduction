@@ -8,7 +8,7 @@
 
 @section HeaderContent
 {
-    <h2>MID AUTUME FESTIVAL LUCKY DRAW</h2>
+    <h2>HOTRAM REWARDS PROMOTION</h2>
 }
 
 <style>
@@ -20,9 +20,11 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <form action="/HTRTicketPromotion/MidAutumePromotion" method="post">
-                    <div class="row">
-                        <div class="input-group col-md-6">
+                <form action="/HTRTicketPromotion/HTRPromotion" method="post">
+                    <div class="row col-md-12">
+                        <select id="promotionCombo" name="promotionCombo" class="form-select form-control col-md-6" style="font-weight:bold" required>
+                        </select>
+                        <div class="input-group col-md-4">
                             <input type="number" class="form-control" onchange="hideInfo()" onkeypress="hideInfo()" onkeyup="hideInfo()" placeholder="Search for PID..." aria-label="Search" aria-describedby="basic-addon2" name="PatronID" required>
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit" id="btnSearch">
@@ -70,11 +72,11 @@
                                 <div class="col-md-12">
                                     @if (ViewBag.patronInfo.Quantity == 1)
                                     {
-                                        <button type="button" id="midAutPrintBtn" class="btn btn-primary mt-3" style="float: right" onclick="PrintMidAutume(@ViewBag.patronInfo.PlayerID, '@ViewBag.patronInfo.PlayerName')">Print</button>
+                                        <button type="button" id="proPrintBtn" class="btn btn-primary mt-3" style="float: right" onclick="PrintHTRPromotion(@ViewBag.patronInfo.PlayerID, @ViewBag.patronInfo.PromotionId)">Print</button>
                                     }
                                     else
                                     {
-                                        <button type="button" id="midAutPrintBtn" class="btn btn-primary mt-3 disabled" style="float: right" >Print</button>
+                                        <button type="button" id="proPrintBtn" class="btn btn-primary mt-3 disabled" style="float: right" >Print</button>
                                     }
 
 
@@ -119,10 +121,10 @@
                                     <td>@patron.PrintedDate</td>
                                     <td>@patron.PrintedBy</td>
                                     <td>
-                                        @Html.ActionLink("Reprint", "ReprintMidAutumePromotion", "HTRTicketPromotion", new { ID = patron.ID }
+                                        @Html.ActionLink("Reprint", "ReprintHTRPromotion", "HTRTicketPromotion", new { ID = patron.ID}
                                         , new
                                         {
-                                            onclick = "ReprintMidAutume()",
+                                            onclick = "ReprintHTRPromotion()",
                                             target = "_blank"
                                         })
                                     </td>
@@ -189,7 +191,8 @@
     </div>
 </div>
 
-@section scriptTicketPromotion
+
+@section scriptPromotion
 {
-    <script src="~/Assets/Admin/js/htrTicketPromotion.js?n=2"></script>
+    <script src="~/Assets/Admin/js/promotion.js?n=2"></script>
 }

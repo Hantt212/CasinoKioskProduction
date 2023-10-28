@@ -13,10 +13,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/18/2020 20:56:42</publishTime>
     </File>
     <File Include="Assets/Admin/css/bootstrap.min.css">
-      <publishTime>03/01/2023 14:18:37</publishTime>
+      <publishTime>01/03/2023 14:18:37</publishTime>
     </File>
     <File Include="Assets/Admin/css/buttons.dataTables.min.css">
-      <publishTime>03/01/2023 15:11:12</publishTime>
+      <publishTime>01/03/2023 15:11:12</publishTime>
     </File>
     <File Include="Assets/Admin/img/usericon.png">
       <publishTime>10/15/2020 08:55:10</publishTime>
@@ -25,46 +25,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/07/2022 15:03:00</publishTime>
     </File>
     <File Include="Assets/Admin/js/activity.js">
-      <publishTime>07/05/2022 15:36:32</publishTime>
+      <publishTime>05/07/2022 15:36:32</publishTime>
     </File>
     <File Include="Assets/Admin/js/analyst.js">
-      <publishTime>10/07/2022 09:54:38</publishTime>
+      <publishTime>07/10/2022 09:54:38</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/buttons.html5.min.js">
-      <publishTime>03/01/2023 15:10:08</publishTime>
+      <publishTime>01/03/2023 15:10:08</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/dataTables.buttons.min.js">
-      <publishTime>03/01/2023 15:16:30</publishTime>
+      <publishTime>01/03/2023 15:16:30</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/jszip.min.js">
-      <publishTime>03/01/2023 15:10:08</publishTime>
+      <publishTime>01/03/2023 15:10:08</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/pdfmake.min.js">
-      <publishTime>03/01/2023 15:10:08</publishTime>
+      <publishTime>01/03/2023 15:10:08</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/vfs_fonts.js">
-      <publishTime>03/01/2023 15:10:08</publishTime>
+      <publishTime>01/03/2023 15:10:08</publishTime>
     </File>
     <File Include="Assets/Admin/js/fcUser.js">
       <publishTime>06/07/2022 11:32:52</publishTime>
     </File>
     <File Include="Assets/Admin/js/htrTicketPromotion.js">
-      <publishTime>09/26/2023 10:26:36</publishTime>
+      <publishTime>10/26/2023 14:37:48</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery-1.11.0.js">
-      <publishTime>03/01/2023 10:46:43</publishTime>
+      <publishTime>01/03/2023 10:46:43</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.table2excel.js">
       <publishTime>04/15/2021 14:52:13</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.unobtrusive-ajax.js">
-      <publishTime>03/02/2022 13:18:22</publishTime>
+      <publishTime>02/03/2022 13:18:22</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.unobtrusive-ajax.min.js">
-      <publishTime>03/02/2022 13:18:22</publishTime>
+      <publishTime>02/03/2022 13:18:22</publishTime>
     </File>
     <File Include="Assets/Admin/js/marketAuth.js">
-      <publishTime>03/02/2023 09:24:41</publishTime>
+      <publishTime>02/03/2023 09:24:41</publishTime>
     </File>
     <File Include="Assets/Admin/js/patronUser.js">
       <publishTime>07/15/2022 14:52:42</publishTime>
@@ -74,6 +74,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Assets/Admin/js/playerCard.js">
       <publishTime>10/14/2023 14:33:24</publishTime>
+    </File>
+    <File Include="Assets/Admin/js/promotion.js">
+      <publishTime>10/26/2023 15:00:51</publishTime>
     </File>
     <File Include="Assets/Admin/js/sb-admin-2.js">
       <publishTime>08/18/2020 21:01:05</publishTime>
@@ -122,6 +125,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Assets/Reports/HTRGoldenHourPromotionByIDDataSet.xss">
       <publishTime>04/14/2023 11:22:14</publishTime>
+    </File>
+    <File Include="Assets/Reports/HTRPromotion.aspx">
+      <publishTime>10/27/2023 09:31:51</publishTime>
     </File>
     <File Include="Assets/Reports/MidAutumePromotion.aspx">
       <publishTime>09/26/2023 10:35:12</publishTime>
@@ -193,7 +199,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/23/2022 13:51:50</publishTime>
     </File>
     <File Include="bin/Assets/Reports/CasinoTGSTicket.rdlc">
-      <publishTime>09/08/2022 15:36:56</publishTime>
+      <publishTime>08/09/2022 15:36:56</publishTime>
     </File>
     <File Include="bin/Assets/Reports/DailyBonusLog.rdlc">
       <publishTime>03/16/2022 11:26:42</publishTime>
@@ -211,7 +217,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/18/2023 09:06:42</publishTime>
     </File>
     <File Include="bin/Assets/Reports/MiniBuffet.rdlc">
-      <publishTime>09/18/2023 09:17:59</publishTime>
+      <publishTime>10/24/2023 11:01:02</publishTime>
     </File>
     <File Include="bin/Assets/Reports/PointsRedemptionLog.rdlc">
       <publishTime>03/16/2022 14:10:21</publishTime>
@@ -238,28 +244,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/16/2022 12:21:58</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
-      <publishTime>12/08/2020 18:05:32</publishTime>
+      <publishTime>08/12/2020 18:05:32</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.dll">
-      <publishTime>10/14/2023 15:06:01</publishTime>
+      <publishTime>10/27/2023 08:57:50</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.XmlSerializers.dll">
-      <publishTime>10/14/2023 15:06:02</publishTime>
+      <publishTime>10/27/2023 08:57:50</publishTime>
     </File>
     <File Include="bin/CKDatabaseConnection.dll">
-      <publishTime>10/14/2023 15:05:58</publishTime>
+      <publishTime>10/27/2023 08:57:46</publishTime>
     </File>
     <File Include="bin/de/PdfSharp.Charting.resources.dll">
-      <publishTime>02/04/2019 13:21:54</publishTime>
+      <publishTime>04/02/2019 13:21:54</publishTime>
     </File>
     <File Include="bin/de/PdfSharp.resources.dll">
-      <publishTime>02/04/2019 13:21:52</publishTime>
+      <publishTime>04/02/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>11/03/2015 17:43:42</publishTime>
+      <publishTime>03/11/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>11/03/2015 17:43:42</publishTime>
+      <publishTime>03/11/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/grpc_csharp_ext.x64.dll">
       <publishTime>05/24/2022 00:32:18</publishTime>
@@ -277,25 +283,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2022 10:14:46</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>12/07/2015 19:04:38</publishTime>
+      <publishTime>07/12/2015 19:04:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>03/10/2016 14:26:18</publishTime>
+      <publishTime>10/03/2016 14:26:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>03/09/2016 12:00:14</publishTime>
+      <publishTime>09/03/2016 12:00:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>03/10/2016 14:26:26</publishTime>
+      <publishTime>10/03/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>03/09/2016 11:57:34</publishTime>
+      <publishTime>09/03/2016 11:57:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>11/25/2019 10:57:50</publishTime>
@@ -310,7 +316,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/29/2015 21:27:38</publishTime>
     </File>
     <File Include="bin/Microsoft.SqlServer.Types.dll">
-      <publishTime>12/10/2016 15:26:34</publishTime>
+      <publishTime>10/12/2016 15:26:34</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>04/23/2012 15:23:58</publishTime>
@@ -325,10 +331,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/30/2013 18:15:20</publishTime>
     </File>
     <File Include="bin/PdfSharp.Charting.dll">
-      <publishTime>02/04/2019 13:21:52</publishTime>
+      <publishTime>04/02/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/PdfSharp.dll">
-      <publishTime>02/04/2019 13:21:52</publishTime>
+      <publishTime>04/02/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>06/18/2015 20:19:46</publishTime>
@@ -385,7 +391,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2018 12:59:46</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>02/11/2014 15:26:04</publishTime>
+      <publishTime>11/02/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
       <publishTime>11/28/2018 13:00:12</publishTime>
@@ -819,11 +825,17 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="PointsRedemptionLogDataSet.xss">
       <publishTime>03/16/2022 12:09:09</publishTime>
     </File>
+    <File Include="PromotionDataSet.xsc">
+      <publishTime>10/26/2023 15:02:50</publishTime>
+    </File>
+    <File Include="PromotionDataSet.xss">
+      <publishTime>10/26/2023 15:02:50</publishTime>
+    </File>
     <File Include="ReportDataSet.xsc">
-      <publishTime>10/05/2020 05:40:02</publishTime>
+      <publishTime>05/10/2020 05:40:02</publishTime>
     </File>
     <File Include="ReportDataSet.xss">
-      <publishTime>10/05/2020 05:40:02</publishTime>
+      <publishTime>05/10/2020 05:40:02</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
       <publishTime>08/18/2020 20:56:42</publishTime>
@@ -886,7 +898,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2022 11:30:02</publishTime>
     </File>
     <File Include="scripts/jquery-1.10.2.js">
-      <publishTime>07/04/2022 13:10:51</publishTime>
+      <publishTime>04/07/2022 13:10:51</publishTime>
     </File>
     <File Include="scripts/jquery-1.9.1.js">
       <publishTime>09/11/2020 05:59:52</publishTime>
@@ -946,16 +958,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/13/2021 11:11:23</publishTime>
     </File>
     <File Include="TicketPromotionByID.xsc">
-      <publishTime>09/08/2022 15:32:21</publishTime>
+      <publishTime>08/09/2022 15:32:21</publishTime>
     </File>
     <File Include="TicketPromotionByID.xss">
-      <publishTime>09/08/2022 15:32:21</publishTime>
+      <publishTime>08/09/2022 15:32:21</publishTime>
     </File>
     <File Include="TicketPromotionByIDDataSet.xsc">
-      <publishTime>09/08/2022 15:38:24</publishTime>
+      <publishTime>08/09/2022 15:38:24</publishTime>
     </File>
     <File Include="TicketPromotionByIDDataSet.xss">
-      <publishTime>09/08/2022 15:38:24</publishTime>
+      <publishTime>08/09/2022 15:38:24</publishTime>
     </File>
     <File Include="TicketPromotionByPID.xsc">
       <publishTime>09/09/2022 15:35:26</publishTime>
@@ -976,10 +988,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2023 14:06:49</publishTime>
     </File>
     <File Include="Views/ActivityTracking/Report.cshtml">
-      <publishTime>07/05/2022 16:24:03</publishTime>
+      <publishTime>05/07/2022 16:24:03</publishTime>
     </File>
     <File Include="Views/Analyst/Index.cshtml">
-      <publishTime>10/07/2022 09:56:26</publishTime>
+      <publishTime>07/10/2022 09:56:26</publishTime>
     </File>
     <File Include="Views/CasinoTGS/Index.cshtml">
       <publishTime>07/15/2022 16:10:23</publishTime>
@@ -1002,6 +1014,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Views/HTRTicketPromotion/GoldenHour.cshtml">
       <publishTime>08/09/2023 15:25:28</publishTime>
     </File>
+    <File Include="Views/HTRTicketPromotion/HTRPromotionList.cshtml">
+      <publishTime>10/26/2023 15:35:09</publishTime>
+    </File>
+    <File Include="Views/HTRTicketPromotion/HTRPromotionLog.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
     <File Include="Views/HTRTicketPromotion/Index.cshtml">
       <publishTime>09/09/2022 14:59:43</publishTime>
     </File>
@@ -1018,7 +1036,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2023 15:34:05</publishTime>
     </File>
     <File Include="Views/Items/Create.cshtml">
-      <publishTime>03/01/2023 15:27:11</publishTime>
+      <publishTime>01/03/2023 15:27:11</publishTime>
     </File>
     <File Include="Views/Items/Edit.cshtml">
       <publishTime>06/10/2022 13:54:45</publishTime>
@@ -1033,7 +1051,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/07/2023 10:16:01</publishTime>
     </File>
     <File Include="Views/Logs/DailyManual.cshtml">
-      <publishTime>08/02/2023 15:15:07</publishTime>
+      <publishTime>02/08/2023 15:15:07</publishTime>
     </File>
     <File Include="Views/Logs/FOPatronUserActionLog.cshtml">
       <publishTime>02/07/2023 10:20:56</publishTime>
@@ -1060,7 +1078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2023 09:19:47</publishTime>
     </File>
     <File Include="Views/PlayerCard/Index.cshtml">
-      <publishTime>10/14/2023 15:01:29</publishTime>
+      <publishTime>10/14/2023 15:08:03</publishTime>
     </File>
     <File Include="Views/Players/Index.cshtml">
       <publishTime>04/30/2022 09:51:14</publishTime>
@@ -1072,10 +1090,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2022 15:59:57</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/30/2023 10:06:14</publishTime>
+      <publishTime>10/24/2023 09:15:55</publishTime>
     </File>
     <File Include="Views/Shared/_MenuBar.cshtml">
-      <publishTime>09/29/2023 13:40:50</publishTime>
+      <publishTime>10/27/2023 08:47:18</publishTime>
     </File>
     <File Include="Views/Test/GetPlayerInfo.cshtml">
       <publishTime>05/18/2022 09:26:21</publishTime>
@@ -1120,7 +1138,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/28/2020 13:21:05</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>09/30/2023 13:39:36</publishTime>
+      <publishTime>10/26/2023 15:43:51</publishTime>
     </File>
     <File Include="webfonts/fa-brands-400.eot">
       <publishTime>07/28/2022 11:30:02</publishTime>

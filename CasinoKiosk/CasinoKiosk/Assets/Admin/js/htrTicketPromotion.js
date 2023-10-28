@@ -312,38 +312,6 @@ function VoidSundayPromotion(ID) {
 }
 //Sunday promotion end
 
-//Mid Autume start
-function PrintMidAutume(playerID, playerName) {
-    $('#midAutPrintBtn').prop('disabled', true);
-    window.open('/HTRTicketPromotion/PrintMidAutumePromotion?PlayerID=' + playerID + "&PlayerName=" + playerName)
-}
-
-function ReprintMidAutume() {
-    $('#midAutPrintBtn').prop('disabled', true);
-    return confirm('Are you sure you wish to reprint this ticket?');
-}
-
-function VoidMidAutume(ID) {
-    if (confirm('Are you sure you want to void this ticket?')) {
-
-        $.ajax({
-            url: "/HTRTicketPromotion/VoidMidAutumePromotion/" + ID,
-            type: "POST",
-            contentType: "application/json;charset=UTF-8",
-            dataType: "json",
-            success: function (result) {
-                window.location.reload();
-
-            },
-            error: function (errormessage) {
-                alert('You do not have permission');
-            }
-        });
-        return false;
-    }
-}
-//Mid Autume end
-
 function hideInfo() {
     $('#formPatronInfoMiniBuffet').hide();
 }

@@ -20,7 +20,7 @@ namespace CKDatabaseConnection.EF
         {
             this.CasinoKioskUserRoles = new HashSet<CasinoKioskUserRole>();
         }
-        
+    
         [Key]
         public int UserID { get; set; }
         public string CasinoKiosk_UserName { get; set; }

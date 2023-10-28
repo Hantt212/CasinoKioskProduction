@@ -66,6 +66,9 @@
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_SundayGoldenHourLog" Width="1.5" PointX="16.375" PointY="21.75" />
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_MidAutumeLog" Width="1.5" PointX="0.75" PointY="22.75" />
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTR_MidAutumePlayers" Width="1.5" PointX="2.75" PointY="22.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRPromotion" Width="1.5" PointX="22.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRPromotionLog" Width="2.25" PointX="13.375" PointY="22.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRPromotionPlayer" Width="2.25" PointX="22.375" PointY="15.75" IsExpanded="true" />
     
         </Diagram>
     </edmx:Diagrams>

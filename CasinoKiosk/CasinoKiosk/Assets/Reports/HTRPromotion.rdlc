@@ -2,18 +2,18 @@
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:cl="http://schemas.microsoft.com/sqlserver/reporting/2010/01/componentdefinition" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/reportdefinition">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="MidAutumeDataSet">
+    <DataSource Name="PromotionDataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>db7374f4-2d1e-4537-b26c-712c740e206e</rd:DataSourceID>
+      <rd:DataSourceID>954e5348-0f78-48f6-8b24-f077a5fa5ea5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="MidAutume">
+    <DataSet Name="Promotion">
       <Query>
-        <DataSourceName>MidAutumeDataSet</DataSourceName>
+        <DataSourceName>PromotionDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -33,42 +33,30 @@
           <DataField>PrintedDate</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="PrintedBy">
-          <DataField>PrintedBy</DataField>
+        <Field Name="PromotionName">
+          <DataField>PromotionName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="isPrinted">
-          <DataField>isPrinted</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="ReprintedBy">
-          <DataField>ReprintedBy</DataField>
+        <Field Name="PromotionContent">
+          <DataField>PromotionContent</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ReprintedDate">
-          <DataField>ReprintedDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
+        <Field Name="Condition">
+          <DataField>Condition</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="isVoided">
-          <DataField>isVoided</DataField>
-          <rd:TypeName>System.Boolean</rd:TypeName>
-        </Field>
-        <Field Name="VoidedDate">
-          <DataField>VoidedDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="VoidedBy">
-          <DataField>VoidedBy</DataField>
+        <Field Name="LuckyDate">
+          <DataField>LuckyDate</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>MidAutumeDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\igt.admin\Desktop\CasinoKiosk13Jan2021\CasinoKiosk\CasinoKiosk\MidAutumeDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>spHTR_MidAutumeLogByID</rd:TableName>
+        <rd:DataSetName>PromotionDataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKioskProduction.git\trunk\CasinoKiosk\CasinoKiosk\CasinoKiosk\PromotionDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>spHTR_PromotionLogByID</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>spHTR_MidAutumeLogByIDTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>spHTR_PromotionLogByIDTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -94,8 +82,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>0.47067in</Top>
-            <Left>1.28615in</Left>
+            <Top>0.28611in</Top>
+            <Left>1.26705in</Left>
             <Height>0.23622in</Height>
             <Width>0.63541in</Width>
             <Style>
@@ -124,8 +112,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>0.79011in</Top>
-            <Left>1.28615in</Left>
+            <Top>0.60555in</Top>
+            <Left>1.26705in</Left>
             <Height>0.20855in</Height>
             <Width>0.63541in</Width>
             <ZIndex>1</ZIndex>
@@ -157,8 +145,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>1.37344in</Top>
-            <Left>0.13938in</Left>
+            <Top>1.04357in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
             <Width>1.27083in</Width>
             <ZIndex>2</ZIndex>
@@ -190,10 +178,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>1.65121in</Top>
-            <Left>0.13938in</Left>
+            <Top>1.33523in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
-            <Width>2.72051in</Width>
+            <Width>2.75263in</Width>
             <ZIndex>3</ZIndex>
             <Style>
               <Border />
@@ -225,10 +213,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PlayerID</rd:DefaultName>
-            <Top>1.94289in</Top>
-            <Left>1.40247in</Left>
+            <Top>1.64079in</Top>
+            <Left>1.35472in</Left>
             <Height>0.25in</Height>
-            <Width>1.44787in</Width>
+            <Width>1.49562in</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border />
@@ -257,8 +245,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>1.95677in</Top>
-            <Left>0.13938in</Left>
+            <Top>1.64079in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
             <Width>0.9375in</Width>
             <ZIndex>5</ZIndex>
@@ -289,8 +277,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>2.24497in</Top>
-            <Left>0.13938in</Left>
+            <Top>1.92899in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
             <Width>1.26309in</Width>
             <ZIndex>6</ZIndex>
@@ -324,10 +312,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>PlayerName</rd:DefaultName>
-            <Top>2.24497in</Top>
-            <Left>1.39292in</Left>
+            <Top>1.92899in</Top>
+            <Left>1.35472in</Left>
             <Height>0.25in</Height>
-            <Width>1.45742in</Width>
+            <Width>1.48607in</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border />
@@ -357,8 +345,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.13732in</Top>
-            <Left>0.14893in</Left>
+            <Top>3.82134in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
             <Width>2.72051in</Width>
             <ZIndex>8</ZIndex>
@@ -394,8 +382,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.41163in</Top>
-            <Left>0.14893in</Left>
+            <Top>4.09565in</Top>
+            <Left>0.11073in</Left>
             <Height>0.44792in</Height>
             <Width>2.71096in</Width>
             <ZIndex>9</ZIndex>
@@ -428,8 +416,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>4.90122in</Top>
-            <Left>0.13938in</Left>
+            <Top>4.61301in</Top>
+            <Left>0.10118in</Left>
             <Height>0.25in</Height>
             <Width>2.71096in</Width>
             <ZIndex>10</ZIndex>
@@ -463,8 +451,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>TicketNo</rd:DefaultName>
-            <Top>3.45327cm</Top>
-            <Left>3.61721cm</Left>
+            <Top>2.65068cm</Top>
+            <Left>3.62602cm</Left>
             <Height>0.67028cm</Height>
             <Width>3.62265cm</Width>
             <ZIndex>11</ZIndex>
@@ -498,8 +486,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>IssuedDate</rd:DefaultName>
-            <Top>1.19549cm</Top>
-            <Left>4.98659cm</Left>
+            <Top>0.72672cm</Top>
+            <Left>4.93807cm</Left>
             <Height>0.6cm</Height>
             <Width>2.30179cm</Width>
             <ZIndex>12</ZIndex>
@@ -533,142 +521,14 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>IssuedTime</rd:DefaultName>
-            <Top>1.97188cm</Top>
-            <Left>4.95132cm</Left>
+            <Top>1.50311cm</Top>
+            <Left>4.9028cm</Left>
             <Height>0.52972cm</Height>
             <Width>2.33706cm</Width>
             <ZIndex>13</ZIndex>
             <Style>
               <Border />
               <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox25">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>MID AUTUMN FESTIVAL LUCKY DRAW</Value>
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Center</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Prize Structures:
-
-1 x F&amp;B coupon of USD888 net to be used at JBX or TG Bistro.</Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>
-2 x Accommodation vouchers at Villas of Ixora with one spa treatment for two people (applicable for weekday and weekend).
-
-3 x PMPV at USD2000 each.</Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Lucky Draw Date:    </Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=CDate(Fields!PrintedDate.Value).ToString("dd/MM/yyyy")</Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <Format>dd-MM-yyyy</Format>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Each participant will be given 01 free lucky draw ticket when joining the VIP Event.
-</Value>
-                    <Style>
-                      <FontSize>9pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>2.77623in</Top>
-            <Left>0.12983in</Left>
-            <Height>1.19095in</Height>
-            <Width>2.72051in</Width>
-            <ZIndex>14</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Top</VerticalAlign>
               <PaddingLeft>2pt</PaddingLeft>
               <PaddingRight>2pt</PaddingRight>
               <PaddingTop>2pt</PaddingTop>
@@ -694,11 +554,11 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox17</rd:DefaultName>
-            <Top>2.53664in</Top>
-            <Left>0.13938in</Left>
-            <Height>0.19792in</Height>
-            <Width>2.72051in</Width>
-            <ZIndex>15</ZIndex>
+            <Top>2.23455in</Top>
+            <Left>0.09163in</Left>
+            <Height>0.17014in</Height>
+            <Width>2.76218in</Width>
+            <ZIndex>14</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -714,22 +574,151 @@
             <Source>Embedded</Source>
             <Value>RoseGold600x600</Value>
             <Sizing>FitProportional</Sizing>
-            <Top>0.46877cm</Top>
-            <Left>0.11722cm</Left>
-            <Height>2.84339cm</Height>
+            <Top>0cm</Top>
+            <Left>0.0687cm</Left>
+            <Height>2.63172cm</Height>
             <Width>2.78271cm</Width>
-            <ZIndex>16</ZIndex>
+            <ZIndex>15</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Image>
+          <Textbox Name="PromotionName">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=UCase(Fields!PromotionName.Value)</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.43247in</Top>
+            <Left>0.09163in</Left>
+            <Height>0.25in</Height>
+            <Width>2.75871in</Width>
+            <ZIndex>16</ZIndex>
+            <Style>
+              <Border />
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="PromotionName2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!PromotionContent.Value</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.87761in</Top>
+            <Left>0.09163in</Left>
+            <Height>0.39651in</Height>
+            <Width>2.76783in</Width>
+            <ZIndex>17</ZIndex>
+            <Style>
+              <Border />
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="PromotionName3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!Condition.Value</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>3.3144in</Top>
+            <Left>0.09163in</Left>
+            <Height>0.40972in</Height>
+            <Width>2.75871in</Width>
+            <ZIndex>18</ZIndex>
+            <Style>
+              <Border />
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="PromotionName4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Fields!LuckyDate.Value</Value>
+                    <Style>
+                      <FontSize>9pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <Top>2.65592in</Top>
+            <Left>0.09163in</Left>
+            <Height>0.20641in</Height>
+            <Width>2.76783in</Width>
+            <ZIndex>19</ZIndex>
+            <Style>
+              <Border />
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>13.45847cm</Height>
+        <Height>12.7441cm</Height>
         <Style />
       </Body>
-      <Width>7.66666cm</Width>
+      <Width>7.6402cm</Width>
       <Page>
         <PageHeight>16cm</PageHeight>
         <PageWidth>8cm</PageWidth>

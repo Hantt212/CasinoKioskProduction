@@ -208,6 +208,7 @@
     <Content Include="Assets\Admin\js\patronUser.js" />
     <Content Include="Assets\Admin\js\player.js" />
     <Content Include="Assets\Admin\js\playerCard.js" />
+    <Content Include="Assets\Admin\js\promotion.js" />
     <Content Include="Assets\Admin\js\sb-admin-2.js" />
     <Content Include="Assets\Admin\js\sb-admin-2.min.js" />
     <Content Include="Assets\Admin\js\user.js" />
@@ -221,7 +222,7 @@
     <Content Include="Assets\Reports\css\theme.css" />
     <Content Include="Assets\Reports\css\triangle.css" />
     <Content Include="Assets\Reports\DailyPSBundleTicket.aspx" />
-    <Content Include="Assets\Reports\MidAutumePromotion.aspx" />
+    <Content Include="Assets\Reports\HTRPromotion.aspx" />
     <Content Include="Assets\Reports\SundayPromotion.aspx" />
     <Content Include="Assets\Reports\MiniBuffetTicket.aspx" />
     <Content Include="Assets\Reports\GoldenHourTicket.aspx" />
@@ -553,17 +554,6 @@
     <Content Include="MiniBuffetDataSet.xsc">
       <DependentUpon>MiniBuffetDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="MidAutumeDataSet.xsc">
-      <DependentUpon>MidAutumeDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="MidAutumeDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MidAutumeDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="MidAutumeDataSet.xss">
-      <DependentUpon>MidAutumeDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="MiniBuffetDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>MiniBuffetDataSet.Designer.cs</LastGenOutput>
@@ -579,6 +569,17 @@
     </None>
     <Content Include="PointsRedemptionLogDataSet.xss">
       <DependentUpon>PointsRedemptionLogDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="PromotionDataSet.xsc">
+      <DependentUpon>PromotionDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PromotionDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PromotionDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PromotionDataSet.xss">
+      <DependentUpon>PromotionDataSet.xsd</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\CasinoKioskProduction.pubxml" />
     <None Include="Properties\PublishProfiles\Website.pubxml" />
@@ -737,8 +738,9 @@
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Views\HTRTicketPromotion\SundayPromotion.cshtml" />
-    <Content Include="Views\HTRTicketPromotion\MidAutumePromotion.cshtml" />
+    <Content Include="Views\HTRTicketPromotion\HTRPromotionLog.cshtml" />
     <Content Include="Views\PlayerCard\Index.cshtml" />
+    <Content Include="Views\HTRTicketPromotion\HTRPromotionList.cshtml" />
     <None Include="Web References\WebServiceCasino\WebServiceCasino.disco">
       <SubType>Designer</SubType>
     </None>
@@ -788,12 +790,12 @@
     <Compile Include="Assets\Reports\DailyPSBundleTicket.aspx.designer.cs">
       <DependentUpon>DailyPSBundleTicket.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Assets\Reports\MidAutumePromotion.aspx.cs">
-      <DependentUpon>MidAutumePromotion.aspx</DependentUpon>
+    <Compile Include="Assets\Reports\HTRPromotion.aspx.cs">
+      <DependentUpon>HTRPromotion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Assets\Reports\MidAutumePromotion.aspx.designer.cs">
-      <DependentUpon>MidAutumePromotion.aspx</DependentUpon>
+    <Compile Include="Assets\Reports\HTRPromotion.aspx.designer.cs">
+      <DependentUpon>HTRPromotion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Assets\Reports\SundayPromotion.aspx.cs">
       <DependentUpon>SundayPromotion.aspx</DependentUpon>
@@ -902,11 +904,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ITHoTram_CustomReportDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MidAutumeDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MidAutumeDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MiniBuffetDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -914,6 +911,11 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\UserIdentity.cs" />
+    <Compile Include="PromotionDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PromotionDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Services\AccountMembershipService.cs" />
     <Compile Include="Assets\Reports\CifePlayers.aspx.cs">
       <DependentUpon>CifePlayers.aspx</DependentUpon>
@@ -1078,7 +1080,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Assets\Reports\MidAutumeReport.rdlc" />
+    <EmbeddedResource Include="Assets\Reports\HTRPromotion.rdlc" />
     <EmbeddedResource Include="Assets\Reports\SundayPromotion.rdlc" />
     <EmbeddedResource Include="Assets\Reports\HTRGoldenHourPromotion.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
