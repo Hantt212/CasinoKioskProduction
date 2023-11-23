@@ -12,6 +12,7 @@
     <Property Name="DateUpdated" Type="datetime" />
     <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
     <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="PassportID" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="RA_SecurityModelStoreContainer">
     <EntitySet Name="FCardIDRefPID" EntityType="Self.FCardIDRefPID" Schema="dbo" store:Type="Tables" />

@@ -843,6 +843,7 @@ namespace CKDatabaseConnection.DAO
 
             }
         }
+        // public void updateItemDailyStatusYesterday(int playerID, DateTime playerGamingDate)
         public void updateItemDailyStatusYesterday(int playerID)
         {
 
@@ -854,7 +855,7 @@ namespace CKDatabaseConnection.DAO
                     con.Open();
                     cmd.Connection = con;
                     cmd.Parameters.Add(new SqlParameter("@playerID", playerID));
-                    //cmd.Parameters.Add(new SqlParameter("@status", status));
+                   // cmd.Parameters.Add(new SqlParameter("@gamingDate", playerGamingDate.ToString("dd/MM/yyyy").Replace("-", "/")));
                     //cmd.Parameters.Add(new SqlParameter("@itemPoints", itemPoints));
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
@@ -921,7 +922,7 @@ namespace CKDatabaseConnection.DAO
                     cmd.Connection = con;
                     cmd.Parameters.Add(new SqlParameter("@PlayerID", playerID));
                     cmd.Parameters.Add(new SqlParameter("@ItemPoints", itemPoints));
-                    //cmd.Parameters.Add(new SqlParameter("@itemPoints", itemPoints));
+                    //cmd.Parameters.Add(new SqlParameter("@GamingDate", gamingDate.ToString("dd/MM/yyyy").Replace("-", "/")));
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();
                 }

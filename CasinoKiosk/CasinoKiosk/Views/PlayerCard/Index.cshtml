@@ -20,12 +20,14 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <form action="/PlayerCard/RegisterPlayer" method="post" onsubmit="submitForm(event)">
+                <form action="/PlayerCard/RegisterPlayer" method="post" onsubmit="submitForm(event)" autocomplete="off">
                     <div class="input-group col-md-12">
                         <label class="col-md-1">Card ID</label>
                         <input type="number" class="form-control col-md-2" id="fCardID" placeholder="Enter Card ID..." name="fCardID" onchange="changeFCardID()" required>
                         <label class="col-md-1">Patron ID</label>
                         <input type="number" class="form-control col-md-2" id="patronID" placeholder="Enter Patron ID..." name="patronID" required>
+                        <label class="col-md-1">Passport ID</label>
+                        <input type="number" class="form-control col-md-2" id="passportID" placeholder="Enter Passport ID..." name="passportID" required>
                         
                         <label for="chkVisitor" class="ml-3">
                             Is Visitor
@@ -49,6 +51,7 @@
                     <tr>
                         <th>CardID</th>
                         <th>PlayerID</th>
+                        <th>Passport</th>
                         <th>Type</th>
                         <th>Active</th>
                         <th>Inserted Date</th>
@@ -121,5 +124,5 @@
 
 @section scriptTicketPromotion
 {
-    <script src="~/Assets/Admin/js/playerCard.js?n=7"></script>
+    <script src="~/Assets/Admin/js/playerCard.js?n=8"></script>
 }

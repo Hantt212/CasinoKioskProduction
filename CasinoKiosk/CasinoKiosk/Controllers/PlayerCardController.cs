@@ -17,10 +17,10 @@ namespace CasinoKiosk.Controllers
         }
 
         [HttpPost]
-        public JsonResult RegisterPlayer(int fcardId, string patronId, bool isVisitor)
+        public JsonResult RegisterPlayer(string fcardId, string patronId,string passportId, bool isVisitor)
         {
             var dao = new PlayerDao();
-            long exist = dao.InsertFCardID(fcardId.ToString(), patronId, isVisitor);
+            long exist = dao.InsertFCardID(fcardId, patronId, passportId, isVisitor);
             return Json(exist, JsonRequestBehavior.AllowGet);
         }
 
@@ -33,6 +33,7 @@ namespace CasinoKiosk.Controllers
                                  ID = item.ID,
                                  FCardID = item.FCardID,
                                  PID = item.PID,
+                                 PassportID = item.PassportID,
                                  IsActive = item.IsActive,
                                  IsVisitor = item.Remark,
                                  DateInserted = item.DateInserted.ToString(),

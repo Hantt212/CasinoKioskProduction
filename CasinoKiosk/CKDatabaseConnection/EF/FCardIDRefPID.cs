@@ -22,5 +22,6 @@ namespace CKDatabaseConnection.EF
         public string UpdatedBy { get; set; }
         public Nullable<bool> IsActive { get; set; }
         public string Remark { get; set; }
+        public string PassportID { get; set; }
     }
 }

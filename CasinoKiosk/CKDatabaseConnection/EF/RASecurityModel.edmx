@@ -17,6 +17,7 @@
           <Property Name="DateUpdated" Type="datetime" />
           <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
           <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="PassportID" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="RA_SecurityModelStoreContainer">
           <EntitySet Name="FCardIDRefPID" EntityType="Self.FCardIDRefPID" Schema="dbo" store:Type="Tables" />
@@ -37,6 +38,7 @@
           <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsActive" Type="Boolean" />
           <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PassportID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="RA_SecurityEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="FCardIDRefPIDs" EntityType="Self.FCardIDRefPID" />
@@ -50,6 +52,7 @@
           <EntitySetMapping Name="FCardIDRefPIDs">
             <EntityTypeMapping TypeName="RA_SecurityModel.FCardIDRefPID">
               <MappingFragment StoreEntitySet="FCardIDRefPID">
+                <ScalarProperty Name="PassportID" ColumnName="PassportID" />
                 <ScalarProperty Name="Remark" ColumnName="Remark" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="ID" ColumnName="ID" />

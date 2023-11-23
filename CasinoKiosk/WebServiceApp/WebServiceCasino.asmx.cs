@@ -104,7 +104,7 @@ namespace WebServiceApp
                             currentPlayerPoints = Convert.ToInt32(ds.Tables[0].Rows[0]["NewPlayerBalance"].ToString());
 
                             ok = 1;
-                            
+
                             log.LogName = itemName;
 
                             DateTime now = DateTime.Now;
@@ -362,7 +362,7 @@ namespace WebServiceApp
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public RedeemLogDailyPSbundleFirst RedeemDailyPSBundleFirst(int playerID)
-        {            
+        {
             ITHoTram_CustomReportEntities entity = new ITHoTram_CustomReportEntities();
             DailyPSBundle_Players player = new DailyPSBundle_Players();
             DailyPSBundle_Items item = new DailyPSBundle_Items();
@@ -426,9 +426,9 @@ namespace WebServiceApp
             DailyPSBundle_Items item = new DailyPSBundle_Items();
 
             DailyPSBundle_Logs log = new DailyPSBundle_Logs();
-               
+
             int maxID = 0;
-           
+
             item = entity.DailyPSBundle_Items.SingleOrDefault(x => x.ID == itemID);
 
             item.Status = 2;
@@ -651,7 +651,6 @@ namespace WebServiceApp
             else
             {
                 function.updatePlayerDailyPoints(playerID, playerPointsDaily);
-                //function.updatePlayerGamingDate(playerID, currentDay);
             }
 
             //if items not existed.
@@ -659,7 +658,6 @@ namespace WebServiceApp
             {
                 function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "Last actived Date: " + playerGamingDate);
                 function.updatePlayerGamingDate(playerID, currentDay);
-                //function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "Update today gaming date into Players table: " + currentDay.ToString("dd/MM/yyyy"));
                 switch (dailyPoints)
                 {
                     case 1000:
@@ -691,7 +689,7 @@ namespace WebServiceApp
             else
             {
                 //compare last player gaming date vs current gaming date/yesterday
-                
+
                 function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "CurrentDate: " + currentDay.ToString("dd/MM/yyyy") + " itemPoints: " + dailyPoints.ToString());
                 function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "GamingDate: " + playerGamingDate.ToString("dd/MM/yyyy"));
                 if (playerGamingDate < currentDay)
@@ -699,6 +697,7 @@ namespace WebServiceApp
                     if (playerGamingDate == yesterday)
                     {
                         //Move Items from Today to Yesterday
+                        //function.updateItemDailyStatusYesterday(playerID, playerGamingDate);
                         function.updateItemDailyStatusYesterday(playerID);
                         function.updateItemDailyStatusAll(playerID, 0);
                         function.updatePlayerGamingDate(playerID, currentDay);
@@ -709,7 +708,7 @@ namespace WebServiceApp
                         yesterdayList.ForEach(item =>
                         {
                             function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "ItemName: " + item.ItemName + " Status: " + item.Status.ToString());
-                        });                  
+                        });
                     }
                     else
                     {
@@ -721,36 +720,40 @@ namespace WebServiceApp
                     }
                 }
 
-                switch (dailyPoints)
+                //function.updateItemDailyStatusNew(playerID, dailyPoints, playerGamingDate);
+                //switch (dailyPoints)
+                //{
+                //    case 1000:
+                //        this.function.updateItemDailyStatusNew(playerID, 1000);
+                //        break;
+                //    case 2000:
+                //        this.function.updateItemDailyStatusNew(playerID, 2000);
+                //        break;
+                //    case 4000:
+                //        this.function.updateItemDailyStatusNew(playerID, 4000);
+                //        break;
+                //    case 6000:
+                //        this.function.updateItemDailyStatusNew(playerID, 6000);
+                //        break;
+                //    case 8000:
+                //        this.function.updateItemDailyStatusNew(playerID, 8000);
+                //        break;
+                //    case 20000:
+                //        this.function.updateItemDailyStatusNew(playerID, 20000);
+                //        break;
+                //    default:
+                //        this.function.updateItemDailyStatusAll(playerID, 0);
+                //        break;
+                //}
+
+                if (dailyPoints > 0)
                 {
-                    case 1000:
-
-                        function.updateItemDailyStatusNew(playerID, 1000);
-                        break;
-                    case 2000:
-
-                        function.updateItemDailyStatusNew(playerID, 2000);
-                        break;
-                    case 4000:
-
-                        function.updateItemDailyStatusNew(playerID, 4000);
-                        break;
-                    case 6000:
-                        function.updateItemDailyStatusNew(playerID, 6000);
-                        break;
-                    case 8000:
-                        function.updateItemDailyStatusNew(playerID, 8000);
-                        break;
-                    //Add 20230619 Hantt start
-                    case 20000:
-                        function.updateItemDailyStatusNew(playerID, 20000);
-                        break;
-                    //Add 20230619 Hantt end
-                    default:
-
-                        function.updateItemDailyStatusAll(playerID, 0);
-                        break;
+                    this.function.updateItemDailyStatusNew(playerID, dailyPoints);
+                }else
+                {
+                    this.function.updateItemDailyStatusAll(playerID, 0);
                 }
+               
             }
 
             var dailyLog = new RedeemLogDailyFirst()
@@ -777,7 +780,7 @@ namespace WebServiceApp
             ItemsDaily itemsDaily = new ItemsDaily();
             ItemDetail itemDetail = new ItemDetail();
             List<ItemsDaily> listItemsDaily = new List<ItemsDaily>();
-  
+
 
             DataSet ds;
             int maxID = 0;
@@ -813,7 +816,7 @@ namespace WebServiceApp
                 function.updateItemDailyStatusSecondNew(playerID, itemDetail.ItemPoints, 0, type);
                 function.updateItemDailyStatusSecond(playerID, itemDetail.ID, 2, type);
                 itemDetail = GetRedeemItemDetailDailyByID(playerID, itemID, type);
-               
+
 
                 log.ID = itemDetail.ID;
                 log.PlayerID = playerID;
@@ -846,11 +849,7 @@ namespace WebServiceApp
                 log.voidedStatus = "printed";
 
                 function.updatePlayerGamingDate(playerID, currentDay);
-                // function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "Update today gaming date into Players table: " + currentDay.ToString("dd/MM/yyyy"));
 
-                //Del 20230109 Hantt start
-                //ok = 1;
-                //Del 20230109 Hantt end
                 try
                 {
                     ok = 1;
@@ -859,7 +858,7 @@ namespace WebServiceApp
                     maxID = log.ID;
 
                     function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "ItemID: " + itemDetail.ID + " has been redeemed at" + DateTime.Now.ToString("HH:mm:ss"));
-                  
+
                 }
                 catch (Exception ex)
                 {
@@ -892,11 +891,7 @@ namespace WebServiceApp
                 Points = playerPointsDaily,
                 IssuedDate = DateTime.Now.ToString("dd/MM/yyyy"),
                 IssuedTime = DateTime.Now.ToString("HH:mm:ss"),
-                //Change 20230220 Hantt start
-                //GamingDate = currentDay.ToString("dd/MM/yyyy"),
-                //Yesterday = yesterday.ToString("dd/MM/yyyy"),
                 GamingDate = log.GamingDate,
-                //Change 20230220 Hantt end
                 Status = ok,
                 Items = GetItemListDailyByPlayerID(playerID)
             };
@@ -907,7 +902,7 @@ namespace WebServiceApp
             return dailyLog;
         }
 
-        
+
         public List<ItemsDaily> GetItemListDailyByPlayerID(int ID)
         {
             List<ItemsDaily> listItemsDaily = new List<ItemsDaily>();
@@ -1311,12 +1306,12 @@ namespace WebServiceApp
                 {
                     stream = new FileStream(strpath, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
                 }
-               
+
 
 
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
-                    writer.WriteLine("======================START:  " + DateTime.Now+ "   =================" + "\n");
+                    writer.WriteLine("======================START:  " + DateTime.Now + "   =================" + "\n");
                     writer.WriteLine("PlayerID: " + playerID);
                     writer.WriteLine("GamingDate: " + gamingDate);
                     writer.WriteLine("Points: " + points.ToString());
@@ -1484,12 +1479,12 @@ namespace WebServiceApp
                             {
                                 writer.Write("All Item Detail \n");
                             }
-                                foreach (DataRow dr in ds.Tables[0].Rows)
+                            foreach (DataRow dr in ds.Tables[0].Rows)
                             {
-                               
+
                                 int id = Convert.ToInt32(dr["ID"]);
                                 string itemName = dr["ItemName"].ToString();
-                                
+
 
                                 int status = Convert.ToInt32(dr["Status"].ToString());
 
@@ -1507,7 +1502,7 @@ namespace WebServiceApp
                                 {
                                     writer.Write("ItemName: " + itemName + " Status: " + status.ToString() + "\n");
                                 }
-                                
+
                             }
                         }
                     }

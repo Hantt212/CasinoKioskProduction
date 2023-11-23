@@ -19,8 +19,9 @@ function submitForm(e) {
         url: "/PlayerCard/RegisterPlayer",
         type: 'POST',
         data: {
-            fcardId: +$("#fCardID").val(),
+            fcardId: $("#fCardID").val(),
             patronId: $("#patronID").val(),
+            passportId: $("#passportID").val(),
             isVisitor: $("#chkVisitor").prop("checked")
         },
         dataType: "json",
@@ -61,6 +62,7 @@ function loadData() {
                 columns: [
                   { "data": "FCardID" },
                   { "data": "PID" },
+                  { "data": "PassportID" },
                   { "data": "IsVisitor"},
                   { "data": "IsActive" },
                   { "data": "DateInserted" },

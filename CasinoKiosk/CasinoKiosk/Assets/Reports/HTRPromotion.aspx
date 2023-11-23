@@ -41,17 +41,24 @@
                 //        WinPrint.close();
                 //        isPrinting = false;
                 //    };
-                //   // setTimeout(function () { if (!isPrinting) { WinPrint.print(); WinPrint.close(); } }, 300);
+                //    setTimeout(function () { if (!isPrinting) { WinPrint.print(); WinPrint.close(); } }, 300);
+                //}
+                //if (navigator.useragent.tolowercase().indexof('chrome') > -1) {   // chrome browser detected?
+                //    winprint.ppclose = false;                                     // clear close flag
+                //    winprint.onbeforeunload = function () {                         // before window close event
+                //        if (window.close === false) {                           // close not ok?
+                //            return 'leaving this page will block the parent window!\nplease select "stay on this page option" and use the\ncancel button instead to close the print preview window.\n';
+                //        }
+                //    }
+                //    winprint.print();                                             // print preview
+                //    winprint.close = true;                                      // set close flag to ok.
             //}
-                if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {   // Chrome Browser Detected?
-                    WinPrint.PPClose = false;                                     // Clear Close Flag
-                    WinPrint.onbeforeunload = function () {                         // Before Window Close Event
-                        if (window.PPClose === false) {                           // Close not OK?
-                            return 'Leaving this page will block the parent window!\nPlease select "Stay on this Page option" and use the\nCancel button instead to close the Print Preview Window.\n';
-                        }
-                    }
-                    WinPrint.print();                                             // Print preview
-                    WinPrint.PPClose = true;                                      // Set Close Flag to OK.
+                if (is_chrome) {
+                    mywindow.onload = function () { // wait until all resources loaded 
+                        mywindow.focus(); // necessary for IE >= 10
+                        mywindow.print();  // change window to mywindow
+                        mywindow.close();// change window to mywindow
+                    };
                 }
                 else {
                     WinPrint.document.close(); // necessary for IE >= 10
@@ -60,13 +67,14 @@
                     WinPrint.close();
                 }
 
-
-                
-
                 return true;
             }
     </script>
-
+    <style>
+        /*#ReportPromotion_ctl09 img{
+            width: 20px
+        }*/
+    </style>
 
 </head>
 <body style="text-align: center">

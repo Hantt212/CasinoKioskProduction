@@ -76,7 +76,7 @@ namespace CKDatabaseConnection.DAO
 
 
         //Add fake Card Id start
-        public long InsertFCardID(string fcardId, string patronId, bool isVisitor)
+        public long InsertFCardID(string fcardId, string patronId, string passportId, bool isVisitor)
         {
             //Find Patron ID
             FCardIDRefPID cardInfoByPID = RAcontext.FCardIDRefPIDs.Where(item => item.PID == patronId && item.IsActive == true).OrderByDescending(item => item.DateInserted).FirstOrDefault();
@@ -102,6 +102,7 @@ namespace CKDatabaseConnection.DAO
                     cardInfoNew.FCardID = fcardId;
                     cardInfoNew.PID = patronId;
                     cardInfoNew.IsActive = true;
+                    cardInfoNew.PassportID = passportId;
                     cardInfoNew.DateInserted = DateTime.Now;
                     cardInfoNew.UpdatedBy = HttpContext.Current.Session["UserName"].ToString();
                     if (isVisitor == true)
