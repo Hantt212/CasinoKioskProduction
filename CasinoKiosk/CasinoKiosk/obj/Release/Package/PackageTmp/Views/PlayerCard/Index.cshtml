@@ -26,11 +26,12 @@
                         <input type="number" class="form-control col-md-2" id="fCardID" placeholder="Enter Card ID..." name="fCardID" onchange="changeFCardID()" required>
                         <label class="col-md-1">Patron ID</label>
                         <input type="number" class="form-control col-md-2" id="patronID" placeholder="Enter Patron ID..." name="patronID" required>
-                        
                         <label for="chkVisitor" class="ml-3">
                             Is Visitor
                         </label>
-                        <input class="ml-3 " style="width:38px; height:38px" type="checkbox" id="chkVisitor" />
+                        <input class="ml-3 " style="width:38px; height:38px" type="checkbox" id="chkVisitor"  onclick="changeIsVisitor(this)"/>
+                        <label class="col-md-1" id="lblPassportID" style="display:none">Passport ID</label>
+                        <input type="text" class="form-control col-md-2" style="display:none" id="passportID" placeholder="Enter Passport ID..." name="passportID">
                     
                         
                         <button class="btn btn-primary" type="submit" style="margin-left:100px" id="btnSearch" onclick="clickRegister()">
@@ -48,7 +49,8 @@
                 <thead>
                     <tr>
                         <th>CardID</th>
-                        <th>PlayerID</th>
+                        <th>PatronID</th>
+                        <th>Passport</th>
                         <th>Type</th>
                         <th>Active</th>
                         <th>Inserted Date</th>
@@ -77,18 +79,21 @@
 
                         <input type="hidden" id="mID" placeholder="mID" />
                     </div>
+                    <div class="form-group ">
+                        <label for="mCardID" class="font-weight-bold">Card ID</label>
+                        <input type="number" class="form-control" id="mCardID" onchange="changeMFCardID()"/>
+                    </div>
                     <div class="form-group">
                         <label for="mPID" class="font-weight-bold">Patron ID</label>
                         <input type="text" class="form-control" id="mPID" disabled />
                     </div>
                     <div class="form-group ">
-                        <label for="mCardID" class="font-weight-bold">Card ID</label>
-                        <input type="number" class="form-control" id="mCardID" />
-                    </div>
-                    <div class="form-group ">
                         <label for="mChkVisitor" class="font-weight-bold">Visitor</label>
-                        <input style="width:38px; height:38px" type="checkbox" class="form-control" id="mChkVisitor" />
-                        @*<input class="" style="width:38px; height:38px" type="checkbox" id="mChkVisitor" />*@
+                        <input style="width:38px; height:38px" type="checkbox" class="form-control" id="mChkVisitor" onclick="changeVisitorModel(this)" />
+                    </div>
+                    <div class="form-group" id="mPassportDiv" style="display: none" >
+                        <label for="mPassportID" class="font-weight-bold">Passport ID</label>
+                        <input type="text" class="form-control" id="mPassportID"  />
                     </div>
                         
 
@@ -119,7 +124,10 @@
     </div>
 </div>
 
+
+
+
 @section scriptTicketPromotion
 {
-    <script src="~/Assets/Admin/js/playerCard.js?n=7"></script>
+    <script src="~/Assets/Admin/js/playerCard.js?n=11"></script>
 }

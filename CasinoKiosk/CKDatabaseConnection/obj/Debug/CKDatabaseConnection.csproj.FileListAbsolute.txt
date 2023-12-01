@@ -229,4 +229,3 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseC
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.pdb
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.csprojResolveAssemblyReference.cache

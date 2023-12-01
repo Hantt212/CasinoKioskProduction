@@ -50,18 +50,18 @@ namespace CasinoKiosk.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult UpdateCardInfoByID(int Id, string fCardID, bool isVisitor)
+        public JsonResult UpdateCardInfoByID(int Id, string fCardID, string passport, bool isVisitor)
         {
             var dao = new PlayerDao();
             //Mode == 2 is Edit
-            return Json(dao.updateFCardID(Id, fCardID, isVisitor, true, 2), JsonRequestBehavior.AllowGet);
+            return Json(dao.updateFCardID(Id, fCardID, passport, isVisitor, true, 2), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult DelCardInfoByID(int Id)
         {
             var dao = new PlayerDao();
             //Mode == 3 is Delete
-            return Json(dao.updateFCardID(Id, null, false, false, 3), JsonRequestBehavior.AllowGet);
+            return Json(dao.updateFCardID(Id, null, null, false, false, 3), JsonRequestBehavior.AllowGet);
         }
 
     }

@@ -287,7 +287,7 @@ namespace CasinoKiosk.Areas.Admin.Controllers
             var authTicket = new FormsAuthenticationTicket(1, //version
                                                         userName, // user name
                                                         DateTime.Now,             //creation
-                                                        DateTime.Now.AddMinutes(30), //Expiration
+                                                        DateTime.Now.AddMinutes(120), //Expiration
                                                         persistanceFlag, //Persistent
                                                         userData);
 

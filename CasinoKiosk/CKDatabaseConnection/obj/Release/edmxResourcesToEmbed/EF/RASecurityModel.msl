@@ -4,6 +4,7 @@
     <EntitySetMapping Name="FCardIDRefPIDs">
       <EntityTypeMapping TypeName="RA_SecurityModel.FCardIDRefPID">
         <MappingFragment StoreEntitySet="FCardIDRefPID">
+          <ScalarProperty Name="PassportID" ColumnName="PassportID" />
           <ScalarProperty Name="Remark" ColumnName="Remark" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="ID" ColumnName="ID" />

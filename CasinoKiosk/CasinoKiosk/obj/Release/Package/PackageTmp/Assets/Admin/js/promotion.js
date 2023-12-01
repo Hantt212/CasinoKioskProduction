@@ -173,20 +173,31 @@ function loadPromotionLog() {
 
             //Get data for Log table
             var html = '';
+            var logId;
             var table = $('#logTbl').DataTable({
                 data: result,
                 columns: [
-                  { "data": "ID" },
+                  {
+                      "data": "ID",
+                      render: function (data, type, row, meta) {
+                          if (type === "display") {
+                              logId = data;
+                          }
+                          return logId;
+                      }
+                  },
                   { "data": "PlayerID" },
                   { "data": "PlayerName" },
                   { "data": "PrintedDate" },
                   { "data": "PrintedBy" },
                   {
-                      "data": "ID",
+                      "data": "isVoided",
                       render: function (data, type, row, meta) {
                           if (type === "display") {
                               var html = '';
-                              html += '<a href="/HTRTicketPromotion/ReprintHTRPromotion?ID=' + data + '" onclick="ReprintHTRPromotion()" target="_blank">Reprint</a> ';
+                              if (!data) {
+                                  html += '<a href="/HTRTicketPromotion/ReprintHTRPromotion?ID=' + logId + '" onclick="ReprintHTRPromotion()" target="_blank">Reprint</a> ';
+                              }
                               data = html;
                           }
                           return data;

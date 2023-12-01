@@ -12,6 +12,7 @@
     <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" />
     <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PassportID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityContainer Name="RA_SecurityEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="FCardIDRefPIDs" EntityType="Self.FCardIDRefPID" />

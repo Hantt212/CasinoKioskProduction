@@ -13,6 +13,8 @@ namespace CKDatabaseConnection.DAO
     {        
         ITHoTram_CustomReportEntities context = null;
         RA_SecurityEntities RAcontext = null;
+
+        string userNamecurr = HttpContext.Current.Session["UserName"].ToString();
         public PlayerDao()
         {
             context = new ITHoTram_CustomReportEntities();
@@ -87,12 +89,17 @@ namespace CKDatabaseConnection.DAO
             //Create new FCard
             FCardIDRefPID cardInfoNew = new FCardIDRefPID();
             long exist = 0;
-            if (cardInfoByPID != null)
+
+            //Session timeout
+            if (userNamecurr == null)
             {
-                exist = -1;
+                return -3;
             }
-            else
-            {
+
+
+            if (cardInfoByPID != null) {
+                exist = -1;
+            } else {
                 if (cardInfoByID != null)
                 {
                     exist = -2;
@@ -104,7 +111,7 @@ namespace CKDatabaseConnection.DAO
                     cardInfoNew.IsActive = true;
                     cardInfoNew.PassportID = passportId;
                     cardInfoNew.DateInserted = DateTime.Now;
-                    cardInfoNew.UpdatedBy = HttpContext.Current.Session["UserName"].ToString();
+                    cardInfoNew.UpdatedBy = userNamecurr;
                     if (isVisitor == true)
                     {
                         cardInfoNew.Remark = "Visitor";
@@ -125,7 +132,8 @@ namespace CKDatabaseConnection.DAO
 
         public List<FCardIDRefPID> getFCardInfoList()
         {
-            return RAcontext.FCardIDRefPIDs.Where(item => item.IsActive == true).ToList();
+            List<FCardIDRefPID> result = RAcontext.FCardIDRefPIDs.Where(item => item.IsActive == true).ToList();
+            return result;
         }
 
         public FCardIDRefPID getFCardID(int Id)
@@ -134,10 +142,14 @@ namespace CKDatabaseConnection.DAO
             return fCard;
         }
 
-        public bool updateFCardID(int Id, string fCardID, bool isVisitor, bool isActive, int mode)
+        public int updateFCardID(int Id, string fCardID,string passport, bool isVisitor, bool isActive, int mode)
         {
             try
             {
+                if (userNamecurr == null)
+                {
+                    return -3;
+                }
                 FCardIDRefPID fCard = RAcontext.FCardIDRefPIDs.Find(Id);
                 if (mode == 2)
                 {
@@ -145,10 +157,12 @@ namespace CKDatabaseConnection.DAO
                     if (isVisitor)
                     {
                         fCard.Remark = "Visitor";
+                        fCard.PassportID = passport;
                     }
                     else
                     {
                         fCard.Remark = "Member";
+                        fCard.PassportID = "";
                     }
                     
                 }
@@ -158,15 +172,15 @@ namespace CKDatabaseConnection.DAO
                 }
               
                 fCard.DateUpdated = DateTime.Now;
-                fCard.UpdatedBy = HttpContext.Current.Session["UserName"].ToString();
+                fCard.UpdatedBy = userNamecurr;
 
 
                 RAcontext.SaveChanges();
-                return true;
+                return 0;
             }
             catch
             {
-                return false;
+                return -1;
             }
         }
 
