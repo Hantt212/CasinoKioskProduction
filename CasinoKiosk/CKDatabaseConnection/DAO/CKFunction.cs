@@ -238,6 +238,11 @@ namespace CKDatabaseConnection.DAO
 
             return currentDay;
         }
+
+        //Add 20231212 Hantt start
+        //Add 20231212 Hantt end
+
+
         public void insertItemsDaily(int itemPoints, int playerID)
         {
 
@@ -247,9 +252,7 @@ namespace CKDatabaseConnection.DAO
                 {
                     con.Open();
                     cmd.Connection = con;
-                    //cmd.Parameters.Add(new SqlParameter("@ItemName", itemName));
                     cmd.Parameters.Add(new SqlParameter("@ItemPoints", itemPoints));
-                    //cmd.Parameters.Add(new SqlParameter("@Status", status));
                     cmd.Parameters.Add(new SqlParameter("@PlayerID", playerID));
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.ExecuteNonQuery();

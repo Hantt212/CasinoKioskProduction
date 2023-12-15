@@ -21,7 +21,9 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MFDailyBonus_Items_Yesterday> MFDailyBonus_Items_Yesterdays { get; set; }
         public virtual DbSet<MFDailyBonus_YesterdayItemsManual_Log> MFDailyBonus_YesterdayItemsManual_Logs { get; set; }
         public virtual DbSet<MFDailyBonus_Players> MFDailyBonus_Players { get; set; }
-        
+        public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Players> MF8DragonBuffetBonus_Players { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Logs> MF8DragonBuffetBonus_Logs { get; set; }
         public virtual DbSet<MFDailyBonus_SecondLogs> MFDailyBonus_SecondLogs { get; set; }
         public virtual DbSet<MFWeeklyBonus_Items> MFWeeklyBonus_Items { get; set; }
         public virtual DbSet<MFWeeklyBonus_Logs> MFWeeklyBonus_Logs { get; set; }

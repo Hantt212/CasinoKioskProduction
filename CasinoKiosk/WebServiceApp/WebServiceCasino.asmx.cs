@@ -605,8 +605,198 @@ namespace WebServiceApp
             return redeemPointsLog;
         }
 
-        //Mass Floor Daily Bonus Webservices
+        //Add 20231212 Hantt end
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public RedeemLog8DragonsFirst Redeem8DragonsFirst(int playerID)
+        {
+            List<MF8DragonBuffetBonus_Items> dragonItemList = new List<MF8DragonBuffetBonus_Items>();
+            MF8DragonBuffetBonus_Items dragonItem;
+            MF8DragonBuffetBonus_Players dragonPlayer;
+            string playerName = function.getPlayerName(playerID);
 
+            DateTime currentDay;
+            DateTime newDay;
+            DateTime yesterday;
+            bool isStanded = false;
+
+            //count Item of Player
+            int countItems = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).Count();
+            int countPlayers = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).Count();
+            
+            DateTime playerGamingDate = function.getPlayerGamingDateDaily(playerID);
+            currentDay = function.getMFDBCurrentDay();
+            yesterday = currentDay.AddDays(-1);
+            newDay = DateTime.Now;
+
+            //Lấy điểm từ System
+            int playerPointsDaily = function.getPlayerPointsDaily(playerID, currentDay);
+            int playerPointsYesterday = function.getPlayerPointsDaily(playerID, yesterday);
+            int combinedPoints = playerPointsDaily + playerPointsYesterday;
+            int balancePoints = function.getPlayerPointsBalance(playerID);
+
+            //Dựa vào điểm, insert Item tương ứng
+            isStanded = false;
+            if (combinedPoints >= 20 || balancePoints >= 1000) {
+                isStanded = true;
+            }
+
+            //Insert or update Player
+            if (countPlayers == 0){
+                dragonPlayer = new MF8DragonBuffetBonus_Players();
+                dragonPlayer.PlayerID = playerID;
+                dragonPlayer.PlayerName = playerName;
+                dragonPlayer.DailyPoints = playerPointsDaily;
+                dragonPlayer.YesterdayPoints = playerPointsYesterday;
+                dragonPlayer.CombinedPoints = combinedPoints;
+                dragonPlayer.BalancePoints = balancePoints;
+                dragonPlayer.GamingDate = playerGamingDate;
+                db.MF8DragonBuffetBonus_Players.Add(dragonPlayer);
+            } else {
+                dragonPlayer = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).FirstOrDefault();
+                dragonPlayer.DailyPoints = playerPointsDaily;
+                dragonPlayer.YesterdayPoints = playerPointsYesterday;
+                dragonPlayer.CombinedPoints = combinedPoints;
+                dragonPlayer.BalancePoints = balancePoints;
+               // dragonPlayer.GamingDate = playerGamingDate;
+            }
+
+            //Insert or update Items
+            if (countItems == 0) {
+                //Insert Item
+                
+                dragonItem = new MF8DragonBuffetBonus_Items();
+                dragonItem.ItemName = "8Dragon Buffet Ticket";
+                dragonItem.Status = isStanded == true ? 1 : 0;
+                dragonItem.PlayerID = playerID;
+                dragonItem.DateInserted = DateTime.Now;
+                db.MF8DragonBuffetBonus_Items.Add(dragonItem);
+            }
+            //if items existed.
+            else {
+                //compare last player gaming date vs current gaming date/yesterday
+                dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).FirstOrDefault();
+
+                if (dragonItem.DateInserted < currentDay) {
+                    dragonItem.Status = isStanded == true ? 1 : 0;
+                    dragonItem.DateInserted = DateTime.Now;
+                }else
+                {
+                    if (dragonItem.Status == 0 &&  isStanded == true)
+                    {
+                        dragonItem.Status = 1;
+                        dragonItem.DateInserted = DateTime.Now;
+                    }
+                }
+            }
+
+            //update GamingDate
+            dragonPlayer.GamingDate = currentDay;
+
+            db.SaveChanges();
+
+            var dragonInfo = new RedeemLog8DragonsFirst()
+            {
+                PlayerID = playerID,
+                PlayerName = playerName,
+                PromotionName = "8Dragon Buffet Bonus",
+                Points = playerPointsDaily,
+                GamingDate = currentDay.ToString("dd/MM/yyyy"),
+                Items = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).ToList()
+            };
+
+            return dragonInfo;
+        }
+
+        public RedeemLog8DragonsSecond Redeem8DragonsSecond(int playerID, int itemID, string location)
+        {
+            MF8DragonBuffetBonus_Items dragonItem = new MF8DragonBuffetBonus_Items();
+            List<ItemsDaily> listItemsDaily = new List<ItemsDaily>();
+
+
+            DataSet ds;
+            int maxID = 0;
+            int ok = 0;
+            string playerName = function.getPlayerName(playerID);
+            MF8DragonBuffetBonus_Logs log = new MF8DragonBuffetBonus_Logs();
+
+
+            if (playerID > 0 && itemID > 0)
+            {
+                dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID && item.ID == itemID).FirstOrDefault();
+            }
+            
+            DateTime currentDay;
+            DateTime yesterday;
+
+            currentDay = function.getMFDBCurrentDay();
+            yesterday = currentDay.AddDays(-1);
+            int playerPointsDaily = function.getPlayerPointsDaily(playerID, currentDay);
+            int playerPointYesterday = function.getPlayerPointsDaily(playerID, yesterday);
+            int balancePoint = function.getPlayerPointsBalance(playerID);
+            //insert items and players here.
+
+            if (dragonItem.ID > 0)
+            {
+                dragonItem.Status = 2;
+                
+                log.ID = dragonItem.ID;
+                log.PlayerID = playerID;
+                log.PlayerName = playerName;
+
+                log.PromotionName = "8Dragon Buffet Bonus";
+                log.DailyPoints = playerPointsDaily;
+                log.YesterdayPoints = playerPointYesterday;
+                log.CombinedPoints = playerPointsDaily + playerPointYesterday;
+                log.BalancePoints = balancePoint;
+                log.GamingDate = function.getPlayerGamingDateDaily(playerID).ToString("dd/MM/yyyy");
+
+                log.ItemID = dragonItem.ID;
+                log.ItemName = dragonItem.ItemName;
+                log.IssueDate = DateTime.Now.ToString("dd/MM/yyyy");
+                log.IssueTime = DateTime.Now.ToString("HH:mm:ss");
+                log.Location = location;
+                log.voidedStatus = "printed";
+                
+                //update GamingDate
+                MF8DragonBuffetBonus_Players dragonPlayer = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).FirstOrDefault();
+                dragonPlayer.GamingDate = currentDay;
+                
+                try
+                {
+                    ok = 1;
+                    db.MF8DragonBuffetBonus_Logs.Add(log);
+                    db.SaveChanges();
+                    maxID = log.ID;
+
+                    function.insertUpdateItemsYesterdayLog(playerID, DateTime.Now, "ItemID: " + dragonItem.ID + " has been redeemed at" + DateTime.Now.ToString("HH:mm:ss"));
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+            var dailyLog = new RedeemLog8DragonsSecond()
+            {
+                TicketNo = maxID,
+                PlayerID = playerID,
+                PlayerName = function.getPlayerName(playerID),
+                ItemName = dragonItem.ItemName,
+                PromotionName = "8Dragon Buffet Bonus",
+                Points = playerPointsDaily,
+                IssuedDate = DateTime.Now.ToString("dd/MM/yyyy"),
+                IssuedTime = DateTime.Now.ToString("HH:mm:ss"),
+                GamingDate = log.GamingDate,
+                Status = ok,
+                Items = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).ToList()
+            };
+            return dailyLog;
+        }
+
+        //Add 20231212 Hantt end
+
+        //Daily
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public RedeemLogDailyFirst RedeemDailyFirst(int playerID)
@@ -719,38 +909,12 @@ namespace WebServiceApp
                         function.updatePlayerGamingDate(playerID, currentDay);
                     }
                 }
-
-                //function.updateItemDailyStatusNew(playerID, dailyPoints, playerGamingDate);
-                //switch (dailyPoints)
-                //{
-                //    case 1000:
-                //        this.function.updateItemDailyStatusNew(playerID, 1000);
-                //        break;
-                //    case 2000:
-                //        this.function.updateItemDailyStatusNew(playerID, 2000);
-                //        break;
-                //    case 4000:
-                //        this.function.updateItemDailyStatusNew(playerID, 4000);
-                //        break;
-                //    case 6000:
-                //        this.function.updateItemDailyStatusNew(playerID, 6000);
-                //        break;
-                //    case 8000:
-                //        this.function.updateItemDailyStatusNew(playerID, 8000);
-                //        break;
-                //    case 20000:
-                //        this.function.updateItemDailyStatusNew(playerID, 20000);
-                //        break;
-                //    default:
-                //        this.function.updateItemDailyStatusAll(playerID, 0);
-                //        break;
-                //}
+                
 
                 if (dailyPoints > 0)
                 {
                     this.function.updateItemDailyStatusNew(playerID, dailyPoints);
-                }else
-                {
+                }else {
                     this.function.updateItemDailyStatusAll(playerID, 0);
                 }
                
@@ -1544,8 +1708,7 @@ namespace WebServiceApp
                         if (ds.Tables[0].Rows.Count > 0)
                         {
                             DataRow dr = ds.Tables[0].Rows[0];
-
-
+                            
                             itemDetail.ID = Convert.ToInt32(dr["ID"]);
                             itemDetail.ItemName = dr["ItemName"].ToString();
                             itemDetail.ItemPoints = Convert.ToInt32(dr["ItemPoints"].ToString());
@@ -1616,10 +1779,7 @@ namespace WebServiceApp
             if (count > 0)
             {
                 function.updatePlayerPoints(playerID, dailyPoints, weeklyPoints, fridayPoints, gamingDate);
-            }
-
-            else
-            {
+            } else {
                 function.insertPlayersPoints(playerID, dailyPoints, weeklyPoints, fridayPoints, gamingDate);
             }
 
@@ -1627,7 +1787,7 @@ namespace WebServiceApp
             p.WeeklyPoints = weeklyPoints;
             p.FridayPoints = fridayPoints;
             p.BalancePoints = balancePoints;
-
+            p.CombinePoints = dailyPoints + function.getPlayerPointsDaily(playerID, yesterday);
             return p;
         }
 
@@ -2067,7 +2227,7 @@ namespace WebServiceApp
             var _sqlHelper = new SqlHelper();
             PlayerInfo P = new PlayerInfo();
             String strConnString = ConfigurationManager.ConnectionStrings["MainConnStr"].ConnectionString;
-            string command = "exec pro_IT_PlayPointInfo_new '{0}'";
+            string command = "exec pro_IT_PlayPointInfo '{0}'";
 
             SqlConnection cnn = new SqlConnection(strConnString);
 
@@ -2629,7 +2789,38 @@ namespace WebServiceApp
             public int Status { get; set; }
             public int YStatus { get; set; }
         }
-        public class RedeemLogDailyFirst
+        //Add 20231212 Hantt start
+        public class RedeemLog8DragonsFirst
+        {
+            public int PlayerID { get; set; }
+            public string PlayerName { get; set; }
+            public string GamingDate { get; set; }
+            public string PromotionName { get; set; }
+            public int Points { get; set; }
+            public int CombinedPoints { get; set; }
+            public int BalancePoints { get; set; }
+            public List<MF8DragonBuffetBonus_Items> Items { get; set; }
+        }
+
+        public class RedeemLog8DragonsSecond
+    {
+            public int TicketNo { get; set; }
+            public int PlayerID { get; set; }
+            public string PlayerName { get; set; }
+            public string ItemName { get; set; }
+            public string IssuedDate { get; set; }
+            public string IssuedTime { get; set; }
+            public string GamingDate { get; set; }
+            public string PromotionName { get; set; }
+            public int Points { get; set; }
+            public int CombinedPoints { get; set; }
+            public int BalancePoints { get; set; }
+            public int Status { get; set; }
+            public List<MF8DragonBuffetBonus_Items> Items { get; set; }
+        }
+    //Add 20231212 Hantt end
+
+    public class RedeemLogDailyFirst
         {
             public int PlayerID { get; set; }
             public string PlayerName { get; set; }
@@ -2698,6 +2889,7 @@ namespace WebServiceApp
             public int FridayPoints { get; set; }
 
             public int BalancePoints { get; set; }
+            public int CombinePoints { get; set; }
         }
 
         // Lucky Firday Class

@@ -225,6 +225,15 @@
     <Compile Include="EF\KioskUserActionLog_SelectAll_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\MF8DragonBuffetBonus_Items.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MF8DragonBuffetBonus_Logs.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\MF8DragonBuffetBonus_Players.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="EF\MFBonus_PlayerPoints.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

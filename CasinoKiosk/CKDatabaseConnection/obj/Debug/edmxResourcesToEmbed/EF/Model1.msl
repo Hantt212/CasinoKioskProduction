@@ -1215,5 +1215,55 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="MF8DragonBuffetBonus_Items">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items">
+        <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Items">
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MF8DragonBuffetBonus_Logs">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs">
+        <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Logs">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+          <ScalarProperty Name="reprintedTime" ColumnName="reprintedTime" />
+          <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+          <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+          <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+          <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="BalancePoints" ColumnName="BalancePoints" />
+          <ScalarProperty Name="CombinedPoints" ColumnName="CombinedPoints" />
+          <ScalarProperty Name="YesterdayPoints" ColumnName="YesterdayPoints" />
+          <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MF8DragonBuffetBonus_Players">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players">
+        <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Players">
+          <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+          <ScalarProperty Name="BalancePoints" ColumnName="BalancePoints" />
+          <ScalarProperty Name="CombinedPoints" ColumnName="CombinedPoints" />
+          <ScalarProperty Name="YesterdayPoints" ColumnName="YesterdayPoints" />
+          <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

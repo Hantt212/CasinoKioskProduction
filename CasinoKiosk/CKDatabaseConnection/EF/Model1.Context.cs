@@ -80,6 +80,9 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<HTRPromotion> HTRPromotions { get; set; }
         public virtual DbSet<HTRPromotionLog> HTRPromotionLogs { get; set; }
         public virtual DbSet<HTRPromotionPlayer> HTRPromotionPlayers { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Logs> MF8DragonBuffetBonus_Logs { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Players> MF8DragonBuffetBonus_Players { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {

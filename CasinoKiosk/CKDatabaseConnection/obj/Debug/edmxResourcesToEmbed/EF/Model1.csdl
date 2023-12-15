@@ -324,6 +324,9 @@
     <FunctionImport Name="spHTR_PromotionLogByID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_PromotionLogByID_Result)">
       <Parameter Name="ID" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" />
+    <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs" />
+    <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players" />
   </EntityContainer>
   <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -1173,4 +1176,51 @@
     <Property Type="String" Name="Condition" Nullable="true" />
     <Property Type="String" Name="LuckyDate" Nullable="true" MaxLength="10" />
   </ComplexType>
+  <EntityType Name="MF8DragonBuffetBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="MF8DragonBuffetBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DailyPoints" Type="Int32" />
+    <Property Name="YesterdayPoints" Type="Int32" />
+    <Property Name="CombinedPoints" Type="Int32" />
+    <Property Name="BalancePoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedTime" Type="DateTime" Precision="3" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MF8DragonBuffetBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DailyPoints" Type="Int32" Nullable="false" />
+    <Property Name="YesterdayPoints" Type="Int32" Nullable="false" />
+    <Property Name="CombinedPoints" Type="Int32" Nullable="false" />
+    <Property Name="BalancePoints" Type="Int32" Nullable="false" />
+    <Property Name="GamingDate" Type="DateTime" Precision="3" />
+  </EntityType>
 </Schema>
