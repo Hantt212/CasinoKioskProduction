@@ -66,23 +66,14 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MFBonus_SlotDailyLogs> MFBonus_SlotDailyLogs { get; set; }
         public virtual DbSet<MFBonus_SlotDailyPlayers> MFBonus_SlotDailyPlayers { get; set; }
         public virtual DbSet<MFPointsRedemption_Logs> MFPointsRedemption_Logs { get; set; }
-        public virtual DbSet<HTRGoldenHourPlayer> HTRGoldenHourPlayers { get; set; }
-        public virtual DbSet<HTRGoldenHourPromotion> HTRGoldenHourPromotions { get; set; }
-        public virtual DbSet<HTR_ThursdayGoldenHourPlayers> HTR_ThursdayGoldenHourPlayers { get; set; }
-        public virtual DbSet<HTR_ThursdayGoldenHourPromotion> HTR_ThursdayGoldenHourPromotion { get; set; }
         public virtual DbSet<MFDailyBonus_Items_Yesterday> MFDailyBonus_Items_Yesterday { get; set; }
         public virtual DbSet<MFDailyBonus_YesterdayItemsManual_Log> MFDailyBonus_YesterdayItemsManual_Log { get; set; }
-        public virtual DbSet<MiniBuffet_GetNewClassicPlayerLogs> MiniBuffet_GetNewClassicPlayerLogs { get; set; }
-        public virtual DbSet<HTR_SundayGoldenHourPlayers> HTR_SundayGoldenHourPlayers { get; set; }
-        public virtual DbSet<HTR_SundayGoldenHourLog> HTR_SundayGoldenHourLog { get; set; }
-        public virtual DbSet<HTR_MidAutumeLog> HTR_MidAutumeLog { get; set; }
-        public virtual DbSet<HTR_MidAutumePlayers> HTR_MidAutumePlayers { get; set; }
         public virtual DbSet<HTRPromotion> HTRPromotions { get; set; }
         public virtual DbSet<HTRPromotionLog> HTRPromotionLogs { get; set; }
         public virtual DbSet<HTRPromotionPlayer> HTRPromotionPlayers { get; set; }
-        public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
         public virtual DbSet<MF8DragonBuffetBonus_Logs> MF8DragonBuffetBonus_Logs { get; set; }
         public virtual DbSet<MF8DragonBuffetBonus_Players> MF8DragonBuffetBonus_Players { get; set; }
+        public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {
@@ -248,15 +239,6 @@ namespace CKDatabaseConnection.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SpReport_MarketingAuthorizer_Result>("SpReport_MarketingAuthorizer");
         }
     
-        public virtual ObjectResult<spHTR_GoldenHourDraw_Result> spHTR_GoldenHourDraw(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_GoldenHourDraw_Result>("spHTR_GoldenHourDraw", playerIDParameter);
-        }
-    
         public virtual ObjectResult<CasinoKiosk_spGetFOPatronLogByDate_Result> CasinoKiosk_spGetFOPatronLogByDate(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
         {
             var fromDateParameter = fromDate.HasValue ?
@@ -270,15 +252,6 @@ namespace CKDatabaseConnection.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<CasinoKiosk_spGetFOPatronLogByDate_Result>("CasinoKiosk_spGetFOPatronLogByDate", fromDateParameter, toDateParameter);
         }
     
-        public virtual ObjectResult<spHTR_ThursdayGoldenHourDraw_Result> spHTR_ThursdayGoldenHourDraw(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_ThursdayGoldenHourDraw_Result>("spHTR_ThursdayGoldenHourDraw", playerIDParameter);
-        }
-    
         public virtual ObjectResult<Nullable<int>> MFDailyBonus_YesterdayItemsManual(Nullable<int> playerID)
         {
             var playerIDParameter = playerID.HasValue ?
@@ -286,47 +259,6 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("PlayerID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("MFDailyBonus_YesterdayItemsManual", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MiniBuffet_GetNewClassicPlayer_Result> MiniBuffet_GetNewClassicPlayer()
-        {
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MiniBuffet_GetNewClassicPlayer_Result>("MiniBuffet_GetNewClassicPlayer");
-        }
-    
-        public virtual ObjectResult<spHTR_SundayGoldenHourDraw_Result> spHTR_SundayGoldenHourDraw(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_SundayGoldenHourDraw_Result>("spHTR_SundayGoldenHourDraw", playerIDParameter);
-        }
-    
-        public virtual int spHTR_SundayGoldenHourPromotionByID(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spHTR_SundayGoldenHourPromotionByID", iDParameter);
-        }
-    
-        public virtual ObjectResult<spHTR_MidAutumeBySearchPatron_Result> spHTR_MidAutumeBySearchPatron(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_MidAutumeBySearchPatron_Result>("spHTR_MidAutumeBySearchPatron", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<spHTR_MidAutumeLogByID_Result> spHTR_MidAutumeLogByID(Nullable<int> iD)
-        {
-            var iDParameter = iD.HasValue ?
-                new ObjectParameter("ID", iD) :
-                new ObjectParameter("ID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_MidAutumeLogByID_Result>("spHTR_MidAutumeLogByID", iDParameter);
         }
     
         public virtual ObjectResult<spHTR_PromotionByPatron_Result> spHTR_PromotionByPatron(Nullable<int> playerID, Nullable<int> promotionID)

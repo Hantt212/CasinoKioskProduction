@@ -139,6 +139,42 @@ namespace CasinoKiosk.Areas.Admin.Controllers
             return Redirect(url);
         }
 
+        //8Dragon Buffet start
+        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        public ActionResult MF8DragonReprint(int id, int playerID, string promoName)
+        {
+            var dao = new LogDao();
+            MFBonus_ReprintLog reprintLog = new MFBonus_ReprintLog();
+            var dragonLog = entity.MF8DragonBuffetBonus_Logs.Find(id);
+            string s1 = Session["userName"].ToString();
+
+            var countLog = entity.MFBonus_ReprintLog.Where(x => x.ID == id && x.PlayerID == playerID && x.PromotionName == promoName);
+            dragonLog.reprintedPerson = s1;
+            dragonLog.reprintedTime = DateTime.Now;
+
+            if (countLog.Count() == 0) {
+                reprintLog.TicketNo = id;
+                reprintLog.PlayerID = dragonLog.PlayerID;
+                reprintLog.PlayerName = dragonLog.PlayerName;
+                reprintLog.PromotionName = dragonLog.PromotionName;
+                reprintLog.ItemName = dragonLog.ItemName;
+                reprintLog.PrintedBy = s1;
+                reprintLog.PrintedDate = DateTime.Now.ToString("dd/MM/yyyy");
+
+                entity.MFBonus_ReprintLog.Add(reprintLog);
+            }
+            else {
+                reprintLog.PrintedBy = s1;
+                reprintLog.PrintedDate = DateTime.Now.ToString("dd/MM/yyyy");
+            }
+
+            entity.SaveChanges();
+
+            string url = "~/Assets/Reports/MF8DragonTickets.aspx?id=" + id + "&playerID=" + playerID + "&promoName" + promoName;
+            return Redirect(url);
+        }
+        //8Dragon Buffet end
+
         [Authorize(Roles = "SuperAdmin, HTRAdmin")]
         public ActionResult FridayReprint(int id, int playerID, string promoName)
         {

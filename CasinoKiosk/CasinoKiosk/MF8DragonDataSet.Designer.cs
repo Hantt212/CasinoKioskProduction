@@ -20,17 +20,17 @@ namespace CasinoKiosk {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MiniBuffetDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("MF8DragonDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MiniBuffetDataSet : global::System.Data.DataSet {
+    public partial class MF8DragonDataSet : global::System.Data.DataSet {
         
-        private MiniBuffet_GetNewClassicPlayerLogsByIDDataTable tableMiniBuffet_GetNewClassicPlayerLogsByID;
+        private MF8DragonBuffetBonus_LogsByIDDataTable tableMF8DragonBuffetBonus_LogsByID;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MiniBuffetDataSet() {
+        public MF8DragonDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CasinoKiosk {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected MiniBuffetDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected MF8DragonDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CasinoKiosk {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["MiniBuffet_GetNewClassicPlayerLogsByID"] != null)) {
-                    base.Tables.Add(new MiniBuffet_GetNewClassicPlayerLogsByIDDataTable(ds.Tables["MiniBuffet_GetNewClassicPlayerLogsByID"]));
+                if ((ds.Tables["MF8DragonBuffetBonus_LogsByID"] != null)) {
+                    base.Tables.Add(new MF8DragonBuffetBonus_LogsByIDDataTable(ds.Tables["MF8DragonBuffetBonus_LogsByID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CasinoKiosk {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MiniBuffet_GetNewClassicPlayerLogsByIDDataTable MiniBuffet_GetNewClassicPlayerLogsByID {
+        public MF8DragonBuffetBonus_LogsByIDDataTable MF8DragonBuffetBonus_LogsByID {
             get {
-                return this.tableMiniBuffet_GetNewClassicPlayerLogsByID;
+                return this.tableMF8DragonBuffetBonus_LogsByID;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MiniBuffetDataSet cln = ((MiniBuffetDataSet)(base.Clone()));
+            MF8DragonDataSet cln = ((MF8DragonDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CasinoKiosk {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["MiniBuffet_GetNewClassicPlayerLogsByID"] != null)) {
-                    base.Tables.Add(new MiniBuffet_GetNewClassicPlayerLogsByIDDataTable(ds.Tables["MiniBuffet_GetNewClassicPlayerLogsByID"]));
+                if ((ds.Tables["MF8DragonBuffetBonus_LogsByID"] != null)) {
+                    base.Tables.Add(new MF8DragonBuffetBonus_LogsByIDDataTable(ds.Tables["MF8DragonBuffetBonus_LogsByID"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableMiniBuffet_GetNewClassicPlayerLogsByID = ((MiniBuffet_GetNewClassicPlayerLogsByIDDataTable)(base.Tables["MiniBuffet_GetNewClassicPlayerLogsByID"]));
+            this.tableMF8DragonBuffetBonus_LogsByID = ((MF8DragonBuffetBonus_LogsByIDDataTable)(base.Tables["MF8DragonBuffetBonus_LogsByID"]));
             if ((initTable == true)) {
-                if ((this.tableMiniBuffet_GetNewClassicPlayerLogsByID != null)) {
-                    this.tableMiniBuffet_GetNewClassicPlayerLogsByID.InitVars();
+                if ((this.tableMF8DragonBuffetBonus_LogsByID != null)) {
+                    this.tableMF8DragonBuffetBonus_LogsByID.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MiniBuffetDataSet";
+            this.DataSetName = "MF8DragonDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MiniBuffetDataSet.xsd";
+            this.Namespace = "http://tempuri.org/MF8DragonDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableMiniBuffet_GetNewClassicPlayerLogsByID = new MiniBuffet_GetNewClassicPlayerLogsByIDDataTable();
-            base.Tables.Add(this.tableMiniBuffet_GetNewClassicPlayerLogsByID);
+            this.tableMF8DragonBuffetBonus_LogsByID = new MF8DragonBuffetBonus_LogsByIDDataTable();
+            base.Tables.Add(this.tableMF8DragonBuffetBonus_LogsByID);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeMiniBuffet_GetNewClassicPlayerLogsByID() {
+        private bool ShouldSerializeMF8DragonBuffetBonus_LogsByID() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CasinoKiosk {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MiniBuffetDataSet ds = new MiniBuffetDataSet();
+            MF8DragonDataSet ds = new MF8DragonDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace CasinoKiosk {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEventHandler(object sender, MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent e);
+        public delegate void MF8DragonBuffetBonus_LogsByIDRowChangeEventHandler(object sender, MF8DragonBuffetBonus_LogsByIDRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MiniBuffet_GetNewClassicPlayerLogsByIDDataTable : global::System.Data.TypedTableBase<MiniBuffet_GetNewClassicPlayerLogsByIDRow> {
+        public partial class MF8DragonBuffetBonus_LogsByIDDataTable : global::System.Data.TypedTableBase<MF8DragonBuffetBonus_LogsByIDRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -285,26 +285,42 @@ namespace CasinoKiosk {
             
             private global::System.Data.DataColumn columnPlayerName;
             
-            private global::System.Data.DataColumn columnPrintedDate;
+            private global::System.Data.DataColumn columnIssueDate;
             
-            private global::System.Data.DataColumn columnPrintedBy;
+            private global::System.Data.DataColumn columnIssueTime;
             
-            private global::System.Data.DataColumn columnisPrinted;
+            private global::System.Data.DataColumn columnPromotionName;
             
-            private global::System.Data.DataColumn columnReprintedBy;
+            private global::System.Data.DataColumn columnDailyPoints;
             
-            private global::System.Data.DataColumn columnReprintedDate;
+            private global::System.Data.DataColumn columnYesterdayPoints;
             
-            private global::System.Data.DataColumn columnisVoided;
+            private global::System.Data.DataColumn columnCombinedPoints;
             
-            private global::System.Data.DataColumn columnVoidedDate;
+            private global::System.Data.DataColumn columnBalancePoints;
             
-            private global::System.Data.DataColumn columnVoidedBy;
+            private global::System.Data.DataColumn columnItemID;
+            
+            private global::System.Data.DataColumn columnItemName;
+            
+            private global::System.Data.DataColumn columnGamingDate;
+            
+            private global::System.Data.DataColumn columnvoidedStatus;
+            
+            private global::System.Data.DataColumn columnvoidedPerson;
+            
+            private global::System.Data.DataColumn columnreprintedPerson;
+            
+            private global::System.Data.DataColumn columnreprintedTime;
+            
+            private global::System.Data.DataColumn columnvoidedTime;
+            
+            private global::System.Data.DataColumn columnLocation;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDDataTable() {
-                this.TableName = "MiniBuffet_GetNewClassicPlayerLogsByID";
+            public MF8DragonBuffetBonus_LogsByIDDataTable() {
+                this.TableName = "MF8DragonBuffetBonus_LogsByID";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -312,7 +328,7 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MiniBuffet_GetNewClassicPlayerLogsByIDDataTable(global::System.Data.DataTable table) {
+            internal MF8DragonBuffetBonus_LogsByIDDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -329,7 +345,7 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected MiniBuffet_GetNewClassicPlayerLogsByIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected MF8DragonBuffetBonus_LogsByIDDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -360,65 +376,129 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PrintedDateColumn {
+            public global::System.Data.DataColumn IssueDateColumn {
                 get {
-                    return this.columnPrintedDate;
+                    return this.columnIssueDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PrintedByColumn {
+            public global::System.Data.DataColumn IssueTimeColumn {
                 get {
-                    return this.columnPrintedBy;
+                    return this.columnIssueTime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn isPrintedColumn {
+            public global::System.Data.DataColumn PromotionNameColumn {
                 get {
-                    return this.columnisPrinted;
+                    return this.columnPromotionName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReprintedByColumn {
+            public global::System.Data.DataColumn DailyPointsColumn {
                 get {
-                    return this.columnReprintedBy;
+                    return this.columnDailyPoints;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn ReprintedDateColumn {
+            public global::System.Data.DataColumn YesterdayPointsColumn {
                 get {
-                    return this.columnReprintedDate;
+                    return this.columnYesterdayPoints;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn isVoidedColumn {
+            public global::System.Data.DataColumn CombinedPointsColumn {
                 get {
-                    return this.columnisVoided;
+                    return this.columnCombinedPoints;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VoidedDateColumn {
+            public global::System.Data.DataColumn BalancePointsColumn {
                 get {
-                    return this.columnVoidedDate;
+                    return this.columnBalancePoints;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn VoidedByColumn {
+            public global::System.Data.DataColumn ItemIDColumn {
                 get {
-                    return this.columnVoidedBy;
+                    return this.columnItemID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ItemNameColumn {
+                get {
+                    return this.columnItemName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GamingDateColumn {
+                get {
+                    return this.columnGamingDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn voidedStatusColumn {
+                get {
+                    return this.columnvoidedStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn voidedPersonColumn {
+                get {
+                    return this.columnvoidedPerson;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn reprintedPersonColumn {
+                get {
+                    return this.columnreprintedPerson;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn reprintedTimeColumn {
+                get {
+                    return this.columnreprintedTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn voidedTimeColumn {
+                get {
+                    return this.columnvoidedTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LocationColumn {
+                get {
+                    return this.columnLocation;
                 }
             }
             
@@ -433,62 +513,88 @@ namespace CasinoKiosk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRow this[int index] {
+            public MF8DragonBuffetBonus_LogsByIDRow this[int index] {
                 get {
-                    return ((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(this.Rows[index]));
+                    return ((MF8DragonBuffetBonus_LogsByIDRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEventHandler MiniBuffet_GetNewClassicPlayerLogsByIDRowChanging;
+            public event MF8DragonBuffetBonus_LogsByIDRowChangeEventHandler MF8DragonBuffetBonus_LogsByIDRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEventHandler MiniBuffet_GetNewClassicPlayerLogsByIDRowChanged;
+            public event MF8DragonBuffetBonus_LogsByIDRowChangeEventHandler MF8DragonBuffetBonus_LogsByIDRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEventHandler MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleting;
+            public event MF8DragonBuffetBonus_LogsByIDRowChangeEventHandler MF8DragonBuffetBonus_LogsByIDRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEventHandler MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleted;
+            public event MF8DragonBuffetBonus_LogsByIDRowChangeEventHandler MF8DragonBuffetBonus_LogsByIDRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddMiniBuffet_GetNewClassicPlayerLogsByIDRow(MiniBuffet_GetNewClassicPlayerLogsByIDRow row) {
+            public void AddMF8DragonBuffetBonus_LogsByIDRow(MF8DragonBuffetBonus_LogsByIDRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRow AddMiniBuffet_GetNewClassicPlayerLogsByIDRow(int PlayerID, string PlayerName, System.DateTime PrintedDate, string PrintedBy, bool isPrinted, string ReprintedBy, System.DateTime ReprintedDate, bool isVoided, System.DateTime VoidedDate, string VoidedBy) {
-                MiniBuffet_GetNewClassicPlayerLogsByIDRow rowMiniBuffet_GetNewClassicPlayerLogsByIDRow = ((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(this.NewRow()));
+            public MF8DragonBuffetBonus_LogsByIDRow AddMF8DragonBuffetBonus_LogsByIDRow(
+                        int PlayerID, 
+                        string PlayerName, 
+                        string IssueDate, 
+                        string IssueTime, 
+                        string PromotionName, 
+                        int DailyPoints, 
+                        int YesterdayPoints, 
+                        int CombinedPoints, 
+                        int BalancePoints, 
+                        int ItemID, 
+                        string ItemName, 
+                        string GamingDate, 
+                        string voidedStatus, 
+                        string voidedPerson, 
+                        string reprintedPerson, 
+                        System.DateTime reprintedTime, 
+                        System.DateTime voidedTime, 
+                        string Location) {
+                MF8DragonBuffetBonus_LogsByIDRow rowMF8DragonBuffetBonus_LogsByIDRow = ((MF8DragonBuffetBonus_LogsByIDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         PlayerID,
                         PlayerName,
-                        PrintedDate,
-                        PrintedBy,
-                        isPrinted,
-                        ReprintedBy,
-                        ReprintedDate,
-                        isVoided,
-                        VoidedDate,
-                        VoidedBy};
-                rowMiniBuffet_GetNewClassicPlayerLogsByIDRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMiniBuffet_GetNewClassicPlayerLogsByIDRow);
-                return rowMiniBuffet_GetNewClassicPlayerLogsByIDRow;
+                        IssueDate,
+                        IssueTime,
+                        PromotionName,
+                        DailyPoints,
+                        YesterdayPoints,
+                        CombinedPoints,
+                        BalancePoints,
+                        ItemID,
+                        ItemName,
+                        GamingDate,
+                        voidedStatus,
+                        voidedPerson,
+                        reprintedPerson,
+                        reprintedTime,
+                        voidedTime,
+                        Location};
+                rowMF8DragonBuffetBonus_LogsByIDRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMF8DragonBuffetBonus_LogsByIDRow);
+                return rowMF8DragonBuffetBonus_LogsByIDRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRow FindByID(int ID) {
-                return ((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(this.Rows.Find(new object[] {
+            public MF8DragonBuffetBonus_LogsByIDRow FindByID(int ID) {
+                return ((MF8DragonBuffetBonus_LogsByIDRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MiniBuffet_GetNewClassicPlayerLogsByIDDataTable cln = ((MiniBuffet_GetNewClassicPlayerLogsByIDDataTable)(base.Clone()));
+                MF8DragonBuffetBonus_LogsByIDDataTable cln = ((MF8DragonBuffetBonus_LogsByIDDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -496,7 +602,7 @@ namespace CasinoKiosk {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MiniBuffet_GetNewClassicPlayerLogsByIDDataTable();
+                return new MF8DragonBuffetBonus_LogsByIDDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -505,14 +611,22 @@ namespace CasinoKiosk {
                 this.columnID = base.Columns["ID"];
                 this.columnPlayerID = base.Columns["PlayerID"];
                 this.columnPlayerName = base.Columns["PlayerName"];
-                this.columnPrintedDate = base.Columns["PrintedDate"];
-                this.columnPrintedBy = base.Columns["PrintedBy"];
-                this.columnisPrinted = base.Columns["isPrinted"];
-                this.columnReprintedBy = base.Columns["ReprintedBy"];
-                this.columnReprintedDate = base.Columns["ReprintedDate"];
-                this.columnisVoided = base.Columns["isVoided"];
-                this.columnVoidedDate = base.Columns["VoidedDate"];
-                this.columnVoidedBy = base.Columns["VoidedBy"];
+                this.columnIssueDate = base.Columns["IssueDate"];
+                this.columnIssueTime = base.Columns["IssueTime"];
+                this.columnPromotionName = base.Columns["PromotionName"];
+                this.columnDailyPoints = base.Columns["DailyPoints"];
+                this.columnYesterdayPoints = base.Columns["YesterdayPoints"];
+                this.columnCombinedPoints = base.Columns["CombinedPoints"];
+                this.columnBalancePoints = base.Columns["BalancePoints"];
+                this.columnItemID = base.Columns["ItemID"];
+                this.columnItemName = base.Columns["ItemName"];
+                this.columnGamingDate = base.Columns["GamingDate"];
+                this.columnvoidedStatus = base.Columns["voidedStatus"];
+                this.columnvoidedPerson = base.Columns["voidedPerson"];
+                this.columnreprintedPerson = base.Columns["reprintedPerson"];
+                this.columnreprintedTime = base.Columns["reprintedTime"];
+                this.columnvoidedTime = base.Columns["voidedTime"];
+                this.columnLocation = base.Columns["Location"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -524,22 +638,38 @@ namespace CasinoKiosk {
                 base.Columns.Add(this.columnPlayerID);
                 this.columnPlayerName = new global::System.Data.DataColumn("PlayerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlayerName);
-                this.columnPrintedDate = new global::System.Data.DataColumn("PrintedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrintedDate);
-                this.columnPrintedBy = new global::System.Data.DataColumn("PrintedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrintedBy);
-                this.columnisPrinted = new global::System.Data.DataColumn("isPrinted", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisPrinted);
-                this.columnReprintedBy = new global::System.Data.DataColumn("ReprintedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReprintedBy);
-                this.columnReprintedDate = new global::System.Data.DataColumn("ReprintedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnReprintedDate);
-                this.columnisVoided = new global::System.Data.DataColumn("isVoided", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnisVoided);
-                this.columnVoidedDate = new global::System.Data.DataColumn("VoidedDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVoidedDate);
-                this.columnVoidedBy = new global::System.Data.DataColumn("VoidedBy", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVoidedBy);
+                this.columnIssueDate = new global::System.Data.DataColumn("IssueDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueDate);
+                this.columnIssueTime = new global::System.Data.DataColumn("IssueTime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIssueTime);
+                this.columnPromotionName = new global::System.Data.DataColumn("PromotionName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPromotionName);
+                this.columnDailyPoints = new global::System.Data.DataColumn("DailyPoints", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDailyPoints);
+                this.columnYesterdayPoints = new global::System.Data.DataColumn("YesterdayPoints", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnYesterdayPoints);
+                this.columnCombinedPoints = new global::System.Data.DataColumn("CombinedPoints", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCombinedPoints);
+                this.columnBalancePoints = new global::System.Data.DataColumn("BalancePoints", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBalancePoints);
+                this.columnItemID = new global::System.Data.DataColumn("ItemID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemID);
+                this.columnItemName = new global::System.Data.DataColumn("ItemName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemName);
+                this.columnGamingDate = new global::System.Data.DataColumn("GamingDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGamingDate);
+                this.columnvoidedStatus = new global::System.Data.DataColumn("voidedStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvoidedStatus);
+                this.columnvoidedPerson = new global::System.Data.DataColumn("voidedPerson", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvoidedPerson);
+                this.columnreprintedPerson = new global::System.Data.DataColumn("reprintedPerson", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreprintedPerson);
+                this.columnreprintedTime = new global::System.Data.DataColumn("reprintedTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreprintedTime);
+                this.columnvoidedTime = new global::System.Data.DataColumn("voidedTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvoidedTime);
+                this.columnLocation = new global::System.Data.DataColumn("Location", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLocation);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -547,35 +677,41 @@ namespace CasinoKiosk {
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
                 this.columnPlayerName.MaxLength = 50;
-                this.columnPrintedBy.MaxLength = 50;
-                this.columnReprintedBy.MaxLength = 50;
-                this.columnVoidedBy.MaxLength = 50;
+                this.columnIssueDate.MaxLength = 25;
+                this.columnIssueTime.MaxLength = 25;
+                this.columnPromotionName.MaxLength = 50;
+                this.columnItemName.MaxLength = 100;
+                this.columnGamingDate.MaxLength = 25;
+                this.columnvoidedStatus.MaxLength = 50;
+                this.columnvoidedPerson.MaxLength = 50;
+                this.columnreprintedPerson.MaxLength = 50;
+                this.columnLocation.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRow NewMiniBuffet_GetNewClassicPlayerLogsByIDRow() {
-                return ((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(this.NewRow()));
+            public MF8DragonBuffetBonus_LogsByIDRow NewMF8DragonBuffetBonus_LogsByIDRow() {
+                return ((MF8DragonBuffetBonus_LogsByIDRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MiniBuffet_GetNewClassicPlayerLogsByIDRow(builder);
+                return new MF8DragonBuffetBonus_LogsByIDRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MiniBuffet_GetNewClassicPlayerLogsByIDRow);
+                return typeof(MF8DragonBuffetBonus_LogsByIDRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MiniBuffet_GetNewClassicPlayerLogsByIDRowChanged != null)) {
-                    this.MiniBuffet_GetNewClassicPlayerLogsByIDRowChanged(this, new MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent(((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(e.Row)), e.Action));
+                if ((this.MF8DragonBuffetBonus_LogsByIDRowChanged != null)) {
+                    this.MF8DragonBuffetBonus_LogsByIDRowChanged(this, new MF8DragonBuffetBonus_LogsByIDRowChangeEvent(((MF8DragonBuffetBonus_LogsByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -583,8 +719,8 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MiniBuffet_GetNewClassicPlayerLogsByIDRowChanging != null)) {
-                    this.MiniBuffet_GetNewClassicPlayerLogsByIDRowChanging(this, new MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent(((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(e.Row)), e.Action));
+                if ((this.MF8DragonBuffetBonus_LogsByIDRowChanging != null)) {
+                    this.MF8DragonBuffetBonus_LogsByIDRowChanging(this, new MF8DragonBuffetBonus_LogsByIDRowChangeEvent(((MF8DragonBuffetBonus_LogsByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -592,8 +728,8 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleted != null)) {
-                    this.MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleted(this, new MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent(((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(e.Row)), e.Action));
+                if ((this.MF8DragonBuffetBonus_LogsByIDRowDeleted != null)) {
+                    this.MF8DragonBuffetBonus_LogsByIDRowDeleted(this, new MF8DragonBuffetBonus_LogsByIDRowChangeEvent(((MF8DragonBuffetBonus_LogsByIDRow)(e.Row)), e.Action));
                 }
             }
             
@@ -601,14 +737,14 @@ namespace CasinoKiosk {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleting != null)) {
-                    this.MiniBuffet_GetNewClassicPlayerLogsByIDRowDeleting(this, new MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent(((MiniBuffet_GetNewClassicPlayerLogsByIDRow)(e.Row)), e.Action));
+                if ((this.MF8DragonBuffetBonus_LogsByIDRowDeleting != null)) {
+                    this.MF8DragonBuffetBonus_LogsByIDRowDeleting(this, new MF8DragonBuffetBonus_LogsByIDRowChangeEvent(((MF8DragonBuffetBonus_LogsByIDRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveMiniBuffet_GetNewClassicPlayerLogsByIDRow(MiniBuffet_GetNewClassicPlayerLogsByIDRow row) {
+            public void RemoveMF8DragonBuffetBonus_LogsByIDRow(MF8DragonBuffetBonus_LogsByIDRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -617,7 +753,7 @@ namespace CasinoKiosk {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MiniBuffetDataSet ds = new MiniBuffetDataSet();
+                MF8DragonDataSet ds = new MF8DragonDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -635,7 +771,7 @@ namespace CasinoKiosk {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MiniBuffet_GetNewClassicPlayerLogsByIDDataTable";
+                attribute2.FixedValue = "MF8DragonBuffetBonus_LogsByIDDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -679,25 +815,25 @@ namespace CasinoKiosk {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MiniBuffet_GetNewClassicPlayerLogsByIDRow : global::System.Data.DataRow {
+        public partial class MF8DragonBuffetBonus_LogsByIDRow : global::System.Data.DataRow {
             
-            private MiniBuffet_GetNewClassicPlayerLogsByIDDataTable tableMiniBuffet_GetNewClassicPlayerLogsByID;
+            private MF8DragonBuffetBonus_LogsByIDDataTable tableMF8DragonBuffetBonus_LogsByID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal MiniBuffet_GetNewClassicPlayerLogsByIDRow(global::System.Data.DataRowBuilder rb) : 
+            internal MF8DragonBuffetBonus_LogsByIDRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMiniBuffet_GetNewClassicPlayerLogsByID = ((MiniBuffet_GetNewClassicPlayerLogsByIDDataTable)(this.Table));
+                this.tableMF8DragonBuffetBonus_LogsByID = ((MF8DragonBuffetBonus_LogsByIDDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int ID {
                 get {
-                    return ((int)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.IDColumn]));
+                    return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.IDColumn]));
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.IDColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.IDColumn] = value;
                 }
             }
             
@@ -706,15 +842,15 @@ namespace CasinoKiosk {
             public int PlayerID {
                 get {
                     try {
-                        return ((int)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerIDColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerID\' in table \'MiniBuffet_GetNewClassicPlayerLogsByID\'" +
-                                " is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerID\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerIDColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerIDColumn] = value;
                 }
             }
             
@@ -723,272 +859,504 @@ namespace CasinoKiosk {
             public string PlayerName {
                 get {
                     try {
-                        return ((string)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerNameColumn]));
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerName\' in table \'MiniBuffet_GetNewClassicPlayerLogsByI" +
-                                "D\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PlayerName\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerNameColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime PrintedDate {
+            public string IssueDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedDateColumn]));
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.IssueDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrintedDate\' in table \'MiniBuffet_GetNewClassicPlayerLogsBy" +
-                                "ID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueDate\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedDateColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.IssueDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string PrintedBy {
+            public string IssueTime {
                 get {
                     try {
-                        return ((string)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedByColumn]));
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.IssueTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PrintedBy\' in table \'MiniBuffet_GetNewClassicPlayerLogsByID" +
-                                "\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'IssueTime\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedByColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.IssueTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool isPrinted {
+            public string PromotionName {
                 get {
                     try {
-                        return ((bool)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isPrintedColumn]));
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.PromotionNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isPrinted\' in table \'MiniBuffet_GetNewClassicPlayerLogsByID" +
-                                "\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PromotionName\' in table \'MF8DragonBuffetBonus_LogsByID\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isPrintedColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.PromotionNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string ReprintedBy {
+            public int DailyPoints {
                 get {
                     try {
-                        return ((string)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedByColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.DailyPointsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReprintedBy\' in table \'MiniBuffet_GetNewClassicPlayerLogsBy" +
-                                "ID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'DailyPoints\' in table \'MF8DragonBuffetBonus_LogsByID\' is DB" +
+                                "Null.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedByColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.DailyPointsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime ReprintedDate {
+            public int YesterdayPoints {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedDateColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.YesterdayPointsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ReprintedDate\' in table \'MiniBuffet_GetNewClassicPlayerLogs" +
-                                "ByID\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'YesterdayPoints\' in table \'MF8DragonBuffetBonus_LogsByID\' i" +
+                                "s DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedDateColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.YesterdayPointsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool isVoided {
+            public int CombinedPoints {
                 get {
                     try {
-                        return ((bool)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isVoidedColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.CombinedPointsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'isVoided\' in table \'MiniBuffet_GetNewClassicPlayerLogsByID\'" +
-                                " is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'CombinedPoints\' in table \'MF8DragonBuffetBonus_LogsByID\' is" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isVoidedColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.CombinedPointsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime VoidedDate {
+            public int BalancePoints {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedDateColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.BalancePointsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VoidedDate\' in table \'MiniBuffet_GetNewClassicPlayerLogsByI" +
-                                "D\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BalancePoints\' in table \'MF8DragonBuffetBonus_LogsByID\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedDateColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.BalancePointsColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string VoidedBy {
+            public int ItemID {
                 get {
                     try {
-                        return ((string)(this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedByColumn]));
+                        return ((int)(this[this.tableMF8DragonBuffetBonus_LogsByID.ItemIDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'VoidedBy\' in table \'MiniBuffet_GetNewClassicPlayerLogsByID\'" +
-                                " is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ItemID\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedByColumn] = value;
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.ItemIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ItemName {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.ItemNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ItemName\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.ItemNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GamingDate {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.GamingDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GamingDate\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.GamingDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string voidedStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.voidedStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'voidedStatus\' in table \'MF8DragonBuffetBonus_LogsByID\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.voidedStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string voidedPerson {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.voidedPersonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'voidedPerson\' in table \'MF8DragonBuffetBonus_LogsByID\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.voidedPersonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string reprintedPerson {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedPersonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'reprintedPerson\' in table \'MF8DragonBuffetBonus_LogsByID\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedPersonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime reprintedTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'reprintedTime\' in table \'MF8DragonBuffetBonus_LogsByID\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime voidedTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableMF8DragonBuffetBonus_LogsByID.voidedTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'voidedTime\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.voidedTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Location {
+                get {
+                    try {
+                        return ((string)(this[this.tableMF8DragonBuffetBonus_LogsByID.LocationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Location\' in table \'MF8DragonBuffetBonus_LogsByID\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableMF8DragonBuffetBonus_LogsByID.LocationColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlayerIDNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerIDColumn);
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.PlayerIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlayerIDNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerIDColumn] = global::System.Convert.DBNull;
+                this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerIDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPlayerNameNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerNameColumn);
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.PlayerNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPlayerNameNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PlayerNameColumn] = global::System.Convert.DBNull;
+                this[this.tableMF8DragonBuffetBonus_LogsByID.PlayerNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrintedDateNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedDateColumn);
+            public bool IsIssueDateNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.IssueDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrintedDateNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedDateColumn] = global::System.Convert.DBNull;
+            public void SetIssueDateNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.IssueDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPrintedByNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedByColumn);
+            public bool IsIssueTimeNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.IssueTimeColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPrintedByNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.PrintedByColumn] = global::System.Convert.DBNull;
+            public void SetIssueTimeNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.IssueTimeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsisPrintedNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isPrintedColumn);
+            public bool IsPromotionNameNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.PromotionNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetisPrintedNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isPrintedColumn] = global::System.Convert.DBNull;
+            public void SetPromotionNameNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.PromotionNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReprintedByNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedByColumn);
+            public bool IsDailyPointsNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.DailyPointsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReprintedByNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedByColumn] = global::System.Convert.DBNull;
+            public void SetDailyPointsNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.DailyPointsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsReprintedDateNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedDateColumn);
+            public bool IsYesterdayPointsNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.YesterdayPointsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetReprintedDateNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.ReprintedDateColumn] = global::System.Convert.DBNull;
+            public void SetYesterdayPointsNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.YesterdayPointsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsisVoidedNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isVoidedColumn);
+            public bool IsCombinedPointsNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.CombinedPointsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetisVoidedNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.isVoidedColumn] = global::System.Convert.DBNull;
+            public void SetCombinedPointsNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.CombinedPointsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVoidedDateNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedDateColumn);
+            public bool IsBalancePointsNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.BalancePointsColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVoidedDateNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedDateColumn] = global::System.Convert.DBNull;
+            public void SetBalancePointsNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.BalancePointsColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsVoidedByNull() {
-                return this.IsNull(this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedByColumn);
+            public bool IsItemIDNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.ItemIDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetVoidedByNull() {
-                this[this.tableMiniBuffet_GetNewClassicPlayerLogsByID.VoidedByColumn] = global::System.Convert.DBNull;
+            public void SetItemIDNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.ItemIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsItemNameNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.ItemNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetItemNameNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.ItemNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGamingDateNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.GamingDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGamingDateNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.GamingDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvoidedStatusNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.voidedStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvoidedStatusNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.voidedStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvoidedPersonNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.voidedPersonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvoidedPersonNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.voidedPersonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsreprintedPersonNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.reprintedPersonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetreprintedPersonNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedPersonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsreprintedTimeNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.reprintedTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetreprintedTimeNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.reprintedTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsvoidedTimeNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.voidedTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetvoidedTimeNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.voidedTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLocationNull() {
+                return this.IsNull(this.tableMF8DragonBuffetBonus_LogsByID.LocationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLocationNull() {
+                this[this.tableMF8DragonBuffetBonus_LogsByID.LocationColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -996,22 +1364,22 @@ namespace CasinoKiosk {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent : global::System.EventArgs {
+        public class MF8DragonBuffetBonus_LogsByIDRowChangeEvent : global::System.EventArgs {
             
-            private MiniBuffet_GetNewClassicPlayerLogsByIDRow eventRow;
+            private MF8DragonBuffetBonus_LogsByIDRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRowChangeEvent(MiniBuffet_GetNewClassicPlayerLogsByIDRow row, global::System.Data.DataRowAction action) {
+            public MF8DragonBuffetBonus_LogsByIDRowChangeEvent(MF8DragonBuffetBonus_LogsByIDRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public MiniBuffet_GetNewClassicPlayerLogsByIDRow Row {
+            public MF8DragonBuffetBonus_LogsByIDRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1027,7 +1395,7 @@ namespace CasinoKiosk {
         }
     }
 }
-namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
+namespace CasinoKiosk.MF8DragonDataSetTableAdapters {
     
     
     /// <summary>
@@ -1039,7 +1407,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class MiniBuffet_GetNewClassicPlayerLogsByIDTableAdapter : global::System.ComponentModel.Component {
+    public partial class MF8DragonBuffetBonus_LogsByIDTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1053,7 +1421,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public MiniBuffet_GetNewClassicPlayerLogsByIDTableAdapter() {
+        public MF8DragonBuffetBonus_LogsByIDTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1150,18 +1518,26 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "MiniBuffet_GetNewClassicPlayerLogsByID";
+            tableMapping.DataSetTable = "MF8DragonBuffetBonus_LogsByID";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("PlayerID", "PlayerID");
             tableMapping.ColumnMappings.Add("PlayerName", "PlayerName");
-            tableMapping.ColumnMappings.Add("PrintedDate", "PrintedDate");
-            tableMapping.ColumnMappings.Add("PrintedBy", "PrintedBy");
-            tableMapping.ColumnMappings.Add("isPrinted", "isPrinted");
-            tableMapping.ColumnMappings.Add("ReprintedBy", "ReprintedBy");
-            tableMapping.ColumnMappings.Add("ReprintedDate", "ReprintedDate");
-            tableMapping.ColumnMappings.Add("isVoided", "isVoided");
-            tableMapping.ColumnMappings.Add("VoidedDate", "VoidedDate");
-            tableMapping.ColumnMappings.Add("VoidedBy", "VoidedBy");
+            tableMapping.ColumnMappings.Add("IssueDate", "IssueDate");
+            tableMapping.ColumnMappings.Add("IssueTime", "IssueTime");
+            tableMapping.ColumnMappings.Add("PromotionName", "PromotionName");
+            tableMapping.ColumnMappings.Add("DailyPoints", "DailyPoints");
+            tableMapping.ColumnMappings.Add("YesterdayPoints", "YesterdayPoints");
+            tableMapping.ColumnMappings.Add("CombinedPoints", "CombinedPoints");
+            tableMapping.ColumnMappings.Add("BalancePoints", "BalancePoints");
+            tableMapping.ColumnMappings.Add("ItemID", "ItemID");
+            tableMapping.ColumnMappings.Add("ItemName", "ItemName");
+            tableMapping.ColumnMappings.Add("GamingDate", "GamingDate");
+            tableMapping.ColumnMappings.Add("voidedStatus", "voidedStatus");
+            tableMapping.ColumnMappings.Add("voidedPerson", "voidedPerson");
+            tableMapping.ColumnMappings.Add("reprintedPerson", "reprintedPerson");
+            tableMapping.ColumnMappings.Add("reprintedTime", "reprintedTime");
+            tableMapping.ColumnMappings.Add("voidedTime", "voidedTime");
+            tableMapping.ColumnMappings.Add("Location", "Location");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1178,7 +1554,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.MiniBuffet_GetNewClassicPlayerLogsByID";
+            this._commandCollection[0].CommandText = "dbo.MF8DragonBuffetBonus_LogsByID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1188,7 +1564,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(MiniBuffetDataSet.MiniBuffet_GetNewClassicPlayerLogsByIDDataTable dataTable, global::System.Nullable<int> ID) {
+        public virtual int Fill(MF8DragonDataSet.MF8DragonBuffetBonus_LogsByIDDataTable dataTable, global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ID.Value));
@@ -1207,7 +1583,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual MiniBuffetDataSet.MiniBuffet_GetNewClassicPlayerLogsByIDDataTable GetData(global::System.Nullable<int> ID) {
+        public virtual MF8DragonDataSet.MF8DragonBuffetBonus_LogsByIDDataTable GetData(global::System.Nullable<int> ID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((ID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(ID.Value));
@@ -1215,7 +1591,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            MiniBuffetDataSet.MiniBuffet_GetNewClassicPlayerLogsByIDDataTable dataTable = new MiniBuffetDataSet.MiniBuffet_GetNewClassicPlayerLogsByIDDataTable();
+            MF8DragonDataSet.MF8DragonBuffetBonus_LogsByIDDataTable dataTable = new MF8DragonDataSet.MF8DragonBuffetBonus_LogsByIDDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1289,7 +1665,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(MiniBuffetDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(MF8DragonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1299,7 +1675,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(MiniBuffetDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(MF8DragonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1309,7 +1685,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(MiniBuffetDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(MF8DragonDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1343,7 +1719,7 @@ namespace CasinoKiosk.MiniBuffetDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(MiniBuffetDataSet dataSet) {
+        public virtual int UpdateAll(MF8DragonDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

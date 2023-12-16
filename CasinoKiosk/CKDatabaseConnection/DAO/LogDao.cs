@@ -100,48 +100,7 @@ namespace CKDatabaseConnection.DAO
             return list.OrderByDescending(x => x.ID);
         }
 
-        //Add 20231304 Hantt start
-        public spHTR_GoldenHourDraw_Result getPatronGolderHour(int playerID)
-        {
-            spHTR_GoldenHourDraw_Result result = context.spHTR_GoldenHourDraw(playerID).FirstOrDefault();
 
-            return result;
-        }
-        
-        public List<HTRGoldenHourPromotion> getLogGolderHour()
-        {
-            List<HTRGoldenHourPromotion> list = context.HTRGoldenHourPromotions.ToList();
-            return list;
-        }
-        //Add 20231304 Hantt end
-
-
-        //Add 20230619 Hantt start
-        public spHTR_ThursdayGoldenHourDraw_Result getPatronThursdayGolderHour(int playerID)
-        {
-            spHTR_ThursdayGoldenHourDraw_Result result = context.spHTR_ThursdayGoldenHourDraw(playerID).FirstOrDefault();
-            return result;
-        }
-
-        public List<HTR_ThursdayGoldenHourPromotion> getLogThursdayGolderHour()
-        {
-            List<HTR_ThursdayGoldenHourPromotion> list = context.HTR_ThursdayGoldenHourPromotion.ToList();
-            return list;
-        }
-        //Add 20230619 Hantt end
-        public spHTR_SundayGoldenHourDraw_Result getPatronSundayGolderHour(int playerID)
-        {
-            spHTR_SundayGoldenHourDraw_Result result = context.spHTR_SundayGoldenHourDraw(playerID).FirstOrDefault();
-            return result;
-        }
-
-        public List<HTR_SundayGoldenHourLog> getSundayGolderHourLog()
-        {
-            List<HTR_SundayGoldenHourLog> list = context.HTR_SundayGoldenHourLog.ToList();
-            return list;
-        }
-
-        //Mid Autume start
         public spHTR_PromotionByPatron_Result getPromotionByPatron(int promotion,int playerID)
         {
             spHTR_PromotionByPatron_Result result = context.spHTR_PromotionByPatron(playerID, promotion).FirstOrDefault();
@@ -262,41 +221,27 @@ namespace CKDatabaseConnection.DAO
 
         }
 
-        //Add 20230809 Hantt start
-        public MiniBuffet_GetNewClassicPlayer_Result getMiniBuffet_GetNewClassicPlayer(int playerID)
-        {
-            MiniBuffet_GetNewClassicPlayer_Result result = context.MiniBuffet_GetNewClassicPlayer().Where(item => item.PlayerID == playerID).FirstOrDefault();
-            return result;
-        }
-
-        public List<MiniBuffet_GetNewClassicPlayerLogs> getMiniBuffetLogs()
-        {
-            List<MiniBuffet_GetNewClassicPlayerLogs> list = context.MiniBuffet_GetNewClassicPlayerLogs.ToList();
-            return list;
-        }
-        //Add 20230809 Hantt end
-
-        //End
+      
+        //Daily
         public IEnumerable<MFBonus_spSelectDailyLogs_Result> ListAllPagingDailyLog(int page, int pageSize, int playerID)
         {
             List<MFBonus_spSelectDailyLogs_Result> list = context.MFBonus_spSelectDailyLogs_Result(playerID).ToList();
             return list.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
-
-        //add by Doc Ly: 2021/04/15
+        
         public IEnumerable<MFBonus_spSelectDailyLogs_Result> ListAllDailyLog(int playerID)
         {
             List<MFBonus_spSelectDailyLogs_Result> list = context.MFBonus_spSelectDailyLogs_Result(playerID).ToList();
             return list.OrderByDescending(x => x.ID);
         }
-        //End
 
+        //Weekly
         public IEnumerable<MFBonus_spSelectWeeklyLogs_Result> ListAllPagingWeeklyLog(int page, int pageSize, int playerID)
         {
             List<MFBonus_spSelectWeeklyLogs_Result> list = context.MFBonus_spSelectWeeklyLogs_Result(playerID).ToList();
             return list.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
         }
-        // add by Doc Ly 2021/05/28
+       
         public IEnumerable<MFBonus_spSelectWeeklyLogs_Result> ListAllWeeklyLog(string fromdate, string todate, int playerID)
         {
             List<MFBonus_spSelectWeeklyLogs_Result> list = context.MFBonus_spSelectWeeklyLogs_Result(playerID)
@@ -308,7 +253,30 @@ namespace CKDatabaseConnection.DAO
                 ).ToList();
             return list.OrderByDescending(x => x.ID);
         }
-        //End
+
+        //Bufet 8Dragons start
+        public IEnumerable<MF8DragonBuffetBonus_Logs> ListAllPagingMF8DragonLog(int page, int pageSize, int playerID)
+        {
+            List<MF8DragonBuffetBonus_Logs> list = context.MF8DragonBuffetBonus_Logs.Where(item => item.PlayerID == (playerID > 0 ? playerID : item.PlayerID)).ToList();
+            return list.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
+        }
+
+        public IEnumerable<MF8DragonBuffetBonus_Logs> ListAllMF8DragonLog(string fromdate, string todate, int playerID)
+        {
+            List<MF8DragonBuffetBonus_Logs> list = context.MF8DragonBuffetBonus_Logs.Where(item => item.PlayerID == (playerID > 0 ? playerID : item.PlayerID)).ToList();
+            if (fromdate != "" && todate != "")
+            {
+                list = list.Where(p => (DateTime.ParseExact(p.IssueDate, "dd/MM/yyyy", CultureInfo.CurrentCulture) >= DateTime.Parse(fromdate, CultureInfo.CurrentCulture)
+                &&
+                DateTime.ParseExact(p.IssueDate, "dd/MM/yyyy", CultureInfo.CurrentCulture) <= DateTime.Parse(todate, CultureInfo.CurrentCulture)
+                )).ToList();
+            }
+                
+            return list.OrderByDescending(x => x.ID);
+        }
+
+        //Bufet 8Dragons end
+
         public IEnumerable<MFBonus_spSelectFridayLogs_Result> ListAllPagingFridayLog(int page, int pageSize, int playerID)
         {
             List<MFBonus_spSelectFridayLogs_Result> list = context.MFBonus_spSelectFridayLogs_Result(playerID).ToList();

@@ -222,10 +222,8 @@
     <Content Include="Assets\Reports\css\theme.css" />
     <Content Include="Assets\Reports\css\triangle.css" />
     <Content Include="Assets\Reports\DailyPSBundleTicket.aspx" />
+    <Content Include="Assets\Reports\MF8DragonTickets.aspx" />
     <Content Include="Assets\Reports\HTRPromotion.aspx" />
-    <Content Include="Assets\Reports\SundayPromotion.aspx" />
-    <Content Include="Assets\Reports\MiniBuffetTicket.aspx" />
-    <Content Include="Assets\Reports\GoldenHourTicket.aspx" />
     <Content Include="Assets\Reports\DailyTickets.aspx" />
     <Content Include="Assets\Reports\FridayTickets.aspx" />
     <Content Include="Assets\Reports\moment.js" />
@@ -485,61 +483,6 @@
     <Content Include="FridayLogDataSet.xss">
       <DependentUpon>FridayLogDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="Assets\Reports\HTRGoldenHourPromotionByIDDataSet.xsc">
-      <DependentUpon>HTRGoldenHourPromotionByIDDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="Assets\Reports\HTRGoldenHourPromotionByIDDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HTRGoldenHourPromotionByIDDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Assets\Reports\HTRGoldenHourPromotionByIDDataSet.xss">
-      <DependentUpon>HTRGoldenHourPromotionByIDDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="HTRGoldenHourDataSet.xsc">
-      <DependentUpon>HTRGoldenHourDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="HTRGoldenHourDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HTRGoldenHourDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="HTRGoldenHourDataSet.xss">
-      <DependentUpon>HTRGoldenHourDataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="HTRGoldenHourTicket.xsc">
-      <DependentUpon>HTRGoldenHourTicket.xsd</DependentUpon>
-    </Content>
-    <None Include="HTRGoldenHourTicket.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HTRGoldenHourTicket.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="HTRGoldenHourTicket.xss">
-      <DependentUpon>HTRGoldenHourTicket.xsd</DependentUpon>
-    </Content>
-    <Content Include="HTR_SundayHour_DataSet.xsc">
-      <DependentUpon>HTR_SundayHour_DataSet.xsd</DependentUpon>
-    </Content>
-    <Content Include="HTRSundayGoldenHourDataSet.xsc">
-      <DependentUpon>HTRSundayGoldenHourDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="HTRSundayGoldenHourDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HTRSundayGoldenHourDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="HTRSundayGoldenHourDataSet.xss">
-      <DependentUpon>HTRSundayGoldenHourDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="HTR_SundayHour_DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HTR_SundayHour_DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="HTR_SundayHour_DataSet.xss">
-      <DependentUpon>HTR_SundayHour_DataSet.xsd</DependentUpon>
-    </Content>
     <None Include="ITHoTram_CustomReportDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
@@ -551,16 +494,16 @@
     <Content Include="PointsRedemptionLogDataSet.xsc">
       <DependentUpon>PointsRedemptionLogDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="MiniBuffetDataSet.xsc">
-      <DependentUpon>MiniBuffetDataSet.xsd</DependentUpon>
+    <Content Include="MF8DragonDataSet.xsc">
+      <DependentUpon>MF8DragonDataSet.xsd</DependentUpon>
     </Content>
-    <None Include="MiniBuffetDataSet.xsd">
+    <None Include="MF8DragonDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>MiniBuffetDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>MF8DragonDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <Content Include="MiniBuffetDataSet.xss">
-      <DependentUpon>MiniBuffetDataSet.xsd</DependentUpon>
+    <Content Include="MF8DragonDataSet.xss">
+      <DependentUpon>MF8DragonDataSet.xsd</DependentUpon>
     </Content>
     <None Include="PointsRedemptionLogDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -625,17 +568,6 @@
     <Content Include="TicketMFRedemptionDataSet.xsc">
       <DependentUpon>TicketMFRedemptionDataSet.xsd</DependentUpon>
     </Content>
-    <Content Include="SundayPromotionDataSet.xsc">
-      <DependentUpon>SundayPromotionDataSet.xsd</DependentUpon>
-    </Content>
-    <None Include="SundayPromotionDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SundayPromotionDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="SundayPromotionDataSet.xss">
-      <DependentUpon>SundayPromotionDataSet.xsd</DependentUpon>
-    </Content>
     <None Include="TicketMFRedemptionDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>TicketMFRedemptionDataSet.Designer.cs</LastGenOutput>
@@ -695,8 +627,6 @@
       <DependentUpon>TicketPromotionByPID.xsd</DependentUpon>
     </Content>
     <Content Include="Views\Analyst\Index.cshtml" />
-    <Content Include="Views\HTRTicketPromotion\GoldenHour.cshtml" />
-    <Content Include="Views\HTRTicketPromotion\MarketAuth.cshtml" />
     <Content Include="TicketPromotionByPIDDataSet.xsc">
       <DependentUpon>TicketPromotionByPIDDataSet.xsd</DependentUpon>
     </Content>
@@ -709,7 +639,6 @@
       <DependentUpon>TicketPromotionByPIDDataSet.xsd</DependentUpon>
     </Content>
     <Content Include="Views\Logs\DailyManual.cshtml" />
-    <Content Include="Views\HTRTicketPromotion\MiniBuffet.cshtml" />
     <Content Include="Web References\WebServiceCasino\Items.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -737,10 +666,10 @@
     <Content Include="Web References\WebServiceCasino\RedeemLogWeeklySecond.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Views\HTRTicketPromotion\SundayPromotion.cshtml" />
     <Content Include="Views\HTRTicketPromotion\HTRPromotionLog.cshtml" />
     <Content Include="Views\PlayerCard\Index.cshtml" />
     <Content Include="Views\HTRTicketPromotion\HTRPromotionList.cshtml" />
+    <Content Include="Views\Logs\MF8DragonLog.cshtml" />
     <None Include="Web References\WebServiceCasino\WebServiceCasino.disco">
       <SubType>Designer</SubType>
     </None>
@@ -790,36 +719,19 @@
     <Compile Include="Assets\Reports\DailyPSBundleTicket.aspx.designer.cs">
       <DependentUpon>DailyPSBundleTicket.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Assets\Reports\MF8DragonTickets.aspx.cs">
+      <DependentUpon>MF8DragonTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Assets\Reports\MF8DragonTickets.aspx.designer.cs">
+      <DependentUpon>MF8DragonTickets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Assets\Reports\HTRPromotion.aspx.cs">
       <DependentUpon>HTRPromotion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Assets\Reports\HTRPromotion.aspx.designer.cs">
       <DependentUpon>HTRPromotion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Assets\Reports\SundayPromotion.aspx.cs">
-      <DependentUpon>SundayPromotion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Assets\Reports\SundayPromotion.aspx.designer.cs">
-      <DependentUpon>SundayPromotion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Assets\Reports\MiniBuffetTicket.aspx.cs">
-      <DependentUpon>MiniBuffetTicket.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Assets\Reports\MiniBuffetTicket.aspx.designer.cs">
-      <DependentUpon>MiniBuffetTicket.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Assets\Reports\GoldenHourTicket.aspx.cs">
-      <DependentUpon>GoldenHourTicket.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Assets\Reports\GoldenHourTicket.aspx.designer.cs">
-      <DependentUpon>GoldenHourTicket.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Assets\Reports\HTRGoldenHourPromotionByIDDataSet.cs">
-      <DependentUpon>HTRGoldenHourPromotionByIDDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Assets\Reports\RedeemLogDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -871,31 +783,6 @@
       <DependentUpon>FOPatronLogDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Helpers\HtmlHelper.cs" />
-    <Compile Include="Assets\Reports\HTRGoldenHourPromotionByIDDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HTRGoldenHourPromotionByIDDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HTRGoldenHourDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HTRGoldenHourDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HTRGoldenHourTicket.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HTRGoldenHourTicket.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HTRSundayGoldenHourDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HTRSundayGoldenHourDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HTR_SundayHour_DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HTR_SundayHour_DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Infrastructure\CustomMembershipProvider.cs" />
     <Compile Include="Infrastructure\CustomRoleProvider.cs" />
     <Compile Include="Interfaces\IMembershipService.cs" />
@@ -904,10 +791,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ITHoTram_CustomReportDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="MiniBuffetDataSet.Designer.cs">
+    <Compile Include="MF8DragonDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MiniBuffetDataSet.xsd</DependentUpon>
+      <DependentUpon>MF8DragonDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\UserIdentity.cs" />
@@ -1012,11 +899,6 @@
       <DependentUpon>ReportDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="SundayPromotionDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SundayPromotionDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Supports\PrintExtention.cs" />
     <Compile Include="TicketMFRedemptionDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -1081,13 +963,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Assets\Reports\HTRPromotion.rdlc" />
-    <EmbeddedResource Include="Assets\Reports\SundayPromotion.rdlc" />
-    <EmbeddedResource Include="Assets\Reports\HTRGoldenHourPromotion.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Assets\Reports\MiniBuffet.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <EmbeddedResource Include="Assets\Reports\HTRTicketPromotion.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -1098,6 +973,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\Reports\FridayBonusLog.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Reports\MF8DragonTickets.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Assets\Reports\TicketMFRedemption.rdlc">

@@ -115,13 +115,7 @@ namespace CKDatabaseConnection.Supports
         {
             UserDao dao = new UserDao();
             DataTable dt = dao.GetDataTicketPromotion(ID);
-
-            //ReportParameter reportParam1;
-
-            //ReportParameter[] reportParameters = new ReportParameter[1];
-            //reportParam1 = new ReportParameter("ReportParameter1", reportTitle);
-            //reportParameters[0] = reportParam1;
-
+            
             ReportDataSource rds = new ReportDataSource("TicketPromotionByPID", dt);
             report.DataSources.Add(rds);
             report.ReportPath = @"Assets\Reports\HTRTicketPromotion.rdlc";
@@ -129,19 +123,6 @@ namespace CKDatabaseConnection.Supports
             return report;
         }
 
-        //Add 20230413 Hantt start
-        public static LocalReport ExportReportGoldenHour(LocalReport report, int ticketID)
-        {
-            UserDao dao = new UserDao();
-            DataTable dt = dao.GetDataGoldenHourByID(ticketID);
-
-            ReportDataSource rds = new ReportDataSource("HTRGoldenHourPromotionByID", dt);
-            report.DataSources.Add(rds);
-            report.ReportPath = @"Assets\Reports\HTRGoldenHourPromotion.rdlc";
-            report.ReportPath = "Assets/Reports/HTRGoldenHourPromotion.rdlc";
-            return report;
-        }
-        //Add 20230413 Hantt end
 
         public static void SavePDF(LocalReport report, string filename)
         {

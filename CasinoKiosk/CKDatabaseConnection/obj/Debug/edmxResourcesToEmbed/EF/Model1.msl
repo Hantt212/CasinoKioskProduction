@@ -883,48 +883,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="HTRGoldenHourPlayers">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRGoldenHourPlayer">
-        <MappingFragment StoreEntitySet="HTRGoldenHourPlayers">
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HTRGoldenHourPromotions">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRGoldenHourPromotion">
-        <MappingFragment StoreEntitySet="HTRGoldenHourPromotion">
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="isReprinted" ColumnName="isReprinted" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spHTR_GoldenHourDraw" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_GoldenHourDraw">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_GoldenHourDraw_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="CasinoKiosk_spGetFOPatronLogByDate" FunctionName="ITHoTram_CustomReportModel.Store.CasinoKiosk_spGetFOPatronLogByDate">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_spGetFOPatronLogByDate_Result">
@@ -939,49 +897,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="HTR_ThursdayGoldenHourPlayers">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPlayers">
-        <MappingFragment StoreEntitySet="HTR_ThursdayGoldenHourPlayers">
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spHTR_ThursdayGoldenHourDraw" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_ThursdayGoldenHourDraw">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_ThursdayGoldenHourDraw_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="HTR_ThursdayGoldenHourPromotion">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_ThursdayGoldenHourPromotion">
-        <MappingFragment StoreEntitySet="HTR_ThursdayGoldenHourPromotion">
-          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="MFDailyBonus_Items_Yesterday">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MFDailyBonus_Items_Yesterday">
         <MappingFragment StoreEntitySet="MFDailyBonus_Items_Yesterday">
@@ -1010,135 +925,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MiniBuffet_GetNewClassicPlayerLogs">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MiniBuffet_GetNewClassicPlayerLogs">
-        <MappingFragment StoreEntitySet="MiniBuffet_GetNewClassicPlayerLogs">
-          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="MiniBuffet_GetNewClassicPlayer" FunctionName="ITHoTram_CustomReportModel.Store.MiniBuffet_GetNewClassicPlayer">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MiniBuffet_GetNewClassicPlayer_Result">
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="isPrint" ColumnName="isPrint" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="HTR_SundayGoldenHourPlayers">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_SundayGoldenHourPlayers">
-        <MappingFragment StoreEntitySet="HTR_SundayGoldenHourPlayers">
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spHTR_SundayGoldenHourDraw" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_SundayGoldenHourDraw">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_SundayGoldenHourDraw_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <EntitySetMapping Name="HTR_SundayGoldenHourLog">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_SundayGoldenHourLog">
-        <MappingFragment StoreEntitySet="HTR_SundayGoldenHourLog">
-          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HTR_MidAutumeLog">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_MidAutumeLog">
-        <MappingFragment StoreEntitySet="HTR_MidAutumeLog">
-          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="HTR_MidAutumePlayers">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTR_MidAutumePlayers">
-        <MappingFragment StoreEntitySet="HTR_MidAutumePlayers">
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spHTR_MidAutumeBySearchPatron" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_MidAutumeBySearchPatron">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_MidAutumeBySearchPatron_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
-          <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
-          <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="spHTR_MidAutumeLogByID" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_MidAutumeLogByID">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_MidAutumeLogByID_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
-          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
-          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
-          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
-          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
-          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
-          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
-          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="HTRPromotions">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotion">
         <MappingFragment StoreEntitySet="HTRPromotion">
@@ -1215,17 +1001,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
-    <EntitySetMapping Name="MF8DragonBuffetBonus_Items">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items">
-        <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Items">
-          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="MF8DragonBuffetBonus_Logs">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs">
         <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Logs">
@@ -1261,6 +1036,17 @@
           <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
           <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
           <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MF8DragonBuffetBonus_Items">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items">
+        <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Items">
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
           <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>

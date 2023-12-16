@@ -186,12 +186,6 @@
     <Compile Include="EF\HTAppGetPlayerInfoByPID_1_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\HTRGoldenHourPlayer.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTRGoldenHourPromotion.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="EF\HTRPromotion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -202,24 +196,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\HTRTicketPromotion.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_MidAutumeLog.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_MidAutumePlayers.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_SundayGoldenHourLog.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_SundayGoldenHourPlayers.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_ThursdayGoldenHourPlayers.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\HTR_ThursdayGoldenHourPromotion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\KioskUserActionLog_SelectAll_Result.cs">
@@ -306,9 +282,6 @@
     <Compile Include="EF\MFWeeklyBonus_Players.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\MiniBuffet_GetNewClassicPlayerLogs.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="EF\MiniBuffet_GetNewClassicPlayer_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -348,25 +321,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RASecurityModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="EF\spHTR_GoldenHourDraw_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\spHTR_MidAutumeBySearchPatron_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\spHTR_MidAutumeLogByID_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="EF\spHTR_PromotionByPatron_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\spHTR_PromotionLogByID_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\spHTR_SundayGoldenHourDraw_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\spHTR_ThursdayGoldenHourDraw_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="EF\spReportCIFE_Program_Result.cs">
@@ -399,6 +357,7 @@
     </EntityDeploy>
     <None Include="EF\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <EntityDeploy Include="EF\RASecurityModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

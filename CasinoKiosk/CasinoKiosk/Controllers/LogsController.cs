@@ -465,6 +465,87 @@ namespace CasinoKiosk.Areas.Admin.Controllers
 
         }
 
+        //8Dragon Buffet Log start
+        [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
+        public ActionResult MF8DragonLog(int page = 1)
+        {
+            var dao = new LogDao();
+            var model = dao.ListAllPagingMF8DragonLog(page, 50, 0);
+            return View(model);
+        }
+        
+        [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
+        [HttpPost]
+        public ActionResult MF8DragonLogByDate()
+        {
+            var dao = new LogDao();
+            IEnumerable<MF8DragonBuffetBonus_Logs> model = null;
+            if (HttpContext.Request.Form["ID"] != "")
+            {
+                var ID = Convert.ToInt32(HttpContext.Request.Form["ID"].ToString());
+                model = dao.ListAllMF8DragonLog("", "", ID);
+            }
+            else
+            if (HttpContext.Request.Form["dfromDate"] != "" && HttpContext.Request.Form["dtoDate"] != "")
+            {
+                var fdate = Convert.ToString(HttpContext.Request.Form["dfromDate"]);
+                var tdate = Convert.ToString(HttpContext.Request.Form["dtoDate"]);
+                model = dao.ListAllMF8DragonLog(fdate, tdate, 0);
+            }
+            else
+            {
+                model = dao.ListAllMF8DragonLog("", "", 0).Take(100);
+            }
+
+            return View("MF8DragonLog", model);
+
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
+        [HttpPost]
+        public ActionResult MF8DragonLog(int ID, int page = 1)
+        {
+            if (HttpContext.Request.Form["ID"] != null){
+                ID = Convert.ToInt32(HttpContext.Request.Form["ID"]);
+            } else {
+                ID = 0;
+            }
+
+            var dao = new LogDao();
+            var model = dao.ListAllPagingMF8DragonLog(page, 50, ID);
+            return View(model);
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        public ActionResult MF8DragonVoid(int id)
+        {
+            var dao = new LogDao();
+            var log = new MF8DragonBuffetBonus_Logs();
+            MF8DragonBuffetBonus_Items item;
+
+            log = entity.MF8DragonBuffetBonus_Logs.FirstOrDefault(x => x.ID == id);
+
+            string s1 = Session["userName"].ToString();
+
+            if (log.voidedStatus == "printed") {
+                log.voidedStatus = "voided";
+                if (log.voidedPerson == null) {
+                    item = entity.MF8DragonBuffetBonus_Items.Find(log.ItemID);
+                    item.Status = 1;
+                    item.DateInserted = DateTime.Now;
+                     
+                    log.voidedPerson = s1;
+                    log.voidedTime = DateTime.Now;
+                    entity.SaveChanges();
+                }
+            }
+
+            entity.SaveChanges();
+            return RedirectToAction("MF8DragonLog");
+
+        }
+        //8Dragon Buffet Log end
+
         [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
         public ActionResult FridayLog(int page = 1)
         {

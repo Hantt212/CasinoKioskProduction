@@ -30,17 +30,11 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
                     {
-
-                        @*<a>@Html.ActionLink("Item List", "Index", "Items", new object { }, new { @class = "active" })</a>*@
                         <a class="collapse-item" href="~/Items/Index">Item List</a>
-
-
-                        @*<a>@Html.ActionLink("Log List", "Index", "Logs", new object { }, new { @class = "collapse-item" })</a>*@
                         <a class="collapse-item" href="~/Logs/Index">Log List</a>
                     }
                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                     {
-                        @*<a>@Html.ActionLink("Create", "Create", "Items", new object { }, new { @class = "collapse-item" })</a>*@
                         <a class="collapse-item" href="~/Items/Create">Create Item</a>
                     }
                 </div>
@@ -64,32 +58,19 @@
                         <a>@Html.ActionLink("Daily Manual", "DailyManual", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
                         <a>@Html.ActionLink("Weekly Log", "WeeklyLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
+                        <a>@Html.ActionLink("8Dragons Buffet Log", "MF8DragonLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
                         <a>@Html.ActionLink("Friday Log", "FridayLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
                         <a>@Html.ActionLink("Redemption Log", "RedemptionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
-                        @*<a>@Html.ActionLink("Daily PS Bundle", "PSBundleLog", "Logs", new object { }, new { @class = "collapse-item" })</a>*@
-
-                        @*<a>@Html.ActionLink("The Grand Signature", "Index", "CasinoTGS", new object { }, new { @class = "collapse-item" })</a>*@
-
-                        @*<a>@Html.ActionLink("Ticket Promotion Log", "Index", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>*@
-
-                        @*<a>@Html.ActionLink("Thursday Promotion", "GoldenHour", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
-                        <a>@Html.ActionLink("Sunday Promotion", "SundayPromotion", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>*@
                         if (User.IsInRole("SuperAdmin"))
                         {
                             <a> @Html.ActionLink("HTR Promotion List", "HTRPromotionList", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
                         }
 
                         <a> @Html.ActionLink("HTR Promotion Log", "HTRPromotionLog", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
-
-                        @*<a>@Html.ActionLink("Ticket Mini Buffet", "MiniBuffet", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>*@
-
-
-                        @*<a href="~/Assets/Reports/TicketPromotion.aspx" class="collapse-item">Ticket Promotion</a>*@
-
-
+                        
                     }
                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("ITAdmin"))
                     {
@@ -131,8 +112,6 @@
                     <a>@Html.ActionLink("CIFE Players List", "Index", "Players", new object { }, new { @class = "collapse-item" })</a>
                     <a>@Html.ActionLink("CIFE Reports", "CIFEReport", "Report", new object { }, new { @class = "collapse-item" })</a>
                     <a>@Html.ActionLink("CIFE Detail Reports", "PlayerList", "Players", new object { }, new { @class = "collapse-item" })</a>
-                   
-                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
                 </div>
             </div>
         </li>
@@ -154,15 +133,12 @@
                         <a>@Html.ActionLink("CIFE Detail Reports", "PlayerList", "Players", new object { }, new { @class = "collapse-item" })</a>
                         <a>@Html.ActionLink("Analyst Reports", "Index", "Analyst", new object { }, new { @class = "collapse-item" })</a>
                     }
+                    
 
-                    @*Add 20230301 Hantt start*@
                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                     {
                         <a>@Html.ActionLink("Marketing Authorizers", "MarketAuth", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
                     }
-                    @*Add 20230301 Hantt end*@
-
-                    @*<a>@Html.ActionLink("Reprint", "Reprint", "Report", new object { }, new { @class = "collapse-item" })</a>*@
                 </div>
             </div>
         </li>

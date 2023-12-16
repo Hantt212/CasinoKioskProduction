@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace CasinoKiosk.Assets.Reports
 {
-    public partial class GoldenHourTicket : System.Web.UI.Page
+    public partial class MF8DragonTickets : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,13 +30,12 @@ namespace CasinoKiosk.Assets.Reports
             string connStr = System.Configuration.ConfigurationManager.ConnectionStrings["CKdbContext"].ConnectionString;
             using (SqlConnection cn = new SqlConnection(connStr))
             {
-                //SqlCommand cmd = new SqlCommand("sp_HTRGoldenHourPromotionByID", cn);
-                SqlCommand cmd = new SqlCommand("spHTR_ThursdayGoldenHourPromotionByID", cn);
+                SqlCommand cmd = new SqlCommand("MF8DragonBuffetBonus_LogsByID", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@ID", id);
-                //cmd.Parameters.AddWithValue("@toDate", toDate);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.Fill(dt);
+                
             }
             return dt;
         }
@@ -53,20 +52,15 @@ namespace CasinoKiosk.Assets.Reports
 
             if (dt != null)
             {
-                //dt.TableName = "RedeemLogDatatable";
-                //ReportParameter[] reportParameters = new ReportParameter[1];
-                ReportDataSource rds = new ReportDataSource("HTRGoldenHour", dt);
+                ReportDataSource rds = new ReportDataSource("MF8Dragon", dt);
 
-                //string s = rds.DataMember.ToString();
+                ReportPromotion.LocalReport.DataSources.Clear();
+                ReportPromotion.LocalReport.DataSources.Add(rds);
+                ReportPromotion.LocalReport.ReportPath = Server.MapPath("~/Assets/Reports/MF8DragonTickets.rdlc");
 
-                ReportViewerGoldenHour.LocalReport.DataSources.Clear();
-                ReportViewerGoldenHour.LocalReport.DataSources.Add(rds);
-                ReportViewerGoldenHour.LocalReport.ReportPath = Server.MapPath("~/Assets/Reports/HTRGoldenHourPromotion.rdlc");
-
-                //ReportViewerTicketPromotion.LocalReport.SetParameters(reportParameters);
-                ReportViewerGoldenHour.DataBind();
-                ReportViewerGoldenHour.ShowToolBar = false;
-                ReportViewerGoldenHour.LocalReport.Refresh();
+                ReportPromotion.DataBind();
+                ReportPromotion.ShowToolBar = false;
+                ReportPromotion.LocalReport.Refresh();
 
             }
 
