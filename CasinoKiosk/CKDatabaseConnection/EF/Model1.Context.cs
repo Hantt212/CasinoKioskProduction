@@ -35,7 +35,6 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MFDailyBonus_Players> MFDailyBonus_Players { get; set; }
         public virtual DbSet<MFFridayBonus_Items> MFFridayBonus_Items { get; set; }
         public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
-        public virtual DbSet<MFFridayBonus_Players> MFFridayBonus_Players { get; set; }
         public virtual DbSet<MFWeeklyBonus_Items> MFWeeklyBonus_Items { get; set; }
         public virtual DbSet<MFWeeklyBonus_Logs> MFWeeklyBonus_Logs { get; set; }
         public virtual DbSet<MFWeeklyBonus_Players> MFWeeklyBonus_Players { get; set; }
@@ -281,6 +280,15 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("ID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionLogByID_Result>("spHTR_PromotionLogByID", iDParameter);
+        }
+    
+        public virtual ObjectResult<string> SpCheckPlayerTier(string playerID)
+        {
+            var playerIDParameter = playerID != null ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SpCheckPlayerTier", playerIDParameter);
         }
     }
 }

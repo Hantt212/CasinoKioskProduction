@@ -637,7 +637,9 @@ namespace WebServiceApp
 
             //Dựa vào điểm, insert Item tương ứng
             isStanded = false;
-            if (combinedPoints >= 20 || balancePoints >= 1000) {
+            string tierName = function.getTierName(playerID);
+            if ((tierName == "Classic" && combinedPoints >= 20) || (tierName == "Classic" && balancePoints >= 1000))
+            {
                 isStanded = true;
             }
 

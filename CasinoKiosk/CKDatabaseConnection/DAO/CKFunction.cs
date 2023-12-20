@@ -3456,6 +3456,7 @@ namespace CKDatabaseConnection.DAO
             }
             return itemPoints;
         }
+
         public string getItemName(int ID)
         {
             string itemName = "";
@@ -3494,6 +3495,45 @@ namespace CKDatabaseConnection.DAO
                 throw ex;
             }
             return itemName;
+        }
+
+        public string getTierName(int ID)
+        {
+            string tierName = "";
+            DataSet ds;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SpCheckPlayerTier", con))
+                {
+                    con.Open();
+                    cmd.Connection = con;
+                    cmd.Parameters.Add(new SqlParameter("@PlayerID", ID));
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        ds = new DataSet();
+                        da.Fill(ds);
+                    }
+                }
+            }
+            try
+            {
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            tierName = ds.Tables[0].Rows[0]["Tier"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return tierName;
         }
         public int getItemQuantity(int ID)
         {

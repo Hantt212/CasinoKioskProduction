@@ -1051,5 +1051,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SpCheckPlayerTier" FunctionName="ITHoTram_CustomReportModel.Store.SpCheckPlayerTier" />
   </EntityContainerMapping>
 </Mapping>

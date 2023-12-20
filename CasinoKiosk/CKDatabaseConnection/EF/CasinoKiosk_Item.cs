@@ -18,7 +18,7 @@ namespace CKDatabaseConnection.EF
         public string ItemName { get; set; }
         public Nullable<int> ItemPoints { get; set; }
         public int Quantity { get; set; }
-        public bool isActive { get; set; }
+        public Nullable<bool> isActive { get; set; }
         public string imageURL { get; set; }
     }
 }

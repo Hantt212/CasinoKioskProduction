@@ -731,6 +731,9 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SpCheckPlayerTier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlayerID" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />
@@ -1100,6 +1103,9 @@
           <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs" />
           <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players" />
           <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" />
+          <FunctionImport Name="SpCheckPlayerTier" ReturnType="Collection(String)">
+            <Parameter Name="PlayerID" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -2876,6 +2882,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SpCheckPlayerTier" FunctionName="ITHoTram_CustomReportModel.Store.SpCheckPlayerTier" />
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

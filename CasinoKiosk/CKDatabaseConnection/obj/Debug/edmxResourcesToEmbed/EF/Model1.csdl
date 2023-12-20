@@ -299,6 +299,9 @@
     <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs" />
     <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players" />
     <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" />
+    <FunctionImport Name="SpCheckPlayerTier" ReturnType="Collection(String)">
+      <Parameter Name="PlayerID" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
