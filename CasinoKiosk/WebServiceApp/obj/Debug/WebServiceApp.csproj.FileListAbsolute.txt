@@ -325,6 +325,7 @@ C:\Users\igt.admin\Desktop\Hantt\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\zh-Ha
 C:\Users\igt.admin\Desktop\Hantt\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.csprojResolveAssemblyReference.cache
 C:\Users\igt.admin\Desktop\Hantt\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.dll
 C:\Users\igt.admin\Desktop\Hantt\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.pdb
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.csprojResolveAssemblyReference.cache
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\grpc_csharp_ext.x86.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\grpc_csharp_ext.x64.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\libgrpc_csharp_ext.x64.so
@@ -379,6 +380,5 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceA
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\ru\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.csprojResolveAssemblyReference.cache
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.pdb

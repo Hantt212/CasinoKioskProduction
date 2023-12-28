@@ -71,7 +71,7 @@
                                     <th>Yesterday Points</th>
                                     <th>ItemID</th>
                                     <th>ItemName</th>
-                                    
+                                    <th>Kiosk.No</th>
                                     <th>Status</th>
                                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                     {
@@ -94,7 +94,7 @@
                                         <td>@Log.YesterdayPoints</td>
                                         <td>@Log.ItemID</td>
                                         <td>@Log.ItemName</td>
-                                       
+                                        <td>@Log.Location</td>
                                         <td>@Log.voidedStatus</td>
                                         @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                         {
@@ -108,10 +108,15 @@
                                             </td>
 
                                             <td>
-                                                @Html.ActionLink("Reprint", "MF8DragonReprint", "Report", new { id = Log.ID, playerID = Log.PlayerID, promoName = Log.PromotionName }, new
-                                           {
-                                               onclick = "return confirm('Are you sure you wish to reprint this ticket?');"
-                                           })
+                                                @if (Log.voidedStatus != "voided")
+                                                {
+                                                    @Html.ActionLink("Reprint", "MF8DragonReprint", "Report", new { id = Log.ID, playerID = Log.PlayerID, promoName = Log.PromotionName }, new
+                                                   {
+                                                       onclick = "return confirm('Are you sure you wish to reprint this ticket?');"
+                                                   })
+
+                                                }
+                                            
                                             </td>
                                         }
                                     </tr>

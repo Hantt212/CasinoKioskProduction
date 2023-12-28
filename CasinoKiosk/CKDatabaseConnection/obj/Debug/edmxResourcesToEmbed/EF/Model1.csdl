@@ -97,29 +97,6 @@
     <Property Name="Status" Type="Int32" />
     <Property Name="PlayerID" Type="Int32" />
   </EntityType>
-  <EntityType Name="MFFridayBonus_Logs">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PlayerID" Type="Int32" />
-    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="FridayPoints" Type="Int32" />
-    <Property Name="SlotFridayPoints" Type="Int32" />
-    <Property Name="TableFridayPoints" Type="Int32" />
-    <Property Name="ItemID" Type="Int32" />
-    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="ItemPoints" Type="Int32" />
-    <Property Name="Status" Type="Int32" />
-    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="voidedTime" Type="DateTime" Precision="3" />
-  </EntityType>
   <EntityType Name="MFFridayBonus_Players">
     <Key>
       <PropertyRef Name="ID" />
@@ -186,7 +163,6 @@
     <EntitySet Name="MFDailyBonus_Items" EntityType="Self.MFDailyBonus_Items" />
     <EntitySet Name="MFDailyBonus_Players" EntityType="Self.MFDailyBonus_Players" />
     <EntitySet Name="MFFridayBonus_Items" EntityType="Self.MFFridayBonus_Items" />
-    <EntitySet Name="MFFridayBonus_Logs" EntityType="Self.MFFridayBonus_Logs" />
     <EntitySet Name="MFFridayBonus_Players" EntityType="Self.MFFridayBonus_Players" />
     <EntitySet Name="MFWeeklyBonus_Items" EntityType="Self.MFWeeklyBonus_Items" />
     <EntitySet Name="MFWeeklyBonus_Logs" EntityType="Self.MFWeeklyBonus_Logs" />
@@ -195,19 +171,7 @@
       <Parameter Name="PlayerID" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="MFDailyBonus_SecondLogs" EntityType="ITHoTram_CustomReportModel.MFDailyBonus_SecondLogs" />
-    <FunctionImport Name="MFBonus_spSelectDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="MFBonus_spSelectDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
     <FunctionImport Name="MFBonus_spSelectFridayLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
       <Parameter Name="PlayerID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="MFBonus_spSelectFridayLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
@@ -299,8 +263,18 @@
     <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs" />
     <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players" />
     <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" />
-    <FunctionImport Name="SpCheckPlayerTier" ReturnType="Collection(String)">
-      <Parameter Name="PlayerID" Mode="In" Type="String" />
+    <EntitySet Name="MFFridayBonus_Logs" EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Logs" />
+    <FunctionImport Name="MFBonus_spSelectDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
@@ -337,26 +311,6 @@
     <Property Name="reprintedTime" Type="DateTime" Precision="3" />
     <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <ComplexType Name="MFBonus_spSelectDailyLogs_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="Int32" Name="PlayerID" Nullable="true" />
-    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="DailyPoints" Nullable="true" />
-    <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
-    <Property Type="Int32" Name="TableDailyPoints" Nullable="true" />
-    <Property Type="Int32" Name="ItemID" Nullable="true" />
-    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-    <Property Type="Int32" Name="Status" Nullable="true" />
-    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
-    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
-  </ComplexType>
   <ComplexType Name="MFBonus_spSelectFridayLogs_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
     <Property Type="Int32" Name="PlayerID" Nullable="true" />
@@ -367,25 +321,6 @@
     <Property Type="Int32" Name="FridayPoints" Nullable="true" />
     <Property Type="Int32" Name="SlotFridayPoints" Nullable="true" />
     <Property Type="Int32" Name="TableFridayPoints" Nullable="true" />
-    <Property Type="Int32" Name="ItemID" Nullable="true" />
-    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
-    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-    <Property Type="Int32" Name="Status" Nullable="true" />
-    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
-  </ComplexType>
-  <ComplexType Name="MFBonus_spSelectWeeklyLogs_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="Int32" Name="PlayerID" Nullable="true" />
-    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
-    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
-    <Property Type="Int32" Name="SlotWeeklyPoints" Nullable="true" />
-    <Property Type="Int32" Name="TableWeeklyPoints" Nullable="true" />
     <Property Type="Int32" Name="ItemID" Nullable="true" />
     <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
     <Property Type="Int32" Name="ItemPoints" Nullable="true" />
@@ -1011,6 +946,7 @@
     <Property Name="CombinedPoints" Type="Int32" Nullable="false" />
     <Property Name="BalancePoints" Type="Int32" Nullable="false" />
     <Property Name="GamingDate" Type="DateTime" Precision="3" />
+    <Property Name="Quantity" Type="Int32" />
   </EntityType>
   <EntityType Name="MF8DragonBuffetBonus_Items">
     <Key>
@@ -1022,4 +958,71 @@
     <Property Name="PlayerID" Type="Int32" />
     <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
+  <EntityType Name="MFFridayBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlayerID" Type="Int32" />
+    <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FridayPoints" Type="Int32" />
+    <Property Name="SlotFridayPoints" Type="Int32" />
+    <Property Name="TableFridayPoints" Type="Int32" />
+    <Property Name="ItemID" Type="Int32" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPoints" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="voidedTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <ComplexType Name="MFBonus_spSelectDailyLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="DailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="TableDailyPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="reprintedTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="MFBonus_spSelectWeeklyLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="SlotWeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="TableWeeklyPoints" Nullable="true" />
+    <Property Type="Int32" Name="ItemID" Nullable="true" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+  </ComplexType>
 </Schema>

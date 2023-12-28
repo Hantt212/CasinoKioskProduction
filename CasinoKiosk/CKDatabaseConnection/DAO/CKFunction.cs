@@ -3456,7 +3456,6 @@ namespace CKDatabaseConnection.DAO
             }
             return itemPoints;
         }
-
         public string getItemName(int ID)
         {
             string itemName = "";
@@ -3535,6 +3534,7 @@ namespace CKDatabaseConnection.DAO
             }
             return tierName;
         }
+
         public int getItemQuantity(int ID)
         {
             int quan = 0;

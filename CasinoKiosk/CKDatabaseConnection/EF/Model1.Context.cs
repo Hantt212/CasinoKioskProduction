@@ -34,7 +34,7 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MFDailyBonus_Items> MFDailyBonus_Items { get; set; }
         public virtual DbSet<MFDailyBonus_Players> MFDailyBonus_Players { get; set; }
         public virtual DbSet<MFFridayBonus_Items> MFFridayBonus_Items { get; set; }
-        public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
+        public virtual DbSet<MFFridayBonus_Players> MFFridayBonus_Players { get; set; }
         public virtual DbSet<MFWeeklyBonus_Items> MFWeeklyBonus_Items { get; set; }
         public virtual DbSet<MFWeeklyBonus_Logs> MFWeeklyBonus_Logs { get; set; }
         public virtual DbSet<MFWeeklyBonus_Players> MFWeeklyBonus_Players { get; set; }
@@ -73,6 +73,7 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MF8DragonBuffetBonus_Logs> MF8DragonBuffetBonus_Logs { get; set; }
         public virtual DbSet<MF8DragonBuffetBonus_Players> MF8DragonBuffetBonus_Players { get; set; }
         public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
+        public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {
@@ -83,24 +84,6 @@ namespace CKDatabaseConnection.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectPlayerPoints_Result>("MFBonus_spSelectPlayerPoints_Result", playerIDParameter);
         }
     
-        public virtual ObjectResult<MFBonus_spSelectDailyLogs_Result> MFBonus_spSelectDailyLogs(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectDailyLogs_Result>("MFBonus_spSelectDailyLogs", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MFBonus_spSelectDailyLogs_Result> MFBonus_spSelectDailyLogs_Result(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectDailyLogs_Result>("MFBonus_spSelectDailyLogs_Result", playerIDParameter);
-        }
-    
         public virtual ObjectResult<MFBonus_spSelectFridayLogs_Result> MFBonus_spSelectFridayLogs(Nullable<int> playerID)
         {
             var playerIDParameter = playerID.HasValue ?
@@ -108,24 +91,6 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("PlayerID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectFridayLogs_Result>("MFBonus_spSelectFridayLogs", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MFBonus_spSelectWeeklyLogs_Result> MFBonus_spSelectWeeklyLogs(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectWeeklyLogs_Result>("MFBonus_spSelectWeeklyLogs", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MFBonus_spSelectWeeklyLogs_Result> MFBonus_spSelectWeeklyLogs_Result(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectWeeklyLogs_Result>("MFBonus_spSelectWeeklyLogs_Result", playerIDParameter);
         }
     
         public virtual ObjectResult<MFBonus_spSelectFridayLogs_Result> MFBonus_spSelectFridayLogs_Result(Nullable<int> playerID)
@@ -282,13 +247,40 @@ namespace CKDatabaseConnection.EF
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionLogByID_Result>("spHTR_PromotionLogByID", iDParameter);
         }
     
-        public virtual ObjectResult<string> SpCheckPlayerTier(string playerID)
+        public virtual ObjectResult<MFBonus_spSelectDailyLogs_Result> MFBonus_spSelectDailyLogs(Nullable<int> playerID)
         {
-            var playerIDParameter = playerID != null ?
+            var playerIDParameter = playerID.HasValue ?
                 new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(string));
+                new ObjectParameter("PlayerID", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("SpCheckPlayerTier", playerIDParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectDailyLogs_Result>("MFBonus_spSelectDailyLogs", playerIDParameter);
+        }
+    
+        public virtual ObjectResult<MFBonus_spSelectDailyLogs_Result> MFBonus_spSelectDailyLogs_Result(Nullable<int> playerID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectDailyLogs_Result>("MFBonus_spSelectDailyLogs_Result", playerIDParameter);
+        }
+    
+        public virtual ObjectResult<MFBonus_spSelectWeeklyLogs_Result> MFBonus_spSelectWeeklyLogs(Nullable<int> playerID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectWeeklyLogs_Result>("MFBonus_spSelectWeeklyLogs", playerIDParameter);
+        }
+    
+        public virtual ObjectResult<MFBonus_spSelectWeeklyLogs_Result> MFBonus_spSelectWeeklyLogs_Result(Nullable<int> playerID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectWeeklyLogs_Result>("MFBonus_spSelectWeeklyLogs_Result", playerIDParameter);
         }
     }
 }

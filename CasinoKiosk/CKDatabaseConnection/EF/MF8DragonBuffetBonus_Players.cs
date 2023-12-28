@@ -22,5 +22,6 @@ namespace CKDatabaseConnection.EF
         public int CombinedPoints { get; set; }
         public int BalancePoints { get; set; }
         public Nullable<System.DateTime> GamingDate { get; set; }
+        public Nullable<int> Quantity { get; set; }
     }
 }

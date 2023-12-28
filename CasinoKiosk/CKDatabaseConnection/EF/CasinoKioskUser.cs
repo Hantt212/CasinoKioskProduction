@@ -11,7 +11,8 @@ namespace CKDatabaseConnection.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CasinoKioskUser
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,6 +21,7 @@ namespace CKDatabaseConnection.EF
             this.CasinoKioskUserRoles = new HashSet<CasinoKioskUserRole>();
         }
     
+        [Key]
         public int UserID { get; set; }
         public string CasinoKiosk_UserName { get; set; }
         public Nullable<System.DateTime> CreatedTime { get; set; }

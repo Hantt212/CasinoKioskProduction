@@ -31,7 +31,6 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MFFridayBonus_Items> MFFridayBonus_Items { get; set; }
         public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
         public virtual DbSet<MFFridayBonus_Players> MFFridayBonus_Players { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             

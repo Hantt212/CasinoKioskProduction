@@ -618,12 +618,12 @@ namespace WebServiceApp
             DateTime currentDay;
             DateTime newDay;
             DateTime yesterday;
-            bool isStanded = false;
+            bool isPass = false;
 
             //count Item of Player
             int countItems = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).Count();
             int countPlayers = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).Count();
-            
+
             DateTime playerGamingDate = function.getPlayerGamingDateDaily(playerID);
             currentDay = function.getMFDBCurrentDay();
             yesterday = currentDay.AddDays(-1);
@@ -636,15 +636,13 @@ namespace WebServiceApp
             int balancePoints = function.getPlayerPointsBalance(playerID);
 
             //Dựa vào điểm, insert Item tương ứng
-            isStanded = false;
+            isPass = false;
             string tierName = function.getTierName(playerID);
-            if ((tierName == "Classic" && combinedPoints >= 20) || (tierName == "Classic" && balancePoints >= 1000))
-            {
-                isStanded = true;
-            }
+
 
             //Insert or update Player
-            if (countPlayers == 0){
+            if (countPlayers == 0)
+            {
                 dragonPlayer = new MF8DragonBuffetBonus_Players();
                 dragonPlayer.PlayerID = playerID;
                 dragonPlayer.PlayerName = playerName;
@@ -653,49 +651,85 @@ namespace WebServiceApp
                 dragonPlayer.CombinedPoints = combinedPoints;
                 dragonPlayer.BalancePoints = balancePoints;
                 dragonPlayer.GamingDate = playerGamingDate;
+                dragonPlayer.Quantity = 3; // maximum 3 ticket
                 db.MF8DragonBuffetBonus_Players.Add(dragonPlayer);
-            } else {
+            }
+            else
+            {
                 dragonPlayer = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).FirstOrDefault();
                 dragonPlayer.DailyPoints = playerPointsDaily;
                 dragonPlayer.YesterdayPoints = playerPointsYesterday;
                 dragonPlayer.CombinedPoints = combinedPoints;
                 dragonPlayer.BalancePoints = balancePoints;
-               // dragonPlayer.GamingDate = playerGamingDate;
             }
 
-            //Insert or update Items
-            if (countItems == 0) {
-                //Insert Item
-                
-                dragonItem = new MF8DragonBuffetBonus_Items();
-                dragonItem.ItemName = "8Dragon Buffet Ticket";
-                dragonItem.Status = isStanded == true ? 1 : 0;
-                dragonItem.PlayerID = playerID;
-                dragonItem.DateInserted = DateTime.Now;
-                db.MF8DragonBuffetBonus_Items.Add(dragonItem);
-            }
-            //if items existed.
-            else {
-                //compare last player gaming date vs current gaming date/yesterday
-                dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).FirstOrDefault();
-
-                if (dragonItem.DateInserted < currentDay) {
-                    dragonItem.Status = isStanded == true ? 1 : 0;
-                    dragonItem.DateInserted = DateTime.Now;
-                }else
-                {
-                    if (dragonItem.Status == 0 &&  isStanded == true)
-                    {
-                        dragonItem.Status = 1;
-                        dragonItem.DateInserted = DateTime.Now;
-                    }
-                }
+            if ((tierName == "Classic" && combinedPoints >= 20) || (tierName == "Classic" && balancePoints >= 1000))
+            {
+                isPass = true;
             }
 
             //update GamingDate
             dragonPlayer.GamingDate = currentDay;
 
-            db.SaveChanges();
+            //Insert or update Items
+            if (countItems == 0)
+            {
+                //Insert Item
+                dragonItem = new MF8DragonBuffetBonus_Items();
+                dragonItem.ItemName = "8Dragon Buffet Ticket";
+                dragonItem.Status = isPass == true ? 1 : 0;
+                dragonItem.PlayerID = playerID;
+                dragonItem.DateInserted = DateTime.Now;
+                db.MF8DragonBuffetBonus_Items.Add(dragonItem);
+                db.SaveChanges();
+                db.MF8DragonBuffetBonus_Items.Add(dragonItem);
+                db.SaveChanges();
+                db.MF8DragonBuffetBonus_Items.Add(dragonItem);
+                db.SaveChanges();
+            }
+            //if items existed.
+            else
+            {
+                List<MF8DragonBuffetBonus_Items> itemList = new List<MF8DragonBuffetBonus_Items>();
+                itemList = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).ToList();
+
+                //compare last player gaming date vs current gaming date/yesterday
+                foreach (var item in itemList)
+                {
+                    dragonItem = db.MF8DragonBuffetBonus_Items.Find(item.ID);
+
+
+
+                    if (item.DateInserted < currentDay)
+                    {
+                        dragonItem.Status = isPass == true ? 1 : 0;
+                        dragonItem.DateInserted = DateTime.Now;
+                    }
+                    else
+                    {
+                        if (isPass == true)
+                        {
+                            if (item.Status == 0)
+                            {
+                                dragonItem.Status = 1;
+                                dragonItem.DateInserted = DateTime.Now;
+                            }
+                        }
+                        else
+                        {
+                            dragonItem.Status = 0;
+                            dragonItem.DateInserted = DateTime.Now;
+                        }
+                    }
+                    db.SaveChanges();
+                }
+
+
+            }
+
+
+
+
 
             var dragonInfo = new RedeemLog8DragonsFirst()
             {
@@ -710,6 +744,8 @@ namespace WebServiceApp
             return dragonInfo;
         }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public RedeemLog8DragonsSecond Redeem8DragonsSecond(int playerID, int itemID, string location)
         {
             MF8DragonBuffetBonus_Items dragonItem = new MF8DragonBuffetBonus_Items();
@@ -727,7 +763,7 @@ namespace WebServiceApp
             {
                 dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID && item.ID == itemID).FirstOrDefault();
             }
-            
+
             DateTime currentDay;
             DateTime yesterday;
 
@@ -741,7 +777,7 @@ namespace WebServiceApp
             if (dragonItem.ID > 0)
             {
                 dragonItem.Status = 2;
-                
+
                 log.ID = dragonItem.ID;
                 log.PlayerID = playerID;
                 log.PlayerName = playerName;
@@ -759,11 +795,13 @@ namespace WebServiceApp
                 log.IssueTime = DateTime.Now.ToString("HH:mm:ss");
                 log.Location = location;
                 log.voidedStatus = "printed";
-                
+
                 //update GamingDate
                 MF8DragonBuffetBonus_Players dragonPlayer = db.MF8DragonBuffetBonus_Players.Where(item => item.PlayerID == playerID).FirstOrDefault();
                 dragonPlayer.GamingDate = currentDay;
-                
+                dragonPlayer.Quantity = dragonPlayer.Quantity - 1;
+
+
                 try
                 {
                     ok = 1;
@@ -786,7 +824,9 @@ namespace WebServiceApp
                 PlayerName = function.getPlayerName(playerID),
                 ItemName = dragonItem.ItemName,
                 PromotionName = "8Dragon Buffet Bonus",
-                Points = playerPointsDaily,
+                TodayPoints = playerPointsDaily,
+                YesterdayPoints = playerPointYesterday,
+                BalancePoints = balancePoint,
                 IssuedDate = DateTime.Now.ToString("dd/MM/yyyy"),
                 IssuedTime = DateTime.Now.ToString("HH:mm:ss"),
                 GamingDate = log.GamingDate,
@@ -911,15 +951,17 @@ namespace WebServiceApp
                         function.updatePlayerGamingDate(playerID, currentDay);
                     }
                 }
-                
+
 
                 if (dailyPoints > 0)
                 {
                     this.function.updateItemDailyStatusNew(playerID, dailyPoints);
-                }else {
+                }
+                else
+                {
                     this.function.updateItemDailyStatusAll(playerID, 0);
                 }
-               
+
             }
 
             var dailyLog = new RedeemLogDailyFirst()
@@ -1710,7 +1752,7 @@ namespace WebServiceApp
                         if (ds.Tables[0].Rows.Count > 0)
                         {
                             DataRow dr = ds.Tables[0].Rows[0];
-                            
+
                             itemDetail.ID = Convert.ToInt32(dr["ID"]);
                             itemDetail.ItemName = dr["ItemName"].ToString();
                             itemDetail.ItemPoints = Convert.ToInt32(dr["ItemPoints"].ToString());
@@ -1781,7 +1823,9 @@ namespace WebServiceApp
             if (count > 0)
             {
                 function.updatePlayerPoints(playerID, dailyPoints, weeklyPoints, fridayPoints, gamingDate);
-            } else {
+            }
+            else
+            {
                 function.insertPlayersPoints(playerID, dailyPoints, weeklyPoints, fridayPoints, gamingDate);
             }
 
@@ -2805,7 +2849,7 @@ namespace WebServiceApp
         }
 
         public class RedeemLog8DragonsSecond
-    {
+        {
             public int TicketNo { get; set; }
             public int PlayerID { get; set; }
             public string PlayerName { get; set; }
@@ -2814,15 +2858,16 @@ namespace WebServiceApp
             public string IssuedTime { get; set; }
             public string GamingDate { get; set; }
             public string PromotionName { get; set; }
-            public int Points { get; set; }
+            public int YesterdayPoints { get; set; }
+            public int TodayPoints { get; set; }
             public int CombinedPoints { get; set; }
             public int BalancePoints { get; set; }
             public int Status { get; set; }
             public List<MF8DragonBuffetBonus_Items> Items { get; set; }
         }
-    //Add 20231212 Hantt end
+        //Add 20231212 Hantt end
 
-    public class RedeemLogDailyFirst
+        public class RedeemLogDailyFirst
         {
             public int PlayerID { get; set; }
             public string PlayerName { get; set; }

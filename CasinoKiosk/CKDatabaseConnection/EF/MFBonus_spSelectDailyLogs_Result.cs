@@ -31,5 +31,8 @@ namespace CKDatabaseConnection.EF
         public string voidedStatus { get; set; }
         public string voidedPerson { get; set; }
         public string reprintedPerson { get; set; }
+        public Nullable<System.DateTime> voidedTime { get; set; }
+        public string Location { get; set; }
+        public Nullable<System.DateTime> reprintedTime { get; set; }
     }
 }

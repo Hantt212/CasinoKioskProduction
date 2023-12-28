@@ -376,6 +376,7 @@
           <Property Name="CombinedPoints" Type="int" Nullable="false" />
           <Property Name="BalancePoints" Type="int" Nullable="false" />
           <Property Name="GamingDate" Type="datetime" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="MFBonus_PlayerPoints">
           <Key>
@@ -731,9 +732,6 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="SpCheckPlayerTier" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="PlayerID" Type="nvarchar" Mode="In" />
-        </Function>
         <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />
@@ -901,29 +899,6 @@
           <Property Name="Status" Type="Int32" />
           <Property Name="PlayerID" Type="Int32" />
         </EntityType>
-        <EntityType Name="MFFridayBonus_Logs">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PlayerID" Type="Int32" />
-          <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FridayPoints" Type="Int32" />
-          <Property Name="SlotFridayPoints" Type="Int32" />
-          <Property Name="TableFridayPoints" Type="Int32" />
-          <Property Name="ItemID" Type="Int32" />
-          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="ItemPoints" Type="Int32" />
-          <Property Name="Status" Type="Int32" />
-          <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
-          <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="voidedTime" Type="DateTime" Precision="3" />
-        </EntityType>
         <EntityType Name="MFFridayBonus_Players">
           <Key>
             <PropertyRef Name="ID" />
@@ -990,7 +965,6 @@
           <EntitySet Name="MFDailyBonus_Items" EntityType="Self.MFDailyBonus_Items" />
           <EntitySet Name="MFDailyBonus_Players" EntityType="Self.MFDailyBonus_Players" />
           <EntitySet Name="MFFridayBonus_Items" EntityType="Self.MFFridayBonus_Items" />
-          <EntitySet Name="MFFridayBonus_Logs" EntityType="Self.MFFridayBonus_Logs" />
           <EntitySet Name="MFFridayBonus_Players" EntityType="Self.MFFridayBonus_Players" />
           <EntitySet Name="MFWeeklyBonus_Items" EntityType="Self.MFWeeklyBonus_Items" />
           <EntitySet Name="MFWeeklyBonus_Logs" EntityType="Self.MFWeeklyBonus_Logs" />
@@ -999,19 +973,7 @@
           <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="MFDailyBonus_SecondLogs" EntityType="ITHoTram_CustomReportModel.MFDailyBonus_SecondLogs" />
-          <FunctionImport Name="MFBonus_spSelectDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="MFBonus_spSelectDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="MFBonus_spSelectFridayLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
           <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MFBonus_spSelectFridayLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result)">
@@ -1103,8 +1065,18 @@
           <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Logs" />
           <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players" />
           <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" />
-          <FunctionImport Name="SpCheckPlayerTier" ReturnType="Collection(String)">
-            <Parameter Name="PlayerID" Mode="In" Type="String" />
+          <EntitySet Name="MFFridayBonus_Logs" EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Logs" />
+          <FunctionImport Name="MFBonus_spSelectDailyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MFBonus_spSelectDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result)">
+          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
@@ -1141,26 +1113,6 @@
           <Property Name="reprintedTime" Type="DateTime" Precision="3" />
           <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <ComplexType Name="MFBonus_spSelectDailyLogs_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PlayerID" Nullable="true" />
-          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="DailyPoints" Nullable="true" />
-          <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
-          <Property Type="Int32" Name="TableDailyPoints" Nullable="true" />
-          <Property Type="Int32" Name="ItemID" Nullable="true" />
-          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-          <Property Type="Int32" Name="Status" Nullable="true" />
-          <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
-        </ComplexType>
         <ComplexType Name="MFBonus_spSelectFridayLogs_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
           <Property Type="Int32" Name="PlayerID" Nullable="true" />
@@ -1171,25 +1123,6 @@
           <Property Type="Int32" Name="FridayPoints" Nullable="true" />
           <Property Type="Int32" Name="SlotFridayPoints" Nullable="true" />
           <Property Type="Int32" Name="TableFridayPoints" Nullable="true" />
-          <Property Type="Int32" Name="ItemID" Nullable="true" />
-          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
-          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-          <Property Type="Int32" Name="Status" Nullable="true" />
-          <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
-        </ComplexType>
-        <ComplexType Name="MFBonus_spSelectWeeklyLogs_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="Int32" Name="PlayerID" Nullable="true" />
-          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
-          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
-          <Property Type="Int32" Name="SlotWeeklyPoints" Nullable="true" />
-          <Property Type="Int32" Name="TableWeeklyPoints" Nullable="true" />
           <Property Type="Int32" Name="ItemID" Nullable="true" />
           <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
           <Property Type="Int32" Name="ItemPoints" Nullable="true" />
@@ -1815,6 +1748,7 @@
           <Property Name="CombinedPoints" Type="Int32" Nullable="false" />
           <Property Name="BalancePoints" Type="Int32" Nullable="false" />
           <Property Name="GamingDate" Type="DateTime" Precision="3" />
+          <Property Name="Quantity" Type="Int32" />
         </EntityType>
         <EntityType Name="MF8DragonBuffetBonus_Items">
           <Key>
@@ -1826,6 +1760,73 @@
           <Property Name="PlayerID" Type="Int32" />
           <Property Name="DateInserted" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
+        <EntityType Name="MFFridayBonus_Logs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlayerID" Type="Int32" />
+          <Property Name="PlayerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IssueDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="IssueTime" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="PromotionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FridayPoints" Type="Int32" />
+          <Property Name="SlotFridayPoints" Type="Int32" />
+          <Property Name="TableFridayPoints" Type="Int32" />
+          <Property Name="ItemID" Type="Int32" />
+          <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemPoints" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="GamingDate" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="voidedStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="voidedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="reprintedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="voidedTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <ComplexType Name="MFBonus_spSelectDailyLogs_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="true" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="DailyPoints" Nullable="true" />
+          <Property Type="Int32" Name="SlotDailyPoints" Nullable="true" />
+          <Property Type="Int32" Name="TableDailyPoints" Nullable="true" />
+          <Property Type="Int32" Name="ItemID" Nullable="true" />
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="Type" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="reprintedTime" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="MFBonus_spSelectWeeklyLogs_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="true" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="IssueDate" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="IssueTime" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="WeeklyPoints" Nullable="true" />
+          <Property Type="Int32" Name="SlotWeeklyPoints" Nullable="true" />
+          <Property Type="Int32" Name="TableWeeklyPoints" Nullable="true" />
+          <Property Type="Int32" Name="ItemID" Nullable="true" />
+          <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="String" Name="GamingDate" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1936,30 +1937,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MFFridayBonus_Logs">
-            <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MFFridayBonus_Logs">
-              <MappingFragment StoreEntitySet="MFFridayBonus_Logs">
-                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="FridayPoints" ColumnName="FridayPoints" />
-                <ScalarProperty Name="SlotFridayPoints" ColumnName="SlotFridayPoints" />
-                <ScalarProperty Name="TableFridayPoints" ColumnName="TableFridayPoints" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="MFFridayBonus_Players">
             <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MFFridayBonus_Players">
               <MappingFragment StoreEntitySet="MFFridayBonus_Players">
@@ -2061,54 +2038,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectDailyLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectDailyLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
-                <ScalarProperty Name="SlotDailyPoints" ColumnName="SlotDailyPoints" />
-                <ScalarProperty Name="TableDailyPoints" ColumnName="TableDailyPoints" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectDailyLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectDailyLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
-                <ScalarProperty Name="SlotDailyPoints" ColumnName="SlotDailyPoints" />
-                <ScalarProperty Name="TableDailyPoints" ColumnName="TableDailyPoints" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
-                <ScalarProperty Name="Type" ColumnName="Type" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="MFBonus_spSelectFridayLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectFridayLogs">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectFridayLogs_Result">
@@ -2121,52 +2050,6 @@
                 <ScalarProperty Name="FridayPoints" ColumnName="FridayPoints" />
                 <ScalarProperty Name="SlotFridayPoints" ColumnName="SlotFridayPoints" />
                 <ScalarProperty Name="TableFridayPoints" ColumnName="TableFridayPoints" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectWeeklyLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectWeeklyLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="WeeklyPoints" ColumnName="WeeklyPoints" />
-                <ScalarProperty Name="SlotWeeklyPoints" ColumnName="SlotWeeklyPoints" />
-                <ScalarProperty Name="TableWeeklyPoints" ColumnName="TableWeeklyPoints" />
-                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectWeeklyLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectWeeklyLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
-                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="WeeklyPoints" ColumnName="WeeklyPoints" />
-                <ScalarProperty Name="SlotWeeklyPoints" ColumnName="SlotWeeklyPoints" />
-                <ScalarProperty Name="TableWeeklyPoints" ColumnName="TableWeeklyPoints" />
                 <ScalarProperty Name="ItemID" ColumnName="ItemID" />
                 <ScalarProperty Name="ItemName" ColumnName="ItemName" />
                 <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
@@ -2860,6 +2743,7 @@
           <EntitySetMapping Name="MF8DragonBuffetBonus_Players">
             <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Players">
               <MappingFragment StoreEntitySet="MF8DragonBuffetBonus_Players">
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
                 <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
                 <ScalarProperty Name="BalancePoints" ColumnName="BalancePoints" />
                 <ScalarProperty Name="CombinedPoints" ColumnName="CombinedPoints" />
@@ -2882,7 +2766,134 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SpCheckPlayerTier" FunctionName="ITHoTram_CustomReportModel.Store.SpCheckPlayerTier" />
+          <EntitySetMapping Name="MFFridayBonus_Logs">
+            <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.MFFridayBonus_Logs">
+              <MappingFragment StoreEntitySet="MFFridayBonus_Logs">
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="TableFridayPoints" ColumnName="TableFridayPoints" />
+                <ScalarProperty Name="SlotFridayPoints" ColumnName="SlotFridayPoints" />
+                <ScalarProperty Name="FridayPoints" ColumnName="FridayPoints" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MFBonus_spSelectDailyLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectDailyLogs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
+                <ScalarProperty Name="SlotDailyPoints" ColumnName="SlotDailyPoints" />
+                <ScalarProperty Name="TableDailyPoints" ColumnName="TableDailyPoints" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="reprintedTime" ColumnName="reprintedTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MFBonus_spSelectDailyLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectDailyLogs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectDailyLogs_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="DailyPoints" ColumnName="DailyPoints" />
+                <ScalarProperty Name="SlotDailyPoints" ColumnName="SlotDailyPoints" />
+                <ScalarProperty Name="TableDailyPoints" ColumnName="TableDailyPoints" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="reprintedTime" ColumnName="reprintedTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MFBonus_spSelectWeeklyLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectWeeklyLogs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="WeeklyPoints" ColumnName="WeeklyPoints" />
+                <ScalarProperty Name="SlotWeeklyPoints" ColumnName="SlotWeeklyPoints" />
+                <ScalarProperty Name="TableWeeklyPoints" ColumnName="TableWeeklyPoints" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MFBonus_spSelectWeeklyLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectWeeklyLogs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="IssueTime" ColumnName="IssueTime" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="WeeklyPoints" ColumnName="WeeklyPoints" />
+                <ScalarProperty Name="SlotWeeklyPoints" ColumnName="SlotWeeklyPoints" />
+                <ScalarProperty Name="TableWeeklyPoints" ColumnName="TableWeeklyPoints" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="GamingDate" ColumnName="GamingDate" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

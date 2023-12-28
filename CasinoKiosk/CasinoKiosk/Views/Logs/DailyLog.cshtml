@@ -89,6 +89,7 @@
                                     <th>ItemName</th>
                                     <th>ItemPoints</th>
                                     <th>Type</th>
+                                    <th>Kiosk.No</th>
                                     <th>Status</th>
                                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                     {
@@ -113,6 +114,7 @@
                                         <td>@Log.ItemName</td>
                                         <td>@Log.ItemPoints</td>
                                         <td>@Log.Type</td>
+                                        <td>@Log.Location</td>
                                         <td>@Log.voidedStatus</td>
 
                                         @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))

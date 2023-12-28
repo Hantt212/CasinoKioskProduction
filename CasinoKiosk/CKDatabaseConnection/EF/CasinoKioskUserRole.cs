@@ -11,9 +11,11 @@ namespace CKDatabaseConnection.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CasinoKioskUserRole
     {
+        [Key]
         public int UserRoleId { get; set; }
         public int UserId { get; set; }
         public short RoleId { get; set; }
