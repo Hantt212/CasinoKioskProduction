@@ -826,6 +826,8 @@
     <EntitySetMapping Name="HTRPromotionLogs">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotionLog">
         <MappingFragment StoreEntitySet="HTRPromotionLog">
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
           <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
           <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
           <ScalarProperty Name="isVoided" ColumnName="isVoided" />

@@ -297,6 +297,8 @@
           <Property Name="isVoided" Type="bit" />
           <Property Name="VoidedDate" Type="datetime" />
           <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="HTRPromotionPlayer">
           <Key>
@@ -1073,10 +1075,10 @@
           <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MFBonus_spSelectWeeklyLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
-            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
-            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
@@ -1678,6 +1680,8 @@
           <Property Name="isVoided" Type="Boolean" />
           <Property Name="VoidedDate" Type="DateTime" Precision="3" />
           <Property Name="VoidedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="HTRPromotionPlayer">
           <Key>
@@ -2658,6 +2662,8 @@
           <EntitySetMapping Name="HTRPromotionLogs">
             <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotionLog">
               <MappingFragment StoreEntitySet="HTRPromotionLog">
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
                 <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
                 <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
                 <ScalarProperty Name="isVoided" ColumnName="isVoided" />

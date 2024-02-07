@@ -676,7 +676,7 @@ namespace WebServiceApp
             {
                 //Insert Item
                 dragonItem = new MF8DragonBuffetBonus_Items();
-                dragonItem.ItemName = "8Dragon Buffet Ticket";
+                dragonItem.ItemName = "8Dragons Buffet Ticket";
                 dragonItem.Status = isPass == true ? 1 : 0;
                 dragonItem.PlayerID = playerID;
                 dragonItem.DateInserted = DateTime.Now;

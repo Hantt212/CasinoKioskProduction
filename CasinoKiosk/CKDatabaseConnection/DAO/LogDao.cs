@@ -184,6 +184,12 @@ namespace CKDatabaseConnection.DAO
 
         //Mid Autime end
 
+        public HTRPromotionLog getPromotionLogById(int logID)
+        {
+            HTRPromotionLog result = context.HTRPromotionLogs.Find(logID);
+            return result;
+        }
+        
 
         public List<HTRPromotion> getHTRPromotionList()
         {
@@ -217,11 +223,29 @@ namespace CKDatabaseConnection.DAO
             {
                 return 1;
             }
-            
-
         }
 
-      
+        public int savePromotionLog(int logID, string playerName, string updatedBy)
+        {
+            try
+            {
+                HTRPromotionLog log = context.HTRPromotionLogs.Find(logID);
+                log.PlayerName = playerName;
+                log.UpdatedDate = DateTime.Now;
+                log.UpdatedBy = updatedBy;
+
+                HTRPromotionPlayer player = context.HTRPromotionPlayers.Where(item => item.PlayerID == log.PlayerID).FirstOrDefault();
+                player.PlayerName = playerName;
+               
+                context.SaveChanges();
+                return 0;
+            }
+            catch (Exception e)
+            {
+                return 1;
+            }
+        }
+
         //Daily
         public IEnumerable<MFBonus_spSelectDailyLogs_Result> ListAllPagingDailyLog(int page, int pageSize, int playerID)
         {

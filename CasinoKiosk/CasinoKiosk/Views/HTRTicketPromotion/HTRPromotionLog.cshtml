@@ -64,38 +64,34 @@
     </div>
 </div>
 
-<div class="modal fade " id="detailMarketModal" tabindex="-1" role="dialog" aria-labelledby="detailMarketLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
+<div class="modal fade" id="proLogModal" tabindex="-1" role="dialog" aria-labelledby="proLogModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Player List</h4>
+                <h4 class="modal-title">Log Information</h4>
             </div>
-            <div class="modal-body ">
-                <table class="table table-bordered table-hover" id="detailMarTbl">
-                    <thead>
-                        <tr>
-                            <th>
-                                No
-                            </th>
-                            <th>
-                                Authorizer
-                            </th>
-                            <th>
-                                Status
-                            </th>
-                            <th>
-                                PlayerId
-                            </th>
-                            <th>
-                                PlayerName
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="detailMarTbd"></tbody>
-                </table>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <input type="hidden" id="proLogID" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proContent" class="font-weight-bold">Ticket No</label>
+                        <input class="form-control" id="proLogTicketNo" placeholder="Ticket No" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proName" class="font-weight-bold">Player Name</label>
+                        <input type="text" class="form-control" id="proLogPlayerName" placeholder="Player Name" autocomplete="off" />
+                    </div>
+
+                </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="savePromotionLog()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -104,5 +100,5 @@
 
 @section scriptPromotion
 {
-    <script src="~/Assets/Admin/js/promotion.js?n=4"></script>
+    <script src="~/Assets/Admin/js/promotion.js?n=5"></script>
 }

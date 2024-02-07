@@ -292,6 +292,8 @@
     <Property Name="isVoided" Type="bit" />
     <Property Name="VoidedDate" Type="datetime" />
     <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="HTRPromotionPlayer">
     <Key>

@@ -26,5 +26,7 @@ namespace CKDatabaseConnection.EF
         public Nullable<bool> isVoided { get; set; }
         public Nullable<System.DateTime> VoidedDate { get; set; }
         public string VoidedBy { get; set; }
+        public Nullable<System.DateTime> UpdatedDate { get; set; }
+        public string UpdatedBy { get; set; }
     }
 }

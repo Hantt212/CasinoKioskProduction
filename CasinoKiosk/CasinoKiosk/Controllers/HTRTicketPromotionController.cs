@@ -212,7 +212,20 @@ namespace CasinoKiosk.Controllers
             return Json(dao.VoidHTRPromotion(ID), JsonRequestBehavior.AllowGet);
         }
 
-        
+        public JsonResult GetPromotionLogById(int logID)
+        {
+            var dao = new LogDao();
+            return Json(dao.getPromotionLogById(logID), JsonRequestBehavior.AllowGet);
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        public JsonResult SavePromotionLog(int LogID, string PlayerName)
+        {
+            var dao = new LogDao();
+            string updateBy = Session["UserName"].ToString();
+            return Json(dao.savePromotionLog(LogID, PlayerName, updateBy), JsonRequestBehavior.AllowGet);
+        }
+
         //MidAutume Promotion end
 
         public ActionResult Reprint(int ID)

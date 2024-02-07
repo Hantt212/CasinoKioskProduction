@@ -773,26 +773,32 @@ namespace CasinoKiosk.Areas.Admin.Controllers
                 int yesterdayPoints = function.getItemPointsDaily(playerPointsYesterday);//0
 
                 yesItemList = db.MFDailyBonus_Items_Yesterdays.Where(item => item.PlayerID == PlayerID).ToList();
-               
-                for (int i =0; i<= 5; i++)
+               if (yesItemList.Count > 0)
                 {
-                    if(yesItemList[i].Status == 0 && yesItemList[i].ItemPoints <= yesterdayPoints
-                       && yesItemList[i + 6].Status == 0 && yesItemList[i + 6].ItemPoints <= yesterdayPoints)
+                    for (int i = 0; i <= 5; i++)
                     {
-                        yesItemList[i].Status = -1;
+                        if (yesItemList[i].Status == 0 && yesItemList[i].ItemPoints <= yesterdayPoints
+                           && yesItemList[i + 6].Status == 0 && yesItemList[i + 6].ItemPoints <= yesterdayPoints)
+                        {
+                            yesItemList[i].Status = -1;
 
-                        list.Add(yesItemList[i]);
-                    }else
-                    {
-                        if(yesItemList[i].Status > yesItemList[i + 6].Status)
-                        {
                             list.Add(yesItemList[i]);
-                        }else
+                        }
+                        else
                         {
-                            list.Add(yesItemList[i + 6]);
+                            if (yesItemList[i].Status > yesItemList[i + 6].Status)
+                            {
+                                list.Add(yesItemList[i]);
+                            }
+                            else
+                            {
+                                list.Add(yesItemList[i + 6]);
+                            }
                         }
                     }
+
                 }
+                
 
                 list = list.OrderBy(item => item.ItemPoints).ToList();
 
