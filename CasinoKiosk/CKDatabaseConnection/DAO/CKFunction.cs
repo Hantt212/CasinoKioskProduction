@@ -1777,11 +1777,16 @@ namespace CKDatabaseConnection.DAO
             switch (weeklyItemPoints)
             {
                 case 8000:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 1, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 1, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 1, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 0, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 0, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 0, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 1, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 0, playerID);
@@ -1792,11 +1797,16 @@ namespace CKDatabaseConnection.DAO
                     break;
 
                 case 10000:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 1, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 1, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 0, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 1, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 0, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 0, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 0, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 1, playerID);
@@ -1806,11 +1816,16 @@ namespace CKDatabaseConnection.DAO
 
                     break;
                 case 20000:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 1, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 1, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 0, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 0, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 1, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 0, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 0, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 0, playerID);
@@ -1820,11 +1835,16 @@ namespace CKDatabaseConnection.DAO
 
                     break;
                 case 30000:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 1, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 1, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 0, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 0, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 1, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 0, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 0, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 0, playerID);
@@ -1834,11 +1854,16 @@ namespace CKDatabaseConnection.DAO
 
                     break;
                 case 60000:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 1, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 1, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 0, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 0, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 0, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 1, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 0, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 0, playerID);
@@ -1848,11 +1873,16 @@ namespace CKDatabaseConnection.DAO
                     break;
 
                 default:
-                    insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
-                    insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
-                    insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
-                    insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
-                    insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    //insertItemsWeekly("$200 SBV + $200 SFP - 8000 pts", 8000, 0, playerID);
+                    //insertItemsWeekly("$250 SBV + $250 SFP - 10000 pts", 10000, 0, playerID);
+                    //insertItemsWeekly("$400 SBV + $400 SFP - 20000 pts", 20000, 0, playerID);
+                    //insertItemsWeekly("$800 SBV + $700 SFP - 30000 pts", 30000, 0, playerID);
+                    //insertItemsWeekly("$2,000 SBV + $1,500 SFP - 60000 pts", 60000, 0, playerID);
+                    insertItemsWeekly("$400 SFP - 8000 pts", 8000, 0, playerID);
+                    insertItemsWeekly("$500 SFP - 10000 pts", 10000, 0, playerID);
+                    insertItemsWeekly("$800 SFP - 20000 pts", 20000, 0, playerID);
+                    insertItemsWeekly("$1,500 SFP - 30000 pts", 30000, 0, playerID);
+                    insertItemsWeekly("$3,500 SFP - 60000 pts", 60000, 0, playerID);
 
                     insertItemsWeekly("$400 SBV - 8000 pts", 8000, 0, playerID);
                     insertItemsWeekly("$500 SBV - 10000 pts", 10000, 0, playerID);

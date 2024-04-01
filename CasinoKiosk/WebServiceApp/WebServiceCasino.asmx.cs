@@ -1525,7 +1525,12 @@ namespace WebServiceApp
                     writer.WriteLine("Points: " + points.ToString());
 
                     lstItem = GetItemListWeeklyByPlayerID(playerID, writer);
-
+                    List<ItemDetail> lstItemFirst = new List<ItemDetail>();
+                    List<ItemDetail> lstItemSecond = new List<ItemDetail>();
+                    lstItemFirst = lstItem.GetRange(0, 5);
+                    lstItemSecond = lstItem.GetRange(5, 5);
+                    lstItemSecond.AddRange(lstItemFirst);
+                    lstItem = lstItemSecond;
                     writer.WriteLine("========================END==========================================" + "\n");
                     writer.WriteLine("\n\n");
                 }
