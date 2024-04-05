@@ -40,7 +40,8 @@ namespace CasinoKiosk.Controllers
                                  DateUpdated = item.DateUpdated.ToString(),
                                  UpdatedBy = item.UpdatedBy
                              });
-            return Json(fcardList, JsonRequestBehavior.AllowGet);
+           
+            return new JsonResult() { Data = fcardList, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
         }
 
         public JsonResult GetCardInfoByID(int Id)

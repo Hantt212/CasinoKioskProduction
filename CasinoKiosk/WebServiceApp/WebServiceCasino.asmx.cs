@@ -1527,8 +1527,10 @@ namespace WebServiceApp
                     lstItem = GetItemListWeeklyByPlayerID(playerID, writer);
                     List<ItemDetail> lstItemFirst = new List<ItemDetail>();
                     List<ItemDetail> lstItemSecond = new List<ItemDetail>();
-                    lstItemFirst = lstItem.GetRange(0, 5);
-                    lstItemSecond = lstItem.GetRange(5, 5);
+                    int size = lstItem.Count();
+                    lstItemFirst = lstItem.GetRange(0, size/2);
+                    lstItemSecond = lstItem.GetRange(size / 2, size / 2);
+
                     lstItemSecond.AddRange(lstItemFirst);
                     lstItem = lstItemSecond;
                     writer.WriteLine("========================END==========================================" + "\n");
