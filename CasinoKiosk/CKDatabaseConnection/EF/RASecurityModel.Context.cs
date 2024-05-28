@@ -12,6 +12,8 @@ namespace CKDatabaseConnection.EF
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class RA_SecurityEntities : DbContext
     {
@@ -26,5 +28,14 @@ namespace CKDatabaseConnection.EF
         }
     
         public virtual DbSet<FCardIDRefPID> FCardIDRefPIDs { get; set; }
+    
+        public virtual ObjectResult<sp_GetCasinoDoorLog_Result> sp_GetCasinoDoorLog(string begin_Date)
+        {
+            var begin_DateParameter = begin_Date != null ?
+                new ObjectParameter("begin_Date", begin_Date) :
+                new ObjectParameter("begin_Date", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_GetCasinoDoorLog_Result>("sp_GetCasinoDoorLog", begin_DateParameter);
+        }
     }
 }

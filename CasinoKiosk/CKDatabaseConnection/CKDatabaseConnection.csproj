@@ -333,6 +333,9 @@
     <Compile Include="EF\SpReport_MarketingAuthorizer_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\sp_GetCasinoDoorLog_Result.cs">
+      <DependentUpon>RASecurityModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CompType.cs" />
     <Compile Include="Models\MFDailyBonus_Items_YesterdayManual.cs" />
     <Compile Include="Models\FBItem.cs" />

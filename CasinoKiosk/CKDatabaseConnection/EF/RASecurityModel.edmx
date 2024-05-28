@@ -19,6 +19,9 @@
           <Property Name="Remark" Type="nvarchar" MaxLength="200" />
           <Property Name="PassportID" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Function Name="sp_GetCasinoDoorLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="begin_Date" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="RA_SecurityModelStoreContainer">
           <EntitySet Name="FCardIDRefPID" EntityType="Self.FCardIDRefPID" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -42,7 +45,26 @@
         </EntityType>
         <EntityContainer Name="RA_SecurityEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="FCardIDRefPIDs" EntityType="Self.FCardIDRefPID" />
+          <FunctionImport Name="sp_GetCasinoDoorLog" ReturnType="Collection(RA_SecurityModel.sp_GetCasinoDoorLog_Result)">
+            <Parameter Name="begin_Date" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="sp_GetCasinoDoorLog_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="DeviceID" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="DoorID" Nullable="true" />
+          <Property Type="String" Name="CardNumber" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PlayerID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="GroupName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="InOutState" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="isCardValid" Nullable="true" />
+          <Property Type="Int32" Name="isAllow" Nullable="true" />
+          <Property Type="String" Name="NotAllowReason" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="AccessTime" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="isDoorOpenedSuccess" Nullable="true" />
+          <Property Type="String" Name="DoorOpenedFailed_ErrorCode" Nullable="true" MaxLength="250" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -64,6 +86,26 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_GetCasinoDoorLog" FunctionName="RA_SecurityModel.Store.sp_GetCasinoDoorLog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RA_SecurityModel.sp_GetCasinoDoorLog_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+                <ScalarProperty Name="DoorID" ColumnName="DoorID" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="InOutState" ColumnName="InOutState" />
+                <ScalarProperty Name="isCardValid" ColumnName="isCardValid" />
+                <ScalarProperty Name="isAllow" ColumnName="isAllow" />
+                <ScalarProperty Name="NotAllowReason" ColumnName="NotAllowReason" />
+                <ScalarProperty Name="AccessTime" ColumnName="AccessTime" />
+                <ScalarProperty Name="isDoorOpenedSuccess" ColumnName="isDoorOpenedSuccess" />
+                <ScalarProperty Name="DoorOpenedFailed_ErrorCode" ColumnName="DoorOpenedFailed_ErrorCode" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

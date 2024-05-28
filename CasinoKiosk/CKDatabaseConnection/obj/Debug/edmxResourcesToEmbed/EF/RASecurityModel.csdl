@@ -16,5 +16,24 @@
   </EntityType>
   <EntityContainer Name="RA_SecurityEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="FCardIDRefPIDs" EntityType="Self.FCardIDRefPID" />
+    <FunctionImport Name="sp_GetCasinoDoorLog" ReturnType="Collection(RA_SecurityModel.sp_GetCasinoDoorLog_Result)">
+      <Parameter Name="begin_Date" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="sp_GetCasinoDoorLog_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="DeviceID" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="DoorID" Nullable="true" />
+    <Property Type="String" Name="CardNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PlayerID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="GroupName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="InOutState" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="isCardValid" Nullable="true" />
+    <Property Type="Int32" Name="isAllow" Nullable="true" />
+    <Property Type="String" Name="NotAllowReason" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="AccessTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="isDoorOpenedSuccess" Nullable="true" />
+    <Property Type="String" Name="DoorOpenedFailed_ErrorCode" Nullable="true" MaxLength="250" />
+  </ComplexType>
 </Schema>

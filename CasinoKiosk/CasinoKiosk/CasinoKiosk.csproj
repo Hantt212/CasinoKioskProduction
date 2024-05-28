@@ -670,6 +670,7 @@
     <Content Include="Views\PlayerCard\Index.cshtml" />
     <Content Include="Views\HTRTicketPromotion\HTRPromotionList.cshtml" />
     <Content Include="Views\Logs\MF8DragonLog.cshtml" />
+    <Content Include="Views\PlayerCard\CasinoDoorLog.cshtml" />
     <None Include="Web References\WebServiceCasino\WebServiceCasino.disco">
       <SubType>Designer</SubType>
     </None>

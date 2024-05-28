@@ -14,6 +14,9 @@
     <Property Name="Remark" Type="nvarchar" MaxLength="200" />
     <Property Name="PassportID" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <Function Name="sp_GetCasinoDoorLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="begin_Date" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="RA_SecurityModelStoreContainer">
     <EntitySet Name="FCardIDRefPID" EntityType="Self.FCardIDRefPID" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

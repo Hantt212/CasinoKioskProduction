@@ -1,16 +1,14 @@
-======================START:  01-Apr-2024 11:15:32 AM   =================
+======================START:  06-Apr-2024 08:13:31 AM   =================
 
-PlayerID: 10001
-GamingDate: 01-04-2024
-Points: 0
+PlayerID: 1013271
+GamingDate: 06-04-2024
+Points: 15351
 All Item Detail 
-ItemName: $400 SFP - 8000 pts Status: 0
 ItemName: $500 SFP - 10000 pts Status: 0
 ItemName: $800 SFP - 20000 pts Status: 0
 ItemName: $1,500 SFP - 30000 pts Status: 0
 ItemName: $3,500 SFP - 60000 pts Status: 0
-ItemName: $400 SBV - 8000 pts Status: 0
-ItemName: $500 SBV - 10000 pts Status: 0
+ItemName: $500 SBV - 10000 pts Status: 2
 ItemName: $800 SBV - 20000 pts Status: 0
 ItemName: $1,500 SBV - 30000 pts Status: 0
 ItemName: $3,500 SBV - 60000 pts Status: 0
@@ -19,16 +17,18 @@ ItemName: $3,500 SBV - 60000 pts Status: 0
 
 
 
-======================START:  01-Apr-2024 04:13:32 PM   =================
+======================START:  06-Apr-2024 08:45:44 AM   =================
 
-PlayerID: 911753
-GamingDate: 01-04-2024
-Points: 24958
+PlayerID: 1013271
+GamingDate: 06-04-2024
+Points: 15351
 All Item Detail 
-ItemName: $800 SFP - 20000 pts Status: 1
+ItemName: $500 SFP - 10000 pts Status: 0
+ItemName: $800 SFP - 20000 pts Status: 0
 ItemName: $1,500 SFP - 30000 pts Status: 0
 ItemName: $3,500 SFP - 60000 pts Status: 0
-ItemName: $800 SBV - 20000 pts Status: 1
+ItemName: $500 SBV - 10000 pts Status: 2
+ItemName: $800 SBV - 20000 pts Status: 0
 ItemName: $1,500 SBV - 30000 pts Status: 0
 ItemName: $3,500 SBV - 60000 pts Status: 0
 ========================END==========================================

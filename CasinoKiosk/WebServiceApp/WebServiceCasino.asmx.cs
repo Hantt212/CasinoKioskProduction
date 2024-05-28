@@ -727,10 +727,8 @@ namespace WebServiceApp
 
             }
 
-
-
-
-
+            List<MF8DragonBuffetBonus_Items> list = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).ToList();
+            int count = list.Where(item => item.Status == 1).Count();
             var dragonInfo = new RedeemLog8DragonsFirst()
             {
                 PlayerID = playerID,
@@ -738,7 +736,8 @@ namespace WebServiceApp
                 PromotionName = "8Dragon Buffet Bonus",
                 Points = playerPointsDaily,
                 GamingDate = currentDay.ToString("dd/MM/yyyy"),
-                Items = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID).ToList()
+                Items = list,
+                EnableCount = count,
             };
 
             return dragonInfo;
@@ -759,9 +758,17 @@ namespace WebServiceApp
             MF8DragonBuffetBonus_Logs log = new MF8DragonBuffetBonus_Logs();
 
 
-            if (playerID > 0 && itemID > 0)
+            if (playerID > 0 )
             {
-                dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID && item.ID == itemID).FirstOrDefault();
+                if (itemID > 0)
+                {
+                    dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID && item.ID == itemID).FirstOrDefault();
+                }else
+                {
+                    //Print from Casinoloyaltykiosk not Promotion
+                    dragonItem = db.MF8DragonBuffetBonus_Items.Where(item => item.PlayerID == playerID && item.Status == 1).FirstOrDefault();
+                }
+                
             }
 
             DateTime currentDay;
@@ -1640,6 +1647,15 @@ namespace WebServiceApp
             //string points = itemName.Substring(idxCharSub + 1, itemName.Length - idxCharSub - 1);
             //Add 20230619 Hantt end
 
+            List<ItemDetail> lstItem = GetItemListWeeklyByPlayerID(playerID, null);
+            List<ItemDetail> lstItemFirst = new List<ItemDetail>();
+            List<ItemDetail> lstItemSecond = new List<ItemDetail>();
+            int size = lstItem.Count();
+            lstItemFirst = lstItem.GetRange(0, size / 2);
+            lstItemSecond = lstItem.GetRange(size / 2, size / 2);
+
+            lstItemSecond.AddRange(lstItemFirst);
+
             var weeklyLog = new RedeemLogWeeklySecond()
             {
 
@@ -1657,7 +1673,7 @@ namespace WebServiceApp
 
                 IssuedTime = DateTime.Now.ToString("HH:mm:ss"),
                 Status = ok,
-                Items = GetItemListWeeklyByPlayerID(playerID, null)
+                Items = lstItemSecond
             };
 
             return weeklyLog;
@@ -2852,6 +2868,7 @@ namespace WebServiceApp
             public int Points { get; set; }
             public int CombinedPoints { get; set; }
             public int BalancePoints { get; set; }
+            public int EnableCount { get; set; }
             public List<MF8DragonBuffetBonus_Items> Items { get; set; }
         }
 

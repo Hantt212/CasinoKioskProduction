@@ -186,7 +186,13 @@ namespace CKDatabaseConnection.DAO
 
         //Add fake Card Id end
 
-        
-        
+        //Add CasinoDoorLog start
+        public List<sp_GetCasinoDoorLog_Result> getCasinoDoorLog(string selectedDate)
+        {
+            List<sp_GetCasinoDoorLog_Result> result = RAcontext.sp_GetCasinoDoorLog(selectedDate).ToList();
+            return result;
+        }
+        //Add CasinoDoorLog end
+
     }
 }

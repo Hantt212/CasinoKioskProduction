@@ -16,5 +16,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_GetCasinoDoorLog" FunctionName="RA_SecurityModel.Store.sp_GetCasinoDoorLog">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RA_SecurityModel.sp_GetCasinoDoorLog_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="DoorID" ColumnName="DoorID" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="InOutState" ColumnName="InOutState" />
+          <ScalarProperty Name="isCardValid" ColumnName="isCardValid" />
+          <ScalarProperty Name="isAllow" ColumnName="isAllow" />
+          <ScalarProperty Name="NotAllowReason" ColumnName="NotAllowReason" />
+          <ScalarProperty Name="AccessTime" ColumnName="AccessTime" />
+          <ScalarProperty Name="isDoorOpenedSuccess" ColumnName="isDoorOpenedSuccess" />
+          <ScalarProperty Name="DoorOpenedFailed_ErrorCode" ColumnName="DoorOpenedFailed_ErrorCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

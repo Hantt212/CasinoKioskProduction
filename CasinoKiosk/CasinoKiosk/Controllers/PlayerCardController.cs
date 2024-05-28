@@ -9,7 +9,7 @@ namespace CasinoKiosk.Controllers
 {
     public class PlayerCardController : Controller
     {
-
+        PlayerDao dao = new PlayerDao();
         // GET: PlayerCard
         public ActionResult Index()
         {
@@ -63,6 +63,13 @@ namespace CasinoKiosk.Controllers
             var dao = new PlayerDao();
             //Mode == 3 is Delete
             return Json(dao.updateFCardID(Id, null, null, false, false, 3), JsonRequestBehavior.AllowGet);
+        }
+
+
+        public ActionResult CasinoDoorLog()
+        {
+            var result = dao.getCasinoDoorLog("");
+            return View(result);
         }
 
     }

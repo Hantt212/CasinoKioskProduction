@@ -91,10 +91,16 @@
     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff") || User.IsInRole("ITAdmin"))
     {
         <li class="nav-item">
-            <a class="nav-link" href="/PlayerCard/Index">
+            <a class="nav-link" href="#" data-toggle="collapse" data-target="#casinoGate" aria-expanded="true" aria-controls="casinoGate">
                 <i class="fas fa-fw fa-folder"></i>
-                <span>Player Card Initial</span>
+                <span>Casino Gate</span>
             </a>
+             <div id="casinoGate" class="collapse" aria-labelledby="headingMFBonus" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                        <a>@Html.ActionLink("Player Card Initial", "Index", "PlayerCard", new object { }, new { @class = "collapse-item" })</a>
+                        <a>@Html.ActionLink("Casino Door Log", "CasinoDoorLog", "PlayerCard", new object { }, new { @class = "collapse-item" })</a>
+                </div>
+            </div>
         </li>
     }
 
