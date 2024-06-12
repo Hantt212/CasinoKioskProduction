@@ -91,6 +91,7 @@ function loadData() {
             var table = $('#datatable-json').DataTable({
                 data: data,
                 columns: [
+                
                   { "data": "FCardID" },
                   { "data": "PID" },
                   { "data": "PassportID" },
@@ -112,6 +113,8 @@ function loadData() {
                 ],
                 responsive: true,
                 destroy: true,
+                order: [[8, 'desc']]
+                
             });
 
         },

@@ -1,0 +1,106 @@
+﻿@*@model List<CKDatabaseConnection.EF.WoF_GetWheelOfFortuneLog_Result>*@
+
+@using PagedList.Mvc;
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section HeaderContent
+{
+    <h2> PRIZE INFORMATION </h2>
+}
+<style>
+    #printGolden:visited {
+        pointer-events: none;
+    }
+</style>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            
+            <table id="wofInfoTbl" class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Prize Name</th>
+                        <th>Position</th>
+                        <th>Total Qty</th>
+                        <th>Remain Qty</th>
+                        <th>Chance</th>
+                        <th>Is Selected</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<!--Prize Info-->
+<div class="modal fade" id="mPrizeInfo" tabindex="-1" role="dialog" aria-labelledby="mPrizeInfoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" onsubmit="UpdatePrizeInfoByID(event)">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="mPrizeInfoLabel">Prize Information</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+
+                        <input type="hidden" id="mID" placeholder="mID" />
+                    </div>
+                    <div class="form-group ">
+                        <label for="mCardID" class="font-weight-bold">Prize</label>
+                        <input type="text" class="form-control" id="mPrize" />
+                    </div>
+                    <div class="form-group">
+                        <label for="mPID" class="font-weight-bold">Position</label>
+                        <input type="number" class="form-control" id="mPosition" readonly/>
+                    </div>
+                    <div class="form-group">
+                        <label for="mPID" class="font-weight-bold">Total Qty</label>
+                        <input type="number" class="form-control" id="mTotalQty" />
+                    </div>
+                    <div class="form-group">
+                        <label for="mPID" class="font-weight-bold">Remain Qty</label>
+                        <input type="number" class="form-control" id="mRemainQty" readonly/>
+                    </div>
+                    <div class="form-group ">
+                        <label for="mSelected" id="mSelectedLbl" class="font-weight-bold">Is Selected</label>
+                        <input style="width:38px; height:38px" type="checkbox" class="form-control" id="mSelected" onclick="changeVisitorModel(this)" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btnUpdate" onclick="onClickPrizeById();">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+      </div>
+</div>
+
+<!--Position Info-->
+<div class="modal fade" id="mPositionInfo" tabindex="-1" role="dialog" aria-labelledby="mPositionInfoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <form method="post" onsubmit="updPosition(event)">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="mPrizeInfoLabel">Prize Position</h4>
+                </div>
+                <div class="modal-body" id="mPrizeDiv">
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="btnUpdate" onclick="onClickPosition();">Update</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section scriptTicketPromotion
+{
+    <script src="~/Assets/Admin/js/wheelOfFortune.js?n=1"></script>
+}

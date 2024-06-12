@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WheelOfFortuneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="WoF_Prize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PrizeTypeID" Type="int" Nullable="false" />
+          <Property Name="PrizeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Icon" Type="nvarchar(max)" />
+          <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+          <Property Name="OriginalQty" Type="int" />
+          <Property Name="RemainingQty" Type="int" />
+          <Property Name="PositionID" Type="int" />
+          <Property Name="Chance" Type="float" />
+          <Property Name="isShown" Type="bit" Nullable="false" />
+          <Property Name="isUpdated" Type="bit" Nullable="false" />
+          <Property Name="isSelected" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WoF_Prize_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OldValue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NewValue" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Created By" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Created Time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Function Name="WoF_GetWheelOfFortuneLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="WheelOfFortuneModelStoreContainer">
+          <EntitySet Name="WoF_Prize" EntityType="Self.WoF_Prize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WoF_Prize_Log" EntityType="Self.WoF_Prize_Log" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WheelOfFortuneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WheelOfFortuneEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="WoF_GetWheelOfFortuneLog" ReturnType="Collection(WheelOfFortuneModel.WoF_GetWheelOfFortuneLog_Result)" />
+          <EntitySet Name="WoF_Prize" EntityType="WheelOfFortuneModel.WoF_Prize" />
+          <EntitySet Name="WoF_Prize_Log" EntityType="WheelOfFortuneModel.WoF_Prize_Log" />
+        </EntityContainer>
+        <ComplexType Name="WoF_GetWheelOfFortuneLog_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="PlayerID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="PlayerName" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="Prize" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DateInserted" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <EntityType Name="WoF_Prize">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PrizeTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PrizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Icon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IconPath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OriginalQty" Type="Int32" />
+          <Property Name="RemainingQty" Type="Int32" />
+          <Property Name="PositionID" Type="Int32" />
+          <Property Name="Chance" Type="Double" />
+          <Property Name="isShown" Type="Boolean" Nullable="false" />
+          <Property Name="isUpdated" Type="Boolean" Nullable="false" />
+          <Property Name="isSelected" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WoF_Prize_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OldValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NewValue" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created_By" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_Time" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WheelOfFortuneModelStoreContainer" CdmEntityContainer="WheelOfFortuneEntities" >
+          <FunctionImportMapping FunctionImportName="WoF_GetWheelOfFortuneLog" FunctionName="WheelOfFortuneModel.Store.WoF_GetWheelOfFortuneLog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="WheelOfFortuneModel.WoF_GetWheelOfFortuneLog_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="Prize" ColumnName="Prize" />
+                <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="WoF_Prize">
+            <EntityTypeMapping TypeName="WheelOfFortuneModel.WoF_Prize">
+              <MappingFragment StoreEntitySet="WoF_Prize">
+                <ScalarProperty Name="isSelected" ColumnName="isSelected" />
+                <ScalarProperty Name="isUpdated" ColumnName="isUpdated" />
+                <ScalarProperty Name="isShown" ColumnName="isShown" />
+                <ScalarProperty Name="Chance" ColumnName="Chance" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="RemainingQty" ColumnName="RemainingQty" />
+                <ScalarProperty Name="OriginalQty" ColumnName="OriginalQty" />
+                <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+                <ScalarProperty Name="PrizeTypeID" ColumnName="PrizeTypeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WoF_Prize_Log">
+            <EntityTypeMapping TypeName="WheelOfFortuneModel.WoF_Prize_Log">
+              <MappingFragment StoreEntitySet="WoF_Prize_Log">
+                <ScalarProperty Name="Created_Time" ColumnName="Created Time" />
+                <ScalarProperty Name="Created_By" ColumnName="Created By" />
+                <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

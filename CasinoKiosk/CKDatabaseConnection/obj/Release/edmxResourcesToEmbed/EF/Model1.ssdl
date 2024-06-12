@@ -261,117 +261,6 @@
     <Property Name="ValueAfter" Type="nvarchar" MaxLength="250" />
     <Property Name="ActionDate" Type="datetime" />
   </EntityType>
-  <EntityType Name="HTR_MidAutumeLog">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="PrintedDate" Type="datetime" />
-    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="isPrinted" Type="bit" />
-    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReprintedDate" Type="datetime" />
-    <Property Name="isVoided" Type="bit" />
-    <Property Name="VoidedDate" Type="datetime" />
-    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="HTR_MidAutumePlayers">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Quantity" Type="int" />
-    <Property Name="TotalPointsEarned" Type="int" />
-    <Property Name="PrintedQty" Type="int" />
-    <Property Name="InsertDate" Type="datetime" />
-  </EntityType>
-  <EntityType Name="HTR_SundayGoldenHourLog">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="PrintedDate" Type="datetime" />
-    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="isPrinted" Type="bit" />
-    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReprintedDate" Type="datetime" />
-    <Property Name="isVoided" Type="bit" />
-    <Property Name="VoidedDate" Type="datetime" />
-    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="HTR_SundayGoldenHourPlayers">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Quantity" Type="int" />
-    <Property Name="TotalPointsEarned" Type="int" />
-    <Property Name="PrintedQty" Type="int" />
-    <Property Name="InsertDate" Type="datetime" />
-  </EntityType>
-  <EntityType Name="HTR_ThursdayGoldenHourPlayers">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Quantity" Type="int" />
-    <Property Name="TotalPointsEarned" Type="int" />
-    <Property Name="PrintedQty" Type="int" />
-    <Property Name="InsertDate" Type="datetime" />
-  </EntityType>
-  <EntityType Name="HTR_ThursdayGoldenHourPromotion">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="PrintedDate" Type="datetime" />
-    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="isPrinted" Type="bit" />
-    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReprintedDate" Type="datetime" />
-    <Property Name="isVoided" Type="bit" />
-    <Property Name="VoidedDate" Type="datetime" />
-    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="HTRGoldenHourPlayers">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="Quantity" Type="int" />
-    <Property Name="TotalPointsEarned" Type="int" />
-    <Property Name="PrintedQty" Type="int" />
-    <Property Name="InsertDate" Type="datetime" />
-  </EntityType>
-  <EntityType Name="HTRGoldenHourPromotion">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="PrintedDate" Type="datetime" />
-    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="isReprinted" Type="bit" />
-    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReprintedDate" Type="datetime" />
-    <Property Name="isVoided" Type="bit" />
-    <Property Name="VoidedDate" Type="nchar" MaxLength="10" />
-  </EntityType>
   <EntityType Name="HTRPromotion">
     <Key>
       <PropertyRef Name="PromotionId" />
@@ -403,6 +292,8 @@
     <Property Name="isVoided" Type="bit" />
     <Property Name="VoidedDate" Type="datetime" />
     <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="HTRPromotionPlayer">
     <Key>
@@ -435,6 +326,54 @@
     <Property Name="isVoided" Type="bit" />
     <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
     <Property Name="VoidedDate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MF8DragonBuffetBonus_Items">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="DateInserted" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MF8DragonBuffetBonus_Logs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IssueDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="IssueTime" Type="nvarchar" MaxLength="25" />
+    <Property Name="PromotionName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyPoints" Type="int" />
+    <Property Name="YesterdayPoints" Type="int" />
+    <Property Name="CombinedPoints" Type="int" />
+    <Property Name="BalancePoints" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="GamingDate" Type="nvarchar" MaxLength="25" />
+    <Property Name="voidedStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="voidedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="reprintedTime" Type="datetime" />
+    <Property Name="voidedTime" Type="datetime" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MF8DragonBuffetBonus_Players">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlayerID" Type="int" />
+    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DailyPoints" Type="int" Nullable="false" />
+    <Property Name="YesterdayPoints" Type="int" Nullable="false" />
+    <Property Name="CombinedPoints" Type="int" Nullable="false" />
+    <Property Name="BalancePoints" Type="int" Nullable="false" />
+    <Property Name="GamingDate" Type="datetime" />
+    <Property Name="Quantity" Type="int" />
   </EntityType>
   <EntityType Name="MFBonus_PlayerPoints">
     <Key>
@@ -697,22 +636,6 @@
     <Property Name="TableWeeklyPoints" Type="int" />
     <Property Name="GamingDate" Type="datetime" />
   </EntityType>
-  <EntityType Name="MiniBuffet_GetNewClassicPlayerLogs">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PlayerID" Type="int" />
-    <Property Name="PlayerName" Type="nvarchar" MaxLength="50" />
-    <Property Name="PrintedDate" Type="datetime" />
-    <Property Name="PrintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="isPrinted" Type="bit" />
-    <Property Name="ReprintedBy" Type="nvarchar" MaxLength="50" />
-    <Property Name="ReprintedDate" Type="datetime" />
-    <Property Name="isVoided" Type="bit" />
-    <Property Name="VoidedDate" Type="datetime" />
-    <Property Name="VoidedBy" Type="nvarchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="POSPatron8DragonUserActionLog">
     <Key>
       <PropertyRef Name="ID" />
@@ -806,27 +729,12 @@
     <Parameter Name="PlayerID" Type="int" Mode="In" />
   </Function>
   <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <Function Name="spHTR_GoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PlayerID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="spHTR_MidAutumeBySearchPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PlayerID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="spHTR_MidAutumeLogByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="ID" Type="int" Mode="In" />
-  </Function>
   <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PlayerID" Type="int" Mode="In" />
     <Parameter Name="PromotionID" Type="int" Mode="In" />
   </Function>
   <Function Name="spHTR_PromotionLogByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="spHTR_SundayGoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PlayerID" Type="int" Mode="In" />
-  </Function>
-  <Function Name="spHTR_ThursdayGoldenHourDraw" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-    <Parameter Name="PlayerID" Type="int" Mode="In" />
   </Function>
   <Function Name="SpReport_MarketingAuthorizer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="spReportCIFE_Program" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -851,18 +759,13 @@
     <EntitySet Name="DailyPSBundle_Players" EntityType="Self.DailyPSBundle_Players" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FOPatronUser" EntityType="Self.FOPatronUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FOPatronUserActionLog" EntityType="Self.FOPatronUserActionLog" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_MidAutumeLog" EntityType="Self.HTR_MidAutumeLog" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_MidAutumePlayers" EntityType="Self.HTR_MidAutumePlayers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_SundayGoldenHourLog" EntityType="Self.HTR_SundayGoldenHourLog" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_SundayGoldenHourPlayers" EntityType="Self.HTR_SundayGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_ThursdayGoldenHourPlayers" EntityType="Self.HTR_ThursdayGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTR_ThursdayGoldenHourPromotion" EntityType="Self.HTR_ThursdayGoldenHourPromotion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTRGoldenHourPlayers" EntityType="Self.HTRGoldenHourPlayers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HTRGoldenHourPromotion" EntityType="Self.HTRGoldenHourPromotion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HTRPromotion" EntityType="Self.HTRPromotion" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HTRPromotionLog" EntityType="Self.HTRPromotionLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HTRPromotionPlayer" EntityType="Self.HTRPromotionPlayer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HTRTicketPromotion" EntityType="Self.HTRTicketPromotion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="Self.MF8DragonBuffetBonus_Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="Self.MF8DragonBuffetBonus_Logs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MF8DragonBuffetBonus_Players" EntityType="Self.MF8DragonBuffetBonus_Players" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MFBonus_PlayerPoints" EntityType="Self.MFBonus_PlayerPoints" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MFBonus_ReprintLog" EntityType="Self.MFBonus_ReprintLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MFBonus_SlotDailyItems" EntityType="Self.MFBonus_SlotDailyItems" Schema="dbo" store:Type="Tables" />
@@ -881,7 +784,6 @@
     <EntitySet Name="MFWeeklyBonus_Items" EntityType="Self.MFWeeklyBonus_Items" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MFWeeklyBonus_Logs" EntityType="Self.MFWeeklyBonus_Logs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MFWeeklyBonus_Players" EntityType="Self.MFWeeklyBonus_Players" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MiniBuffet_GetNewClassicPlayerLogs" EntityType="Self.MiniBuffet_GetNewClassicPlayerLogs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="POSPatron8DragonUserActionLog" EntityType="Self.POSPatron8DragonUserActionLog" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="POSPatronInfoUser" EntityType="Self.POSPatronInfoUser" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">

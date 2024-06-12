@@ -137,6 +137,8 @@
     </Reference>
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -212,6 +214,7 @@
     <Content Include="Assets\Admin\js\sb-admin-2.js" />
     <Content Include="Assets\Admin\js\sb-admin-2.min.js" />
     <Content Include="Assets\Admin\js\user.js" />
+    <Content Include="Assets\Admin\js\wheelOfFortune.js" />
     <Content Include="Assets\Images\add.png" />
     <Content Include="Assets\Images\minus.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -671,6 +674,8 @@
     <Content Include="Views\HTRTicketPromotion\HTRPromotionList.cshtml" />
     <Content Include="Views\Logs\MF8DragonLog.cshtml" />
     <Content Include="Views\PlayerCard\CasinoDoorLog.cshtml" />
+    <Content Include="Views\WheelOfFortune\Index.cshtml" />
+    <Content Include="Views\WheelOfFortune\PrizeInfo.cshtml" />
     <None Include="Web References\WebServiceCasino\WebServiceCasino.disco">
       <SubType>Designer</SubType>
     </None>
@@ -767,6 +772,7 @@
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\LogsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\WheelOfFortuneController.cs" />
     <Compile Include="Controllers\PlayerCardController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\POS8DragonController.cs" />
@@ -1028,6 +1034,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -582,8 +582,6 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Images\minus.png
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRGoldenHourPromotion.rdlc
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\MiniBuffet.rdlc
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\HTRTicketPromotion.rdlc
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\FOPatronLog.rdlc
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\PointsRedemptionLog.rdlc
@@ -662,3 +660,4 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Release\CasinoKiosk.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Release\CasinoKiosk.pdb
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Release\CasinoKiosk.XmlSerializers.dll
+C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\Assets\Reports\MF8DragonTickets.rdlc

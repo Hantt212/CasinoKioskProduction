@@ -62,6 +62,45 @@ namespace CKDatabaseConnection.DAO
             }
             return playerName;
         }
+
+        public string getPromotionEnd()
+        {
+            DataSet ds;
+            string promotionEnd = "";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("Proc_GetPromotionEnd", con))
+                {
+                    con.Open();
+                    cmd.Connection = con;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        ds = new DataSet();
+                        da.Fill(ds);
+                    }
+                }
+            }
+            try
+            {
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            promotionEnd = ds.Tables[0].Rows[0]["PromotionEnd"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return promotionEnd;
+        }
+
         public int getPlayerPointsBalance(int ID)
         {
 

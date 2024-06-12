@@ -336,6 +336,30 @@
     <Compile Include="EF\sp_GetCasinoDoorLog_Result.cs">
       <DependentUpon>RASecurityModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EF\WheelOfFortuneModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WheelOfFortuneModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WheelOfFortuneModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WheelOfFortuneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WheelOfFortuneModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WheelOfFortuneModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WoF_GetWheelOfFortuneLog_Result.cs">
+      <DependentUpon>WheelOfFortuneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WoF_Prize.cs">
+      <DependentUpon>WheelOfFortuneModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\WoF_Prize_Log.cs">
+      <DependentUpon>WheelOfFortuneModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\CompType.cs" />
     <Compile Include="Models\MFDailyBonus_Items_YesterdayManual.cs" />
     <Compile Include="Models\FBItem.cs" />
@@ -370,6 +394,13 @@
     <None Include="EF\RASecurityModel.edmx.diagram">
       <DependentUpon>RASecurityModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="EF\WheelOfFortuneModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WheelOfFortuneModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\WheelOfFortuneModel.edmx.diagram">
+      <DependentUpon>WheelOfFortuneModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -382,6 +413,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RASecurityModel.edmx</DependentUpon>
       <LastGenOutput>RASecurityModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\WheelOfFortuneModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WheelOfFortuneModel.edmx</DependentUpon>
+      <LastGenOutput>WheelOfFortuneModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\WheelOfFortuneModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WheelOfFortuneModel.edmx</DependentUpon>
+      <LastGenOutput>WheelOfFortuneModel.cs</LastGenOutput>
     </Content>
     <Content Include="Properties\Content\PagedList.css" />
     <Content Include="EF\Model1.Context.tt">

@@ -38,10 +38,7 @@ namespace WebServiceApp
 
         //db casinokiosk
         string connectionString = ConfigurationManager.ConnectionStrings["CKdbContext"].ConnectionString;
-
-        //db playermanagement
-        string connectionString1 = ConfigurationManager.ConnectionStrings["PlayerManagementConStr"].ConnectionString;
-
+        
         //Redemption Webservices
 
         [WebMethod]
@@ -75,7 +72,7 @@ namespace WebServiceApp
             {
 
 
-                using (SqlConnection con = new SqlConnection(connectionString1))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("Proc_PlayerPointRedeem", con))
                     {
@@ -481,15 +478,10 @@ namespace WebServiceApp
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public List<MFPointsRedemption_Items> RedeemPointsFirst()
         {
-            //string playerName = function.getPlayerName(playerID);
-            //int playerPoints = function.getPlayerPointsBalance(playerID);
-
             ITHoTram_CustomReportEntities entity = new ITHoTram_CustomReportEntities();
-
-            var itemList = entity.MFPointsRedemption_Items.ToList();
-
-            return itemList;
-        }
+            List<MFPointsRedemption_Items> Items = entity.MFPointsRedemption_Items.ToList();
+           return Items;
+    }
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
@@ -516,7 +508,7 @@ namespace WebServiceApp
 
             if (playerPoints >= item.ItemPoints)
             {
-                using (SqlConnection con = new SqlConnection(connectionString1))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("Proc_PlayerPointRedeem", con))
                     {
@@ -970,7 +962,6 @@ namespace WebServiceApp
                 }
 
             }
-
             var dailyLog = new RedeemLogDailyFirst()
             {
                 PlayerID = playerID,
@@ -1857,6 +1848,7 @@ namespace WebServiceApp
             p.FridayPoints = fridayPoints;
             p.BalancePoints = balancePoints;
             p.CombinePoints = dailyPoints + function.getPlayerPointsDaily(playerID, yesterday);
+            p.PromotionEnd = function.getPromotionEnd();
             return p;
         }
 
@@ -2233,7 +2225,7 @@ namespace WebServiceApp
                 var uid = getUserIDByUserName(userName);
                 var dt = new DataTable();
                 var compid = -1;
-                using (SqlConnection con = new SqlConnection(connectionString1))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     //var strCommand = string.Format("exec Proc_Comp '{0}','{1}',1,NULL,{2},0,1,2,{3},31261,31261,0,'{4}'", playerId, DateTime.Now.ToString("yyyy-MM-dd"), itemNumber, itemValue, hostName);
                     var strCommand = string.Format("exec Proc_Comp '{0}','{1}',1,NULL,{2},0,1,2,{3},{5},{5},0,'{4}'", playerId, DateTime.Now.ToString("yyyy-MM-dd"), itemNumber, itemValue, hostName, uid);
@@ -2933,6 +2925,7 @@ namespace WebServiceApp
             public int TablePoints { get; set; }
             public List<ItemDetail> Items { get; set; }
         }
+
         public class RedeemLogWeeklySecond
         {
             public int TicketNo { get; set; }
@@ -2961,6 +2954,8 @@ namespace WebServiceApp
 
             public int BalancePoints { get; set; }
             public int CombinePoints { get; set; }
+
+            public string PromotionEnd { get; set;}
         }
 
         // Lucky Firday Class

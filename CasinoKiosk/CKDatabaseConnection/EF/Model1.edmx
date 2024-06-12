@@ -734,6 +734,7 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        
         <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />

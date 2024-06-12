@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WheelOfFortuneModelStoreContainer" CdmEntityContainer="WheelOfFortuneEntities">
+    <FunctionImportMapping FunctionImportName="WoF_GetWheelOfFortuneLog" FunctionName="WheelOfFortuneModel.Store.WoF_GetWheelOfFortuneLog">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="WheelOfFortuneModel.WoF_GetWheelOfFortuneLog_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="Prize" ColumnName="Prize" />
+          <ScalarProperty Name="DateInserted" ColumnName="DateInserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="WoF_Prize">
+      <EntityTypeMapping TypeName="WheelOfFortuneModel.WoF_Prize">
+        <MappingFragment StoreEntitySet="WoF_Prize">
+          <ScalarProperty Name="isSelected" ColumnName="isSelected" />
+          <ScalarProperty Name="isUpdated" ColumnName="isUpdated" />
+          <ScalarProperty Name="isShown" ColumnName="isShown" />
+          <ScalarProperty Name="Chance" ColumnName="Chance" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="RemainingQty" ColumnName="RemainingQty" />
+          <ScalarProperty Name="OriginalQty" ColumnName="OriginalQty" />
+          <ScalarProperty Name="IconPath" ColumnName="IconPath" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          <ScalarProperty Name="PrizeName" ColumnName="PrizeName" />
+          <ScalarProperty Name="PrizeTypeID" ColumnName="PrizeTypeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WoF_Prize_Log">
+      <EntityTypeMapping TypeName="WheelOfFortuneModel.WoF_Prize_Log">
+        <MappingFragment StoreEntitySet="WoF_Prize_Log">
+          <ScalarProperty Name="Created_Time" ColumnName="Created Time" />
+          <ScalarProperty Name="Created_By" ColumnName="Created By" />
+          <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+          <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

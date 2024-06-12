@@ -105,6 +105,49 @@ function openPromotionMd(PromtionID) {
     $("#proRegisModal").modal("show");
 }
 
+function openPromotionLogMd(logId) {
+    clearPromotionLogMd();
+    $.ajax({
+        url: "/HTRTicketPromotion/GetPromotionLogById",
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        data: {
+            logID: +logId
+        },
+        dataType: "json",
+        success: function (result) {
+            $('#proLogID').val(logId);
+            $('#proLogTicketNo').val(result.ID);
+            $('#proLogPlayerName').val(result.PlayerName);
+           
+            $("#proLogModal").modal("show");
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+}
+
+function savePromotionLog() {
+    $.ajax({
+        url: "/HTRTicketPromotion/SavePromotionLog",
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({
+            LogID: +$('#proLogID').val(),
+            PlayerName: $('#proLogPlayerName').val()
+        }),
+        dataType: "json",
+        success: function (result) {
+            $("#proLogModal").modal("hide");
+            loadPromotionLog();
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+}
+
 function savePromotion() {
     $.ajax({
         url: "/HTRTicketPromotion/SaveHTRPromotion",
@@ -187,7 +230,22 @@ function loadPromotionLog() {
                       }
                   },
                   { "data": "PlayerID" },
-                  { "data": "PlayerName" },
+                  {
+                      "data": "PlayerName",
+                      render: function (data, type, row, meta) {
+                          if (type === "display") {
+                              var html = '';
+                              if ($('#promotionCombo').val() == "4") {
+                                  html += '<a href="#" onclick="openPromotionLogMd(' + logId + ')" >' + data + '</a>';
+                              }else{
+                                  html += data;
+                              }
+                              
+                              data = html;
+                          }
+                          return data;
+                      }
+                  },
                   { "data": "PrintedDate" },
                   { "data": "PrintedBy" },
                   {
@@ -315,6 +373,12 @@ function clearPromotionMd() {
     $('#proContent').val(''),
     $('#proStartDate').val(''),
     $('#proEndDate').val('')
+}
+
+function clearPromotionLogMd() {
+   $('#proLogID').val('');
+   $('#proLogPlayerName').val('');
+   $('#proLogTicketNo').val('');
 }
 
 

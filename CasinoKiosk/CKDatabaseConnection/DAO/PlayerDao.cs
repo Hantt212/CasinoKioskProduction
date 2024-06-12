@@ -13,12 +13,14 @@ namespace CKDatabaseConnection.DAO
     {        
         ITHoTram_CustomReportEntities context = null;
         RA_SecurityEntities RAcontext = null;
+        WheelOfFortuneEntities WOFcontext = null;
 
         string userNamecurr = HttpContext.Current.Session["UserName"].ToString();
         public PlayerDao()
         {
             context = new ITHoTram_CustomReportEntities();
             RAcontext = new RA_SecurityEntities();
+            WOFcontext = new WheelOfFortuneEntities();
         }
         public long Insert(CIFE_Players entity)
         {
@@ -194,5 +196,104 @@ namespace CKDatabaseConnection.DAO
         }
         //Add CasinoDoorLog end
 
+        //Add WOF start
+        public List<WoF_GetWheelOfFortuneLog_Result> getWheelOfFortuneLog()
+        {
+            List<WoF_GetWheelOfFortuneLog_Result> logs = new List<WoF_GetWheelOfFortuneLog_Result>();
+            try
+            {
+                logs = WOFcontext.WoF_GetWheelOfFortuneLog().ToList();
+            }
+            catch(Exception e){}
+
+            return logs;
+        }
+
+        public List<WoF_Prize> getPrizeInfo()
+        {
+            List<WoF_Prize> infos = WOFcontext.WoF_Prize.ToList();
+            return infos;
+        }
+
+        public WoF_Prize getPrizeInfoByID(int Id)
+        {
+            WoF_Prize prize = WOFcontext.WoF_Prize.Find(Id);
+            //If exist selected don't show
+            bool isSelected = WOFcontext.WoF_Prize.Any(item => item.isSelected == true);
+            prize.isSelected = isSelected;
+            return prize;
+        }
+
+        public int UpdatePrizeInfoByID(int Id, string PrizeName, int TotalQty, bool IsSelected)
+        {
+            try
+            {
+                //Session timeout
+                if (userNamecurr == null)
+                {
+                    return -3;
+                }else
+                {
+                    WoF_Prize prize = WOFcontext.WoF_Prize.Find(Id);
+                    //Write log
+                    WoF_Prize_Log log = new WoF_Prize_Log();
+                    log.Action = "Update Prize";
+                    log.OldValue = "DisplayName:" + prize.DisplayName + ", OriginalQty:" + prize.OriginalQty;
+                    log.NewValue = "DisplayName:" + PrizeName + ", OriginalQty:" + TotalQty;
+                    log.Created_By = userNamecurr;
+                    log.Created_Time = DateTime.Now;
+
+
+                    //upd Prize
+                    prize.DisplayName = PrizeName;
+                    prize.OriginalQty = TotalQty;
+                    if (IsSelected)
+                    {
+                        log.OldValue += ", isSelected: False";
+                        log.NewValue += ", isSelected: True";
+                        prize.isSelected = IsSelected;
+                    }
+
+                    WOFcontext.WoF_Prize_Log.Add(log);
+                    WOFcontext.SaveChanges();
+                    return 0;
+                }
+            }
+            catch
+            {
+                return -1;
+            }
+        }
+
+        public int updPosition(List<WoF_Prize> prizeList)
+        {
+            //Session timeout
+            if (userNamecurr == null)
+            {
+                return -3;
+            }else
+            {
+                prizeList.ForEach(item =>
+                {
+                    WoF_Prize prize = WOFcontext.WoF_Prize.Find(item.ID);
+                    //Write log
+                    WoF_Prize_Log log = new WoF_Prize_Log();
+                    log.Action = "Update Position";
+                    log.OldValue = "PositionID:" + prize.PositionID;
+                    log.NewValue = "PositionID:" + item.PositionID;
+                    log.Created_By = userNamecurr;
+                    log.Created_Time = DateTime.Now;
+                    WOFcontext.WoF_Prize_Log.Add(log);
+
+                    //upd position
+                    prize.PositionID = item.PositionID;
+                    WOFcontext.SaveChanges();
+                });
+                return 0;
+            }
+
+           
+        }
+        //Add WOF end
     }
 }

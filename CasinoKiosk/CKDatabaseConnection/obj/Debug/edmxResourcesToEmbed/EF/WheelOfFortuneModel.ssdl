@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WheelOfFortuneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="WoF_Prize">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PrizeTypeID" Type="int" Nullable="false" />
+    <Property Name="PrizeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Icon" Type="nvarchar(max)" />
+    <Property Name="IconPath" Type="nvarchar" MaxLength="50" />
+    <Property Name="OriginalQty" Type="int" />
+    <Property Name="RemainingQty" Type="int" />
+    <Property Name="PositionID" Type="int" />
+    <Property Name="Chance" Type="float" />
+    <Property Name="isShown" Type="bit" Nullable="false" />
+    <Property Name="isUpdated" Type="bit" Nullable="false" />
+    <Property Name="isSelected" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WoF_Prize_Log">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="OldValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NewValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Created By" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Created Time" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Function Name="WoF_GetWheelOfFortuneLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="WheelOfFortuneModelStoreContainer">
+    <EntitySet Name="WoF_Prize" EntityType="Self.WoF_Prize" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WoF_Prize_Log" EntityType="Self.WoF_Prize_Log" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
