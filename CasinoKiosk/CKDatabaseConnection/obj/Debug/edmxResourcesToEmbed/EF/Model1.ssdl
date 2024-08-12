@@ -24,7 +24,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemName" Type="nvarchar(max)" />
     <Property Name="ItemPoints" Type="int" />
     <Property Name="Quantity" Type="int" Nullable="false" />
     <Property Name="isActive" Type="bit" />
@@ -735,6 +735,9 @@
   </Function>
   <Function Name="spHTR_PromotionLogByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spHTR_PromotionLogByPromotionID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="promotionID" Type="int" Mode="In" />
   </Function>
   <Function Name="SpReport_MarketingAuthorizer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="spReportCIFE_Program" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />

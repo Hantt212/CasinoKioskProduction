@@ -358,7 +358,6 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceA
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\Microsoft.ReportViewer.WebForms.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\PagedList.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\Microsoft.SqlServer.Types.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\CKDatabaseConnection.pdb
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\EntityFramework.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\EntityFramework.SqlServer.xml
@@ -369,16 +368,6 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceA
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\Microsoft.ApplicationInsights.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\PagedList.xml
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\de\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\es\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\fr\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\it\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\ja\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\ko\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\pt\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\ru\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\zh-Hans\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\bin\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.csprojResolveAssemblyReference.cache
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\WebServiceApp\obj\Debug\WebServiceApp.pdb

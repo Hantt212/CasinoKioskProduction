@@ -655,7 +655,7 @@ namespace WebServiceApp
                 dragonPlayer.BalancePoints = balancePoints;
             }
 
-            if ((tierName == "Classic" && combinedPoints >= 20) || (tierName == "Classic" && balancePoints >= 1000))
+            if (((tierName == "Classic" || tierName == "Fortune") && combinedPoints >= 20) || ((tierName == "Classic" || tierName == "Fortune") && balancePoints >= 1000))
             {
                 isPass = true;
             }
@@ -690,9 +690,18 @@ namespace WebServiceApp
                 {
                     dragonItem = db.MF8DragonBuffetBonus_Items.Find(item.ID);
 
+                    DateTime dateInsert = item.DateInserted;
 
+                    int currentTime = Int32.Parse(dateInsert.Hour.ToString());
+                    if (currentTime < 6)
+                    {
+                        dateInsert = dateInsert.AddDays(-1);
 
-                    if (item.DateInserted < currentDay)
+                    }
+
+                    // if (item.DateInserted < currentDay)
+
+                    if (dateInsert < currentDay)
                     {
                         dragonItem.Status = isPass == true ? 1 : 0;
                         dragonItem.DateInserted = DateTime.Now;

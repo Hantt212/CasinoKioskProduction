@@ -23,7 +23,9 @@ function loadData() {
                 ],
                 responsive: true,
                 destroy: true,
-                order: [[4, 'desc']]
+                order: [[4, 'desc']],
+               
+                
             });
         },
         error: function (errormessage) {
@@ -31,6 +33,7 @@ function loadData() {
         }
     });
 }
+
 
 function loadPrizeInfo() {
     $.ajax({
@@ -48,16 +51,6 @@ function loadPrizeInfo() {
                   { "data": "PositionID" },
                   { "data": "OriginalQty" },
                   { "data": "RemainingQty" },
-                  { "data": "Chance" },
-                  {
-                      "data": "isSelected",
-                      render: function (data, type, row, meta) {
-                          if (data === true) {
-                              return '<span style="color: #4752e9;">' + data + '</span>';
-                          }
-                          return data;
-                      }
-                  },
                   {
                        "data": "ID",
                        render: function (data, type, row, meta) {
@@ -70,6 +63,7 @@ function loadPrizeInfo() {
                 ],
                 responsive: true,
                 destroy: true,
+                pageLength: 25,
                // order: [[2, 'desc']]
             });
         },

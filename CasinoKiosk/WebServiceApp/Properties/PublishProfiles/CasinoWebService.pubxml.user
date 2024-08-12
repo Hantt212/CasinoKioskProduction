@@ -22,10 +22,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2014 20:26:06</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>03/11/2015 17:43:42</publishTime>
+      <publishTime>11/03/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>03/11/2015 17:43:42</publishTime>
+      <publishTime>11/03/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/es/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 20:25:54</publishTime>
@@ -55,25 +55,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/20/2022 10:14:46</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>07/12/2015 19:04:38</publishTime>
+      <publishTime>12/07/2015 19:04:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>10/03/2016 14:26:18</publishTime>
+      <publishTime>03/10/2016 14:26:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>09/03/2016 12:00:14</publishTime>
+      <publishTime>03/09/2016 12:00:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>10/03/2016 14:26:26</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>09/03/2016 11:57:34</publishTime>
+      <publishTime>03/09/2016 11:57:34</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/15/2015 02:06:24</publishTime>

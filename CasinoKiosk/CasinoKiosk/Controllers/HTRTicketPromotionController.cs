@@ -123,7 +123,8 @@ namespace CasinoKiosk.Controllers
                         VoidedDate = item.VoidedDate?.ToString("yyyy-MM-dd HH:mm")
                     }
             ).ToList();
-            return Json(result, JsonRequestBehavior.AllowGet);
+            //return Json(result, JsonRequestBehavior.AllowGet);
+            return new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
         }
 
         public JsonResult SearchPromotionByPatron(int PromotionID, int PatronID)

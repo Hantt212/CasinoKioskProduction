@@ -107,9 +107,9 @@ namespace CKDatabaseConnection.DAO
             return result;
         }
 
-        public List<HTRPromotionLog> getHTRPromotionLog(int promotionID)
+        public List<spHTR_PromotionLogByPromotionID_Result> getHTRPromotionLog(int promotionID)
         {
-            List<HTRPromotionLog> list = context.HTRPromotionLogs.Where(item => item.PromotionId == promotionID).OrderBy(item => item.ID).ToList();
+            List<spHTR_PromotionLogByPromotionID_Result> list = context.spHTR_PromotionLogByPromotionID(promotionID).ToList();
             return list;
         }
 

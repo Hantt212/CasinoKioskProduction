@@ -244,7 +244,6 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseC
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Buffers.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Memory.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\Microsoft.SqlServer.Types.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\EntityFramework.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\PagedList.xml
@@ -252,16 +251,6 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseC
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Buffers.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Memory.xml
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
-C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.csprojResolveAssemblyReference.cache
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CKDatabaseConnection\obj\Debug\CKDatabaseConnection.pdb

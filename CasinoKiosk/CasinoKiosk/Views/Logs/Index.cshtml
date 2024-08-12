@@ -74,6 +74,7 @@
                                     <th>isRedeem</th>
                                     <th>Current PlayerPoints</th>
                                     <th>Quantity</th>
+                                    <th>Kiosk.No</th>
                                     <th>Voided Status</th>
                                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                     {
@@ -98,6 +99,7 @@
                                         <td>@Log.Status</td>
                                         <td>@Log.CurrentPlayerPoints</td>
                                         <td>@Log.Quantity</td>
+                                        <td>@Log.Location</td>
                                         <td>@Log.voidedStatus</td>
 
                                         @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))

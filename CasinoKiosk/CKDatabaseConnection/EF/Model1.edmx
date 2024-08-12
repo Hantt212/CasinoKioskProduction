@@ -29,7 +29,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ItemName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemName" Type="nvarchar(max)" />
           <Property Name="ItemPoints" Type="int" />
           <Property Name="Quantity" Type="int" Nullable="false" />
           <Property Name="isActive" Type="bit" />
@@ -734,13 +734,15 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        
         <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />
         </Function>
         <Function Name="spHTR_PromotionLogByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spHTR_PromotionLogByPromotionID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="promotionID" Type="int" Mode="In" />
         </Function>
         <Function Name="SpReport_MarketingAuthorizer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="spReportCIFE_Program" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -823,17 +825,6 @@
           <Property Name="NewIsActive" Type="Boolean" />
           <Property Name="ChangedDate" Type="DateTime" Precision="3" />
           <Property Name="ChangedPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="CasinoKiosk_Item">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ItemPoints" Type="Int32" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="isActive" Type="Boolean" />
-          <Property Name="imageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="CasinoKiosk_Log">
           <Key>
@@ -962,7 +953,6 @@
         </EntityType>
         <EntityContainer Name="ITHoTram_CustomReportEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CasinoKiosk_ChangeLog" EntityType="Self.CasinoKiosk_ChangeLog" />
-          <EntitySet Name="CasinoKiosk_Item" EntityType="Self.CasinoKiosk_Item" />
           <EntitySet Name="CasinoKiosk_Log" EntityType="Self.CasinoKiosk_Log" />
           <EntitySet Name="MFBonus_PlayerPoints" EntityType="Self.MFBonus_PlayerPoints" />
           <EntitySet Name="MFDailyBonus_Items" EntityType="Self.MFDailyBonus_Items" />
@@ -1081,6 +1071,10 @@
           <FunctionImport Name="MFBonus_spSelectWeeklyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectWeeklyLogs_Result)">
           <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="spHTR_PromotionLogByPromotionID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_PromotionLogByPromotionID_Result)">
+          <Parameter Name="promotionID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="CasinoKiosk_Item" EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Item" />
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -1832,6 +1826,33 @@
           <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
           <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <ComplexType Name="spHTR_PromotionLogByPromotionID_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="PromotionId" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="true" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="PrintedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PrintedBy" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="isPrinted" Nullable="true" />
+          <Property Type="String" Name="ReprintedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="ReprintedDate" Nullable="true" Precision="23" />
+          <Property Type="Boolean" Name="isVoided" Nullable="true" />
+          <Property Type="DateTime" Name="VoidedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="VoidedBy" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="UpdatedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdatedBy" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="CasinoKiosk_Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ItemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ItemPoints" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="imageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1855,18 +1876,6 @@
                 <ScalarProperty Name="NewIsActive" ColumnName="NewIsActive" />
                 <ScalarProperty Name="ChangedDate" ColumnName="ChangedDate" />
                 <ScalarProperty Name="ChangedPerson" ColumnName="ChangedPerson" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CasinoKiosk_Item">
-            <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_Item">
-              <MappingFragment StoreEntitySet="CasinoKiosk_Item">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="imageURL" ColumnName="imageURL" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2901,6 +2910,38 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spHTR_PromotionLogByPromotionID" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_PromotionLogByPromotionID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_PromotionLogByPromotionID_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
+                <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
+                <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
+                <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
+                <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
+                <ScalarProperty Name="isVoided" ColumnName="isVoided" />
+                <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
+                <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CasinoKiosk_Item">
+            <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_Item">
+              <MappingFragment StoreEntitySet="CasinoKiosk_Item">
+                <ScalarProperty Name="imageURL" ColumnName="imageURL" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

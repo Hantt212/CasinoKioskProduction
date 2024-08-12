@@ -10,9 +10,11 @@
 namespace CKDatabaseConnection.EF
 {
     using System;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CasinoKioskUsers_SelectAll_Result
     {
+        [Key]
         public int UserID { get; set; }
         public string CasinoKiosk_UserName { get; set; }
         public Nullable<bool> isActive { get; set; }

@@ -28,7 +28,6 @@ namespace CKDatabaseConnection.EF
         }
     
         public virtual DbSet<CasinoKiosk_ChangeLog> CasinoKiosk_ChangeLog { get; set; }
-        public virtual DbSet<CasinoKiosk_Item> CasinoKiosk_Item { get; set; }
         public virtual DbSet<CasinoKiosk_Log> CasinoKiosk_Log { get; set; }
         public virtual DbSet<MFBonus_PlayerPoints> MFBonus_PlayerPoints { get; set; }
         public virtual DbSet<MFDailyBonus_Items> MFDailyBonus_Items { get; set; }
@@ -74,6 +73,7 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MF8DragonBuffetBonus_Players> MF8DragonBuffetBonus_Players { get; set; }
         public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
         public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
+        public virtual DbSet<CasinoKiosk_Item> CasinoKiosk_Item { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {
@@ -281,6 +281,15 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("PlayerID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectWeeklyLogs_Result>("MFBonus_spSelectWeeklyLogs_Result", playerIDParameter);
+        }
+    
+        public virtual ObjectResult<spHTR_PromotionLogByPromotionID_Result> spHTR_PromotionLogByPromotionID(Nullable<int> promotionID)
+        {
+            var promotionIDParameter = promotionID.HasValue ?
+                new ObjectParameter("promotionID", promotionID) :
+                new ObjectParameter("promotionID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionLogByPromotionID_Result>("spHTR_PromotionLogByPromotionID", promotionIDParameter);
         }
     }
 }
