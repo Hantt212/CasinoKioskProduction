@@ -27,7 +27,7 @@ namespace CKDatabaseConnection.DAO
 
 
         //db playermanagement
-        string connectionString1 = ConfigurationManager.ConnectionStrings["PlayerManagementConStr"].ConnectionString;
+        //string connectionString1 = ConfigurationManager.ConnectionStrings["PlayerManagementConStr"].ConnectionString;
         public List<FBItem> getFBItems(int playerID, string fromdate = "", string todate = "")
         {
             string playerName = function.getPlayerName(playerID);
@@ -182,7 +182,7 @@ namespace CKDatabaseConnection.DAO
                 var uid = getUserIDByUserName(userName);
                 var dt = new DataTable();
                 var compid = -1;
-                using (SqlConnection con = new SqlConnection(connectionString1))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     //var strCommand = string.Format("exec Proc_Comp '{0}','{1}',1,NULL,{2},0,1,2,{3},31261,31261,0,'{4}'", playerId, DateTime.Now.ToString("yyyy-MM-dd"), itemNumber, itemValue, hostName);
                     var strCommand = string.Format("exec Proc_Comp '{0}','{1}',1,NULL,{2},0,1,2,{3},{5},{5},0,'{4}'", playerId, DateTime.Now.ToString("yyyy-MM-dd"), itemNumber, itemValue, hostName, uid);

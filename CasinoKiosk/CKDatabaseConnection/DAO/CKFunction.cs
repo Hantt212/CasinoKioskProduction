@@ -22,12 +22,13 @@ namespace CKDatabaseConnection.DAO
         string connectionString = ConfigurationManager.ConnectionStrings["CKdbContext"].ConnectionString;
 
         //db playermanagement
-        string connectionString1 = ConfigurationManager.ConnectionStrings["PlayerManagementConStr"].ConnectionString;
+        //string connectionString1 = ConfigurationManager.ConnectionStrings["PlayerManagementConStr"].ConnectionString;
         public string getPlayerName(int ID)
         {
             string playerName = "";
             DataSet ds;
-            using (SqlConnection con = new SqlConnection(connectionString1))
+            //using (SqlConnection con = new SqlConnection(connectionString1))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("Proc_GetPlayerName", con))
                 {
@@ -107,7 +108,8 @@ namespace CKDatabaseConnection.DAO
             int playerPoints = 0;
             DataSet ds;
 
-            using (SqlConnection con = new SqlConnection(connectionString1))
+            //using (SqlConnection con = new SqlConnection(connectionString1))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("Proc_GetPlayerPointBalance", con))
                 {
