@@ -88,7 +88,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="Assets/Admin/js/wheelOfFortune.js">
-      <publishTime>05/30/2024 13:42:15</publishTime>
+      <publishTime>06/15/2024 14:21:30</publishTime>
     </File>
     <File Include="Assets/Images/add.png">
       <publishTime>12/16/2023 13:48:42</publishTime>
@@ -256,13 +256,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.dll">
-      <publishTime>06/01/2024 11:11:28</publishTime>
+      <publishTime>08/30/2024 12:57:11</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.XmlSerializers.dll">
-      <publishTime>06/01/2024 11:11:29</publishTime>
+      <publishTime>08/30/2024 12:57:12</publishTime>
     </File>
     <File Include="bin/CKDatabaseConnection.dll">
-      <publishTime>06/01/2024 11:11:26</publishTime>
+      <publishTime>08/30/2024 12:57:08</publishTime>
     </File>
     <File Include="bin/de/PdfSharp.Charting.resources.dll">
       <publishTime>12/16/2023 13:48:42</publishTime>
@@ -320,6 +320,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>12/16/2023 13:48:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ReportViewer.Common.dll">
+      <publishTime>02/20/2011 04:40:08</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
       <publishTime>12/16/2023 13:48:42</publishTime>
@@ -1075,7 +1078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="Views/Logs/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>06/17/2024 15:32:34</publishTime>
     </File>
     <File Include="Views/Logs/KioskUserActionLog.cshtml">
       <publishTime>12/16/2023 13:48:42</publishTime>
@@ -1132,7 +1135,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/28/2024 14:26:49</publishTime>
     </File>
     <File Include="Views/WheelOfFortune/PrizeInfo.cshtml">
-      <publishTime>05/30/2024 13:22:29</publishTime>
+      <publishTime>06/15/2024 14:21:25</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/Items.datasource">
       <publishTime>12/16/2023 13:48:42</publishTime>
@@ -1165,7 +1168,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>06/01/2024 11:11:30</publishTime>
+      <publishTime>08/30/2024 13:10:04</publishTime>
     </File>
     <File Include="webfonts/fa-brands-400.eot">
       <publishTime>12/16/2023 13:48:43</publishTime>

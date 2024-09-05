@@ -21,18 +21,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CasinoKiosk_Item">
-      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_Item">
-        <MappingFragment StoreEntitySet="CasinoKiosk_Item">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
-          <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="isActive" ColumnName="isActive" />
-          <ScalarProperty Name="imageURL" ColumnName="imageURL" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CasinoKiosk_Log">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_Log">
         <MappingFragment StoreEntitySet="CasinoKiosk_Log">
@@ -1064,5 +1052,37 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spHTR_PromotionLogByPromotionID" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_PromotionLogByPromotionID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_PromotionLogByPromotionID_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PrintedDate" ColumnName="PrintedDate" />
+          <ScalarProperty Name="PrintedBy" ColumnName="PrintedBy" />
+          <ScalarProperty Name="isPrinted" ColumnName="isPrinted" />
+          <ScalarProperty Name="ReprintedBy" ColumnName="ReprintedBy" />
+          <ScalarProperty Name="ReprintedDate" ColumnName="ReprintedDate" />
+          <ScalarProperty Name="isVoided" ColumnName="isVoided" />
+          <ScalarProperty Name="VoidedDate" ColumnName="VoidedDate" />
+          <ScalarProperty Name="VoidedBy" ColumnName="VoidedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CasinoKiosk_Item">
+      <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CasinoKiosk_Item">
+        <MappingFragment StoreEntitySet="CasinoKiosk_Item">
+          <ScalarProperty Name="imageURL" ColumnName="imageURL" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

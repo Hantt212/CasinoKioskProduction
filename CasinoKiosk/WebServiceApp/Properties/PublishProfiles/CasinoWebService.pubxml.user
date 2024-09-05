@@ -16,7 +16,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2020 21:01:23</publishTime>
     </File>
     <File Include="bin/CKDatabaseConnection.dll">
-      <publishTime>06/12/2024 09:07:37</publishTime>
+      <publishTime>08/30/2024 12:57:08</publishTime>
     </File>
     <File Include="bin/de/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 20:26:06</publishTime>
@@ -130,7 +130,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/21/2014 20:25:46</publishTime>
     </File>
     <File Include="bin/WebServiceApp.dll">
-      <publishTime>06/12/2024 09:07:40</publishTime>
+      <publishTime>08/30/2024 12:57:35</publishTime>
     </File>
     <File Include="bin/zh-Hans/Microsoft.SqlServer.Types.resources.dll">
       <publishTime>02/21/2014 20:27:58</publishTime>
@@ -148,7 +148,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/20/2020 21:01:23</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/12/2024 09:07:40</publishTime>
+      <publishTime>08/30/2024 13:10:30</publishTime>
     </File>
     <File Include="WebServiceCasino.asmx">
       <publishTime>08/20/2020 21:01:59</publishTime>

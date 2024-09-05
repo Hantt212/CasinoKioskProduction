@@ -113,6 +113,8 @@ function loadData() {
                 ],
                 responsive: true,
                 destroy: true,
+                processing: true,
+                serverSide: true,
                 order: [[8, 'desc']]
                 
             });
