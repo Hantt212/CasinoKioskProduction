@@ -40,7 +40,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LogName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LogName" Type="nvarchar" MaxLength="200" />
           <Property Name="createdDate" Type="nvarchar" MaxLength="100" />
           <Property Name="PlayerID" Type="int" />
           <Property Name="PlayerName" Type="nvarchar" MaxLength="100" />
@@ -312,6 +312,18 @@
           <Property Name="TotalPointsEarned" Type="int" />
           <Property Name="PrintedQty" Type="int" />
           <Property Name="InsertDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="HTRPromotionPlayerModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PromotionID" Type="int" Nullable="false" />
+          <Property Name="PlayerID" Type="int" Nullable="false" />
+          <Property Name="OldPlayerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NewPlayerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdatedTime" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="HTRTicketPromotion">
           <Key>
@@ -734,6 +746,13 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spHTR_CheckPrintHTRPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PlayerID" Type="int" Mode="In" />
+          <Parameter Name="PromotionID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spHTR_GetPatronInfoByPromotionID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PromotionID" Type="int" Mode="In" />
+        </Function>
         <Function Name="spHTR_PromotionByPatron" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />
@@ -770,6 +789,7 @@
           <EntitySet Name="HTRPromotion" EntityType="Self.HTRPromotion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HTRPromotionLog" EntityType="Self.HTRPromotionLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HTRPromotionPlayer" EntityType="Self.HTRPromotionPlayer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HTRPromotionPlayerModifyLog" EntityType="Self.HTRPromotionPlayerModifyLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HTRTicketPromotion" EntityType="Self.HTRTicketPromotion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MF8DragonBuffetBonus_Items" EntityType="Self.MF8DragonBuffetBonus_Items" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MF8DragonBuffetBonus_Logs" EntityType="Self.MF8DragonBuffetBonus_Logs" Schema="dbo" store:Type="Tables" />
@@ -831,7 +851,7 @@
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LogName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="createdDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="PlayerID" Type="Int32" />
           <Property Name="PlayerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -979,12 +999,6 @@
           <FunctionImport Name="MFBonus_spSelectSlotDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectSlotDailyLogs_Result)">
           <Parameter Name="PlayerID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="MFBonus_spSelectRedemptionLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="MFBonus_spSelectRedemptionLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
-          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-          </FunctionImport>
           <EntitySet Name="CIFE_Players" EntityType="ITHoTram_CustomReportModel.CIFE_Players" />
           <FunctionImport Name="spReportCIFE_Program" ReturnType="Collection(ITHoTram_CustomReportModel.spReportCIFE_Program_Result)" />
           <EntitySet Name="CasinoKioskRoles" EntityType="ITHoTram_CustomReportModel.CasinoKioskRole" />
@@ -1075,6 +1089,17 @@
           <Parameter Name="promotionID" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="CasinoKiosk_Item" EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Item" />
+          <FunctionImport Name="MFBonus_spSelectRedemptionLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
+          <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spHTR_GetPatronInfoByPromotionID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_GetPatronInfoByPromotionID_Result)">
+          <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="HTRPromotionPlayerModifyLogs" EntityType="ITHoTram_CustomReportModel.HTRPromotionPlayerModifyLog" />
+          <FunctionImport Name="spHTR_CheckPrintHTRPromotion" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_CheckPrintHTRPromotion_Result)">
+            <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+            <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
           <Property Type="Int32" Name="ID" Nullable="false" />
@@ -1158,22 +1183,6 @@
           <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
           <Property Type="DateTime" Name="GamingDate" Nullable="true" Precision="23" />
-        </ComplexType>
-        <ComplexType Name="MFBonus_spSelectRedemptionLogs_Result">
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="LogName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="createdDate" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="createdTime" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="PlayerID" Nullable="true" />
-          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-          <Property Type="Int32" Name="Status" Nullable="true" />
-          <Property Type="Int32" Name="CurrentPlayerPoints" Nullable="true" />
-          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-          <Property Type="DateTime" Name="gamingDate" Nullable="true" Precision="23" />
-          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
         </ComplexType>
         <EntityType Name="CIFE_Players">
           <Key>
@@ -1853,6 +1862,51 @@
           <Property Name="isActive" Type="Boolean" />
           <Property Name="imageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
+        <ComplexType Name="MFBonus_spSelectRedemptionLogs_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="LogName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdDate" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="createdTime" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="PlayerID" Nullable="true" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="Int32" Name="CurrentPlayerPoints" Nullable="true" />
+          <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="gamingDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="reprintedTime" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="spHTR_GetPatronInfoByPromotionID_Result">
+          <Property Type="String" Name="PlayerID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="HTRPromotionPlayerModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PromotionID" Type="Int32" Nullable="false" />
+          <Property Name="PlayerID" Type="Int32" Nullable="false" />
+          <Property Name="OldPlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewPlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <ComplexType Name="spHTR_CheckPrintHTRPromotion_Result">
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="PromotionId" Nullable="false" />
+          <Property Type="Int32" Name="PlayerID" Nullable="true" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Quantity" Nullable="true" />
+          <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+          <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+          <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2112,46 +2166,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="LogName" ColumnName="LogName" />
-                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-                <ScalarProperty Name="createdTime" ColumnName="createdTime" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="LogName" ColumnName="LogName" />
-                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-                <ScalarProperty Name="createdTime" ColumnName="createdTime" />
-                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
-                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-                <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
-                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="CIFE_Players">
             <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CIFE_Players">
               <MappingFragment StoreEntitySet="CIFE_Players">
@@ -2942,6 +2956,64 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LogName" ColumnName="LogName" />
+                <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+                <ScalarProperty Name="createdTime" ColumnName="createdTime" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
+                <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+                <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
+                <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+                <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+                <ScalarProperty Name="reprintedTime" ColumnName="reprintedTime" />
+                <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spHTR_GetPatronInfoByPromotionID" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_GetPatronInfoByPromotionID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_GetPatronInfoByPromotionID_Result">
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="HTRPromotionPlayerModifyLogs">
+            <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.HTRPromotionPlayerModifyLog">
+              <MappingFragment StoreEntitySet="HTRPromotionPlayerModifyLog">
+                <ScalarProperty Name="UpdatedTime" ColumnName="UpdatedTime" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="NewPlayerName" ColumnName="NewPlayerName" />
+                <ScalarProperty Name="OldPlayerName" ColumnName="OldPlayerName" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PromotionID" ColumnName="PromotionID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spHTR_CheckPrintHTRPromotion" FunctionName="ITHoTram_CustomReportModel.Store.spHTR_CheckPrintHTRPromotion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.spHTR_CheckPrintHTRPromotion_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PromotionId" ColumnName="PromotionId" />
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
+                <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

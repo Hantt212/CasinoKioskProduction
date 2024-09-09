@@ -10,15 +10,16 @@
 namespace CKDatabaseConnection.EF
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class CasinoKioskUsers_SelectAll_Result
+    public partial class HTRPromotionPlayerModifyLog
     {
-        public int UserID { get; set; }
-        public string CasinoKiosk_UserName { get; set; }
-        public Nullable<bool> isActive { get; set; }
-        public string UserEmailAddress { get; set; }
-        public short RoleId { get; set; }
-        public string RoleName { get; set; }
-        public int UserRoleId { get; set; }
+        public int Id { get; set; }
+        public int PromotionID { get; set; }
+        public int PlayerID { get; set; }
+        public string OldPlayerName { get; set; }
+        public string NewPlayerName { get; set; }
+        public string UpdatedBy { get; set; }
+        public System.DateTime UpdatedTime { get; set; }
     }
 }

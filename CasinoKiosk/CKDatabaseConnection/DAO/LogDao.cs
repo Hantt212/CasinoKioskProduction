@@ -123,9 +123,12 @@ namespace CKDatabaseConnection.DAO
         {
             var ticket = new HTRPromotionLog();
             string userLogin = HttpContext.Current.Session["UserName"].ToString();
-            HTRPromotionPlayer player = context.HTRPromotionPlayers.OrderByDescending(item => item.InsertDate).FirstOrDefault(item => item.PlayerID == PlayerID && item.PromotionId == PromotionID);
-            if (player != null)
+            // HTRPromotionPlayer player = context.HTRPromotionPlayers.OrderByDescending(item => item.InsertDate).FirstOrDefault(item => item.PlayerID == PlayerID && item.PromotionId == PromotionID);
+            //if (player != null){
+            spHTR_CheckPrintHTRPromotion_Result result = context.spHTR_CheckPrintHTRPromotion(PlayerID, PromotionID).FirstOrDefault();
+            if (result != null)
             {
+                HTRPromotionPlayer player = context.HTRPromotionPlayers.Find(result.ID);
                 if (player.Quantity == 1)
                 {
                     player.Quantity = 0;
@@ -195,6 +198,41 @@ namespace CKDatabaseConnection.DAO
         {
             List<HTRPromotion> result = context.HTRPromotions.ToList();
             return result;
+        }
+
+        public List<spHTR_GetPatronInfoByPromotionID_Result> getHTRPromotionPlayerList(int promotionID)
+        {
+            List<spHTR_GetPatronInfoByPromotionID_Result> playerList = context.spHTR_GetPatronInfoByPromotionID(promotionID).ToList();
+            return playerList;
+        }
+
+        public int savePidModify(int proID, string curPidName, string newPidName)
+        {
+            try
+            {
+                List<HTRPromotionPlayer> playerList = context.HTRPromotionPlayers.Where(item => item.PromotionId == proID && item.PlayerName == curPidName).ToList();
+                playerList.ForEach(item =>
+                {
+                    HTRPromotionPlayer playerModel = context.HTRPromotionPlayers.Find(item.ID);
+                    
+                    HTRPromotionPlayerModifyLog logModel = new HTRPromotionPlayerModifyLog();
+                    logModel.PromotionID = playerModel.PromotionId;
+                    logModel.PlayerID = (int)playerModel.PlayerID;
+                    logModel.OldPlayerName = playerModel.PlayerName;
+                    logModel.NewPlayerName = newPidName;
+                    logModel.UpdatedBy = HttpContext.Current.Session["UserName"].ToString();
+                    logModel.UpdatedTime = DateTime.Now;
+                    context.HTRPromotionPlayerModifyLogs.Add(logModel);
+                    
+                    playerModel.PlayerName = newPidName;
+                    context.SaveChanges();
+                });
+                return 0;
+            }catch(Exception e)
+            {
+                return 1;
+            }
+
         }
 
         public int saveHTRPromotion(HTRPromotion input)
@@ -419,7 +457,7 @@ namespace CKDatabaseConnection.DAO
 
         public IEnumerable<MFBonus_spSelectRedemptionLogs_Result> ListAllPagingRedemptionLog(int page, int pageSize, int playerID)
         {
-            List<MFBonus_spSelectRedemptionLogs_Result> list = context.MFBonus_spSelectRedemptionLogs_Result(playerID).ToList();
+            List<MFBonus_spSelectRedemptionLogs_Result> list = context.MFBonus_spSelectRedemptionLogs(playerID).ToList();
             //return list.OrderByDescending(x => x.ID).ToPagedList(page, pageSize);
             List<MFBonus_spSelectRedemptionLogs_Result> result = new List<MFBonus_spSelectRedemptionLogs_Result>();
             var last3month = DateTime.Today.AddMonths(-3).ToString("yyyy-MM-dd");
@@ -440,7 +478,7 @@ namespace CKDatabaseConnection.DAO
         // add by Doc Ly 2021/05/28
         public IEnumerable<MFBonus_spSelectRedemptionLogs_Result> ListAllRedemptionLog(string fromdate, string todate, int playerID)
         {
-            List<MFBonus_spSelectRedemptionLogs_Result> list = context.MFBonus_spSelectRedemptionLogs_Result(playerID)
+            List<MFBonus_spSelectRedemptionLogs_Result> list = context.MFBonus_spSelectRedemptionLogs(playerID)
                 .Where(p => (fromdate != "" && todate != "") ? (
                 DateTime.ParseExact(p.createdDate, "dd-MM-yyyy", CultureInfo.CurrentCulture) >= DateTime.Parse(fromdate, CultureInfo.CurrentCulture)
                 &&

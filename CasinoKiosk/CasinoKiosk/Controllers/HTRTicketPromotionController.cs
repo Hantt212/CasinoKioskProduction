@@ -12,6 +12,7 @@ namespace CasinoKiosk.Controllers
     {
         ITHoTram_CustomReportEntities entity = new ITHoTram_CustomReportEntities();
         UserDao dao = new UserDao();
+        LogDao logDao = new LogDao();
         // GET: ActivityTracking
         public ActionResult Index()
         {
@@ -33,13 +34,7 @@ namespace CasinoKiosk.Controllers
         {
             return Json(dao.TicketVoid(ID), JsonRequestBehavior.AllowGet);
         }
-
-        //[Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
-        //public JsonResult Reprint(int ID)
-        //{
-        //    return Json(dao.TicketReprint(ID), JsonRequestBehavior.AllowGet);
-        //}
-
+        
         //Add 20230301 Hantt start
         [Authorize(Roles = "SuperAdmin, HTRAdmin")]
         public ActionResult MarketAuth()
@@ -84,8 +79,8 @@ namespace CasinoKiosk.Controllers
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public JsonResult GetHTRPromotionList()
         {
-            var dao = new LogDao();
-            var result = dao.getHTRPromotionList().Where(item => item.IsActived == true).Select(item =>
+            
+            var result = logDao.getHTRPromotionList().Where(item => item.IsActived == true).Select(item =>
                     new {
                         PromotionId = item.PromotionId,
                         PromotionName = item.PromotionName,
@@ -102,14 +97,20 @@ namespace CasinoKiosk.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpPost]
+        public JsonResult GetPIDByPromotion(int PromotionID)
+        {
+            List<spHTR_GetPatronInfoByPromotionID_Result> playerList = logDao.getHTRPromotionPlayerList(PromotionID);
+            return new JsonResult() { Data = playerList, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
+        }
+
         public JsonResult GetHTRPromotionLog(int PromotionID)
         {
-            var dao = new LogDao();
             if (PromotionID == 0)
             {
-                PromotionID = dao.getHTRPromotionList().Where(item => item.IsActived == true).OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
+                PromotionID = logDao.getHTRPromotionList().Where(item => item.IsActived == true).OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
             }
-            var result = dao.getHTRPromotionLog(PromotionID).Select(item =>
+            var result = logDao.getHTRPromotionLog(PromotionID).Select(item =>
                     new {
                         PlayerID = item.PlayerID,
                         PlayerName = item.PlayerName,
@@ -123,7 +124,6 @@ namespace CasinoKiosk.Controllers
                         VoidedDate = item.VoidedDate?.ToString("yyyy-MM-dd HH:mm")
                     }
             ).ToList();
-            //return Json(result, JsonRequestBehavior.AllowGet);
             return new JsonResult() { Data = result, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
         }
 
@@ -138,12 +138,11 @@ namespace CasinoKiosk.Controllers
 
         public JsonResult GetPromotionById(int PromotionID)
         {
-            var dao = new LogDao();
             if (PromotionID == 0)
             {
-                PromotionID = dao.getHTRPromotionList().OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
+                PromotionID = logDao.getHTRPromotionList().OrderBy(pro => pro.PromotionId).FirstOrDefault().PromotionId;
             }
-            var item = dao.getPromotionById(PromotionID);
+            var item = logDao.getPromotionById(PromotionID);
 
             var result = new
             {
@@ -160,7 +159,6 @@ namespace CasinoKiosk.Controllers
         [Authorize(Roles = "SuperAdmin, HTRAdmin")]
         public JsonResult SaveHTRPromotion(HTRPromotion input)
         {
-            var dao = new LogDao();
             if (input.PromotionId == 0)
             {
                 input.CreatedBy = Session["UserName"].ToString();
@@ -171,15 +169,21 @@ namespace CasinoKiosk.Controllers
             input.UpdatedTime = DateTime.Now;
 
 
-            return Json(dao.saveHTRPromotion(input), JsonRequestBehavior.AllowGet);
+            return Json(logDao.saveHTRPromotion(input), JsonRequestBehavior.AllowGet);
         }
-        
+
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        public JsonResult SavePIDModify(int proID, string curPidName, string newPidName)
+        {
+            return Json(logDao.savePidModify(proID, curPidName, newPidName), JsonRequestBehavior.AllowGet);
+        }
+
 
         //Ticket Promotion start
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public ActionResult HTRPromotionLog()
         {
-            var dao = new LogDao();
             return View();
         }
 
@@ -187,21 +191,22 @@ namespace CasinoKiosk.Controllers
         public ActionResult PrintHTRPromotion(int PlayerID, int PromotionID)
         {
             string url = "";
-            var dao = new LogDao();
-            var ID = dao.PrintHTRPromotion(PlayerID, PromotionID);
+            var ID = logDao.PrintHTRPromotion(PlayerID, PromotionID);
             if (ID != 0)
             {
                 url = "~/Assets/Reports/HTRPromotion.aspx?id=" + ID;
                 return Redirect(url);
+            }else
+            {
+                TempData["ErrorMessage"] = "An error occurred: The PID " + PlayerID .ToString() + " does not meet the requirements for printing.";
+                return View("HTRPromotionLog");
             }
-            return Redirect(url);
         }
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public ActionResult ReprintHTRPromotion(int ID)
         {
-            var dao = new LogDao();
-            dao.ReprintHTRPromotion(ID);
+            logDao.ReprintHTRPromotion(ID);
             string url = "~/Assets/Reports/HTRPromotion.aspx?id=" + ID;
             return Redirect(url);
         }
@@ -209,22 +214,19 @@ namespace CasinoKiosk.Controllers
         [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public JsonResult VoidHTRPromotion(int ID)
         {
-            var dao = new LogDao();
-            return Json(dao.VoidHTRPromotion(ID), JsonRequestBehavior.AllowGet);
+            return Json(logDao.VoidHTRPromotion(ID), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetPromotionLogById(int logID)
         {
-            var dao = new LogDao();
-            return Json(dao.getPromotionLogById(logID), JsonRequestBehavior.AllowGet);
+            return Json(logDao.getPromotionLogById(logID), JsonRequestBehavior.AllowGet);
         }
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin")]
         public JsonResult SavePromotionLog(int LogID, string PlayerName)
         {
-            var dao = new LogDao();
             string updateBy = Session["UserName"].ToString();
-            return Json(dao.savePromotionLog(LogID, PlayerName, updateBy), JsonRequestBehavior.AllowGet);
+            return Json(logDao.savePromotionLog(LogID, PlayerName, updateBy), JsonRequestBehavior.AllowGet);
         }
 
         //MidAutume Promotion end
@@ -260,32 +262,26 @@ namespace CasinoKiosk.Controllers
         [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
         public ActionResult Report(int page = 1)
         {
-            var dao = new LogDao();
             this.Session["page"] = page;
-            var model1 = dao.ListAllPagingActivity(page, 50);
+            var model1 = logDao.ListAllPagingActivity(page, 50);
             return View(model1);
         }
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
         public ActionResult ReportByDate()
         {
-            var dao = new LogDao();
             IEnumerable<CasinoTrackingActivity> model = null;
-
-
             if (HttpContext.Request.Form["dfromdate"] != "" && HttpContext.Request.Form["dtodate"] != "")
             {
                 var fdate = Convert.ToString(HttpContext.Request.Form["dfromdate"]);
                 var tdate = Convert.ToString(HttpContext.Request.Form["dtodate"]);
-                model = dao.ListAllActivityLog(fdate, tdate);
+                model = logDao.ListAllActivityLog(fdate, tdate);
             }
             else
             {
-                model = dao.ListAllActivityLog("", "").Take(100);
+                model = logDao.ListAllActivityLog("", "").Take(100);
             }
-
             return View("Report", model);
-
         }
     }
 }

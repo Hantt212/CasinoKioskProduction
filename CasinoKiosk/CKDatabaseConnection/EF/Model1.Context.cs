@@ -74,6 +74,7 @@ namespace CKDatabaseConnection.EF
         public virtual DbSet<MF8DragonBuffetBonus_Items> MF8DragonBuffetBonus_Items { get; set; }
         public virtual DbSet<MFFridayBonus_Logs> MFFridayBonus_Logs { get; set; }
         public virtual DbSet<CasinoKiosk_Item> CasinoKiosk_Item { get; set; }
+        public virtual DbSet<HTRPromotionPlayerModifyLog> HTRPromotionPlayerModifyLogs { get; set; }
     
         public virtual ObjectResult<MFBonus_spSelectPlayerPoints_Result> MFBonus_spSelectPlayerPoints_Result(Nullable<int> playerID)
         {
@@ -118,24 +119,6 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("PlayerID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectSlotDailyLogs_Result>("MFBonus_spSelectSlotDailyLogs_Result", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MFBonus_spSelectRedemptionLogs_Result> MFBonus_spSelectRedemptionLogs(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectRedemptionLogs_Result>("MFBonus_spSelectRedemptionLogs", playerIDParameter);
-        }
-    
-        public virtual ObjectResult<MFBonus_spSelectRedemptionLogs_Result> MFBonus_spSelectRedemptionLogs_Result(Nullable<int> playerID)
-        {
-            var playerIDParameter = playerID.HasValue ?
-                new ObjectParameter("PlayerID", playerID) :
-                new ObjectParameter("PlayerID", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectRedemptionLogs_Result>("MFBonus_spSelectRedemptionLogs_Result", playerIDParameter);
         }
     
         public virtual ObjectResult<spReportCIFE_Program_Result> spReportCIFE_Program()
@@ -290,6 +273,37 @@ namespace CKDatabaseConnection.EF
                 new ObjectParameter("promotionID", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_PromotionLogByPromotionID_Result>("spHTR_PromotionLogByPromotionID", promotionIDParameter);
+        }
+    
+        public virtual ObjectResult<MFBonus_spSelectRedemptionLogs_Result> MFBonus_spSelectRedemptionLogs(Nullable<int> playerID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MFBonus_spSelectRedemptionLogs_Result>("MFBonus_spSelectRedemptionLogs", playerIDParameter);
+        }
+    
+        public virtual ObjectResult<spHTR_GetPatronInfoByPromotionID_Result> spHTR_GetPatronInfoByPromotionID(Nullable<int> promotionID)
+        {
+            var promotionIDParameter = promotionID.HasValue ?
+                new ObjectParameter("PromotionID", promotionID) :
+                new ObjectParameter("PromotionID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_GetPatronInfoByPromotionID_Result>("spHTR_GetPatronInfoByPromotionID", promotionIDParameter);
+        }
+    
+        public virtual ObjectResult<spHTR_CheckPrintHTRPromotion_Result> spHTR_CheckPrintHTRPromotion(Nullable<int> playerID, Nullable<int> promotionID)
+        {
+            var playerIDParameter = playerID.HasValue ?
+                new ObjectParameter("PlayerID", playerID) :
+                new ObjectParameter("PlayerID", typeof(int));
+    
+            var promotionIDParameter = promotionID.HasValue ?
+                new ObjectParameter("PromotionID", promotionID) :
+                new ObjectParameter("PromotionID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spHTR_CheckPrintHTRPromotion_Result>("spHTR_CheckPrintHTRPromotion", playerIDParameter, promotionIDParameter);
         }
     }
 }

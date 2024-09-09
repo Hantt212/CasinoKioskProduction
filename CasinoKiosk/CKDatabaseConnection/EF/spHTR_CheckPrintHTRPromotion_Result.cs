@@ -11,14 +11,15 @@ namespace CKDatabaseConnection.EF
 {
     using System;
     
-    public partial class CasinoKioskUsers_SelectAll_Result
+    public partial class spHTR_CheckPrintHTRPromotion_Result
     {
-        public int UserID { get; set; }
-        public string CasinoKiosk_UserName { get; set; }
-        public Nullable<bool> isActive { get; set; }
-        public string UserEmailAddress { get; set; }
-        public short RoleId { get; set; }
-        public string RoleName { get; set; }
-        public int UserRoleId { get; set; }
+        public int ID { get; set; }
+        public int PromotionId { get; set; }
+        public Nullable<int> PlayerID { get; set; }
+        public string PlayerName { get; set; }
+        public Nullable<int> Quantity { get; set; }
+        public Nullable<int> TotalPointsEarned { get; set; }
+        public Nullable<int> PrintedQty { get; set; }
+        public Nullable<System.DateTime> InsertDate { get; set; }
     }
 }

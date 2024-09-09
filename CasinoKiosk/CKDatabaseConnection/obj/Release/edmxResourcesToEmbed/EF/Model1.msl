@@ -254,46 +254,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="LogName" ColumnName="LogName" />
-          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-          <ScalarProperty Name="createdTime" ColumnName="createdTime" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-          <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
-          <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-          <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
-          <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-          <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs_Result" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="LogName" ColumnName="LogName" />
-          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
-          <ScalarProperty Name="createdTime" ColumnName="createdTime" />
-          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
-          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
-          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
-          <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
-          <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
-          <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
-          <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
-          <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
-          <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="CIFE_Players">
       <EntityTypeMapping TypeName="ITHoTram_CustomReportModel.CIFE_Players">
         <MappingFragment StoreEntitySet="CIFE_Players">
@@ -1084,5 +1044,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="MFBonus_spSelectRedemptionLogs" FunctionName="ITHoTram_CustomReportModel.Store.MFBonus_spSelectRedemptionLogs">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LogName" ColumnName="LogName" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdTime" ColumnName="createdTime" />
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="ItemPoints" ColumnName="ItemPoints" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CurrentPlayerPoints" ColumnName="CurrentPlayerPoints" />
+          <ScalarProperty Name="voidedStatus" ColumnName="voidedStatus" />
+          <ScalarProperty Name="gamingDate" ColumnName="gamingDate" />
+          <ScalarProperty Name="voidedPerson" ColumnName="voidedPerson" />
+          <ScalarProperty Name="reprintedPerson" ColumnName="reprintedPerson" />
+          <ScalarProperty Name="reprintedTime" ColumnName="reprintedTime" />
+          <ScalarProperty Name="voidedTime" ColumnName="voidedTime" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -63,6 +63,7 @@
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MF8DragonBuffetBonus_Items" Width="1.5" PointX="9.375" PointY="19.75" />
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.MFFridayBonus_Logs" Width="1.5" PointX="16.375" PointY="21.75" />
         <EntityTypeShape EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Item" Width="1.5" PointX="4.375" PointY="9.75" />
+        <EntityTypeShape EntityType="ITHoTram_CustomReportModel.HTRPromotionPlayerModifyLog" Width="1.5" PointX="19.375" PointY="12.75" />
     
         </Diagram>
     </edmx:Diagrams>

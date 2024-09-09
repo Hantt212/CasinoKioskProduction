@@ -11,14 +11,9 @@ namespace CKDatabaseConnection.EF
 {
     using System;
     
-    public partial class CasinoKioskUsers_SelectAll_Result
+    public partial class spHTR_GetPatronInfoByPromotionID_Result
     {
-        public int UserID { get; set; }
-        public string CasinoKiosk_UserName { get; set; }
-        public Nullable<bool> isActive { get; set; }
-        public string UserEmailAddress { get; set; }
-        public short RoleId { get; set; }
-        public string RoleName { get; set; }
-        public int UserRoleId { get; set; }
+        public string PlayerID { get; set; }
+        public string PlayerName { get; set; }
     }
 }

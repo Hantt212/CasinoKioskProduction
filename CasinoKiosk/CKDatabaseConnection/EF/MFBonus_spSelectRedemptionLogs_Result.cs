@@ -27,5 +27,8 @@ namespace CKDatabaseConnection.EF
         public Nullable<System.DateTime> gamingDate { get; set; }
         public string voidedPerson { get; set; }
         public string reprintedPerson { get; set; }
+        public Nullable<System.DateTime> reprintedTime { get; set; }
+        public Nullable<System.DateTime> voidedTime { get; set; }
+        public string Location { get; set; }
     }
 }

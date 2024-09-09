@@ -1,5 +1,12 @@
 ﻿$(document).ready(function () {
-    loadData();
+    loadData('');
+
+    const inputElement = document.getElementById('query');
+    inputElement.addEventListener('focusout', function (event) {
+        var queryVal = $('#query').val();
+        loadData(queryVal);
+    });
+
     $("#fCardID").focus();
 
     //prevent auto tab
@@ -11,6 +18,10 @@
   });
 
 });
+
+
+
+
 
 function clickRegister() {
     document.getElementById('patronID').setCustomValidity('');
@@ -79,23 +90,25 @@ function submitForm(e) {
 
 }
 
-function loadData() {
-
+function loadData(param) {
     $.ajax({
         url: "/PlayerCard/getInitData",
         type: "GET",
         contentType: "application/json;charset=utf-8",
+        data: { query: param },
         dataType: "json",
         success: function (data) {
 
             var table = $('#datatable-json').DataTable({
                 data: data,
+                searching: false,
+                lengthChange: false,
                 columns: [
-                
+
                   { "data": "FCardID" },
                   { "data": "PID" },
                   { "data": "PassportID" },
-                  { "data": "IsVisitor"},
+                  { "data": "IsVisitor" },
                   { "data": "IsActive" },
                   { "data": "DateInserted" },
                   { "data": "DateUpdated" },
@@ -113,10 +126,8 @@ function loadData() {
                 ],
                 responsive: true,
                 destroy: true,
-                processing: true,
-                serverSide: true,
                 order: [[8, 'desc']]
-                
+
             });
 
         },
@@ -124,6 +135,8 @@ function loadData() {
             $("#mTimeOut").modal("show");
         }
     });
+
+   
 }
 
 function GetCardInfoByID(Id) {
@@ -193,7 +206,7 @@ function UpdateCardInfoByID() {
             if (+result == -3) {
                 $("#mTimeOut").modal("show");
             } else {
-                loadData();
+                loadData('');
             }
         },
         error: function (errormessage) {
@@ -217,7 +230,7 @@ function ExecDelCardInfoByID() {
         dataType: "json",
         success: function (result) {
             $('#mConfirmDel').modal("hide");
-            loadData();
+            loadData('');
         },
         error: function (errormessage) {
             $("#mTimeOut").modal("show");

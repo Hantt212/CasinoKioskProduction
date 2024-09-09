@@ -195,6 +195,7 @@
     <Content Include="Assets\Admin\js\8DragonUser.js" />
     <Content Include="Assets\Admin\js\activity.js" />
     <Content Include="Assets\Admin\js\analyst.js" />
+    <Content Include="Assets\Admin\js\bootstrap3-typeahead.min.js" />
     <Content Include="Assets\Admin\js\export\buttons.html5.min.js" />
     <Content Include="Assets\Admin\js\export\dataTables.buttons.min.js" />
     <Content Include="Assets\Admin\js\export\jszip.min.js" />

@@ -35,7 +35,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="LogName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LogName" Type="nvarchar" MaxLength="200" />
     <Property Name="createdDate" Type="nvarchar" MaxLength="100" />
     <Property Name="PlayerID" Type="int" />
     <Property Name="PlayerName" Type="nvarchar" MaxLength="100" />

@@ -853,6 +853,9 @@ C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
 C:\Users\HaTT.Nguyen\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb
+C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
+C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
+C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x86.dll
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\grpc_csharp_ext.x64.dll
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\libgrpc_csharp_ext.x64.so
@@ -947,8 +950,5 @@ C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\Casi
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\System.Web.WebPages.Razor.xml
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.resources.dll
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\bin\de\PdfSharp.Charting.resources.dll
-C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.csprojResolveAssemblyReference.cache
-C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.cache
-C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\RdlCompile.compiled
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.dll
 C:\Users\hatt.nguyen.HTPVTG\Desktop\Hantt\HANTT_DEV\CasinoKiosk\CasinoKiosk\CasinoKiosk\obj\Debug\CasinoKiosk.pdb

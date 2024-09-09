@@ -85,6 +85,7 @@
                                     <th>Promotion Name</th>
                                     <th>Item Points</th>
                                     <th>Current PlayerPoints</th>
+                                    <th>Kiosk.No</th>
                                     <th>Void status</th>
                                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                     {
@@ -109,7 +110,7 @@
                                         <td>@Log.ItemPoints</td>
 
                                         <td>@Log.CurrentPlayerPoints</td>
-
+                                        <td>@Log.Location</td>
                                         <td>@Log.voidedStatus</td>
                                         @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                                         {

@@ -10,115 +10,115 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="ApplicationInsights.config">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/css/bootstrap.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/css/buttons.dataTables.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/img/usericon.png">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/8DragonUser.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/activity.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/analyst.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/buttons.html5.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/dataTables.buttons.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/jszip.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/pdfmake.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/export/vfs_fonts.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/fcUser.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/htrTicketPromotion.js">
       <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery-1.11.0.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.table2excel.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.unobtrusive-ajax.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/jquery.unobtrusive-ajax.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/marketAuth.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/patronUser.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/player.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/playerCard.js">
-      <publishTime>12/16/2023 13:48:39</publishTime>
+      <publishTime>09/06/2024 11:01:36</publishTime>
     </File>
     <File Include="Assets/Admin/js/promotion.js">
       <publishTime>02/06/2024 14:42:14</publishTime>
     </File>
     <File Include="Assets/Admin/js/sb-admin-2.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/sb-admin-2.min.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/user.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="Assets/Admin/js/wheelOfFortune.js">
       <publishTime>06/15/2024 14:21:30</publishTime>
     </File>
     <File Include="Assets/Images/add.png">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Images/minus.png">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/CifePlayers.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/css/pikaday.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/css/site.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/css/theme.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/css/triangle.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/DailyPSBundleTicket.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/DailyTickets.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/FridayTickets.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/GoldenHourTicket.aspx">
       <publishTime>06/20/2023 11:01:30</publishTime>
@@ -130,7 +130,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/14/2023 11:22:14</publishTime>
     </File>
     <File Include="Assets/Reports/HTRPromotion.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/MF8DragonTickets.aspx">
       <publishTime>12/16/2023 13:48:40</publishTime>
@@ -142,85 +142,85 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2023 08:51:43</publishTime>
     </File>
     <File Include="Assets/Reports/moment.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/pikaday.js">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/RedeemLog.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/RedeemLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/RedeemLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/SundayPromotion.aspx">
       <publishTime>09/21/2023 12:04:52</publishTime>
     </File>
     <File Include="Assets/Reports/TicketDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFDailyBonusDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFDailyBonusDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFFridayBonusDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFFridayBonusDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFRedemption.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFWeeklyBonusDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketMFWeeklyBonusDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/TicketPromotion.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/Tickets.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Assets/Reports/WeeklyTickets.aspx">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/22/2013 08:43:40</publishTime>
     </File>
     <File Include="bin/ApplicationInsights.config">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:39</publishTime>
     </File>
     <File Include="bin/Assets/Images/minus.png">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/CasinoTGSTicket.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/DailyBonusLog.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/FOPatronLog.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/FridayBonusLog.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/HTRGoldenHourPromotion.rdlc">
       <publishTime>09/18/2023 09:17:24</publishTime>
     </File>
     <File Include="bin/Assets/Reports/HTRTicketPromotion.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/MF8DragonTickets.rdlc">
       <publishTime>12/28/2023 16:25:25</publishTime>
@@ -229,562 +229,562 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/29/2023 17:51:30</publishTime>
     </File>
     <File Include="bin/Assets/Reports/PointsRedemptionLog.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/RedeemLogReport.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/TicketMFDailyBonus.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/TicketMFFridayBonus.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/TicketMFRedemption.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/TicketMFWeeklyBonus.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/TicketSlotTournament.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/Assets/Reports/WeeklyBonusLog.rdlc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/08/2020 18:05:32</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.dll">
-      <publishTime>08/30/2024 12:57:11</publishTime>
+      <publishTime>09/06/2024 13:59:36</publishTime>
     </File>
     <File Include="bin/CasinoKiosk.XmlSerializers.dll">
-      <publishTime>08/30/2024 12:57:12</publishTime>
+      <publishTime>09/06/2024 13:59:37</publishTime>
     </File>
     <File Include="bin/CKDatabaseConnection.dll">
-      <publishTime>08/30/2024 12:57:08</publishTime>
+      <publishTime>09/06/2024 13:59:33</publishTime>
     </File>
     <File Include="bin/de/PdfSharp.Charting.resources.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/04/2019 13:21:54</publishTime>
     </File>
     <File Include="bin/de/PdfSharp.resources.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/04/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/03/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/EntityFramework.SqlServer.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/03/2015 17:43:42</publishTime>
     </File>
     <File Include="bin/grpc_csharp_ext.x64.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>05/24/2022 00:32:18</publishTime>
     </File>
     <File Include="bin/grpc_csharp_ext.x86.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>05/24/2022 00:32:18</publishTime>
     </File>
     <File Include="bin/itextsharp.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/24/2022 13:50:06</publishTime>
     </File>
     <File Include="bin/libgrpc_csharp_ext.x64.dylib">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>05/20/2022 10:14:48</publishTime>
     </File>
     <File Include="bin/libgrpc_csharp_ext.x64.so">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>05/20/2022 10:14:46</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/07/2015 19:04:38</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/10/2016 14:26:18</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/09/2016 12:00:14</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/10/2016 14:26:26</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>03/09/2016 11:57:34</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>06/15/2015 02:06:24</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.Common.dll">
       <publishTime>02/20/2011 04:40:08</publishTime>
     </File>
     <File Include="bin/Microsoft.ReportViewer.WebForms.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>05/29/2015 21:27:38</publishTime>
     </File>
     <File Include="bin/Microsoft.SqlServer.Types.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/10/2016 15:26:34</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>04/23/2012 15:23:58</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>04/25/2013 15:40:12</publishTime>
     </File>
     <File Include="bin/PagedList.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>09/30/2013 17:36:38</publishTime>
     </File>
     <File Include="bin/PagedList.Mvc.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>09/30/2013 18:15:20</publishTime>
     </File>
     <File Include="bin/PdfSharp.Charting.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/04/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/PdfSharp.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/04/2019 13:21:52</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:44</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/System.Collections.Immutable.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/System.Reflection.Metadata.dll">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/vbc.exe">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>06/18/2015 20:19:46</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x64/msvcr120.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x64/SqlServerSpatial140.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x86/msvcr120.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/SqlServerTypes/x86/SqlServerSpatial140.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 12:59:46</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>02/11/2014 15:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 13:00:12</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>07/17/2013 17:03:52</publishTime>
     </File>
     <File Include="CasinoTGSLogByID.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="CasinoTGSLogByID.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/all.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/all.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-datetimepicker-build.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-datetimepicker.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-datetimepicker.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css.map">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap.css.map">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/alerts.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/badges.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/bootstrap.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/breadcrumbs.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/button-groups.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/buttons.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/carousel.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/close.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/code.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/component-animations.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/dropdowns.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/forms.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/glyphicons.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/grid.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/input-groups.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/jumbotron.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/labels.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/list-group.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/media.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/alerts.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/background-variant.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/border-radius.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/buttons.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/center-block.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/clearfix.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/forms.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/gradients.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/grid-framework.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/grid.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/hide-text.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/image.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/labels.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/list-group.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/nav-divider.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/nav-vertical-align.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/opacity.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/pagination.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/panels.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/progress-bar.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/reset-filter.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/reset-text.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/resize.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/responsive-visibility.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/size.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/tab-focus.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/table-row.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/text-emphasis.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/text-overflow.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/mixins/vendor-prefixes.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/modals.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/navbar.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/navs.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/normalize.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/pager.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/pagination.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/panels.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/popovers.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/print.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/progress-bars.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/responsive-embed.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/responsive-utilities.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/scaffolding.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/tables.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/theme.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/thumbnails.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/tooltip.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/type.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/utilities.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/variables.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/bootstrap/wells.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/brands.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/brands.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/font-awesome.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/font-awesome.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fontawesome.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fontawesome.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.eot">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.svg">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.woff">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/fonts/glyphicons-halflings-regular.woff2">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/PagedList.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="Content/regular.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/regular.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/solid.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/solid.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/svg-with-js.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/svg-with-js.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/v4-shims.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/v4-shims.min.css">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Content/_bootstrap-datetimepicker.less">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:40</publishTime>
     </File>
     <File Include="DailyLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="DailyLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.eot">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.svg">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.ttf">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.woff">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/fontawesome-webfont.woff2">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/FontAwesome.otf">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.eot">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.svg">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.ttf">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="fonts/glyphicons-halflings-regular.woff">
-      <publishTime>12/16/2023 13:48:43</publishTime>
+      <publishTime>12/16/2023 13:48:42</publishTime>
     </File>
     <File Include="FOPatronLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="FOPatronLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="FridayLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="FridayLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="HTRGoldenHourDataSet.xsc">
       <publishTime>04/29/2023 05:20:10</publishTime>
@@ -811,10 +811,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2023 12:11:38</publishTime>
     </File>
     <File Include="ITHoTram_CustomReportDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="ITHoTram_CustomReportDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="MF8DragonDataSet.xsc">
       <publishTime>12/16/2023 13:48:41</publishTime>
@@ -838,22 +838,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:43</publishTime>
     </File>
     <File Include="PointsRedemptionLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="PointsRedemptionLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="PromotionDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="PromotionDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="ReportDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="ReportDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="scripts/ai.0.22.9-build00167.js">
       <publishTime>12/16/2023 13:48:43</publishTime>
@@ -949,19 +949,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:43</publishTime>
     </File>
     <File Include="SqlServerTypes/readme.htm">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="SqlServerTypes/x64/msvcr120.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="SqlServerTypes/x64/SqlServerSpatial140.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="SqlServerTypes/x86/msvcr120.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="SqlServerTypes/x86/SqlServerSpatial140.dll">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="SundayPromotionDataSet.xsc">
       <publishTime>09/21/2023 13:46:55</publishTime>
@@ -970,76 +970,76 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2023 13:46:55</publishTime>
     </File>
     <File Include="TicketMFRedemptionDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketMFRedemptionDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByID.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByID.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByIDDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByIDDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByPID.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByPID.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByPIDDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="TicketPromotionByPIDDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Account/LogIn.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/ActivityTracking/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/ActivityTracking/Report.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Analyst/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/CasinoTGS/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/CasinoTGSPrint/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/FBCasino/FBCasinoManagement.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/FC/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/FOPatron/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/HTRTicketPromotion/GoldenHour.cshtml">
       <publishTime>08/09/2023 15:25:28</publishTime>
     </File>
     <File Include="Views/HTRTicketPromotion/HTRPromotionList.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/HTRTicketPromotion/HTRPromotionLog.cshtml">
       <publishTime>02/06/2024 15:45:13</publishTime>
     </File>
     <File Include="Views/HTRTicketPromotion/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/HTRTicketPromotion/MarketAuth.cshtml">
       <publishTime>04/13/2023 15:09:24</publishTime>
@@ -1054,46 +1054,46 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/21/2023 15:34:05</publishTime>
     </File>
     <File Include="Views/Items/Create.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Items/Edit.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Items/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/CCUserActionLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/DailyLog.cshtml">
       <publishTime>12/28/2023 14:03:09</publishTime>
     </File>
     <File Include="Views/Logs/DailyManual.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/FOPatronUserActionLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/FridayLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/Index.cshtml">
       <publishTime>06/17/2024 15:32:34</publishTime>
     </File>
     <File Include="Views/Logs/KioskUserActionLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/MF8DragonLog.cshtml">
       <publishTime>12/28/2023 15:29:41</publishTime>
     </File>
     <File Include="Views/Logs/POS8DragonUserActionLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/PSBundleLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Logs/RedemptionLog.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>09/06/2024 11:45:54</publishTime>
     </File>
     <File Include="Views/Logs/WeeklyLog.cshtml">
       <publishTime>12/28/2023 15:38:14</publishTime>
@@ -1102,16 +1102,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2024 12:00:11</publishTime>
     </File>
     <File Include="Views/PlayerCard/Index.cshtml">
-      <publishTime>05/28/2024 13:58:12</publishTime>
+      <publishTime>09/06/2024 13:49:08</publishTime>
     </File>
     <File Include="Views/Players/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Players/PlayerList.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/POS8Dragon/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>04/05/2024 08:35:54</publishTime>
@@ -1120,16 +1120,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/29/2024 09:39:23</publishTime>
     </File>
     <File Include="Views/Test/GetPlayerInfo.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Test/GetPoints.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/Users/Index.cshtml">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/web.config">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Views/WheelOfFortune/Index.cshtml">
       <publishTime>05/28/2024 14:26:49</publishTime>
@@ -1138,37 +1138,37 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2024 14:21:25</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/Items.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/Points.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLog.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogDailyFirst.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogDailySecond.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogFridayFirst.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogFridaySecond.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogWeeklyFirst.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/RedeemLogWeeklySecond.datasource">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="Web References/WebServiceCasino/Reference.map">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>08/30/2024 13:10:04</publishTime>
+      <publishTime>09/06/2024 13:59:37</publishTime>
     </File>
     <File Include="webfonts/fa-brands-400.eot">
       <publishTime>12/16/2023 13:48:43</publishTime>
@@ -1216,10 +1216,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/16/2023 13:48:43</publishTime>
     </File>
     <File Include="WeeklyLogDataSet.xsc">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
     <File Include="WeeklyLogDataSet.xss">
-      <publishTime>12/16/2023 13:48:42</publishTime>
+      <publishTime>12/16/2023 13:48:41</publishTime>
     </File>
   </ItemGroup>
 </Project>

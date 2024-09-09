@@ -14,3 +14,12 @@ CasinoKiosk/WebServiceApp/bin/WebServiceApp.pdb
 CasinoKiosk/CasinoKiosk/obj/Debug/CasinoKiosk.pdb
 CasinoKiosk/CasinoKiosk/obj/Debug/CasinoKiosk.dll
 CasinoKiosk/CasinoKiosk/bin/CasinoKiosk.dll.config
+/CasinoKiosk/WebServiceApp/obj
+/CasinoKiosk/CKDatabaseConnection/bin
+/CasinoKiosk/WebServiceApp/obj
+/CasinoKiosk/CKDatabaseConnection/obj
+/CasinoKiosk/CKDatabaseConnection/obj
+/CasinoKiosk/CKDatabaseConnection/bin
+/CasinoKiosk/CasinoKiosk/obj
+/CasinoKiosk/CasinoKiosk
+CasinoKiosk/WebServiceApp/obj/Debug/WebServiceApp.csprojResolveAssemblyReference.cache

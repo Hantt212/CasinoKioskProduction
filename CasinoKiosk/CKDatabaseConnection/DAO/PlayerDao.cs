@@ -132,9 +132,16 @@ namespace CKDatabaseConnection.DAO
             return exist;
         }
 
-        public List<FCardIDRefPID> getFCardInfoList()
+        public List<FCardIDRefPID> getFCardInfoList(string query)
         {
-            List<FCardIDRefPID> result = RAcontext.FCardIDRefPIDs.Where(item => item.IsActive == true).ToList();
+            List<FCardIDRefPID> result = new List<FCardIDRefPID>(); 
+            if (query == "")
+            {
+                result = RAcontext.FCardIDRefPIDs.Where(item => item.IsActive == true).Take(1000).OrderByDescending(item => item.ID).ToList();
+            }else
+            {
+                result = RAcontext.FCardIDRefPIDs.Where(item => item.IsActive == true && (item.FCardID.Contains(query) || item.PID.Contains(query) || item.PassportID.Contains(query) || item.Remark.Contains(query))).ToList();
+            }
             return result;
         }
 

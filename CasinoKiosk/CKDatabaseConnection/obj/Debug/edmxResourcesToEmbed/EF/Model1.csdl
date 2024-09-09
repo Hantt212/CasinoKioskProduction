@@ -24,7 +24,7 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="LogName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="createdDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="PlayerID" Type="Int32" />
     <Property Name="PlayerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -172,12 +172,6 @@
     <FunctionImport Name="MFBonus_spSelectSlotDailyLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectSlotDailyLogs_Result)">
       <Parameter Name="PlayerID" Mode="In" Type="Int32" />
     </FunctionImport>
-    <FunctionImport Name="MFBonus_spSelectRedemptionLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="MFBonus_spSelectRedemptionLogs_Result" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
-      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
-    </FunctionImport>
     <EntitySet Name="CIFE_Players" EntityType="ITHoTram_CustomReportModel.CIFE_Players" />
     <FunctionImport Name="spReportCIFE_Program" ReturnType="Collection(ITHoTram_CustomReportModel.spReportCIFE_Program_Result)" />
     <EntitySet Name="CasinoKioskRoles" EntityType="ITHoTram_CustomReportModel.CasinoKioskRole" />
@@ -268,6 +262,17 @@
       <Parameter Name="promotionID" Mode="In" Type="Int32" />
     </FunctionImport>
     <EntitySet Name="CasinoKiosk_Item" EntityType="ITHoTram_CustomReportModel.CasinoKiosk_Item" />
+    <FunctionImport Name="MFBonus_spSelectRedemptionLogs" ReturnType="Collection(ITHoTram_CustomReportModel.MFBonus_spSelectRedemptionLogs_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spHTR_GetPatronInfoByPromotionID" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_GetPatronInfoByPromotionID_Result)">
+      <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="HTRPromotionPlayerModifyLogs" EntityType="ITHoTram_CustomReportModel.HTRPromotionPlayerModifyLog" />
+    <FunctionImport Name="spHTR_CheckPrintHTRPromotion" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_CheckPrintHTRPromotion_Result)">
+      <Parameter Name="PlayerID" Mode="In" Type="Int32" />
+      <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
     <Property Type="Int32" Name="ID" Nullable="false" />
@@ -351,22 +356,6 @@
     <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
     <Property Type="DateTime" Name="GamingDate" Nullable="true" Precision="23" />
-  </ComplexType>
-  <ComplexType Name="MFBonus_spSelectRedemptionLogs_Result">
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="LogName" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="createdDate" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="createdTime" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="PlayerID" Nullable="true" />
-    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
-    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
-    <Property Type="Int32" Name="Status" Nullable="true" />
-    <Property Type="Int32" Name="CurrentPlayerPoints" Nullable="true" />
-    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
-    <Property Type="DateTime" Name="gamingDate" Nullable="true" Precision="23" />
-    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
-    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
   </ComplexType>
   <EntityType Name="CIFE_Players">
     <Key>
@@ -1046,4 +1035,49 @@
     <Property Name="isActive" Type="Boolean" />
     <Property Name="imageURL" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
   </EntityType>
+  <ComplexType Name="MFBonus_spSelectRedemptionLogs_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="LogName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="createdDate" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="createdTime" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PromotionName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ItemPoints" Nullable="true" />
+    <Property Type="Int32" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="CurrentPlayerPoints" Nullable="true" />
+    <Property Type="String" Name="voidedStatus" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="gamingDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="voidedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="reprintedPerson" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="reprintedTime" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="voidedTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Location" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="spHTR_GetPatronInfoByPromotionID_Result">
+    <Property Type="String" Name="PlayerID" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="HTRPromotionPlayerModifyLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PromotionID" Type="Int32" Nullable="false" />
+    <Property Name="PlayerID" Type="Int32" Nullable="false" />
+    <Property Name="OldPlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NewPlayerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <ComplexType Name="spHTR_CheckPrintHTRPromotion_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PromotionId" Nullable="false" />
+    <Property Type="Int32" Name="PlayerID" Nullable="true" />
+    <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
+    <Property Type="Int32" Name="PrintedQty" Nullable="true" />
+    <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+  </ComplexType>
 </Schema>

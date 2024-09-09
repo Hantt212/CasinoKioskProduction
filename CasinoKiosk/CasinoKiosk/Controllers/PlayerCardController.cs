@@ -24,10 +24,10 @@ namespace CasinoKiosk.Controllers
             return Json(exist, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult getInitData()
+        public JsonResult getInitData(string query)
         {
             var dao = new PlayerDao();
-            var fcardList = (from item in dao.getFCardInfoList()
+            var fcardList = (from item in dao.getFCardInfoList(query)
                              select new
                              {
                                  ID = item.ID,
@@ -40,9 +40,12 @@ namespace CasinoKiosk.Controllers
                                  DateUpdated = item.DateUpdated.ToString(),
                                  UpdatedBy = item.UpdatedBy
                              });
+
+           
            
             return new JsonResult() { Data = fcardList, JsonRequestBehavior = JsonRequestBehavior.AllowGet, MaxJsonLength = Int32.MaxValue };
         }
+
 
         public JsonResult GetCardInfoByID(int Id)
         {

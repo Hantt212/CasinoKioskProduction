@@ -6,6 +6,29 @@
     }
 });
 
+var array;
+$('.typeahead').typeahead({
+    source: function (query, process) {
+        return $.post("/HTRTicketPromotion/GetPIDByPromotion", { PromotionID: $('#proID').val() }, function (data) {
+            array = data
+            var playerIdArr = data.map(function (player) {
+                return player.PlayerID;
+            });
+            data = playerIdArr;
+            return process(data);
+        });
+    },
+    updater: function (item) {
+        // do what you want with the item here
+        var playerInfo = array.find(function (player) {
+            return player.PlayerID === item;
+        });
+        $('#pid').val(playerInfo.PlayerID);
+        $('#curPidName').val(playerInfo.PlayerName);
+        return item;
+    }
+})
+
 
 //Load Data function
 function loadPromotionList() {
@@ -44,11 +67,20 @@ function loadPromotionList() {
                   { "data": "PromotionContent" },
                   { "data": "Condition" },
                   { "data": "IsLuckyDate" },
-                  { "data": "IsActived" },
                   { "data": "CreatedBy" },
                   { "data": "CreatedTime" },
                   { "data": "UpdatedBy" },
-                  { "data": "UpdatedTime" },
+                  {
+                      "data": "PromotionId",
+                      render: function (data, type, row, meta) {
+                          if (type === "display") {
+                              var html = '';
+                              html += '<a href="#" onclick="openPIDModifyMd(' + proId + ')" ><i class="fas fa-fw fa-pen"></i></a>';
+                              data = html;
+                          }
+                          return data;
+                      }
+                  }
                 ],
                 responsive: true,
                 destroy: true,
@@ -103,6 +135,12 @@ function openPromotionMd(PromtionID) {
         });
     }
     $("#proRegisModal").modal("show");
+}
+
+function openPIDModifyMd(PromtionID) {
+    clearPidModifyMd();
+    $('#proID').val(PromtionID),
+    $("#pidModifyModal").modal("show");
 }
 
 function openPromotionLogMd(logId) {
@@ -164,6 +202,28 @@ function savePromotion() {
         dataType: "json",
         success: function (result) {
             $("#proRegisModal").modal("hide");
+            loadPromotionList();
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+}
+
+
+function savePIDModify() {
+    $.ajax({
+        url: "/HTRTicketPromotion/SavePIDModify",
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        data:   JSON.stringify({
+            proID: +$('#proID').val(),
+            curPidName: $('#curPidName').val(),
+            newPidName: $('#newPidName').val()
+        }),
+        dataType: "json",
+        success: function (result) {
+            $("#pidModifyModal").modal("hide");
             loadPromotionList();
         },
         error: function (errormessage) {
@@ -289,8 +349,6 @@ function loadPromotionLog() {
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
             });
-           
-
         },
         error: function (errormessage) {
             alert(errormessage.responseText);
@@ -379,6 +437,12 @@ function clearPromotionLogMd() {
    $('#proLogID').val('');
    $('#proLogPlayerName').val('');
    $('#proLogTicketNo').val('');
+}
+
+function clearPidModifyMd() {
+    $('#pid').val('');
+    $('#curPidName').val('');
+    $('#newPidName').val('');
 }
 
 
