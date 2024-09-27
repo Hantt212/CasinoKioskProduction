@@ -209,6 +209,17 @@
             $('#FOPatronGrid').DataTable({
                 "order": [[0, "desc"]]
             });
+            //$('#proTbl').DataTable({
+            //    "order": [[0, "desc"]]
+            //});
+            $('#enrollmentTbl').DataTable({
+                "bDestroy": true,
+                "order": [[0, "desc"]],
+                "dom": 'lBfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
             $('#KioskUserGrid').DataTable({
                 "order": [[0, "desc"]]
             });

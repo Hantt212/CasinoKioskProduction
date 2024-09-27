@@ -233,7 +233,7 @@ namespace WebServiceApp
                                     isActive = Convert.ToBoolean(dr["isActive"].ToString()),
                                     //Change 20230111 Hantt start
                                     //imageURL = "http://casinokiosk/Assets/Images/" + dr["imageURL"].ToString(),
-                                    imageURL = "http://10.21.1.31:8222/Assets/Images/" + dr["imageURL"].ToString(),
+                                    imageURL = "http://10.21.10.1:8222/Assets/Images/" + dr["imageURL"].ToString(),
                                     //Change 20230111 Hantt end
                                     Quantity = Convert.ToInt32(dr["Quantity"].ToString()),
 
@@ -1628,7 +1628,7 @@ namespace WebServiceApp
                 ok = 1;
                 try
                 {
-                    db.MFWeeklyBonus_Logs.Add(log);
+                   // db.MFWeeklyBonus_Logs.Add(log);
                     db.SaveChanges();
                     maxID = log.ID;
                 }
@@ -2290,91 +2290,91 @@ namespace WebServiceApp
         #endregion
 
         #region move from 10.21.1.26
-        [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public PlayerInfo GetPlayerInfo(string cardNumber)
-        {
-            var _sqlHelper = new SqlHelper();
-            PlayerInfo P = new PlayerInfo();
-            String strConnString = ConfigurationManager.ConnectionStrings["MainConnStr"].ConnectionString;
-            string command = "exec pro_IT_PlayPointInfo '{0}'";
+        //[WebMethod]
+        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        //public PlayerInfo GetPlayerInfo(string cardNumber)
+        //{
+        //    var _sqlHelper = new SqlHelper();
+        //    PlayerInfo P = new PlayerInfo();
+        //    String strConnString = ConfigurationManager.ConnectionStrings["MainConnStr"].ConnectionString;
+        //    string command = "exec pro_IT_PlayPointInfo '{0}'";
 
-            SqlConnection cnn = new SqlConnection(strConnString);
+        //    SqlConnection cnn = new SqlConnection(strConnString);
 
-            try
-            {
-                cnn.Open();
-                string cmdText = String.Format(command, cardNumber);
-                SqlCommand cmd = new SqlCommand(cmdText, cnn);
+        //    try
+        //    {
+        //        cnn.Open();
+        //        string cmdText = String.Format(command, cardNumber);
+        //        SqlCommand cmd = new SqlCommand(cmdText, cnn);
 
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                cnn.Close();
+        //        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //        DataSet ds = new DataSet();
+        //        adapter.Fill(ds);
+        //        cnn.Close();
 
-                //Fill data to PlayerInfo object
-                if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-                {
-                    DataRow r = ds.Tables[0].Rows[0];
-                    P.ID = int.Parse(r["PlayerID"].ToString());
-                    P.FirstName = r["FirstName"].ToString();
-                    P.LastName = r["LastName"].ToString();
-                    DateTime dt = DateTime.Parse(r["BirthDay"].ToString());
-                    P.DOB = dt.ToString("dd-MMM-yyyy");
-                    P.Status = r["Status"].ToString();
-                    P.Rank = r["Rank"].ToString();
-                    P.Points = int.Parse(r["Points"].ToString());
-                    P.TodayPoints = int.Parse(r["TodayPoint"].ToString());
-                    P.PeriodPoints = int.Parse(r["PeriodPoint"].ToString());
-                    P.ThursdayPoint = int.Parse(r["ThursdayPoint"].ToString());
+        //        //Fill data to PlayerInfo object
+        //        if (ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+        //        {
+        //            DataRow r = ds.Tables[0].Rows[0];
+        //            P.ID = int.Parse(r["PlayerID"].ToString());
+        //            P.FirstName = r["FirstName"].ToString();
+        //            P.LastName = r["LastName"].ToString();
+        //            DateTime dt = DateTime.Parse(r["BirthDay"].ToString());
+        //            P.DOB = dt.ToString("dd-MMM-yyyy");
+        //            P.Status = r["Status"].ToString();
+        //            P.Rank = r["Rank"].ToString();
+        //            P.Points = int.Parse(r["Points"].ToString());
+        //            P.TodayPoints = int.Parse(r["TodayPoint"].ToString());
+        //            P.PeriodPoints = int.Parse(r["PeriodPoint"].ToString());
+        //            P.ThursdayPoint = int.Parse(r["ThursdayPoint"].ToString());
 
-                    P.NumDayEnrolled = int.Parse(r["NumDayEnrolled"].ToString());
-                    P.GamingDate = DateTime.Parse(r["AccountingDate"].ToString()).ToString("dd-MMM-yyyy");
-                    P.SegmentationCode = r["SegmentationCode"].ToString();
-                    string TotalRedeemedTicketNewYear_today = getRedeemTicketByPromotionByDay("11", r["PlayerID"].ToString(), P.GamingDate);
-                    P.TotalRedeemedTicketNewYear_today = int.Parse(TotalRedeemedTicketNewYear_today);
+        //            P.NumDayEnrolled = int.Parse(r["NumDayEnrolled"].ToString());
+        //            P.GamingDate = DateTime.Parse(r["AccountingDate"].ToString()).ToString("dd-MMM-yyyy");
+        //            P.SegmentationCode = r["SegmentationCode"].ToString();
+        //            string TotalRedeemedTicketNewYear_today = getRedeemTicketByPromotionByDay("11", r["PlayerID"].ToString(), P.GamingDate);
+        //            P.TotalRedeemedTicketNewYear_today = int.Parse(TotalRedeemedTicketNewYear_today);
 
-                    string TotalRedeemedTicketFB8Dragon_today = getRedeemTicketByPromotionByDay("12", r["PlayerID"].ToString(), P.GamingDate);
-                    P.TotalRedeemedTicketFb8Dragon_today = int.Parse(TotalRedeemedTicketFB8Dragon_today);
+        //            string TotalRedeemedTicketFB8Dragon_today = getRedeemTicketByPromotionByDay("12", r["PlayerID"].ToString(), P.GamingDate);
+        //            P.TotalRedeemedTicketFb8Dragon_today = int.Parse(TotalRedeemedTicketFB8Dragon_today);
 
-                    string TotalRedeemedTicketGrandBaccaratTournament = getRedeemTicketByPromotionByDay("13", r["PlayerID"].ToString(), P.GamingDate);
-                    P.TotalRedeemedTicketGrandBaccaratTournament = int.Parse(TotalRedeemedTicketGrandBaccaratTournament);
+        //            string TotalRedeemedTicketGrandBaccaratTournament = getRedeemTicketByPromotionByDay("13", r["PlayerID"].ToString(), P.GamingDate);
+        //            P.TotalRedeemedTicketGrandBaccaratTournament = int.Parse(TotalRedeemedTicketGrandBaccaratTournament);
 
-                    P.TotalRedeemedTicketBountyHuntingSilver = int.Parse(getRedeemTicketByPromotionByDay("14", r["PlayerID"].ToString(), P.GamingDate));
-                    P.TotalRedeemedTicketBountyHuntingGolden = int.Parse(getRedeemTicketByPromotionByDay("15", r["PlayerID"].ToString(), P.GamingDate));
+        //            P.TotalRedeemedTicketBountyHuntingSilver = int.Parse(getRedeemTicketByPromotionByDay("14", r["PlayerID"].ToString(), P.GamingDate));
+        //            P.TotalRedeemedTicketBountyHuntingGolden = int.Parse(getRedeemTicketByPromotionByDay("15", r["PlayerID"].ToString(), P.GamingDate));
 
-                    P.TotalRedeemedTicketBountyHuntingSilverChestAllPlayer = int.Parse(getRedeemTicketBountyHunting("14"));
+        //            P.TotalRedeemedTicketBountyHuntingSilverChestAllPlayer = int.Parse(getRedeemTicketBountyHunting("14"));
 
-                    P.TotalRedeemedTicketBountyHuntingGoldenChestAllPlayer = int.Parse(getRedeemTicketBountyHunting("15"));
-                    P.isShowBountyHunting = 0;
-                    if (P.TotalRedeemedTicketBountyHuntingGoldenChestAllPlayer < 50 || P.TotalRedeemedTicketBountyHuntingSilverChestAllPlayer < 100)
-                    {
+        //            P.TotalRedeemedTicketBountyHuntingGoldenChestAllPlayer = int.Parse(getRedeemTicketBountyHunting("15"));
+        //            P.isShowBountyHunting = 0;
+        //            if (P.TotalRedeemedTicketBountyHuntingGoldenChestAllPlayer < 50 || P.TotalRedeemedTicketBountyHuntingSilverChestAllPlayer < 100)
+        //            {
 
-                        // if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday )
-                        if (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday)
+        //                // if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday )
+        //                if (DateTime.Now.DayOfWeek == DayOfWeek.Wednesday)
 
-                        //if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && (DateTime.Now.Hour >= 19 && DateTime.Now.Hour <= 23) && (DateTime.Now.Minute >= 0 && DateTime.Now.Minute <= 59) && (DateTime.Now.Second >= 0 && DateTime.Now.Second <= 59))
-                        {
-                            P.isShowBountyHunting = 1;
-                        }
-                    }
+        //                //if (DateTime.Now.DayOfWeek == DayOfWeek.Thursday && (DateTime.Now.Hour >= 19 && DateTime.Now.Hour <= 23) && (DateTime.Now.Minute >= 0 && DateTime.Now.Minute <= 59) && (DateTime.Now.Second >= 0 && DateTime.Now.Second <= 59))
+        //                {
+        //                    P.isShowBountyHunting = 1;
+        //                }
+        //            }
 
-                    _sqlHelper.ExecSQL("insert into KioskSwipeCardLog(CardNumber, PlayerID,PlayerName,TodayPoint,EventPoint) values('" + cardNumber + "','" + P.ID + "','" + P.LastName + "-" + P.FirstName + "','" + P.TodayPoints + "','" + P.Promotion1688RedeemedTicket + "')");
+        //            _sqlHelper.ExecSQL("insert into KioskSwipeCardLog(CardNumber, PlayerID,PlayerName,TodayPoint,EventPoint) values('" + cardNumber + "','" + P.ID + "','" + P.LastName + "-" + P.FirstName + "','" + P.TodayPoints + "','" + P.Promotion1688RedeemedTicket + "')");
 
-                }
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-            }
-            finally
-            {
-                if (cnn != null && cnn.State == ConnectionState.Open)
-                    cnn.Close();
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //    finally
+        //    {
+        //        if (cnn != null && cnn.State == ConnectionState.Open)
+        //            cnn.Close();
+        //    }
 
-            return P;
-        }
+        //    return P;
+        //}
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
@@ -2426,43 +2426,43 @@ namespace WebServiceApp
             return Result;
         }
 
-        [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        string getRedeemTicketBountyHunting(string PromotionId)
-        {
-            String strConnString = ConfigurationManager.ConnectionStrings["CasinoLoyaltyKiosk"].ConnectionString;
-            string command = "select count(*) as TotalTicket from Promotion_TicketIssued where PromotionID='{0}' and IssuedTime between dateadd(dd,datediff(dd,0,getdate())/7 * 7 + 2,'17:00:00') and dateadd(dd,datediff(dd,0,getdate())/7 * 7 + 2,'23:59:59') ";
+        //[WebMethod]
+        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        //string getRedeemTicketBountyHunting(string PromotionId)
+        //{
+        //    String strConnString = ConfigurationManager.ConnectionStrings["CasinoLoyaltyKiosk"].ConnectionString;
+        //    string command = "select count(*) as TotalTicket from Promotion_TicketIssued where PromotionID='{0}' and IssuedTime between dateadd(dd,datediff(dd,0,getdate())/7 * 7 + 2,'17:00:00') and dateadd(dd,datediff(dd,0,getdate())/7 * 7 + 2,'23:59:59') ";
 
-            SqlConnection cnn = new SqlConnection(strConnString);
-            string Result = "";
-            try
-            {
-                cnn.Open();
-                string cmdText = String.Format(command, PromotionId);
-                SqlCommand cmd = new SqlCommand(cmdText, cnn);
-                string TotalTicket = "0";
-                var resultObj = cmd.ExecuteScalar();
-                if (resultObj != null)
-                {
-                    TotalTicket = cmd.ExecuteScalar().ToString();
-                }
-                cnn.Close();
+        //    SqlConnection cnn = new SqlConnection(strConnString);
+        //    string Result = "";
+        //    try
+        //    {
+        //        cnn.Open();
+        //        string cmdText = String.Format(command, PromotionId);
+        //        SqlCommand cmd = new SqlCommand(cmdText, cnn);
+        //        string TotalTicket = "0";
+        //        var resultObj = cmd.ExecuteScalar();
+        //        if (resultObj != null)
+        //        {
+        //            TotalTicket = cmd.ExecuteScalar().ToString();
+        //        }
+        //        cnn.Close();
 
-                Result = TotalTicket;
+        //        Result = TotalTicket;
 
 
-            }
-            catch (Exception ex)
-            {
-                Result = "error:" + ex.Message;
-            }
-            finally
-            {
-                if (cnn != null && cnn.State == ConnectionState.Open)
-                    cnn.Close();
-            }
-            return Result;
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Result = "error:" + ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        if (cnn != null && cnn.State == ConnectionState.Open)
+        //            cnn.Close();
+        //    }
+        //    return Result;
+        //}
 
 
         [WebMethod]
@@ -2557,258 +2557,258 @@ namespace WebServiceApp
             return null;
         }
 
-        [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public List<GrandEventTicket> getPromotionTicketList(string PromotionID, string PlayerID, string cardNumber, string KioskNo)
-        {
-            var _sqlHelper = new SqlHelper();
-            List<GrandEventTicket> results = new List<GrandEventTicket>();
-            PlayerInfo player = new PlayerInfo();
-            player = GetPlayerInfo(cardNumber);
-            int totalTicketAvailable = 0;
+        //[WebMethod]
+        //[ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        //public List<GrandEventTicket> getPromotionTicketList(string PromotionID, string PlayerID, string cardNumber, string KioskNo)
+        //{
+        //    var _sqlHelper = new SqlHelper();
+        //    List<GrandEventTicket> results = new List<GrandEventTicket>();
+        //    PlayerInfo player = new PlayerInfo();
+        //    player = GetPlayerInfo(cardNumber);
+        //    int totalTicketAvailable = 0;
 
-            string PromotionName = _sqlHelper.ExecSQL_GetFirstValue("select promotionName from Promotion_List where PromotionID=" + PromotionID);
-            PromotionName = PromotionName.ToUpper();
-            if (PromotionID == "1")
-            {
-                int DragonOfferRedeemedTicket = player.TotalRedeemedTicketDragonOffer;
-                totalTicketAvailable = (player.PointEarnFor8DragonOffer / 500) - player.TotalRedeemedTicketDragonOffer;
+        //    string PromotionName = _sqlHelper.ExecSQL_GetFirstValue("select promotionName from Promotion_List where PromotionID=" + PromotionID);
+        //    PromotionName = PromotionName.ToUpper();
+        //    if (PromotionID == "1")
+        //    {
+        //        int DragonOfferRedeemedTicket = player.TotalRedeemedTicketDragonOffer;
+        //        totalTicketAvailable = (player.PointEarnFor8DragonOffer / 500) - player.TotalRedeemedTicketDragonOffer;
 
-                if (DragonOfferRedeemedTicket < 1)
-                {
-                    if (player.PointEarnFor8DragonOffer >= 500)
-                    {
-                        totalTicketAvailable = 1;
-                    }
-                    else
-                    {
-                        totalTicketAvailable = 0;
-                    }
-                }
-                else
-                {
-                    totalTicketAvailable = 0;
-                }
-            }
-            else if (PromotionID == "2")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketSoundWave;
+        //        if (DragonOfferRedeemedTicket < 1)
+        //        {
+        //            if (player.PointEarnFor8DragonOffer >= 500)
+        //            {
+        //                totalTicketAvailable = 1;
+        //            }
+        //            else
+        //            {
+        //                totalTicketAvailable = 0;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+        //    }
+        //    else if (PromotionID == "2")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketSoundWave;
 
-                totalTicketAvailable = (player.PointEarnForSoundWave / 888) - player.TotalRedeemedTicketSoundWave;
-            }
-            else if (PromotionID == "3")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketDoubleProsperity;
+        //        totalTicketAvailable = (player.PointEarnForSoundWave / 888) - player.TotalRedeemedTicketSoundWave;
+        //    }
+        //    else if (PromotionID == "3")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketDoubleProsperity;
 
-                totalTicketAvailable = (player.PointEarnForDoubleProsperity / 888) - player.TotalRedeemedTicketDoubleProsperity;
-            }
-            else if (PromotionID == "4")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketSoundWave;
+        //        totalTicketAvailable = (player.PointEarnForDoubleProsperity / 888) - player.TotalRedeemedTicketDoubleProsperity;
+        //    }
+        //    else if (PromotionID == "4")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketSoundWave;
 
-                totalTicketAvailable = (player.PointEarnForSoundWave / 688) - player.TotalRedeemedTicketSoundWave;
-            }
-            else if (PromotionID == "5")
-            {
-                int RedeemedTicket1688 = 0;
-                if (player.Promotion1688RedeemedTicket != null)
-                {
-                    RedeemedTicket1688 = int.Parse(player.Promotion1688RedeemedTicket);
-                }
-
-
-                totalTicketAvailable = (player.TodayPoints / 1688) - RedeemedTicket1688;
+        //        totalTicketAvailable = (player.PointEarnForSoundWave / 688) - player.TotalRedeemedTicketSoundWave;
+        //    }
+        //    else if (PromotionID == "5")
+        //    {
+        //        int RedeemedTicket1688 = 0;
+        //        if (player.Promotion1688RedeemedTicket != null)
+        //        {
+        //            RedeemedTicket1688 = int.Parse(player.Promotion1688RedeemedTicket);
+        //        }
 
 
-            }
-            else if (PromotionID == "7")
-            {
-                int RedeemedTicket = 0;
-                if (player.TotalRedeemedTicketSlotTournament != 0)
-                {
-                    RedeemedTicket = player.TotalRedeemedTicketSlotTournament;
-                }
+        //        totalTicketAvailable = (player.TodayPoints / 1688) - RedeemedTicket1688;
 
 
-                totalTicketAvailable = (player.PointEarnForSlotTournament / 500) - RedeemedTicket;
-                int MaxSlotTournamentTicket = 8 - RedeemedTicket;
-
-                if (totalTicketAvailable > MaxSlotTournamentTicket)
-                {
-                    totalTicketAvailable = MaxSlotTournamentTicket;
-                }
-
-
-            }
-            else if (PromotionID == "8")
-            {
-                int RedeemedTicket = 0;
-                if (player.PromotionAnniversary_RedeemedTicket != 0)
-                {
-                    RedeemedTicket = player.PromotionAnniversary_RedeemedTicket;
-                }
+        //    }
+        //    else if (PromotionID == "7")
+        //    {
+        //        int RedeemedTicket = 0;
+        //        if (player.TotalRedeemedTicketSlotTournament != 0)
+        //        {
+        //            RedeemedTicket = player.TotalRedeemedTicketSlotTournament;
+        //        }
 
 
-                totalTicketAvailable = (player.PointEarnForAnniversary / 888) - RedeemedTicket;
+        //        totalTicketAvailable = (player.PointEarnForSlotTournament / 500) - RedeemedTicket;
+        //        int MaxSlotTournamentTicket = 8 - RedeemedTicket;
+
+        //        if (totalTicketAvailable > MaxSlotTournamentTicket)
+        //        {
+        //            totalTicketAvailable = MaxSlotTournamentTicket;
+        //        }
 
 
-
-            }
-            else if (PromotionID == "9")
-            {
-                int RedeemedTicket = 0;
-                if (player.TheGrandLuckyDraw_RedeemedTicket != 0)
-                {
-                    RedeemedTicket = player.TheGrandLuckyDraw_RedeemedTicket;
-                }
-
-
-                totalTicketAvailable = (player.PointForTheGrandLuckyDraw / 1000) - RedeemedTicket;
-
-            }
-            else if (PromotionID == "11")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketNewYear_today;
-
-                int maxTicket = player.TodayPoints / 188;
-                if (maxTicket >= 5)
-                {
-                    maxTicket = 5;
-                }
-
-                totalTicketAvailable = maxTicket - player.TotalRedeemedTicketNewYear_today;
-                if (totalTicketAvailable <= 0)
-                {
-                    totalTicketAvailable = 0;
-                }
-
-            }
-            else if (PromotionID == "12")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketFb8Dragon_today;
-
-                int maxTicket = player.TodayPoints / 10;
-                if (maxTicket >= 2)
-                {
-                    maxTicket = 2;
-                }
-
-                totalTicketAvailable = maxTicket - player.TotalRedeemedTicketFb8Dragon_today;
-                if (totalTicketAvailable <= 0)
-                {
-                    totalTicketAvailable = 0;
-                }
-
-            }
-            else if (PromotionID == "13")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketGrandBaccaratTournament;
-
-                int maxTicket = player.PeriodPoints / 1000;
-                if (maxTicket >= 1)
-                {
-                    maxTicket = 1;
-                }
-
-                totalTicketAvailable = maxTicket - player.TotalRedeemedTicketGrandBaccaratTournament;
-                if (totalTicketAvailable <= 0)
-                {
-                    totalTicketAvailable = 0;
-                }
-
-            }
-            else if (PromotionID == "14")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketBountyHuntingSilver;
-                int maxTicket = 0;
-                if (player.ThursdayPoint < 3000)
-                {
-                    maxTicket = 1;
-                }
-
-                totalTicketAvailable = maxTicket - RedeemedTicket;
-                if (totalTicketAvailable <= 0)
-                {
-                    totalTicketAvailable = 0;
-                }
-
-            }
-            else if (PromotionID == "15")
-            {
-                int RedeemedTicket = player.TotalRedeemedTicketBountyHuntingGolden;
-                int maxTicket = 0;
-                if (player.ThursdayPoint >= 3000)
-                {
-                    maxTicket = 1;
-                }
-
-                totalTicketAvailable = maxTicket - RedeemedTicket;
-                if (totalTicketAvailable <= 0)
-                {
-                    totalTicketAvailable = 0;
-                }
-
-            }
-
-            String strConnString = ConfigurationManager.ConnectionStrings["CasinoLoyaltyKiosk"].ConnectionString;
-            string cmdText = "";
-            int issue_ticket = 0;
-            if (issue_ticket < totalTicketAvailable)
-            {
-                issue_ticket = 1;
-            }
-            for (int i = 1; i <= issue_ticket; i++)
-            {
-                SqlConnection cnn = new SqlConnection(strConnString);
-                string Result = "";
-                try
-                {
-                    cnn.Open();
-                    cmdText = "sp_issued_ticket";
-                    SqlCommand cmd = new SqlCommand(cmdText, cnn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@PromotionID", SqlDbType.VarChar).Value = PromotionID;
-                    cmd.Parameters.Add("@PlayerID", SqlDbType.VarChar).Value = PlayerID;
-                    cmd.Parameters.Add("@PlayerName", SqlDbType.VarChar).Value = player.FirstName + " " + player.LastName;
-                    cmd.Parameters.Add("@KioskNo", SqlDbType.VarChar).Value = KioskNo;
-                    cmd.Parameters.Add("@GamingDate", SqlDbType.VarChar).Value = player.GamingDate;
+        //    }
+        //    else if (PromotionID == "8")
+        //    {
+        //        int RedeemedTicket = 0;
+        //        if (player.PromotionAnniversary_RedeemedTicket != 0)
+        //        {
+        //            RedeemedTicket = player.PromotionAnniversary_RedeemedTicket;
+        //        }
 
 
-                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    adapter.Fill(ds);
-                    cnn.Close();
-                    foreach (DataRow row in ds.Tables[0].Rows)
-                    {
-                        var tk = new GrandEventTicket();
-                        tk.TicketNo = row["TicketNo"].ToString();
-                        tk.PlayerID = player.ID.ToString();
-                        tk.PlayerName = player.FirstName + " " + player.LastName;
-                        tk.IssuedDate = DateTime.Parse(row["IssuedTime"].ToString()).ToString("dd-MM-yyyy");
-                        tk.IssuedTime = DateTime.Parse(row["IssuedTime"].ToString()).ToString("HH:mm");
-                        tk.KioskNo = row["KioskNo"].ToString();
-                        tk.PromotionName = PromotionName;
-                        results.Add(tk);
-                    }
+        //        totalTicketAvailable = (player.PointEarnForAnniversary / 888) - RedeemedTicket;
 
 
 
-                }
-                catch (Exception ex)
-                {
-                    Result = "error:" + ex.Message;
-                }
-                finally
-                {
-                    if (cnn != null && cnn.State == ConnectionState.Open)
-                        cnn.Close();
-                }
-            }
+        //    }
+        //    else if (PromotionID == "9")
+        //    {
+        //        int RedeemedTicket = 0;
+        //        if (player.TheGrandLuckyDraw_RedeemedTicket != 0)
+        //        {
+        //            RedeemedTicket = player.TheGrandLuckyDraw_RedeemedTicket;
+        //        }
 
-            //  string cmdText = String.Format(command, PlayerID);
 
-            return results;
-        }
+        //        totalTicketAvailable = (player.PointForTheGrandLuckyDraw / 1000) - RedeemedTicket;
+
+        //    }
+        //    else if (PromotionID == "11")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketNewYear_today;
+
+        //        int maxTicket = player.TodayPoints / 188;
+        //        if (maxTicket >= 5)
+        //        {
+        //            maxTicket = 5;
+        //        }
+
+        //        totalTicketAvailable = maxTicket - player.TotalRedeemedTicketNewYear_today;
+        //        if (totalTicketAvailable <= 0)
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+
+        //    }
+        //    else if (PromotionID == "12")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketFb8Dragon_today;
+
+        //        int maxTicket = player.TodayPoints / 10;
+        //        if (maxTicket >= 2)
+        //        {
+        //            maxTicket = 2;
+        //        }
+
+        //        totalTicketAvailable = maxTicket - player.TotalRedeemedTicketFb8Dragon_today;
+        //        if (totalTicketAvailable <= 0)
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+
+        //    }
+        //    else if (PromotionID == "13")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketGrandBaccaratTournament;
+
+        //        int maxTicket = player.PeriodPoints / 1000;
+        //        if (maxTicket >= 1)
+        //        {
+        //            maxTicket = 1;
+        //        }
+
+        //        totalTicketAvailable = maxTicket - player.TotalRedeemedTicketGrandBaccaratTournament;
+        //        if (totalTicketAvailable <= 0)
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+
+        //    }
+        //    else if (PromotionID == "14")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketBountyHuntingSilver;
+        //        int maxTicket = 0;
+        //        if (player.ThursdayPoint < 3000)
+        //        {
+        //            maxTicket = 1;
+        //        }
+
+        //        totalTicketAvailable = maxTicket - RedeemedTicket;
+        //        if (totalTicketAvailable <= 0)
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+
+        //    }
+        //    else if (PromotionID == "15")
+        //    {
+        //        int RedeemedTicket = player.TotalRedeemedTicketBountyHuntingGolden;
+        //        int maxTicket = 0;
+        //        if (player.ThursdayPoint >= 3000)
+        //        {
+        //            maxTicket = 1;
+        //        }
+
+        //        totalTicketAvailable = maxTicket - RedeemedTicket;
+        //        if (totalTicketAvailable <= 0)
+        //        {
+        //            totalTicketAvailable = 0;
+        //        }
+
+        //    }
+
+        //    String strConnString = ConfigurationManager.ConnectionStrings["CasinoLoyaltyKiosk"].ConnectionString;
+        //    string cmdText = "";
+        //    int issue_ticket = 0;
+        //    if (issue_ticket < totalTicketAvailable)
+        //    {
+        //        issue_ticket = 1;
+        //    }
+        //    for (int i = 1; i <= issue_ticket; i++)
+        //    {
+        //        SqlConnection cnn = new SqlConnection(strConnString);
+        //        string Result = "";
+        //        try
+        //        {
+        //            cnn.Open();
+        //            cmdText = "sp_issued_ticket";
+        //            SqlCommand cmd = new SqlCommand(cmdText, cnn);
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            cmd.Parameters.Add("@PromotionID", SqlDbType.VarChar).Value = PromotionID;
+        //            cmd.Parameters.Add("@PlayerID", SqlDbType.VarChar).Value = PlayerID;
+        //            cmd.Parameters.Add("@PlayerName", SqlDbType.VarChar).Value = player.FirstName + " " + player.LastName;
+        //            cmd.Parameters.Add("@KioskNo", SqlDbType.VarChar).Value = KioskNo;
+        //            cmd.Parameters.Add("@GamingDate", SqlDbType.VarChar).Value = player.GamingDate;
+
+
+        //            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+        //            DataSet ds = new DataSet();
+        //            adapter.Fill(ds);
+        //            cnn.Close();
+        //            foreach (DataRow row in ds.Tables[0].Rows)
+        //            {
+        //                var tk = new GrandEventTicket();
+        //                tk.TicketNo = row["TicketNo"].ToString();
+        //                tk.PlayerID = player.ID.ToString();
+        //                tk.PlayerName = player.FirstName + " " + player.LastName;
+        //                tk.IssuedDate = DateTime.Parse(row["IssuedTime"].ToString()).ToString("dd-MM-yyyy");
+        //                tk.IssuedTime = DateTime.Parse(row["IssuedTime"].ToString()).ToString("HH:mm");
+        //                tk.KioskNo = row["KioskNo"].ToString();
+        //                tk.PromotionName = PromotionName;
+        //                results.Add(tk);
+        //            }
+
+
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Result = "error:" + ex.Message;
+        //        }
+        //        finally
+        //        {
+        //            if (cnn != null && cnn.State == ConnectionState.Open)
+        //                cnn.Close();
+        //        }
+        //    }
+
+        //    //  string cmdText = String.Format(command, PlayerID);
+
+        //    return results;
+        //}
         #endregion
 
         public class Items

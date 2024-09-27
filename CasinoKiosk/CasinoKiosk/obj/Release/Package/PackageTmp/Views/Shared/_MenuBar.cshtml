@@ -64,7 +64,7 @@
 
                         <a>@Html.ActionLink("Redemption Log", "RedemptionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
-                        if (User.IsInRole("SuperAdmin"))
+                        if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                         {
                             <a> @Html.ActionLink("HTR Promotion List", "HTRPromotionList", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
                         }

@@ -741,6 +741,10 @@
     <Parameter Name="PlayerID" Type="int" Mode="In" />
   </Function>
   <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="NewEnrollment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
   <Function Name="spHTR_CheckPrintHTRPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="PlayerID" Type="int" Mode="In" />
     <Parameter Name="PromotionID" Type="int" Mode="In" />

@@ -192,7 +192,7 @@ namespace CKDatabaseConnection.DAO
             HTRPromotionLog result = context.HTRPromotionLogs.Find(logID);
             return result;
         }
-        
+
 
         public List<HTRPromotion> getHTRPromotionList()
         {
@@ -488,7 +488,13 @@ namespace CKDatabaseConnection.DAO
             return list.OrderByDescending(x => x.ID);
         }
         //End
-        
+
+        public List<NewEnrollment_Result> getNewEnrollmentsList(DateTime fromDate, DateTime toDate)
+        {
+            List<NewEnrollment_Result> result = context.NewEnrollment(fromDate, toDate).ToList();
+            return result;
+        }
+
     }
 }
 

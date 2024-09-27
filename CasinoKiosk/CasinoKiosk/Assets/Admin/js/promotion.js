@@ -23,6 +23,24 @@ $('.typeahead').typeahead({
         var playerInfo = array.find(function (player) {
             return player.PlayerID === item;
         });
+
+        //Get current playerName in Patron
+        $.ajax({
+            url: "/HTRTicketPromotion/GetNameByPID",
+            type: "GET",
+            contentType: "application/json;charset=utf-8",
+            data: {
+                PID: +playerInfo.PlayerID
+            },
+            dataType: "json",
+            success: function (result) {
+                $('#newPidName').val(result);
+            },
+            error: function (errormessage) {
+                alert(errormessage.responseText);
+            }
+        });
+
         $('#pid').val(playerInfo.PlayerID);
         $('#curPidName').val(playerInfo.PlayerName);
         return item;

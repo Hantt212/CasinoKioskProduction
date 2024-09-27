@@ -28,11 +28,10 @@
                                 <th>Promotion's Content </th>
                                 <th>Condition</th>
                                 <th>Lucky Date</th>
-                                <th>Active</th>
                                 <th>Created By</th>
                                 <th>Created Time</th>
                                 <th>Updated By</th>
-                                <th>Updated Time</th>
+                                <th>Modify PID</th>
                             </tr>
                         </thead>
                     </table>
@@ -91,9 +90,47 @@
     </div>
 </div>
 
+<div class="modal fade" id="pidModifyModal" tabindex="-1" role="dialog" aria-labelledby="pidModifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">PID Modify</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+
+                        <input type="hidden" id="proID"  placeholder="proID" />
+                    </div>
+                    <div class="form-group">
+                        <label for="pid" class="font-weight-bold">PID</label>
+                        <input type="text" class="form-control typeahead" id="pid" placeholder="Patron ID" autocomplete="off" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="curPidName" class="font-weight-bold">Current Patron Name</label>
+                        <input type="text" class="form-control" id="curPidName" placeholder="Patron Name" disabled />
+                    </div>
+                    <div class="form-group">
+                        <label for="newPidName" class="font-weight-bold">New Patron Name</label>
+                        <input type="text" class="form-control" id="newPidName" placeholder="Patron Name" autocomplete="off" />
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnAdd" onclick="savePIDModify()">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 @section scriptPromotion
 {
-    <script src="~/Assets/Admin/js/promotion.js?n=4"></script>
+    <script src="~/Assets/Admin/js/promotion.js?n=5"></script>
+   
+    
 }

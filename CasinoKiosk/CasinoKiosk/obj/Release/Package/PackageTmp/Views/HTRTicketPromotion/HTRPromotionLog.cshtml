@@ -34,6 +34,10 @@
 
             </div>
             <span class="text-danger" id="notFounfPD"></span>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <span class="text-danger">@TempData["ErrorMessage"]</span>
+            }
             <div id="patronInfo">
 
             </div>
@@ -100,5 +104,5 @@
 
 @section scriptPromotion
 {
-    <script src="~/Assets/Admin/js/promotion.js?n=5"></script>
+    <script src="~/Assets/Admin/js/promotion.js?n=6"></script>
 }

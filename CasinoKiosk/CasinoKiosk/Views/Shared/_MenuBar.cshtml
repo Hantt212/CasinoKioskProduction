@@ -64,7 +64,7 @@
 
                         <a>@Html.ActionLink("Redemption Log", "RedemptionLog", "Logs", new object { }, new { @class = "collapse-item" })</a>
 
-                        if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
+                        if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
                         {
                             <a> @Html.ActionLink("HTR Promotion List", "HTRPromotionList", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
                         }
@@ -153,10 +153,14 @@
                         <a>@Html.ActionLink("Analyst Reports", "Index", "Analyst", new object { }, new { @class = "collapse-item" })</a>
                     }
 
-
                     @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin"))
                     {
                         <a>@Html.ActionLink("Marketing Authorizers", "MarketAuth", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
+                    }
+
+                    @if (User.IsInRole("SuperAdmin") || User.IsInRole("HTRAdmin") || User.IsInRole("HTRStaff"))
+                    {
+                        <a>@Html.ActionLink("New Enrollments", "NewEnrollments", "HTRTicketPromotion", new object { }, new { @class = "collapse-item" })</a>
                     }
                 </div>
             </div>

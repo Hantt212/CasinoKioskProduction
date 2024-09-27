@@ -1102,5 +1102,19 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NewEnrollment" FunctionName="ITHoTram_CustomReportModel.Store.NewEnrollment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.NewEnrollment_Result">
+          <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+          <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+          <ScalarProperty Name="DateEnrolled" ColumnName="DateEnrolled" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+          <ScalarProperty Name="Host" ColumnName="Host" />
+          <ScalarProperty Name="PointBalance" ColumnName="PointBalance" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

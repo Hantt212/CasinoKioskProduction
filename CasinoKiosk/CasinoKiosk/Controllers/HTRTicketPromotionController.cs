@@ -156,7 +156,7 @@ namespace CasinoKiosk.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
-        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public JsonResult SaveHTRPromotion(HTRPromotion input)
         {
             if (input.PromotionId == 0)
@@ -173,7 +173,7 @@ namespace CasinoKiosk.Controllers
         }
 
 
-        [Authorize(Roles = "SuperAdmin, HTRAdmin")]
+        [Authorize(Roles = "SuperAdmin, HTRAdmin,HTRStaff")]
         public JsonResult SavePIDModify(int proID, string curPidName, string newPidName)
         {
             return Json(logDao.savePidModify(proID, curPidName, newPidName), JsonRequestBehavior.AllowGet);
@@ -221,6 +221,7 @@ namespace CasinoKiosk.Controllers
         {
             return Json(logDao.getPromotionLogById(logID), JsonRequestBehavior.AllowGet);
         }
+
 
         [Authorize(Roles = "SuperAdmin, HTRAdmin")]
         public JsonResult SavePromotionLog(int LogID, string PlayerName)
@@ -282,6 +283,24 @@ namespace CasinoKiosk.Controllers
                 model = logDao.ListAllActivityLog("", "").Take(100);
             }
             return View("Report", model);
+        }
+
+        [Authorize(Roles = "SuperAdmin, HTRAdmin, HTRStaff")]
+        public ActionResult NewEnrollments()
+        {
+            string fromDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string toDate = DateTime.Now.ToString("yyyy-MM-dd");
+            if (HttpContext.Request.Form["dfromdate"] != null && HttpContext.Request.Form["dfromdate"] != "")
+            {
+                fromDate = Convert.ToString(HttpContext.Request.Form["dfromdate"]);
+            }
+            if (HttpContext.Request.Form["dtodate"] != null && HttpContext.Request.Form["dtodate"] != "")
+            {
+                toDate = Convert.ToString(HttpContext.Request.Form["dtodate"]);
+            }
+
+            var result = logDao.getNewEnrollmentsList(DateTime.Parse(fromDate), DateTime.Parse(toDate));
+            return View(result);
         }
     }
 }

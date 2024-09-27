@@ -746,6 +746,10 @@
           <Parameter Name="PlayerID" Type="int" Mode="In" />
         </Function>
         <Function Name="MiniBuffet_GetNewClassicPlayer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="NewEnrollment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="FromDate" Type="date" Mode="In" />
+          <Parameter Name="ToDate" Type="date" Mode="In" />
+        </Function>
         <Function Name="spHTR_CheckPrintHTRPromotion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="PlayerID" Type="int" Mode="In" />
           <Parameter Name="PromotionID" Type="int" Mode="In" />
@@ -1099,6 +1103,10 @@
           <FunctionImport Name="spHTR_CheckPrintHTRPromotion" ReturnType="Collection(ITHoTram_CustomReportModel.spHTR_CheckPrintHTRPromotion_Result)">
             <Parameter Name="PlayerID" Mode="In" Type="Int32" />
             <Parameter Name="PromotionID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NewEnrollment" ReturnType="Collection(ITHoTram_CustomReportModel.NewEnrollment_Result)">
+            <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ToDate" Mode="In" Type="DateTime" />
           </FunctionImport>
           </EntityContainer>
         <ComplexType Name="MFBonus_spSelectPlayerPoints_Result">
@@ -1906,6 +1914,16 @@
           <Property Type="Int32" Name="TotalPointsEarned" Nullable="true" />
           <Property Type="Int32" Name="PrintedQty" Nullable="true" />
           <Property Type="DateTime" Name="InsertDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="NewEnrollment_Result">
+          <Property Type="Int32" Name="PlayerID" Nullable="false" />
+          <Property Type="String" Name="PlayerName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DateEnrolled" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Birthday" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Gender" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CountryDescription" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Host" Nullable="true" MaxLength="30" />
+          <Property Type="Int64" Name="PointBalance" Nullable="true" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -3011,6 +3029,20 @@
                 <ScalarProperty Name="TotalPointsEarned" ColumnName="TotalPointsEarned" />
                 <ScalarProperty Name="PrintedQty" ColumnName="PrintedQty" />
                 <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NewEnrollment" FunctionName="ITHoTram_CustomReportModel.Store.NewEnrollment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ITHoTram_CustomReportModel.NewEnrollment_Result">
+                <ScalarProperty Name="PlayerID" ColumnName="PlayerID" />
+                <ScalarProperty Name="PlayerName" ColumnName="PlayerName" />
+                <ScalarProperty Name="DateEnrolled" ColumnName="DateEnrolled" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CountryDescription" ColumnName="CountryDescription" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="PointBalance" ColumnName="PointBalance" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
